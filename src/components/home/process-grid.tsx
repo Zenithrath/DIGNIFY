@@ -6,7 +6,11 @@ import { formatYearIndex } from "@/lib/utils";
 
 export function ProcessGrid() {
   return (
-    <section aria-labelledby="process-heading" className="bg-paper py-24 sm:py-32">
+    <section
+      aria-labelledby="process-heading"
+      className="bg-paper py-24 sm:py-32"
+      style={{ clipPath: "polygon(0 4%, 100% 0, 100% 100%, 0 100%)" }}
+    >
       <Container>
         <SectionHeader index="05" label="PROCESS" title="A sequence we actually follow." id="process-heading" />
 

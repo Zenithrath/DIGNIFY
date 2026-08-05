@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/layout/brand";
 import { about, team } from "@/content/team";
 import { studioValues } from "@/content/values";
-import cameoOne from "@/app/craiyon_212833_image.png";
-import cameoTwo from "@/app/craiyon_212915_image.png";
+import dijeImg from "@/dije.png";
+import ignasImg from "@/ignas.png";
 
-const cameoImages = [cameoOne, cameoTwo] as const;
+const memberPhotos = [dijeImg, ignasImg] as const;
 
 export const metadata: Metadata = {
   title: "About",
@@ -22,7 +22,11 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section aria-labelledby="about-heading" className="bg-ink py-24 text-paper sm:py-32">
+      <section
+        aria-labelledby="about-heading"
+        className="bg-ink py-24 text-paper sm:py-32"
+        style={{ clipPath: "polygon(0 0, 100% 0, 100% 92%, 0 100%)" }}
+      >
         <Container>
           <Reveal>
             <p className="meta-label text-emerald">/ ABOUT THE STUDIO</p>
@@ -58,7 +62,11 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section aria-labelledby="mission-heading" className="border-y border-line bg-cream py-20 sm:py-28">
+      <section
+        aria-labelledby="mission-heading"
+        className="bg-cream py-20 sm:py-28"
+        style={{ clipPath: "polygon(0 0, 100% 0, 100% 94%, 0 100%)" }}
+      >
         <Container>
           <Reveal>
             <div className="grid grid-cols-12 gap-x-4">
@@ -108,7 +116,11 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section aria-labelledby="name-heading" className="border-t border-line bg-ink py-20 text-paper sm:py-28">
+      <section
+        aria-labelledby="name-heading"
+        className="bg-ink py-20 text-paper sm:py-28"
+        style={{ clipPath: "polygon(0 4%, 100% 0, 100% 100%, 0 100%)" }}
+      >
         <Container>
           <div className="grid grid-cols-12 gap-x-4 gap-y-10">
             <Reveal className="col-span-12 lg:col-span-4">
@@ -137,27 +149,31 @@ export default function AboutPage() {
               </h2>
             </div>
           </Reveal>
-          <div className="mt-10 grid grid-cols-12 gap-x-4 gap-y-8">
+          <div className="mt-14 grid grid-cols-12 gap-x-6 gap-y-12">
             {team.map((member, i) => (
-              <Reveal key={member.name} delay={i * 0.08} className="col-span-12 md:col-span-6">
-                <div className="grid grid-cols-12 border border-line bg-pure">
-                  <div className="relative col-span-12 flex min-h-[22rem] items-end justify-center overflow-hidden border-b border-line bg-ink p-6 sm:col-span-4 sm:min-h-[20rem] sm:border-b-0 sm:border-r">
+              <Reveal key={member.name} delay={i * 0.1} className="col-span-12 md:col-span-6">
+                <div className="relative">
+                  <div className="relative aspect-[3/4] w-full max-w-[300px] overflow-hidden bg-ink shadow-[0_24px_60px_-24px_rgba(11,11,11,0.45)]">
+                    <div className="absolute inset-5 border border-line-dark/40 z-10 pointer-events-none" />
+                    <div className="absolute top-5 left-5 h-3 w-3 border-t-2 border-l-2 border-emerald z-10" />
+                    <div className="absolute bottom-5 right-5 h-3 w-3 border-b-2 border-r-2 border-emerald z-10" />
+                    <div className="absolute top-5 right-5 h-10 w-px bg-line-dark/40 z-10" />
+                    <div className="absolute bottom-5 left-5 h-10 w-px bg-line-dark/40 z-10" />
                     <Image
-                      src={cameoImages[i]}
-                      alt=""
-                      aria-hidden="true"
-                      sizes="(min-width: 640px) 25vw, 100vw"
-                      className="absolute inset-x-0 bottom-0 h-full w-full object-contain object-bottom px-6 pt-4"
+                      src={memberPhotos[i]}
+                      alt={`Portrait of ${member.name}`}
+                      fill
+                      sizes="(min-width: 768px) 30vw, 60vw"
+                      className="object-cover object-top scale-[1.02]"
                     />
-                    <span className="relative z-10 self-start font-mono text-[0.625rem] uppercase tracking-[0.14em] text-emerald">
-                      Cameo / {String(i + 1).padStart(2, "0")}
+                    <span className="absolute bottom-5 left-5 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-emerald z-10">
+                      {String(i + 1).padStart(2, "0")}
                     </span>
                   </div>
-                  <div className="col-span-12 p-8 sm:col-span-8">
-                    <p className="meta-label text-emerald-deep">MEMBER / {String(i + 1).padStart(2, "0")}</p>
-                    <h3 className="display mt-4 text-3xl">{member.name}</h3>
-                    <p className="meta-label mt-3 text-emerald-deep">{member.role.toUpperCase()}</p>
-                    <ul className="mt-6 space-y-2.5 border-t border-line pt-6">
+                  <div className="mt-6">
+                    <h3 className="display text-3xl">{member.name}</h3>
+                    <p className="meta-label mt-2 text-emerald-deep">{member.role.toUpperCase()}</p>
+                    <ul className="mt-5 space-y-2">
                       {member.focus.map((item) => (
                         <li key={item} className="flex items-start gap-3 text-sm text-muted">
                           <span aria-hidden className="mt-[7px] size-1.5 shrink-0 bg-emerald" />
@@ -169,7 +185,7 @@ export default function AboutPage() {
                       href={member.portfolioUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-6 inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-ink-text transition-colors hover:text-emerald-deep"
+                      className="mt-5 inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-ink-text transition-colors hover:text-emerald-deep"
                     >
                       <span className="link-underline">Portfolio</span>
                       <span aria-hidden>↗</span>
@@ -179,7 +195,7 @@ export default function AboutPage() {
               </Reveal>
             ))}
           </div>
-          <Reveal className="mt-12">
+          <Reveal className="mt-14">
             <p className="max-w-2xl text-sm leading-relaxed text-muted">
               No fictional biographies here — just the roles we actually do. If you want to know
               more about a specific area of experience, ask us directly.

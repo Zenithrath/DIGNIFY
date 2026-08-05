@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { BrandLockup } from "./brand";
-import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -79,7 +78,6 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <ThemeToggle className="hidden md:flex" />
             <Button href="/contact" variant="emerald" size="md" className="hidden md:inline-flex">
               Start a Project
             </Button>
@@ -107,7 +105,7 @@ export function SiteHeader() {
           className="menu-enter fixed inset-0 z-40 flex flex-col bg-ink text-paper lg:hidden"
         >
           <Container className="flex h-16 items-center justify-between gap-4 border-b border-line-dark">
-            <ThemeToggle className="border-line-dark" />
+            <BrandLockup tone="paper" />
             <button
               ref={closeRef}
               type="button"

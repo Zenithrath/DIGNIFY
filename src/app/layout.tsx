@@ -11,13 +11,13 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Digital Studio`,
+    default: site.name,
     template: `%s · ${site.name}`,
   },
   description: site.description,
   alternates: { canonical: "/" },
   openGraph: {
-    title: `${site.name} — Digital Studio`,
+    title: site.name,
     description: site.description,
     url: "/",
     siteName: site.name,
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — Digital Studio`,
+    title: site.name,
     description: site.description,
   },
   robots: {
