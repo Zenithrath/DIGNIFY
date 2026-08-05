@@ -3,7 +3,7 @@ import { Reveal } from "@/components/ui/reveal";
 
 export function Intro() {
   return (
-    <section aria-labelledby="intro-heading" className="bg-paper py-24 sm:py-32">
+    <section aria-labelledby="intro-heading" className="border-t border-line bg-cream py-14 sm:py-32">
       <Container>
         <div className="grid grid-cols-12 gap-x-4 gap-y-10">
           <Reveal className="col-span-12 lg:col-span-3">

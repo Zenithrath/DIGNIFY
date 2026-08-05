@@ -3,9 +3,6 @@ import { fontDisplay, fontMono, fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { site } from "@/content/site";
 import { THEME_KEY } from "@/lib/theme";
-import { SkipLink } from "@/components/layout/skip-link";
-import { SiteHeader } from "@/components/layout/site-header";
-import { SiteFooter } from "@/components/layout/site-footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -56,15 +53,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
       <body className="flex min-h-full flex-col bg-paper font-sans text-ink-text">
-        <noscript>
-          <style>{`.reveal-node { opacity: 1 !important; transform: none !important; }`}</style>
-        </noscript>
-        <SkipLink />
-        <SiteHeader />
-        <main id="main" className="flex flex-1 flex-col">
-          {children}
-        </main>
-        <SiteFooter />
+        {children}
       </body>
     </html>
   );

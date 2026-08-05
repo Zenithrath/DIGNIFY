@@ -4,10 +4,9 @@ export const site = {
   name: "Dignify",
   wordmark: "DIGNIFY",
   tagline: "Digital Studio",
-  description:
-    "Dignify designs, develops, and automates modern digital experiences for businesses that need structure, usability, and impact.",
+  description: "Dignify designs, develops, and automates modern digital experiences for businesses that need structure, usability, and impact.",
   url: siteUrl,
-  email: "hello@dignify.studio",
+  email: "dignify@gmail.com",
   foundedBy: "Dije & Ignas",
   location: "Available worldwide · Remote",
 } as const;

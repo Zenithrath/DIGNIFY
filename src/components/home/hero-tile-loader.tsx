@@ -1,90 +1,96 @@
 "use client";
 
-import { useEffect, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { BrandLockup } from "@/components/layout/brand";
 
-const TILE_COLUMNS = 8;
-const TILE_ROWS = 6;
-const TILE_COUNT = TILE_COLUMNS * TILE_ROWS;
-const LOADING_DURATION = 1700;
-const TILE_EXIT_DURATION = 780;
+const INTRO_DURATION = 400;
+const REVEAL_DURATION = 4000;
+const DESKTOP_GRID = { columns: 58, rows: 34 };
+const MOBILE_GRID = { columns: 36, rows: 50 };
+
+type Phase = "intro" | "reveal" | "done";
 
 type TileStyle = CSSProperties & {
-  "--tile-delay": string;
-  "--tile-exit": string;
-  "--tile-color": string;
+  "--pixel-delay": string;
 };
 
-function getTileStyle(index: number): TileStyle {
-  const row = Math.floor(index / TILE_COLUMNS);
-  const column = index % TILE_COLUMNS;
-  const stagger = row * 0.035 + column * 0.028 + ((row + column) % 3) * 0.035;
-
-  return {
-    "--tile-delay": `${stagger}s`,
-    "--tile-exit": row % 2 === 0 ? "-112%" : "112%",
-    "--tile-color": index % 23 === 0 ? "var(--gold)" : index % 17 === 0 ? "var(--emerald)" : "var(--ink)",
-  };
-}
-
 export function HeroTileLoader() {
-  const [progress, setProgress] = useState(0);
-  const [opening, setOpening] = useState(false);
-  const [mounted, setMounted] = useState(true);
+  const [phase, setPhase] = useState<Phase>("intro");
+  const [isMobile, setIsMobile] = useState(false);
+  const grid = isMobile ? MOBILE_GRID : DESKTOP_GRID;
+
+  const tiles = useMemo(() => {
+    const longestPath = grid.columns + grid.rows - 2;
+
+    return Array.from({ length: grid.columns * grid.rows }, (_, index) => {
+      const row = Math.floor(index / grid.columns);
+      const column = index % grid.columns;
+      const diagonalDistance = grid.columns - 1 - column + row;
+      const ripple = ((row * 7 + column * 11) % 5) * 0.008;
+
+      return {
+        id: index,
+        style: {
+          "--pixel-delay": `${(
+            (diagonalDistance / longestPath) * 1.28 + ripple
+          ).toFixed(3)}s`,
+        } as TileStyle,
+      };
+    });
+  }, [grid.columns, grid.rows]);
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) {
-      return;
-    }
+    const query = window.matchMedia("(max-width: 640px)");
+    const syncViewport = () => setIsMobile(query.matches);
+    const frame = window.requestAnimationFrame(syncViewport);
 
-    let frame = 0;
-    let openingTimer = 0;
-    let removeTimer = 0;
-    const startedAt = performance.now();
-
-    const updateProgress = (now: number) => {
-      const elapsed = now - startedAt;
-      const nextProgress = Math.min(100, Math.round((elapsed / LOADING_DURATION) * 100));
-      setProgress(nextProgress);
-
-      if (nextProgress < 100) {
-        frame = requestAnimationFrame(updateProgress);
-        return;
-      }
-
-      openingTimer = window.setTimeout(() => setOpening(true), 120);
-      removeTimer = window.setTimeout(() => setMounted(false), 120 + TILE_EXIT_DURATION + 80);
-    };
-
-    frame = requestAnimationFrame(updateProgress);
-
+    query.addEventListener("change", syncViewport);
     return () => {
-      cancelAnimationFrame(frame);
-      window.clearTimeout(openingTimer);
-      window.clearTimeout(removeTimer);
+      window.cancelAnimationFrame(frame);
+      query.removeEventListener("change", syncViewport);
     };
   }, []);
 
-  if (!mounted) return null;
+  useEffect(() => {
+    const revealTimer = window.setTimeout(() => setPhase("reveal"), INTRO_DURATION);
+    const doneTimer = window.setTimeout(
+      () => setPhase("done"),
+      INTRO_DURATION + REVEAL_DURATION,
+    );
+
+    return () => {
+      window.clearTimeout(revealTimer);
+      window.clearTimeout(doneTimer);
+    };
+  }, []);
+
+  if (phase === "done") return null;
 
   return (
-    <div className="dignify-loader" data-opening={opening || undefined} aria-hidden="true">
-      <div className="dignify-loader__content">
-        <BrandLockup tone="paper" className="h-10 w-auto sm:h-12" />
-        <div className="dignify-loader__meta">
-          <span>Digital studio / 2026</span>
-          <span>{String(progress).padStart(3, "0")}%</span>
-        </div>
-        <div className="dignify-loader__progress" role="presentation">
-          <span style={{ width: `${progress}%` }} />
-        </div>
+    <div
+      className="dignify-loader"
+      data-phase={phase}
+      aria-hidden="true"
+    >
+      <div
+        className="dignify-loader__grid"
+        style={{
+          gridTemplateColumns: `repeat(${grid.columns}, minmax(0, 1fr))`,
+          gridTemplateRows: `repeat(${grid.rows}, minmax(0, 1fr))`,
+        }}
+      >
+        {tiles.map((tile) => (
+          <span
+            key={tile.id}
+            className={`dignify-loader__tile${phase === "reveal" ? " dignify-loader__tile--reveal" : ""}`}
+            style={tile.style}
+          />
+        ))}
       </div>
 
-      <div className="dignify-loader__tiles">
-        {Array.from({ length: TILE_COUNT }, (_, index) => (
-          <span key={index} className="dignify-loader__tile" style={getTileStyle(index)} />
-        ))}
+      <div className="dignify-loader__identity" data-phase={phase}>
+        <BrandLockup tone="paper" className="h-10 w-auto sm:h-14" />
+        <p className="dignify-loader__descriptor">Digital studio / 2026</p>
       </div>
     </div>
   );
