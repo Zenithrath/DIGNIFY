@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
@@ -204,8 +205,18 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
             {project.gallery.map((plate, i) => (
               <Reveal key={plate.index} delay={i * 0.06} className={i === 0 ? "col-span-12" : "col-span-12 md:col-span-6"}>
                 <figure>
-                  <div className="aspect-[16/8] overflow-hidden border border-line">
-                    <ProjectPlate slug={project.slug} index={String(plate.index).padStart(2, "0")} category={project.category} year={project.year} />
+                  <div className="relative aspect-[16/8] overflow-hidden border border-line">
+                    {plate.src ? (
+                      <Image
+                        src={plate.src}
+                        alt={`${project.title} — ${plate.caption}`}
+                        fill
+                        sizes="(min-width: 768px) 50vw, 100vw"
+                        className="object-cover object-top"
+                      />
+                    ) : (
+                      <ProjectPlate slug={project.slug} index={String(plate.index).padStart(2, "0")} category={project.category} year={project.year} />
+                    )}
                   </div>
                   <figcaption className="mt-3 flex items-baseline justify-between gap-4">
                     <span className="meta-label text-muted">SYS-{String(plate.index).padStart(2, "0")}</span>
@@ -257,7 +268,9 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
                 <p className="mt-8 text-sm leading-relaxed text-muted-dark">
                   {project.status === "Concept Project"
                     ? "A design exploration produced by the studio — not shipped, and not presented as a client result."
-                    : "Work produced for and by the Dignify studio itself."}
+                    : project.status === "Client Project"
+                      ? "Work delivered for a real client or organization, produced by the Dignify studio."
+                      : "Work produced for and by the Dignify studio itself."}
                 </p>
               </div>
             </div>
@@ -281,13 +294,23 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
                 className="group mt-6 grid grid-cols-12 items-end gap-x-4 gap-y-6 border-b border-line pb-12"
               >
                 <div className="col-span-12 aspect-[16/6] overflow-hidden border border-line sm:aspect-[16/7] lg:col-span-9">
-                  <div className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.01]">
-                    <ProjectPlate
-                      slug={nextProject.slug}
-                      index={formatYearIndex(projects.indexOf(nextProject) + 1)}
-                      category={nextProject.category}
-                      year={nextProject.year}
-                    />
+                  <div className="relative h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.01]">
+                    {nextProject.cover ? (
+                      <Image
+                        src={nextProject.cover}
+                        alt={`${nextProject.title} — project preview`}
+                        fill
+                        sizes="(min-width: 1024px) 75vw, 100vw"
+                        className="object-cover object-top"
+                      />
+                    ) : (
+                      <ProjectPlate
+                        slug={nextProject.slug}
+                        index={formatYearIndex(projects.indexOf(nextProject) + 1)}
+                        category={nextProject.category}
+                        year={nextProject.year}
+                      />
+                    )}
                   </div>
                 </div>
                 <div className="col-span-12 lg:col-span-3">

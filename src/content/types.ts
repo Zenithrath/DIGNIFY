@@ -1,3 +1,5 @@
+import type { StaticImageData } from "next/image";
+
 export type ProjectCategory = "Website" | "UI/UX" | "Automation";
 
 export type ProjectStatus = "Client Project" | "Internal Project" | "Concept Project";
@@ -12,6 +14,7 @@ export interface ProjectCaseSection {
 export interface ProjectGalleryPlate {
   index: number;
   caption: string;
+  src?: StaticImageData;
 }
 
 export interface Project {
@@ -27,6 +30,7 @@ export interface Project {
   solution: string;
   process: Array<{ step: string; detail: string }>;
   gallery: ProjectGalleryPlate[];
+  cover?: StaticImageData;
   tech: string[];
   reflection: string;
   nextSlug: string;

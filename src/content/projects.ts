@@ -1,5 +1,12 @@
 import type { Project } from "./types";
 
+import bem1 from "@/portfolio/bem1.png";
+import bem2 from "@/portfolio/bem2.png";
+import bem3 from "@/portfolio/bem3.png";
+import dignify1 from "@/portfolio/dignify1.png";
+import dignify2 from "@/portfolio/dignify2.png";
+import dignify3 from "@/portfolio/dignify3.png";
+
 export const projects: Project[] = [
   {
     slug: "dignify-studio-site",
@@ -25,173 +32,81 @@ export const projects: Project[] = [
       { step: "Validation", detail: "Ran lint, type checking, and a production build; audited content integrity and accessibility." },
     ],
     gallery: [
-      { index: 1, caption: "Hero composition — oversized display type over a constructed geometric system" },
-      { index: 2, caption: "Service index — numbered editorial rows instead of generic cards" },
-      { index: 3, caption: "Case study layout — boxed editorial sections with mono metadata" },
+      { index: 1, caption: "Hero composition — oversized display type over a constructed geometric system", src: dignify1 },
+      { index: 2, caption: "Service index — numbered editorial rows instead of generic cards", src: dignify2 },
+      { index: 3, caption: "Case study layout — boxed editorial sections with mono metadata", src: dignify3 },
     ],
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    cover: dignify1,
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     reflection:
       "Building our own site confirmed a suspicion: the discipline of a token layer is what keeps a two-person studio fast. The hardest part was not the design — it was resisting the urge to overclaim. The site states what we do, not what we wish we had done.",
-    nextSlug: "operator-dashboard-ui",
+    nextSlug: "bem-vokasi-ub-2025",
   },
   {
-    slug: "operator-dashboard-ui",
-    title: "Operator Dashboard",
-    category: "UI/UX",
-    status: "Concept Project",
-    year: 2026,
-    summary:
-      "A concept interface for monitoring automated workflows — dense information, structured hierarchy, no decorative noise.",
-    overview:
-      "A design exploration for a monitoring dashboard that oversees a portfolio of automated workflows. The concept asks: what does an interface look like when it is built for an operator who needs status at a glance and detail on demand?",
-    challenge:
-      "Dashboards drown in widgets. The design problem was restraint: how to show dozens of workflow states, failures, and metrics without turning the screen into a control room of colored tiles.",
-    approach:
-      "We treated the dashboard as an editorial artifact. A fixed grid of modular panels, a strict monochrome palette, and emerald reserved for clear action. Status is never communicated by color alone — every state carries a label.",
-    solution:
-      "A three-tier interface: an overview strip with aggregate states, a workflow grid with per-run status lines, and a detail panel for logs and retries. Typography does the hierarchy work, borders do the segmentation, and color stays almost silent.",
-    process: [
-      { step: "Audit", detail: "Mapped the real states an automation operator must distinguish." },
-      { step: "Structure", detail: "Designed the information hierarchy — overview, grid, detail." },
-      { step: "System", detail: "Built a token-scale of status treatments with text-based redundancy." },
-      { step: "Composition", detail: "Composed modular panels on a strict 12-column grid." },
-    ],
-    gallery: [
-      { index: 1, caption: "Overview tier — aggregate workflow states on a single strip" },
-      { index: 2, caption: "Workflow grid — per-run status lines with mono metadata" },
-      { index: 3, caption: "Detail panel — logs, retries, and run history in boxed zones" },
-    ],
-    tech: ["Figma", "Design Tokens", "Information Design"],
-    reflection:
-      "The lesson: dashboards fail by excess, not scarcity. Cutting the palette to two semantic accents made every state readable in a split second — color became a language instead of decoration.",
-    nextSlug: "nodeflow-automation",
-  },
-  {
-    slug: "nodeflow-automation",
-    title: "Nodeflow",
-    category: "Automation",
-    status: "Concept Project",
-    year: 2026,
-    summary:
-      "A concept for a visual n8n workflow library — reusable automation modules documented like a technical manual.",
-    overview:
-      "Nodeflow is a concept project: a pattern library and documentation system for n8n workflows. The idea is that automations should be engineered like software — named, versioned, documented, and reusable — rather than assembled once and forgotten.",
-    challenge:
-      "n8n workflows are powerful and invisible. Once a workflow runs, its logic lives only inside the editor. The concept had to make automation legible: what each workflow does, what it touches, and what happens when it fails.",
-    approach:
-      "We designed a documentation-first workflow system: every module gets a spec sheet — inputs, outputs, error paths, and owners. The concept demonstrates a set of common automation modules: lead intake, status reporting, and content distribution.",
-    solution:
-      "A structured library where each workflow module is presented with architecture diagrams, node sequences, error-handling notes, and maintenance guidance — turning an invisible process into an auditable asset.",
-    process: [
-      { step: "Catalogue", detail: "Identified the repetitive processes that automation genuinely serves." },
-      { step: "Model", detail: "Designed workflow architecture with explicit error paths." },
-      { step: "Document", detail: "Specified each module: triggers, steps, outputs, failure modes." },
-      { step: "Systematize", detail: "Defined a library structure that scales as modules grow." },
-    ],
-    gallery: [
-      { index: 1, caption: "Module spec — inputs, outputs, and error paths on one sheet" },
-      { index: 2, caption: "Node sequence — the automation flow drawn as a system diagram" },
-      { index: 3, caption: "Library index — every automation module catalogued" },
-    ],
-    tech: ["n8n", "Webhooks", "Documentation Systems"],
-    reflection:
-      "Automation fails quietly. The strongest design decision was treating documentation as part of the system, not an afterthought — because a workflow nobody understands is a liability.",
-    nextSlug: "lead-intake-api",
-  },
-  {
-    slug: "lead-intake-api",
-    title: "Lead Intake API",
-    category: "Automation",
-    status: "Internal Project",
-    year: 2026,
-    summary:
-      "An internal integration that routes contact form submissions into a structured pipeline — built as the studio's own reference for API integration work.",
-    overview:
-      "The studio's own contact form feeds into an internal integration: submissions are validated, normalized, and routed to the studio's inbox in a consistent, inspectable format. The project is intentionally small — it exists as a working reference for how Dignify integrates systems.",
-    challenge:
-      "Forms deliver unstructured chaos: emoji, whitespace, missing fields, broken links. The integration had to normalize submissions into a clean record while preserving the original input, and fail loudly when something unexpected arrives.",
-    approach:
-      "We defined a typed payload contract, validated on both the client and the server, and mapped the normalized record into a structured inbox message. The endpoint is deliberately honest: it accepts the submission and returns a clear reference — no silent drops.",
-    solution:
-      "A POST endpoint with schema validation, normalization rules for each field, and a structured response with a reference identifier. The integration is documented as a reusable pattern for client projects that need form-to-tool routing.",
-    process: [
-      { step: "Contract", detail: "Defined the payload schema and the normalized record shape." },
-      { step: "Validation", detail: "Implemented field-level validation with clear error responses." },
-      { step: "Routing", detail: "Mapped the record into the studio's inbox format with a reference ID." },
-      { step: "Document", detail: "Wrote the pattern up as internal reference material." },
-    ],
-    gallery: [
-      { index: 1, caption: "Contract — the typed payload and its normalized record" },
-      { index: 2, caption: "Validation — field-level rules with explicit error responses" },
-      { index: 3, caption: "Routing — the normalized record mapped into the inbox" },
-    ],
-    tech: ["TypeScript", "REST", "JSON Schema"],
-    reflection:
-      "Small integrations are where discipline shows. The reference ID alone — a stable identifier for every submission — turned support conversations from 'did you get it?' into 'here is exactly what arrived.'",
-    nextSlug: "dignify-design-system",
-  },
-  {
-    slug: "dignify-design-system",
-    title: "Dignify Design System",
-    category: "UI/UX",
-    status: "Internal Project",
-    year: 2026,
-    summary:
-      "The internal token and component system that powers every Dignify build — one palette, two accents, three typefaces.",
-    overview:
-      "This is the system underneath this website and every project Dignify ships: a token layer that locks the identity — two monochrome surfaces, one emerald accent, and a three-typeface hierarchy — so every build starts from a coherent foundation instead of a blank page.",
-    challenge:
-      "A two-person studio cannot afford to re-decide spacing, color, and type scale on every project. But a system that is too rigid produces identical sites. The system had to be strict about principles and flexible about composition.",
-    approach:
-      "We separated tokens from components: the token layer encodes the rules (palette, type scale, border system, motion curves), while components remain compositional primitives — sections, rules, labels, and reveals that can be arranged in endless layouts.",
-    solution:
-      "A typed token set implemented as CSS custom properties and Tailwind theme values, with component primitives documented for reuse. The system ships as the foundation of the studio site and as the starting point for client work.",
-    process: [
-      { step: "Palette", detail: "Defined the monochrome surfaces, border tones, and two accent colors." },
-      { step: "Type", detail: "Set the three-typeface hierarchy: display, body, and metadata." },
-      { step: "Motion", detail: "Chose a single easing curve and reveal vocabulary with reduced-motion handling." },
-      { step: "Tokens", detail: "Implemented everything as typed, centralized values." },
-    ],
-    gallery: [
-      { index: 1, caption: "Palette — monochrome foundation with two strategic accents" },
-      { index: 2, caption: "Type scale — display, body, and metadata hierarchies" },
-      { index: 3, caption: "Primitives — the compositional components the system ships" },
-    ],
-    tech: ["CSS Custom Properties", "Tailwind CSS", "TypeScript"],
-    reflection:
-      "The 85–90% monochrome rule is the identity's engine. Limiting the interface to one emerald accent makes every color decision purposeful.",
-    nextSlug: "archive-index-site",
-  },
-  {
-    slug: "archive-index-site",
-    title: "Archive Index",
+    slug: "bem-vokasi-ub-2025",
+    title: "BEM Vokasi UB 2025",
     category: "Website",
-    status: "Concept Project",
-    year: 2026,
+    status: "Client Project",
+    year: 2025,
     summary:
-      "A concept for an editorial archive index — dense, typographic, and built entirely around the grid.",
+      "Company profile and information site for BEM Vokasi UB 2025 — built in-house as the cabinet's programmer, with an editing-order system for the Kominfo ministry.",
     overview:
-      "A design exploration for a publication-style archive: a site whose entire purpose is the ordered presentation of a large body of indexed entries. The concept tests how far a pure editorial grid can carry content with almost no imagery.",
+      "The official web presence of BEM Vokasi Universitas Brawijaya for the 2025 period: profile pages, organizational information, and program-related content across five to seven pages. The site was built while working inside the organization as the cabinet programmer, so every requirement came from the people who would actually run the site.",
     challenge:
-      "Archives are boring or chaotic — rarely both interesting and navigable. The concept had to make thousands of entries findable while keeping every screen a designed composition, without leaning on thumbnails.",
+      "An organization site has two audiences: visitors looking for information and the internal teams who keep that information current. Without a clear content path, the site would go stale the week after launch. The practical problem was making frequent content updates easy for a student cabinet with no dedicated web team.",
     approach:
-      "We let typography and rules do the work. Entries are rows on a strict baseline grid with mono metadata — dates, categories, coordinates — and the hierarchy is communicated through size and position, never decoration.",
+      "We built on a component-first React stack — TypeScript, React, and Tailwind — so pages share the same structure and the cabinet can keep the site consistent page after page. The headline feature is an order system for the Kominfo ministry: a structured way to request and manage edits to the site.",
     solution:
-      "A three-level system: an index of sections, dense entry rows with filterable categories, and a detail view presented as a typographic spread. The composition holds at every breakpoint because it is grid-defined rather than card-defined.",
+      "A five-to-seven page company profile site with a working editing-order flow. Information is organized by division and program, the layout is responsive, and the Kominfo ministry gets a single, tracked channel for requesting changes instead of scattered messages.",
     process: [
-      { step: "Model", detail: "Defined the entry schema — fields, categories, and metadata." },
-      { step: "Grid", detail: "Designed the row-and-rule system that carries the density." },
-      { step: "Navigation", detail: "Built the three-level index structure: sections, rows, spreads." },
-      { step: "Responsive", detail: "Verified the grid holds from handheld to wide desktop." },
+      { step: "Brief", detail: "Collected requirements from cabinet divisions and the Kominfo ministry." },
+      { step: "Architecture", detail: "Planned the page structure — profile, programs, divisions, contact — and the content flow." },
+      { step: "Build", detail: "Implemented the component-first React site with shared layout primitives." },
+      { step: "Order system", detail: "Built the editing-order flow so content requests are structured and trackable." },
+      { step: "Handover", detail: "Documented how the cabinet maintains content after launch." },
     ],
     gallery: [
-      { index: 1, caption: "Index rows — dense entries carried by rules and metadata" },
-      { index: 2, caption: "Section levels — the three-level navigation structure" },
-      { index: 3, caption: "Detail spread — the entry presented as a typographic layout" },
+      { index: 1, caption: "Profile pages — organizational structure and cabinet information", src: bem1 },
+      { index: 2, caption: "Editing-order flow — the Kominfo content request system", src: bem2 },
+      { index: 3, caption: "Program sections — division and program content in a shared layout", src: bem3 },
     ],
-    tech: ["Design Systems", "Typography", "Information Architecture"],
+    cover: bem1,
+    tech: ["TypeScript", "React", "Tailwind CSS"],
     reflection:
-      "The concept proved that imagery is an option, not a requirement. A disciplined grid plus real typography carries density that image-heavy layouts would need megabytes to match.",
+      "Building inside the organization taught a practical lesson: a site succeeds when its maintainers can actually maintain it. The editing-order system was not a feature list item — it was the feature that kept the site alive after the handover.",
+    nextSlug: "arkananta-ai-audit-assistant",
+  },
+  {
+    slug: "arkananta-ai-audit-assistant",
+    title: "Arkananta AI Audit Assistant",
+    category: "Automation",
+    status: "Client Project",
+    year: 2026,
+    summary:
+      "An n8n-powered AI assistant for audit work at Arkananta Apta Pratista — answers audit questions, backs statements with evidence, and retrieves files from Google Drive via RAG.",
+    overview:
+      "A chatbot built on an n8n backend that supports audit work: it answers audit-related questions, provides supporting evidence for its statements, and helps locate the files an auditor needs — including sending the files themselves. The knowledge base lives in Google Drive and is queried with a RAG pipeline, so the assistant can always cite a source.",
+    challenge:
+      "Audit conversations are only useful when every answer can be traced to a document. A chatbot that produces plausible-sounding answers without evidence is worse than no chatbot at all. The system also had to keep up with a knowledge base that grows — new files must become answerable without rebuilding the flow.",
+    approach:
+      "We connected Google Drive as the source of truth and built a RAG pipeline in n8n: retrieval from the drive, grounding the model's answer in the retrieved context, and returning the source file alongside the reply. The assistant runs on a GPT-based model with a fallback model for resilience, and a file-upload feature lets the team add new knowledge that is immediately searchable.",
+    solution:
+      "A full-stack assistant — front end, n8n backend, and integrations — that answers questions with citations, retrieves and sends supporting files, and accepts uploaded documents as new knowledge. The fallback model chain keeps the assistant available even when the primary provider is down.",
+    process: [
+      { step: "Scoping", detail: "Mapped the audit questions, file sources, and evidence requirements." },
+      { step: "Knowledge", detail: "Connected Google Drive as the source and designed the RAG retrieval flow." },
+      { step: "Workflow", detail: "Built the n8n backend — model routing, retrieval, and the fallback chain." },
+      { step: "Front end", detail: "Built the chat interface that presents answers, evidence, and files." },
+      { step: "Update path", detail: "Added the file-upload feature so knowledge grows without a rebuild." },
+    ],
+    gallery: [
+      { index: 1, caption: "Chat flow — question, retrieved context, and cited answer" },
+      { index: 2, caption: "Evidence — the source file attached alongside the statement" },
+      { index: 3, caption: "Knowledge — Google Drive source and the file-upload update path" },
+    ],
+    tech: ["n8n", "GPT", "DeepSeek", "Google Drive", "RAG"],
+    reflection:
+      "The critical design decision was refusing to answer without a source. Retrieval is only useful when the answer points back to the document — that single rule is what separates an assistant from a hallucination generator.",
     nextSlug: "dignify-studio-site",
   },
 ];

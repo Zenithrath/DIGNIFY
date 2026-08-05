@@ -25,9 +25,8 @@ export default function PortfolioPage() {
           </Reveal>
           <Reveal delay={0.08} className="mt-10 max-w-2xl">
             <p className="text-base leading-relaxed text-muted">
-              Every entry below is either an internal project or a concept exploration. We do not
-              present studio experiments as client results — the status label on each project says
-              exactly what it is.
+              Every entry is labeled with exactly what it is — client work, internal work, or a
+              concept exploration. We do not present studio experiments as client results.
             </p>
           </Reveal>
         </Container>

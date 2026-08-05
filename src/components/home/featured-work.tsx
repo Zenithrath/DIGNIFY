@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -18,7 +19,7 @@ export function FeaturedWork() {
       style={{ clipPath: "polygon(0 4%, 100% 0, 100% 100%, 0 100%)" }}
     >
       <Container>
-        <SectionHeader index="04" label="FEATURED WORK" title="Selected systems, built in-house." tone="dark" id="featured-heading" />
+        <SectionHeader index="04" label="FEATURED WORK" title="Selected systems, honestly labeled." tone="dark" id="featured-heading" />
       </Container>
 
       <div className="mt-14 space-y-16 sm:mt-20 sm:space-y-20">
@@ -37,13 +38,23 @@ export function FeaturedWork() {
                       wide ? "lg:col-span-8" : "lg:col-span-8 lg:col-start-5",
                     )}
                   >
-                    <div className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.015]">
-                      <ProjectPlate
-                        slug={project.slug}
-                        index={formatYearIndex(i + 1)}
-                        category={project.category}
-                        year={project.year}
-                      />
+                    <div className="relative h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.015]">
+                      {project.cover ? (
+                        <Image
+                          src={project.cover}
+                          alt={`${project.title} — project preview`}
+                          fill
+                          sizes="(min-width: 1024px) 66vw, 100vw"
+                          className="object-cover object-top"
+                        />
+                      ) : (
+                        <ProjectPlate
+                          slug={project.slug}
+                          index={formatYearIndex(i + 1)}
+                          category={project.category}
+                          year={project.year}
+                        />
+                      )}
                     </div>
                   </div>
 
