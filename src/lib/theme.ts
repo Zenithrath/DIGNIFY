@@ -4,9 +4,9 @@ export type ResolvedTheme = "light" | "dark";
 export const THEME_KEY = "dignify-theme";
 
 export function getStoredTheme(): ThemePreference {
-  if (typeof window === "undefined") return "system";
+  if (typeof window === "undefined") return "light";
   const stored = window.localStorage.getItem(THEME_KEY);
-  return stored === "light" || stored === "dark" || stored === "system" ? stored : "system";
+  return stored === "light" || stored === "dark" || stored === "system" ? stored : "light";
 }
 
 export function systemTheme(): ResolvedTheme {

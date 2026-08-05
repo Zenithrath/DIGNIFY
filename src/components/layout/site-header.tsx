@@ -9,6 +9,7 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { navLinks, site } from "@/content/site";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
@@ -78,6 +79,7 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <ThemeToggle className="hidden md:flex" />
             <Button href="/contact" variant="emerald" size="md" className="hidden md:inline-flex">
               Start a Project
             </Button>
@@ -144,6 +146,7 @@ export function SiteHeader() {
             </ul>
           </nav>
           <div className="border-t border-line-dark px-5 py-5">
+            <ThemeToggle className="mb-5 flex" />
             <p className="meta-label text-muted-dark">NEW PROJECT ENQUIRY</p>
             <a
               href={`mailto:${site.email}`}

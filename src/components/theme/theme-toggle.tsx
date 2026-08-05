@@ -12,7 +12,7 @@ const options: Array<{ key: ThemePreference; label: string; icon: typeof Sun }> 
 ];
 
 export function ThemeToggle({ className }: { className?: string }) {
-  const [pref, setPref] = useState<ThemePreference>("system");
+  const [pref, setPref] = useState<ThemePreference>("light");
 
   useEffect(() => {
     const stored = getStoredTheme();
