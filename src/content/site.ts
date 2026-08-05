@@ -6,7 +6,7 @@ export const site = {
   tagline: "Digital Studio",
   description: "Dignify builds websites, interfaces, AI tools, and automations for teams that need clear digital products.",
   url: siteUrl,
-  email: "djibril.ranggadeja@gmail.com",
+  email: "studiodignify@gmail.com",
   foundedBy: "Dije and Ignas",
   location: "Available worldwide · Remote",
 } as const;
