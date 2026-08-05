@@ -63,7 +63,7 @@ export default function ServicesPage() {
               >
                 <Reveal>
                   <div className="flex items-center justify-between">
-                    <span className={isDark ? "meta-label text-gold" : "meta-label text-gold-deep"}>/ {service.index}</span>
+                    <span className={isDark ? "meta-label text-emerald" : "meta-label text-emerald-deep"}>/ {service.index}</span>
                     <span className={cn("meta-label hidden sm:block", isDark ? "text-muted-dark" : "text-muted")}>
                       SYS / {site.wordmark}
                     </span>
@@ -143,7 +143,7 @@ export default function ServicesPage() {
                 <div className="h-full border border-line bg-pure p-8">
                   <div className="flex items-center justify-between">
                     <span className="meta-label text-muted">PHASE / {phase.index}</span>
-                    <span className="meta-label text-gold-deep">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="meta-label text-emerald-deep">{String(i + 1).padStart(2, "0")}</span>
                   </div>
                   <h3 className="display mt-6 text-2xl">{phase.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted">{phase.detail}</p>
@@ -155,7 +155,7 @@ export default function ServicesPage() {
           <Reveal className="mt-14">
             <div className="flex flex-col items-start justify-between gap-6 border border-line bg-ink p-8 text-paper sm:flex-row sm:items-center sm:p-10">
               <div>
-                <p className="meta-label text-gold">NOT SURE WHERE TO START?</p>
+                <p className="meta-label text-emerald">NOT SURE WHERE TO START?</p>
                 <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-dark">
                   A free consultation is exactly that — a conversation. We will scope the problem
                   together and tell you honestly whether we are the right fit.

@@ -39,7 +39,7 @@ export default function TestimonialsPage() {
             <div className="grid grid-cols-12 border border-line bg-pure">
               <div className="col-span-12 p-8 sm:p-14 lg:col-span-8">
                 <div className="flex items-center gap-3">
-                  <span aria-hidden className="size-2 bg-gold" />
+                  <span aria-hidden className="size-2 bg-emerald" />
                   <p className="meta-label text-muted">STATUS — NO PUBLIC TESTIMONIALS</p>
                 </div>
                 <h2 id="empty-heading" className="display mt-10 text-3xl leading-tight sm:text-5xl">
@@ -55,11 +55,11 @@ export default function TestimonialsPage() {
                 </div>
               </div>
               <div className="col-span-12 border-t border-line bg-ink p-8 text-paper sm:p-14 lg:col-span-4 lg:border-l lg:border-t-0">
-                <p className="meta-label text-gold">WHAT WE WILL SHOW</p>
+                <p className="meta-label text-emerald">WHAT WE WILL SHOW</p>
                 <ul className="mt-6 space-y-4">
                   {testimonialsState.whatWeWillShow.map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm text-muted-dark">
-                      <span aria-hidden className="mt-[7px] size-1.5 shrink-0 bg-gold" />
+                      <span aria-hidden className="mt-[7px] size-1.5 shrink-0 bg-emerald" />
                       {item}
                     </li>
                   ))}
@@ -100,7 +100,7 @@ export default function TestimonialsPage() {
                 ].map(([index, title, detail]) => (
                   <li key={index} className="grid grid-cols-12 gap-x-4 border-b border-line py-7">
                     <span className="col-span-2 sm:col-span-1">
-                      <span className="meta-label text-gold-deep">/{index}</span>
+                      <span className="meta-label text-emerald-deep">/{index}</span>
                     </span>
                     <div className="col-span-10 sm:col-span-11">
                       <h3 className="display text-2xl">{title}</h3>

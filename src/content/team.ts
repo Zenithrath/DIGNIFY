@@ -9,6 +9,7 @@ export const team = [
       "Automation and API integration",
     ],
     initials: "DJ",
+    portfolioUrl: "https://dignify.studio",
   },
   {
     name: "Ignas",
@@ -20,6 +21,7 @@ export const team = [
       "Prototyping and user flows",
     ],
     initials: "IG",
+    portfolioUrl: "https://dignify.studio",
   },
 ] as const;
 

@@ -10,7 +10,11 @@ export function BrandLogo({ tone = "ink", className }: {
     <Image
       src={logo}
       alt="Dignify"
-      className={cn("h-9 w-auto", tone === "ink" && "brightness-0", className)}
+      width={1729}
+      height={724}
+      sizes="(max-width: 768px) 120px, 160px"
+      priority
+      className={cn("h-16 w-auto", tone === "ink" && "brightness-0", className)}
     />
   );
 }

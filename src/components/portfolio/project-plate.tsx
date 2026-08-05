@@ -20,10 +20,10 @@ const variants = [
     cut: [[0, 0], [260, 0], [180, 500], [0, 500]] as const,
   },
   {
-    bg: "var(--color-paper)",
+    bg: "var(--color-pure)",
     fg: "var(--color-ink-text)",
     sub: "var(--color-muted)",
-    accent: "var(--color-gold)",
+    accent: "var(--color-emerald)",
     numberPos: [320, 180] as const,
     labelPos: [48, 404] as const,
     cut: [[800, 500], [800, 240], [560, 500]] as const,

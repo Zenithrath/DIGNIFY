@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/layout/brand";
 import { about, team } from "@/content/team";
 import { studioValues } from "@/content/values";
+import cameoOne from "@/app/craiyon_212833_image.png";
+import cameoTwo from "@/app/craiyon_212915_image.png";
+
+const cameoImages = [cameoOne, cameoTwo] as const;
 
 export const metadata: Metadata = {
   title: "About",
@@ -58,7 +63,7 @@ export default function AboutPage() {
           <Reveal>
             <div className="grid grid-cols-12 gap-x-4">
               <div className="col-span-12 lg:col-span-8">
-                <p className="meta-label text-gold-deep">/ MISSION</p>
+                <p className="meta-label text-emerald-deep">/ MISSION</p>
                 <h2 id="mission-heading" className="display mt-6 text-3xl leading-tight sm:text-5xl">
                   {about.mission}
                 </h2>
@@ -107,10 +112,10 @@ export default function AboutPage() {
         <Container>
           <div className="grid grid-cols-12 gap-x-4 gap-y-10">
             <Reveal className="col-span-12 lg:col-span-4">
-              <BrandLogo tone="paper" className="h-14" />
+              <BrandLogo tone="paper" className="h-24" />
             </Reveal>
             <Reveal delay={0.08} className="col-span-12 lg:col-span-8">
-              <p className="meta-label text-gold">/ THE NAME</p>
+              <p className="meta-label text-emerald">/ THE NAME</p>
               <h2 id="name-heading" className="display mt-6 text-4xl sm:text-5xl">
                 Why &ldquo;Dignify&rdquo;
               </h2>
@@ -136,15 +141,22 @@ export default function AboutPage() {
             {team.map((member, i) => (
               <Reveal key={member.name} delay={i * 0.08} className="col-span-12 md:col-span-6">
                 <div className="grid grid-cols-12 border border-line bg-pure">
-                  <div className="col-span-12 flex items-center justify-center border-b border-line bg-ink p-10 sm:col-span-4 sm:border-b-0 sm:border-r">
-                    <span className="display text-5xl text-paper" aria-hidden>
-                      {member.initials}
+                  <div className="relative col-span-12 flex min-h-[22rem] items-end justify-center overflow-hidden border-b border-line bg-ink p-6 sm:col-span-4 sm:min-h-[20rem] sm:border-b-0 sm:border-r">
+                    <Image
+                      src={cameoImages[i]}
+                      alt=""
+                      aria-hidden="true"
+                      sizes="(min-width: 640px) 25vw, 100vw"
+                      className="absolute inset-x-0 bottom-0 h-full w-full object-contain object-bottom px-6 pt-4"
+                    />
+                    <span className="relative z-10 self-start font-mono text-[0.625rem] uppercase tracking-[0.14em] text-emerald">
+                      Cameo / {String(i + 1).padStart(2, "0")}
                     </span>
                   </div>
                   <div className="col-span-12 p-8 sm:col-span-8">
                     <p className="meta-label text-emerald-deep">MEMBER / {String(i + 1).padStart(2, "0")}</p>
                     <h3 className="display mt-4 text-3xl">{member.name}</h3>
-                    <p className="meta-label mt-3 text-gold-deep">{member.role.toUpperCase()}</p>
+                    <p className="meta-label mt-3 text-emerald-deep">{member.role.toUpperCase()}</p>
                     <ul className="mt-6 space-y-2.5 border-t border-line pt-6">
                       {member.focus.map((item) => (
                         <li key={item} className="flex items-start gap-3 text-sm text-muted">
@@ -153,6 +165,15 @@ export default function AboutPage() {
                         </li>
                       ))}
                     </ul>
+                    <a
+                      href={member.portfolioUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-ink-text transition-colors hover:text-emerald-deep"
+                    >
+                      <span className="link-underline">Portfolio</span>
+                      <span aria-hidden>↗</span>
+                    </a>
                   </div>
                 </div>
               </Reveal>
@@ -177,9 +198,14 @@ export default function AboutPage() {
                   Talk to us directly.
                 </h2>
               </div>
-              <Button href="/contact" variant="emerald" size="lg" arrow>
-                Start a Project
-              </Button>
+              <div className="flex flex-wrap gap-3">
+                <Button href="/portfolio" variant="outlineLight" size="lg" arrow>
+                  View Portfolio
+                </Button>
+                <Button href="/contact" variant="emerald" size="lg" arrow>
+                  Start a Project
+                </Button>
+              </div>
             </div>
           </Reveal>
         </Container>

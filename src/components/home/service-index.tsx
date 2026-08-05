@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -64,45 +63,43 @@ export function ServiceIndex() {
                   </span>
                 </button>
 
-                <AnimatePresence initial={false}>
-                  {expanded ? (
-                    <motion.div
-                      id={`service-panel-${service.slug}`}
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <div className="grid grid-cols-12 gap-x-4 border-t border-line bg-pure py-8 sm:py-10">
-                        <div className="col-span-12 md:col-span-6 lg:col-span-5">
-                          <p className="text-base leading-relaxed text-muted">{service.description}</p>
-                        </div>
-                        <div className="col-span-12 mt-8 md:col-span-5 md:col-start-8 md:mt-0">
-                          <p className="meta-label mb-4 text-muted">DELIVERABLES</p>
-                          <ul className="space-y-3">
-                            {service.deliverables.map((item) => (
-                              <li key={item} className="flex items-start gap-3 text-sm text-ink-text">
-                                <span aria-hidden className="mt-[7px] size-1.5 shrink-0 bg-emerald" />
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-                          <div className="mt-8 flex flex-wrap gap-2">
-                            {service.tags.map((tag) => (
-                              <span
-                                key={tag}
-                                className="meta-label border border-line px-2 py-1 text-muted"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
+                <div
+                  id={`service-panel-${service.slug}`}
+                  aria-hidden={!expanded}
+                  className={cn(
+                    "grid transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                    expanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
+                  )}
+                >
+                  <div className="min-h-0 overflow-hidden">
+                    <div className="grid grid-cols-12 gap-x-4 border-t border-line bg-pure py-8 sm:py-10">
+                      <div className="col-span-12 md:col-span-6 lg:col-span-5">
+                        <p className="text-base leading-relaxed text-muted">{service.description}</p>
+                      </div>
+                      <div className="col-span-12 mt-8 md:col-span-5 md:col-start-8 md:mt-0">
+                        <p className="meta-label mb-4 text-muted">DELIVERABLES</p>
+                        <ul className="space-y-3">
+                          {service.deliverables.map((item) => (
+                            <li key={item} className="flex items-start gap-3 text-sm text-ink-text">
+                              <span aria-hidden className="mt-[7px] size-1.5 shrink-0 bg-emerald" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="mt-8 flex flex-wrap gap-2">
+                          {service.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="meta-label border border-line px-2 py-1 text-muted"
+                            >
+                              {tag}
+                            </span>
+                          ))}
                         </div>
                       </div>
-                    </motion.div>
-                  ) : null}
-                </AnimatePresence>
+                    </div>
+                  </div>
+                </div>
               </li>
             );
           })}

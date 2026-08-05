@@ -322,7 +322,7 @@ export function ContactForm() {
 
       <div className="mt-10">
         {status.kind === "error" ? (
-          <p role="alert" className="meta-label mb-6 border border-gold-deep bg-cream px-4 py-3 text-gold-deep">
+          <p role="alert" className="meta-label mb-6 border border-emerald-deep bg-cream px-4 py-3 text-emerald-deep">
             SUBMISSION FAILED — CHECK YOUR CONNECTION AND TRY AGAIN.
           </p>
         ) : null}

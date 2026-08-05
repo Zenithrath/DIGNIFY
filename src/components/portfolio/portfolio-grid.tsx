@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { ProjectPlate } from "@/components/portfolio/project-plate";
@@ -103,7 +102,7 @@ export function PortfolioGrid() {
               )}
             >
               {option}
-              <span aria-hidden className={cn(active ? "text-emerald" : "text-gold-deep")}>
+              <span aria-hidden className={cn(active ? "text-emerald" : "text-emerald-deep")}>
                 {String(counts.get(key)).padStart(2, "0")}
               </span>
             </button>
@@ -111,23 +110,13 @@ export function PortfolioGrid() {
         })}
       </div>
 
-      <motion.ul layout className="mt-14 space-y-16 sm:space-y-20">
-        <AnimatePresence mode="popLayout">
-          {visible.map((project, i) => (
-            <motion.li
-              key={project.slug}
-              layout
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="list-none"
-            >
-              <ProjectCard project={project} index={i} />
-            </motion.li>
-          ))}
-        </AnimatePresence>
-      </motion.ul>
+      <ul className="mt-14 space-y-16 sm:space-y-20">
+        {visible.map((project, i) => (
+          <li key={project.slug} className="list-none">
+            <ProjectCard project={project} index={i} />
+          </li>
+        ))}
+      </ul>
 
       {visible.length === 0 ? (
         <p className="meta-label mt-14 text-muted">NO PROJECTS IN THIS CATEGORY YET.</p>

@@ -6,27 +6,52 @@
   --font-mono: var(--font-jetbrains);
 }
 
-@theme {
-  --color-paper: #f3f1ec;
-  --color-cream: #f5f5f2;
-  --color-ink: #0b0b0b;
-  --color-surface: #121212;
-  --color-pure: #ffffff;
-  --color-ink-text: #111111;
-  --color-text-soft: #f5f5f5;
-  --color-muted: #6b6b6b;
-  --color-muted-dark: #9c9c94;
-  --color-line: #cfcfc8;
-  --color-line-dark: #2a2a2a;
-  --color-emerald: #10b981;
-  --color-emerald-deep: #047857;
-  --color-gold: #c9a227;
-  --color-gold-soft: #d4af37;
-  --color-gold-deep: #a5821d;
+@theme inline {
+  --color-paper: var(--paper);
+  --color-cream: var(--cream);
+  --color-pure: var(--pure);
+  --color-ink: var(--ink);
+  --color-surface: var(--surface);
+  --color-ink-text: var(--ink-text);
+  --color-text-soft: var(--text-soft);
+  --color-muted: var(--muted);
+  --color-muted-dark: var(--muted-dark);
+  --color-line: var(--line);
+  --color-line-dark: var(--line-dark);
+  --color-emerald: var(--emerald);
+  --color-emerald-deep: var(--emerald-deep);
 }
 
 :root {
+  --paper: #f3f1ec;
+  --cream: #f5f5f2;
+  --pure: #ffffff;
+  --ink: #0b0b0b;
+  --surface: #121212;
+  --ink-text: #111111;
+  --text-soft: #f5f5f5;
+  --muted: #6b6b6b;
+  --muted-dark: #9c9c94;
+  --line: #cfcfc8;
+  --line-dark: #2a2a2a;
+  --emerald: #10b981;
+  --emerald-deep: #047857;
   --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-theme="dark"] {
+  --paper: #f5f5f2;
+  --cream: #121212;
+  --pure: #171717;
+  --ink: #0b0b0b;
+  --surface: #1d1d1d;
+  --ink-text: #f5f5f5;
+  --text-soft: #f5f5f5;
+  --muted: #b0b0a8;
+  --muted-dark: #a3a39b;
+  --line: #383838;
+  --line-dark: #2a2a2a;
+  --emerald-deep: #047857;
 }
 
 html {
@@ -35,16 +60,36 @@ html {
 }
 
 body {
-  background-color: var(--color-paper);
-  color: var(--color-ink-text);
+  background-color: var(--paper);
+  color: var(--ink-text);
   font-family: var(--font-sans);
   font-feature-settings: "cv11", "ss01";
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background-color: var(--color-ink);
-  color: var(--color-paper);
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+[data-theme="dark"] body {
+  background-color: var(--ink);
+}
+
+[data-theme="dark"] .bg-paper {
+  background-color: var(--ink);
+}
+
+[data-theme="dark"] .bg-cream {
+  background-color: var(--cream);
+}
+
+[data-theme="dark"] .bg-pure {
+  background-color: var(--pure);
+}
+
+[data-theme="dark"] .text-emerald-deep {
+  color: #6ee7b7;
 }
 
 :focus-visible {
@@ -100,8 +145,53 @@ body {
   }
 }
 
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-item {
+  opacity: 0;
+  animation: hero-rise 0.8s var(--ease-editorial) forwards;
+}
+
+@keyframes filter-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.filter-item {
+  animation: filter-rise 0.5s var(--ease-editorial) both;
+}
+
+@keyframes menu-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.menu-enter {
+  animation: menu-fade 0.3s var(--ease-editorial) both;
+}
+
 @media (scripting: none) {
-  .reveal-node {
+  .reveal-node,
+  .hero-item {
     opacity: 1 !important;
     transform: none !important;
   }
@@ -110,6 +200,15 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .link-underline {
     transition: none;
+  }
+
+  .hero-item {
+    animation: none;
+    opacity: 1;
+  }
+
+  .filter-item {
+    animation: none;
   }
 }
 

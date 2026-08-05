@@ -21,7 +21,7 @@ export function SectionHeader({
       <div className="flex items-baseline justify-between gap-6">
         <div className="flex items-center gap-3">
           {index ? (
-            <span className={cn("meta-label", dark ? "text-gold" : "text-emerald-deep")}>/ {index}</span>
+            <span className={cn("meta-label", dark ? "text-emerald" : "text-emerald-deep")}>/ {index}</span>
           ) : null}
           <span className={cn("meta-label", dark ? "text-muted-dark" : "text-muted")}>{label}</span>
         </div>
@@ -31,7 +31,7 @@ export function SectionHeader({
         </span>
       </div>
       {title ? (
-        <h2 id={id} className={cn("display mt-6 max-w-4xl text-4xl sm:text-5xl lg:text-6xl", dark ? "text-paper" : "text-ink")}>
+        <h2 id={id} className={cn("display mt-6 max-w-4xl text-4xl sm:text-5xl lg:text-6xl", dark ? "text-paper" : "text-ink-text")}>
           {title}
         </h2>
       ) : null}

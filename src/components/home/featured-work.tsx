@@ -59,7 +59,7 @@ export function FeaturedWork() {
                     </div>
                     <h3 className="display mt-4 text-3xl sm:text-4xl lg:text-5xl">{project.title}</h3>
                     <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-dark">{project.summary}</p>
-                    <p className="mt-5 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-paper transition-colors group-hover:text-gold">
+                    <p className="mt-5 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-paper transition-colors group-hover:text-emerald">
                       Read case study
                       <ArrowUpRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </p>

@@ -47,7 +47,7 @@ export const projects: Project[] = [
     challenge:
       "Dashboards drown in widgets. The design problem was restraint: how to show dozens of workflow states, failures, and metrics without turning the screen into a control room of colored tiles.",
     approach:
-      "We treated the dashboard as an editorial artifact. A fixed grid of modular panels, a strict monochrome palette, and two accents reserved exclusively for two meanings: emerald for healthy, gold for needs attention. Status is never communicated by color alone — every state carries a label.",
+      "We treated the dashboard as an editorial artifact. A fixed grid of modular panels, a strict monochrome palette, and emerald reserved for clear action. Status is never communicated by color alone — every state carries a label.",
     solution:
       "A three-tier interface: an overview strip with aggregate states, a workflow grid with per-run status lines, and a detail panel for logs and retries. Typography does the hierarchy work, borders do the segmentation, and color stays almost silent.",
     process: [
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     summary:
       "The internal token and component system that powers every Dignify build — one palette, two accents, three typefaces.",
     overview:
-      "This is the system underneath this website and every project Dignify ships: a token layer that locks the identity — two monochrome surfaces, emerald and gold accents, a three-typeface hierarchy — so every build starts from a coherent foundation instead of a blank page.",
+      "This is the system underneath this website and every project Dignify ships: a token layer that locks the identity — two monochrome surfaces, one emerald accent, and a three-typeface hierarchy — so every build starts from a coherent foundation instead of a blank page.",
     challenge:
       "A two-person studio cannot afford to re-decide spacing, color, and type scale on every project. But a system that is too rigid produces identical sites. The system had to be strict about principles and flexible about composition.",
     approach:
@@ -159,7 +159,7 @@ export const projects: Project[] = [
     ],
     tech: ["CSS Custom Properties", "Tailwind CSS", "TypeScript"],
     reflection:
-      "The 85–90% monochrome rule is the identity's engine. Limiting accents to two meanings — emerald for action, gold for emphasis — made every decision about color a decision about meaning.",
+      "The 85–90% monochrome rule is the identity's engine. Limiting the interface to one emerald accent makes every color decision purposeful.",
     nextSlug: "archive-index-site",
   },
   {

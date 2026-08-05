@@ -54,7 +54,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
                   </Link>
                 </li>
                 <li aria-hidden>/</li>
-                <li aria-current="page" className="text-gold">{project.category.toUpperCase()}</li>
+                <li aria-current="page" className="text-emerald">{project.category.toUpperCase()}</li>
               </ol>
             </nav>
           </Reveal>
@@ -107,7 +107,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
           <div className="grid grid-cols-12 gap-x-4 gap-y-8">
             <Reveal className="col-span-12 lg:col-span-4">
               <div className="border border-line-dark p-8">
-                <p className="meta-label text-gold">/ 02 — CHALLENGE</p>
+                <p className="meta-label text-emerald">/ 02 — CHALLENGE</p>
                 <h2 id="challenge-heading" className="display mt-6 text-3xl">
                   The problem.
                 </h2>
@@ -177,7 +177,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
                       <span className="meta-label text-muted">{String(i + 1).padStart(2, "0")}</span>
                     </span>
                     <span className="col-span-10 sm:col-span-4">
-                      <span className="meta-label text-gold-deep">{item.step.toUpperCase()}</span>
+                      <span className="meta-label text-emerald-deep">{item.step.toUpperCase()}</span>
                     </span>
                     <span className="col-span-10 col-start-3 mt-3 text-sm leading-relaxed text-muted sm:col-span-6 sm:col-start-6 sm:mt-0">
                       {item.detail}
@@ -243,7 +243,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
           <Reveal>
             <div className="grid grid-cols-12 border border-line bg-ink text-paper">
               <div className="col-span-12 p-8 sm:p-12 lg:col-span-8">
-                <p className="meta-label text-gold">/ 08 — REFLECTION</p>
+                <p className="meta-label text-emerald">/ 08 — REFLECTION</p>
                 <h2 id="reflection-heading" className="sr-only">
                   Reflection
                 </h2>

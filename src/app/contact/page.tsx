@@ -37,7 +37,7 @@ export default function ContactPage() {
                   <dd>
                     <a
                       href={`mailto:${site.email}`}
-                      className="meta-label text-paper transition-colors hover:text-gold"
+                      className="meta-label text-paper transition-colors hover:text-emerald"
                     >
                       {site.email}
                     </a>
@@ -77,7 +77,7 @@ export default function ContactPage() {
                       ["03", "We talk", "A free consultation to scope the project before anything is proposed."],
                     ].map(([index, title, detail]) => (
                       <li key={index}>
-                        <p className="meta-label text-gold-deep">/{index} — {title.toUpperCase()}</p>
+                        <p className="meta-label text-emerald-deep">/{index} — {title.toUpperCase()}</p>
                         <p className="mt-2 text-sm leading-relaxed text-muted">{detail}</p>
                       </li>
                     ))}

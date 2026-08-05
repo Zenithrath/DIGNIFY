@@ -25,7 +25,7 @@ export function SiteFooter() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="inline-block py-1.5 text-sm text-paper transition-colors hover:text-gold"
+                    className="inline-block py-1.5 text-sm text-paper transition-colors hover:text-emerald"
                   >
                     {link.label}
                   </Link>
@@ -41,7 +41,7 @@ export function SiteFooter() {
                 <li key={service.slug}>
                   <Link
                     href={`/services#${service.slug}`}
-                    className="inline-block py-1.5 text-sm text-paper transition-colors hover:text-gold"
+                    className="inline-block py-1.5 text-sm text-paper transition-colors hover:text-emerald"
                   >
                     {service.title}
                   </Link>
@@ -56,7 +56,7 @@ export function SiteFooter() {
               <li>
                 <a
                   href={`mailto:${site.email}`}
-                  className="text-paper underline decoration-paper/40 underline-offset-4 transition-colors hover:text-gold hover:decoration-gold"
+                  className="text-paper underline decoration-paper/40 underline-offset-4 transition-colors hover:text-emerald hover:decoration-emerald"
                 >
                   {site.email}
                 </a>
@@ -72,10 +72,10 @@ export function SiteFooter() {
             <p className="meta-label text-muted-dark">DESIGNED & BUILT BY {site.wordmark}</p>
             <a
               href="#top"
-              className="inline-flex items-center gap-2 py-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-paper transition-colors hover:text-gold"
+              className="inline-flex items-center gap-2 py-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-paper transition-colors hover:text-emerald"
             >
               Top
-              <span aria-hidden className="inline-block text-gold">↑</span>
+              <span aria-hidden className="inline-block text-emerald">↑</span>
             </a>
           </div>
         </div>

@@ -5,7 +5,6 @@ import { ServiceIndex } from "@/components/home/service-index";
 import { FeaturedWork } from "@/components/home/featured-work";
 import { ProcessGrid } from "@/components/home/process-grid";
 import { WhyDignify } from "@/components/home/why-dignify";
-import { TestimonialPreview } from "@/components/home/testimonial-preview";
 import { FinalCta } from "@/components/home/final-cta";
 import { site } from "@/content/site";
 
@@ -29,7 +28,6 @@ export default function HomePage() {
       <FeaturedWork />
       <ProcessGrid />
       <WhyDignify />
-      <TestimonialPreview />
       <FinalCta />
     </>
   );

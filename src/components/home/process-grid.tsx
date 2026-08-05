@@ -28,7 +28,7 @@ export function ProcessGrid() {
                   <Reveal delay={i * 0.05}>
                     <div className="group grid grid-cols-12 items-baseline gap-x-4 py-7 transition-colors hover:bg-pure">
                       <span className="col-span-2 sm:col-span-1">
-                        <span className="meta-label text-muted transition-colors group-hover:text-gold">
+                        <span className="meta-label text-muted transition-colors group-hover:text-emerald-deep">
                           /{step.index}
                         </span>
                       </span>

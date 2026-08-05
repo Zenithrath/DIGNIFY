@@ -92,7 +92,7 @@ export default async function OgImage() {
             <span style={{ fontFamily: "Anton", color: "#9C9C94", fontSize: 15, letterSpacing: 2 }}>FOUNDED BY DIJE + IGNAS</span>
             <span style={{ fontFamily: "Anton", color: "#10B981", fontSize: 15, letterSpacing: 2 }}>DESIGN · DEVELOP · AUTOMATE</span>
           </div>
-          <span style={{ display: "flex", alignItems: "center", gap: 10, fontFamily: "Anton", color: "#C9A227", fontSize: 15, letterSpacing: 2 }}>
+          <span style={{ display: "flex", alignItems: "center", gap: 10, fontFamily: "Anton", color: "#10B981", fontSize: 15, letterSpacing: 2 }}>
             SYS / 01
           </span>
         </div>

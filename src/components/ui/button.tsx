@@ -5,10 +5,10 @@ import { cn } from "@/lib/utils";
 const variants = {
   solid: "bg-ink text-paper hover:bg-emerald-deep hover:text-paper",
   emerald: "bg-emerald text-ink hover:bg-emerald-deep hover:text-paper",
-  outline: "border border-ink text-ink hover:bg-ink hover:text-paper",
-  outlineLight: "border border-paper text-paper hover:bg-paper hover:text-ink",
-  ghost: "text-ink hover:text-emerald-deep",
-  ghostLight: "text-paper hover:text-gold",
+  outline: "border border-ink-text text-ink-text hover:bg-ink hover:text-paper",
+  outlineLight: "border border-paper text-paper hover:bg-emerald hover:text-ink",
+  ghost: "text-ink-text hover:text-emerald-deep",
+  ghostLight: "text-paper hover:text-emerald",
 } as const;
 
 const sizes = {
