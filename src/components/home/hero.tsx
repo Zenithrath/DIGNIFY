@@ -14,7 +14,6 @@ export function Hero() {
     <section
       aria-labelledby="hero-heading"
       className="relative flex min-h-[31rem] flex-col overflow-hidden bg-ink text-paper sm:min-h-[calc(100svh-4rem)] lg:min-h-screen"
-      style={{ clipPath: "polygon(0 0, 100% 0, 100% 92%, 0 100%)" }}
     >
       <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
         <svg width="100%" height="100%">

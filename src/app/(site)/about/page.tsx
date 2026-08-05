@@ -149,7 +149,7 @@ export default function AboutPage() {
               </h2>
             </div>
           </Reveal>
-          <div className="mt-14 flex flex-col items-center justify-center gap-12 md:flex-row md:items-start md:gap-14 lg:gap-20">
+          <div className="mt-14 flex flex-col items-center justify-center gap-16 md:flex-row md:items-start md:gap-24 lg:gap-32">
             {team.map((member, i) => (
               <Reveal key={member.name} delay={i * 0.1} className="w-full max-w-[300px]">
                 <div className="relative">
