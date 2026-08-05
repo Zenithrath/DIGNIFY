@@ -28,8 +28,8 @@ export function WhyDignify() {
                 <span className="text-emerald-deep">intent.</span>
               </p>
               <p className="mt-8 text-sm leading-relaxed text-muted">
-                Every engagement is designed and built by the same two people who answer the
-                emails. Nothing is lost between hand-offs, because there are no hand-offs.
+                The same two people answer your emails, design the work, and build the product.
+                That keeps decisions close to the people doing the work.
               </p>
             </div>
           </Reveal>
@@ -64,7 +64,7 @@ export function WhyDignify() {
             <div className="col-span-12 p-8 sm:p-12 lg:col-span-8">
               <div className="flex items-center gap-3">
                 <span aria-hidden className="size-2 bg-emerald" />
-                <p className="meta-label text-muted">STATUS — NO PUBLIC TESTIMONIALS YET</p>
+                <p className="meta-label text-muted">STATUS / NO PUBLIC TESTIMONIALS YET</p>
               </div>
               <p className="mt-8 max-w-2xl text-2xl leading-snug sm:text-3xl">
                 {testimonialsState.note}

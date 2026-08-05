@@ -13,7 +13,7 @@ export function FinalCta() {
       <Container>
         <div className="grid grid-cols-12 gap-x-4">
           <Reveal className="col-span-12 lg:col-span-9">
-            <p className="meta-label text-emerald">/ 07 — NEXT STEP</p>
+            <p className="meta-label text-emerald">/ 07 / NEXT STEP</p>
             <h2 id="cta-heading" className="display mt-8 text-[clamp(3rem,8.5vw,8.5rem)]">
               Let&apos;s build something
               <br />
@@ -23,8 +23,8 @@ export function FinalCta() {
           <Reveal delay={0.1} className="col-span-12 mt-10 lg:col-span-3 lg:col-start-10 lg:mt-0">
             <div className="border border-line-dark p-8">
               <p className="text-sm leading-relaxed text-muted-dark">
-                A structured conversation about your project — scope, constraints, and whether we
-                are the right fit. No pitch scripts.
+                A focused conversation about your project, its scope, and its constraints. We will
+                tell you clearly whether we are the right fit.
               </p>
               <div className="mt-8 flex flex-col gap-3">
                 <Button href="/contact" variant="emerald" size="lg" arrow>

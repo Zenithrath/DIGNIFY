@@ -5,25 +5,25 @@ export const differentiators: ValueItem[] = [
     index: "01",
     title: "Transparent Communication",
     detail:
-      "Plain-language updates, honest estimates, and no theatrical urgency. You always know where the project stands.",
+      "Plain language updates, honest estimates, and no theatrical urgency. You always know where the project stands.",
   },
   {
     index: "02",
     title: "Thoughtful Systems",
     detail:
-      "We build systems, not one-off pages — design tokens, typed content, and repeatable components that stay coherent as they grow.",
+      "We build systems instead of isolated pages. Shared tokens, typed content, and reusable components make future changes easier.",
   },
   {
     index: "03",
     title: "Design & Development in One Workflow",
     detail:
-      "No hand-off gap. The same people who design the interface build it, so the intent survives the translation.",
+      "The people designing the interface stay involved in the build, so important decisions do not get lost between files and tools.",
   },
   {
     index: "04",
     title: "Practical Automation",
     detail:
-      "We automate what removes real friction — and deliberately leave the rest manual. Automation as a decision, not a gimmick.",
+      "We automate tasks that waste time and leave the parts that need judgment to people. Every automation must solve a real problem.",
   },
   {
     index: "05",
@@ -44,7 +44,7 @@ export const studioValues: ValueItem[] = [
     index: "02",
     title: "Craft",
     detail:
-      "Detail work matters — spacing, type scale, edge cases, and the unglamorous parts of a system.",
+      "Detail work matters, including spacing, type scale, edge cases, and the less visible parts of a system.",
   },
   {
     index: "03",

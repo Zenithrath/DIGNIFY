@@ -62,7 +62,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
 
           <div className="mt-12 grid grid-cols-12 gap-x-4 gap-y-10">
             <Reveal className="col-span-12 lg:col-span-9">
-              <p className="meta-label text-muted-dark">/ CASE STUDY — {String(project.year)}</p>
+              <p className="meta-label text-muted-dark">/ CASE STUDY / {String(project.year)}</p>
               <h1 id="case-heading" className="display mt-6 text-[clamp(2.75rem,7.5vw,7.5rem)]">
                 {project.title}
               </h1>
@@ -92,7 +92,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
         <Container>
           <div className="grid grid-cols-12 gap-x-4 gap-y-10">
             <Reveal className="col-span-12 lg:col-span-3">
-              <p className="meta-label text-emerald-deep">/ 01 — OVERVIEW</p>
+              <p className="meta-label text-emerald-deep">/ 01 / OVERVIEW</p>
             </Reveal>
             <Reveal delay={0.06} className="col-span-12 lg:col-span-9">
               <h2 id="overview-heading" className="display max-w-4xl text-3xl sm:text-5xl">
@@ -108,7 +108,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
           <div className="grid grid-cols-12 gap-x-4 gap-y-8">
             <Reveal className="col-span-12 lg:col-span-4">
               <div className="border border-line-dark p-8">
-                <p className="meta-label text-emerald">/ 02 — CHALLENGE</p>
+                <p className="meta-label text-emerald">/ 02 / CHALLENGE</p>
                 <h2 id="challenge-heading" className="display mt-6 text-3xl">
                   The problem.
                 </h2>
@@ -127,7 +127,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
         <Container>
           <div className="grid grid-cols-12 gap-x-4 gap-y-8">
             <Reveal className="col-span-12 lg:col-span-3">
-              <p className="meta-label text-emerald-deep">/ 03 — APPROACH</p>
+              <p className="meta-label text-emerald-deep">/ 03 / APPROACH</p>
             </Reveal>
             <Reveal delay={0.06} className="col-span-12 lg:col-span-9">
               <h2 id="approach-heading" className="display text-2xl sm:text-3xl">
@@ -145,7 +145,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
         <Container>
           <div className="grid grid-cols-12 gap-x-4 gap-y-8">
             <Reveal className="col-span-12 lg:col-span-3">
-              <p className="meta-label text-emerald-deep">/ 04 — SOLUTION</p>
+              <p className="meta-label text-emerald-deep">/ 04 / SOLUTION</p>
             </Reveal>
             <Reveal delay={0.06} className="col-span-12 lg:col-span-9">
               <h2 id="solution-heading" className="display text-2xl sm:text-3xl">
@@ -163,7 +163,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
         <Container>
           <Reveal>
             <div className="border-b border-line pb-6">
-              <p className="meta-label text-emerald-deep">/ 05 — PROCESS</p>
+              <p className="meta-label text-emerald-deep">/ 05 / PROCESS</p>
               <h2 id="process-heading" className="display mt-6 text-4xl">
                 How it came together.
               </h2>
@@ -195,7 +195,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
         <Container>
           <Reveal>
             <div className="border-b border-line pb-6">
-              <p className="meta-label text-emerald-deep">/ 06 — GALLERY</p>
+              <p className="meta-label text-emerald-deep">/ 06 / GALLERY</p>
               <h2 id="gallery-heading" className="display mt-6 text-4xl">
                 System plates.
               </h2>
@@ -209,7 +209,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
                     {plate.src ? (
                       <Image
                         src={plate.src}
-                        alt={`${project.title} — ${plate.caption}`}
+                        alt={`${project.title} ${plate.caption}`}
                         fill
                         sizes="(min-width: 768px) 50vw, 100vw"
                         className="object-cover object-top"
@@ -219,7 +219,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
                     )}
                   </div>
                   <figcaption className="mt-3 flex items-baseline justify-between gap-4">
-                    <span className="meta-label text-muted">SYS-{String(plate.index).padStart(2, "0")}</span>
+                    <span className="meta-label text-muted">SYS {String(plate.index).padStart(2, "0")}</span>
                     <span className="text-sm text-muted">{plate.caption}</span>
                   </figcaption>
                 </figure>
@@ -233,7 +233,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
         <Container>
           <div className="grid grid-cols-12 gap-x-4 gap-y-8">
             <Reveal className="col-span-12 lg:col-span-3">
-              <p className="meta-label text-emerald-deep">/ 07 — TECHNOLOGY</p>
+              <p className="meta-label text-emerald-deep">/ 07 / TECHNOLOGY</p>
             </Reveal>
             <Reveal delay={0.06} className="col-span-12 lg:col-span-9">
               <h2 id="tech-heading" className="meta-label text-muted">THE STACK</h2>
@@ -254,7 +254,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
           <Reveal>
             <div className="grid grid-cols-12 border border-line bg-ink text-paper">
               <div className="col-span-12 p-8 sm:p-12 lg:col-span-8">
-                <p className="meta-label text-emerald">/ 08 — REFLECTION</p>
+                <p className="meta-label text-emerald">/ 08 / REFLECTION</p>
                 <h2 id="reflection-heading" className="sr-only">
                   Reflection
                 </h2>
@@ -267,7 +267,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
                 <StatusBadge status={project.status} tone="dark" className="mt-4" />
                 <p className="mt-8 text-sm leading-relaxed text-muted-dark">
                   {project.status === "Concept Project"
-                    ? "A design exploration produced by the studio — not shipped, and not presented as a client result."
+                    ? "A design exploration produced by the studio. It was not shipped and is not presented as a client result."
                     : project.status === "Client Project"
                       ? "Work delivered for a real client or organization, produced by the Dignify studio."
                       : "Work produced for and by the Dignify studio itself."}
@@ -284,7 +284,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
             <Reveal>
               <div className="border-t border-line pt-6">
                 <p id="next-heading" className="meta-label text-muted">
-                  / 09 — NEXT PROJECT
+                  / 09 / NEXT PROJECT
                 </p>
               </div>
             </Reveal>
@@ -298,7 +298,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
                     {nextProject.cover ? (
                       <Image
                         src={nextProject.cover}
-                        alt={`${nextProject.title} — project preview`}
+                        alt={`${nextProject.title} project preview`}
                         fill
                         sizes="(min-width: 1024px) 75vw, 100vw"
                         className="object-cover object-top"

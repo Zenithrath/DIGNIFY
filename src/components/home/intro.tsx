@@ -7,7 +7,7 @@ export function Intro() {
       <Container>
         <div className="grid grid-cols-12 gap-x-4 gap-y-10">
           <Reveal className="col-span-12 lg:col-span-3">
-            <p className="meta-label text-emerald-deep">/ 02 — POSITIONING</p>
+            <p className="meta-label text-emerald-deep">/ 02 / POSITIONING</p>
           </Reveal>
           <Reveal delay={0.08} className="col-span-12 lg:col-span-9">
             <h2
@@ -20,9 +20,10 @@ export function Intro() {
           </Reveal>
           <Reveal className="col-span-12 lg:col-span-4 lg:col-start-4">
             <p className="text-base leading-relaxed text-muted">
-              Dignify is a two-person digital studio founded by Dije and Ignas. We design
-              interfaces, build websites, and automate workflows — but we are defined by how we
-              work: modular systems, honest estimates, and communication that never goes dark.
+              Dignify is a digital studio founded by Dije and Ignas. Dije leads front
+              end, UI UX, AI prompting, and automation. Ignas leads back end, SEO, and quality
+              assurance. Together, we build modular systems and communicate clearly throughout the
+              work.
             </p>
           </Reveal>
           <Reveal delay={0.08} className="col-span-12 lg:col-span-4 lg:col-start-8">

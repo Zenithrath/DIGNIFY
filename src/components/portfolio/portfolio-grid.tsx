@@ -39,7 +39,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           {project.cover ? (
             <Image
               src={project.cover}
-              alt={`${project.title} — project preview`}
+              alt={`${project.title} project preview`}
               fill
               sizes="(min-width: 1024px) 66vw, 100vw"
               className="object-cover object-top"
@@ -135,7 +135,7 @@ export function PortfolioGrid() {
 
       <div className="mt-16 border-t border-line pt-8">
         <p className="meta-label text-muted">
-          ALL PROJECTS ARE LABELED HONESTLY — CLIENT, INTERNAL, OR CONCEPT.
+          ALL PROJECTS ARE LABELED HONESTLY / CLIENT, INTERNAL, OR CONCEPT.
         </p>
       </div>
     </div>

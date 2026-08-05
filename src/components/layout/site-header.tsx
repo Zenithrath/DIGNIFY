@@ -44,7 +44,7 @@ export function SiteHeader() {
         <Container className="flex h-16 items-center justify-between gap-6">
           <Link
             href="/"
-            aria-label={`${site.name} — home`}
+            aria-label={`${site.name} home`}
             className="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald"
           >
             <BrandLockup />

@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DIGNIFY
 
-## Getting Started
+Dignify is a digital studio website for Dije and Ignas. The site presents the studio's services, selected work, working process, team roles, and contact flow in an editorial interface.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 with the App Router
+- React 19 and TypeScript
+- Tailwind CSS 4
+- Anton, Inter, and JetBrains Mono typography
+- Lucide icons
+
+## Site direction
+
+The visual system uses a mostly monochrome palette with emerald and gold accents. Layouts use strong rules, modular grids, boxed content, geometric plates, and restrained reveal motion.
+
+The homepage starts with a full screen pixel loader. `HeroTileLoader` reveals small tiles across the viewport before the hero appears. The loader uses a short identity phase followed by a four second diagonal reveal and switches to a denser grid on small screens.
+
+Visible copy follows these rules:
+
+- Keep sentences direct and specific.
+- Do not use em dash or en dash punctuation in page copy.
+- Do not invent clients, testimonials, metrics, awards, or credentials.
+- Label projects as client, internal, or concept work.
+- Hyphens in internal URL slugs are kept where routing requires them.
+
+## Team roles
+
+The About page separates the two studio roles clearly:
+
+| Person | Main responsibility |
+| --- | --- |
+| Dije | Front End, UI/UX, AI prompting, and AI automation |
+| Ignas | Back End, API and database integration, technical SEO, and QA |
+
+The source of truth for these roles is `src/content/team.ts`.
+
+## Routes
+
+| Route | Purpose |
+| --- | --- |
+| `/` | Homepage, full screen loader, services, selected work, process, and CTA |
+| `/services` | Service details and engagement phases |
+| `/portfolio` | Filterable project index |
+| `/portfolio/[slug]` | Project case studies and galleries |
+| `/about` | Studio story, values, team, and links |
+| `/contact` | Contact details and project enquiry form |
+| `/testimonials` | Honest testimonial state and feedback policy |
+| `/admin/login` | Protected content dashboard login |
+| `/admin` | Content overview for the studio |
+
+The public site lives in `src/app/(site)`. The route group keeps the public layout separate from the admin layout.
+
+## Content and media
+
+Editable content is centralized in `src/content/`:
+
+- `site.ts` contains the name, email, location, domain, and global description.
+- `team.ts` contains the team roles and studio story.
+- `services.ts`, `process.ts`, and `values.ts` contain service and positioning copy.
+- `projects.ts` contains portfolio metadata, case study copy, technology lists, and gallery references.
+- `testimonials.ts` controls the current testimonial state.
+
+Project images live in `src/portfolio/`. The Arkananta AI Audit Assistant case study uses:
+
+- `src/portfolio/arkbot1.png` for the cover and first gallery image
+- `src/portfolio/arkbot2.png` for the evidence screen
+- `src/portfolio/arkbot3.png` for the knowledge and upload screen
+
+To add another project, import its images in `src/content/projects.ts`, add a typed project entry, and include `src` on each gallery item that has a real image.
+
+## Local setup
+
+Use Node.js 20 or newer.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The admin routes read these local environment variables:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+ADMIN_PASSWORD=replace-with-a-local-password
+ADMIN_SALT=replace-with-a-local-salt
+```
 
-## Learn More
+Keep them in `.env.local`. Environment files are ignored by Git and must not be committed.
 
-To learn more about Next.js, take a look at the following resources:
+## Validation commands
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run lint
+npm run typecheck
+npm run build
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`npm start` serves the production build locally. There is no separate test script in this repository.
 
-## Deploy on Vercel
+## Project structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```text
+src/
+  app/
+    (site)/                 Public routes and site layout
+    admin/                  Admin login and dashboard
+    api/                    Contact and authentication handlers
+  components/
+    home/                   Homepage sections and pixel loader
+    layout/                 Header, footer, brand, and navigation
+    portfolio/              Project index and visual plates
+    forms/                  Contact form
+  content/                  Typed editable copy and project data
+  portfolio/                Project screenshots
+  lib/                      Fonts, theme, auth, and shared utilities
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+Build the project with `npm run build`, then run it with `npm start` on a Node host. On Vercel, set `ADMIN_PASSWORD` and `ADMIN_SALT` in the project environment settings before deploying.

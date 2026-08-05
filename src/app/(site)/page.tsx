@@ -10,11 +10,11 @@ import { FinalCta } from "@/components/home/final-cta";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: { absolute: `${site.name} — Digital Studio` },
+  title: { absolute: `${site.name} Digital Studio` },
   description: site.description,
   alternates: { canonical: "/" },
   openGraph: {
-    title: `${site.name} — Digital Studio`,
+    title: `${site.name} Digital Studio`,
     description: site.description,
     url: "/",
   },

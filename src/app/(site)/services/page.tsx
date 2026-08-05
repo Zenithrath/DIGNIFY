@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Website development, UI/UX design, AI solutions, n8n workflow automation, and API integration — engineered as modular systems by Dignify.",
+    "Website development, UI/UX design, AI solutions, n8n workflow automation, and API integration from Dignify.",
   alternates: { canonical: "/services" },
   openGraph: { title: "Services · Dignify", url: "/services" },
 };
@@ -28,8 +28,8 @@ export default function ServicesPage() {
           <div className="mt-12 grid grid-cols-12 gap-x-4">
             <Reveal delay={0.08} className="col-span-12 md:col-span-6 lg:col-span-4">
               <p className="text-base leading-relaxed text-muted-dark">
-                Five disciplines, one standard. Each service is a system — scoped, designed, and
-                delivered with the same editorial discipline you see on this site.
+                Five services, one way of working. We scope the problem, design the right structure,
+                and deliver work that is clear enough to maintain.
               </p>
             </Reveal>
             <Reveal delay={0.16} className="col-span-12 mt-10 md:col-span-5 md:col-start-8 md:mt-0">
@@ -157,11 +157,11 @@ export default function ServicesPage() {
               <div>
                 <p className="meta-label text-emerald">NOT SURE WHERE TO START?</p>
                 <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-dark">
-                  A free consultation is exactly that — a conversation. We will scope the problem
-                  together and tell you honestly whether we are the right fit.
+                  A free consultation is a conversation about the problem. We will help you define
+                  the next step and tell you honestly whether we are the right fit.
                 </p>
               </div>
-              <p className="meta-label mt-3 text-emerald">INCLUDED — FREE OF CHARGE</p>
+              <p className="meta-label mt-3 text-emerald">INCLUDED / FREE OF CHARGE</p>
               <Button href="/contact" variant="emerald" arrow>
                 Start a Project
               </Button>

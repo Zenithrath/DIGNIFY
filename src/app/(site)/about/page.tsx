@@ -14,7 +14,7 @@ const memberPhotos = [dijeImg, ignasImg] as const;
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Dignify is a two-person digital studio founded by Dije and Ignas — design, development, and automation under one honest standard.",
+    "Dignify is a digital studio founded by two people, Dije and Ignas. We combine design, development, and automation in one small team.",
   alternates: { canonical: "/about" },
   openGraph: { title: "About · Dignify", url: "/about" },
 };
@@ -37,8 +37,8 @@ export default function AboutPage() {
           <Reveal delay={0.08} className="mt-12 max-w-2xl">
             <p className="text-base leading-relaxed text-muted-dark sm:text-lg">
               Dignify is a small digital studio founded by Dije and Ignas. We design interfaces,
-              build websites, and automate workflows — with a working style that is modular,
-              transparent, and deliberately un-hyped.
+              build websites, and automate workflows with a working style that is modular,
+              transparent, and deliberately free of hype.
             </p>
           </Reveal>
         </Container>
@@ -143,15 +143,15 @@ export default function AboutPage() {
         <Container>
           <Reveal>
             <div className="border-b border-line pb-6">
-              <p className="meta-label text-emerald-deep">/ TEAM — 02 PEOPLE</p>
+              <p className="meta-label text-emerald-deep">/ TEAM / 02 PEOPLE</p>
               <h2 id="team-heading" className="display mt-6 text-4xl">
                 The people who answer the emails.
               </h2>
             </div>
           </Reveal>
-          <div className="mt-14 grid grid-cols-12 gap-x-6 gap-y-12">
+          <div className="mt-14 flex flex-col items-center justify-center gap-12 md:flex-row md:items-start md:gap-14 lg:gap-20">
             {team.map((member, i) => (
-              <Reveal key={member.name} delay={i * 0.1} className="col-span-12 md:col-span-6">
+              <Reveal key={member.name} delay={i * 0.1} className="w-full max-w-[300px]">
                 <div className="relative">
                   <div className="relative aspect-[3/4] w-full max-w-[300px] overflow-hidden bg-ink shadow-[0_24px_60px_-24px_rgba(11,11,11,0.45)]">
                     <div className="absolute inset-5 border border-line-dark/40 z-10 pointer-events-none" />
@@ -181,15 +181,28 @@ export default function AboutPage() {
                         </li>
                       ))}
                     </ul>
-                    <a
-                      href={member.portfolioUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-5 inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-ink-text transition-colors hover:text-emerald-deep"
-                    >
-                      <span className="link-underline">Portfolio</span>
-                      <span aria-hidden>↗</span>
-                    </a>
+                    <div className="mt-5 flex flex-wrap items-center gap-5">
+                      <a
+                        href={member.portfolioUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-ink-text transition-colors hover:text-emerald-deep"
+                      >
+                        <span className="link-underline">Portfolio</span>
+                        <span aria-hidden>↗</span>
+                      </a>
+                      {member.githubUrl ? (
+                        <a
+                          href={member.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-ink-text transition-colors hover:text-emerald-deep"
+                        >
+                          <span className="link-underline">GitHub</span>
+                          <span aria-hidden>↗</span>
+                        </a>
+                      ) : null}
+                    </div>
                   </div>
                 </div>
               </Reveal>
@@ -197,8 +210,8 @@ export default function AboutPage() {
           </div>
           <Reveal className="mt-14">
             <p className="max-w-2xl text-sm leading-relaxed text-muted">
-              No fictional biographies here — just the roles we actually do. If you want to know
-              more about a specific area of experience, ask us directly.
+              These are the roles we actually handle. If you want to know more about a specific
+              area of experience, ask us directly.
             </p>
           </Reveal>
         </Container>

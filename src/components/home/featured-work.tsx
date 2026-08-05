@@ -42,7 +42,7 @@ export function FeaturedWork() {
                       {project.cover ? (
                         <Image
                           src={project.cover}
-                          alt={`${project.title} — project preview`}
+                          alt={`${project.title} project preview`}
                           fill
                           sizes="(min-width: 1024px) 66vw, 100vw"
                           className="object-cover object-top"
@@ -88,7 +88,7 @@ export function FeaturedWork() {
             href="/portfolio"
             className="link-underline font-mono text-xs uppercase tracking-[0.14em] text-paper"
           >
-            View the full index — all work is labeled honestly
+            View the full index. All work is labeled honestly
           </Link>
         </div>
       </Container>

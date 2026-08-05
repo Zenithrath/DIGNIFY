@@ -19,7 +19,7 @@ export function ProcessGrid() {
             <div className="lg:sticky lg:top-24">
               <p className="max-w-sm text-base leading-relaxed text-muted">
                 Five phases, in order, with explicit outputs between them. The sequence exists so
-                that surprises happen early — in discovery — instead of late, in production.
+                that surprises happen during discovery, not late in production.
               </p>
               <p className="meta-label mt-8 text-emerald-deep">SEQ / 05 STEPS</p>
             </div>

@@ -46,7 +46,7 @@ export default function AdminLoginPage() {
 
       <Container className="relative z-10 flex flex-1 flex-col">
         <div className="flex items-center justify-between border-b border-line-dark py-4">
-          <p className="meta-label text-muted-dark">/ ADMIN — MAINTENANCE</p>
+          <p className="meta-label text-muted-dark">/ ADMIN / MAINTENANCE</p>
           <Link
             href="/"
             className="link-underline font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-muted-dark transition-colors hover:text-emerald"
@@ -72,7 +72,7 @@ export default function AdminLoginPage() {
 
         <div className="flex items-center justify-between border-t border-line-dark py-4">
           <p className="meta-label text-muted-dark">SYS / ONLINE</p>
-          <p className="meta-label text-muted-dark">DGN-ADM-01</p>
+          <p className="meta-label text-muted-dark">DGN ADM 01</p>
         </div>
       </Container>
     </section>

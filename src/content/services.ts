@@ -7,12 +7,12 @@ export const services: Service[] = [
     title: "Website Development",
     tagline: "Websites engineered like products.",
     description:
-      "Fast, accessible, and maintainable websites built with modern front-end engineering. We plan the information architecture, design the system, and implement it as clean, typed, and performance-conscious code.",
+      "We plan the site structure, design the interface, and build the result in clean typed code. The finished site is fast, accessible, and easy to maintain.",
     deliverables: [
       "Information architecture and sitemap",
-      "Responsive, mobile-first implementation",
+      "Responsive implementation for mobile and desktop",
       "Performance and accessibility budgets",
-      "CMS-ready, editable content structures",
+      "CMS ready content structures",
     ],
     tags: ["Next.js", "React", "TypeScript", "Tailwind"],
   },
@@ -22,11 +22,11 @@ export const services: Service[] = [
     title: "UI/UX Design",
     tagline: "Interfaces designed as systems.",
     description:
-      "Structured interface design for web products: clear hierarchies, modular layouts, and consistent tokens. We design with constraints, so the result is usable before it is beautiful.",
+      "We create clear page structures, useful user flows, and visual systems that stay consistent as the product grows. The goal is a design people can use before it tries to impress them.",
     deliverables: [
       "User flows and wireframes",
       "Design systems and token libraries",
-      "High-fidelity interface design",
+      "Detailed interface design",
       "Prototypes for testing decisions",
     ],
     tags: ["Figma", "Design Systems", "Prototyping"],
@@ -37,10 +37,10 @@ export const services: Service[] = [
     title: "AI Solutions",
     tagline: "Practical AI, scoped to real work.",
     description:
-      "We integrate AI where it genuinely helps — content assistance, document handling, chat interfaces, and automated analysis — and keep the rest of the system transparent and controlled.",
+      "We use AI for specific tasks such as document search, chat, content support, and analysis. The workflow stays visible, reviewable, and under your control.",
     deliverables: [
-      "Use-case scoping and feasibility review",
-      "LLM-backed interfaces",
+      "Use case scoping and feasibility review",
+      "Interfaces using LLM APIs",
       "Document and data processing flows",
       "Evaluation and safeguards",
     ],
@@ -52,12 +52,12 @@ export const services: Service[] = [
     title: "n8n Workflow Automation",
     tagline: "Workflows that run themselves.",
     description:
-      "We design and build n8n workflows that connect your tools, move data, and remove repetitive manual work — with error handling, logging, and documentation that a small team can actually maintain.",
+      "We connect your tools with n8n so routine work happens without constant copying and checking. Each workflow includes error handling, useful logs, and documentation your team can follow.",
     deliverables: [
       "Workflow architecture and node design",
-      "Third-party tool connections",
+      "External tool connections",
       "Error handling and notification paths",
-      "Documentation for non-technical owners",
+      "Documentation for non technical owners",
     ],
     tags: ["n8n", "Webhooks", "Scheduling"],
   },
@@ -67,7 +67,7 @@ export const services: Service[] = [
     title: "API Integration",
     tagline: "Systems that talk to each other.",
     description:
-      "We connect your product to the services it depends on — REST, webhooks, third-party platforms, and internal data — with typed contracts, sensible retries, and observable failure modes.",
+      "We connect your product to REST services, webhooks, external platforms, and internal data. The integration includes clear data mapping, retries where they help, and useful failure messages.",
     deliverables: [
       "Integration architecture",
       "Typed API clients and webhook handlers",
@@ -83,7 +83,7 @@ export const engagement = [
     index: "A",
     title: "Scoping",
     detail:
-      "A structured conversation about the problem, the constraints, and the definition of done — before any design or code.",
+      "We talk through the problem, constraints, and expected result before design or code begins.",
   },
   {
     index: "B",

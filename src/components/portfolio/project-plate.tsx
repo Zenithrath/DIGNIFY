@@ -78,7 +78,7 @@ export function ProjectPlate({
       viewBox="0 0 800 500"
       preserveAspectRatio="xMidYMid slice"
       role="img"
-      aria-label={`${category} — abstract system plate ${index}`}
+      aria-label={`${category} abstract system plate ${index}`}
       className={cn("block h-full w-full", className)}
     >
       <rect width={800} height={500} fill={variant.bg} />

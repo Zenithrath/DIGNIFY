@@ -57,7 +57,7 @@ export default function AdminDashboardPage() {
           <p className="meta-label text-emerald">/ DASHBOARD</p>
           <h1 className="display mt-3 text-4xl sm:text-5xl">System Overview</h1>
         </div>
-        <p className="meta-label hidden text-muted-dark sm:block">DGN-ADM-01</p>
+        <p className="meta-label hidden text-muted-dark sm:block">DGN ADM 01</p>
       </div>
 
       <section aria-labelledby="content-stats" className="mt-10">

@@ -106,7 +106,7 @@ export function ServiceIndex() {
         </ul>
 
         <div className="mt-10 flex items-center justify-between">
-          <p className="meta-label hidden text-muted sm:block">FRONT-END DEVELOPMENT IS PART OF EVERY BUILD.</p>
+          <p className="meta-label hidden text-muted sm:block">FRONT END DEVELOPMENT IS PART OF EVERY BUILD.</p>
           <Button href="/services" variant="outline" arrow>
             All Services
           </Button>

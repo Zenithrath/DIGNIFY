@@ -21,8 +21,8 @@ type FieldName =
 type Status = { kind: "idle" } | { kind: "submitting" } | { kind: "success"; reference: string } | { kind: "error" };
 
 const serviceOptions = [...services.map((s) => s.title), "Something else"];
-const budgetOptions = ["Under $1,000", "$1,000 – $3,000", "$3,000 – $5,000", "$5,000 – $10,000", "$10,000+", "Not sure yet"];
-const timelineOptions = ["ASAP", "1–3 months", "3–6 months", "Flexible", "Not sure yet"];
+const budgetOptions = ["Under $1,000", "$1,000 to $3,000", "$3,000 to $5,000", "$5,000 to $10,000", "$10,000+", "Not sure yet"];
+const timelineOptions = ["ASAP", "1 to 3 months", "3 to 6 months", "Flexible", "Not sure yet"];
 
 const initialValues: Record<FieldName, string> = {
   name: "",
@@ -44,7 +44,7 @@ function validate(values: Record<FieldName, string>): FormErrors {
     errors.email = "Enter a valid email address.";
   }
   if (!values.service) errors.service = "Choose the service you need.";
-  if (!values.budget) errors.budget = "Choose a budget range — 'Not sure yet' is fine.";
+  if (!values.budget) errors.budget = "Choose a budget range. 'Not sure yet' is fine.";
   if (!values.timeline) errors.timeline = "Choose a timeline.";
   if (!values.description.trim()) {
     errors.description = "Tell us about the project.";
@@ -121,11 +121,10 @@ export function ContactForm() {
           </span>
           <p className="meta-label text-emerald-deep">SUBMISSION RECEIVED</p>
         </div>
-        <p className="display mt-8 text-3xl sm:text-4xl">Message logged. Reference {status.reference}.</p>
+        <p className="display mt-8 text-3xl sm:text-4xl">Brief received. Reference {status.reference}.</p>
         <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted">
-          This endpoint is currently an integration stub — your message has been validated and
-          acknowledged, but delivery to an inbox requires the studio&apos;s email service to be
-          connected. For immediate contact, use the email address below.
+          Your brief has been sent straight to our inbox. We reply to every enquiry personally —
+          expect a plain answer about whether we can help, and what we would need.
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <a
@@ -309,7 +308,7 @@ export function ContactForm() {
             id="reference"
             name="reference"
             type="url"
-            placeholder="https:// — a site, spec, or file you want us to look at"
+            placeholder="https:// a site, spec, or file you want us to look at"
             value={values.reference}
             onChange={setValue("reference")}
             aria-invalid={Boolean(errors.reference)}
@@ -323,7 +322,7 @@ export function ContactForm() {
       <div className="mt-10">
         {status.kind === "error" ? (
           <p role="alert" className="meta-label mb-6 border border-emerald-deep bg-cream px-4 py-3 text-emerald-deep">
-            SUBMISSION FAILED — CHECK YOUR CONNECTION AND TRY AGAIN.
+            SUBMISSION FAILED. CHECK YOUR CONNECTION AND TRY AGAIN.
           </p>
         ) : null}
         <button

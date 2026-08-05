@@ -4,7 +4,7 @@ import { join } from "node:path";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Dignify — Digital Studio. Digital systems built with clarity.";
+export const alt = "Dignify Digital Studio. Digital systems built with clarity.";
 
 export default async function OgImage() {
   const [anton] = await Promise.all([

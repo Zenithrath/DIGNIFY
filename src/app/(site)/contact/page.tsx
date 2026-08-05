@@ -7,7 +7,7 @@ import { site } from "@/content/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start a project with Dignify — tell us what you are building, and we will tell you honestly whether we are the right fit.",
+    "Start a project with Dignify. Tell us what you are building and we will explain how we can help.",
   alternates: { canonical: "/contact" },
   openGraph: { title: "Contact · Dignify", url: "/contact" },
 };
@@ -27,7 +27,8 @@ export default function ContactPage() {
             <Reveal delay={0.08} className="col-span-12 md:col-span-6 lg:col-span-4">
               <p className="text-base leading-relaxed text-muted-dark">
                 The more structure you give us, the more useful our first reply will be. If you
-                are unsure about scope, send it anyway — that is what the consultation is for.
+                are unsure about scope, send it anyway. The first conversation is where we make the
+                scope clearer.
               </p>
             </Reveal>
             <Reveal delay={0.16} className="col-span-12 mt-10 md:col-span-5 md:col-start-8 md:mt-0">
@@ -72,12 +73,12 @@ export default function ContactPage() {
                   <p className="meta-label text-muted">WHAT HAPPENS NEXT</p>
                   <ul className="mt-6 space-y-5">
                     {[
-                      ["01", "We read it", "Your brief is validated and logged with a reference number."],
+                      ["01", "We read it", "Your brief lands directly in our inbox, logged with a reference number."],
                       ["02", "We reply", "A plain answer: whether we can help, and what we would need."],
                       ["03", "We talk", "A free consultation to scope the project before anything is proposed."],
                     ].map(([index, title, detail]) => (
                       <li key={index}>
-                        <p className="meta-label text-emerald-deep">/{index} — {title.toUpperCase()}</p>
+                        <p className="meta-label text-emerald-deep">/{index} / {title.toUpperCase()}</p>
                         <p className="mt-2 text-sm leading-relaxed text-muted">{detail}</p>
                       </li>
                     ))}

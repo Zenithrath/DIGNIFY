@@ -77,7 +77,7 @@ export function LoginForm() {
           </div>
           {error ? (
             <p id="login-error" role="alert" className="mt-3 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-red-400">
-              / ERROR — {error}
+              / ERROR / {error}
             </p>
           ) : null}
           <button

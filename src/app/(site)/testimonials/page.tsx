@@ -7,7 +7,7 @@ import { testimonialsState } from "@/content/testimonials";
 export const metadata: Metadata = {
   title: "Testimonials",
   description:
-    "Client testimonials for Dignify. No testimonials are published yet — Dignify will not manufacture praise, and will publish real client feedback as it arrives.",
+    "Client testimonials for Dignify. No testimonials are published yet. We will share real client feedback when we have permission to publish it.",
   alternates: { canonical: "/testimonials" },
   openGraph: { title: "Testimonials · Dignify", url: "/testimonials" },
 };
@@ -20,14 +20,14 @@ export default function TestimonialsPage() {
           <Reveal>
             <p className="meta-label text-emerald-deep">/ TESTIMONIALS</p>
             <h1 id="testimonials-heading" className="display mt-6 max-w-5xl text-[clamp(2.75rem,7vw,7rem)]">
-              What clients say — the honest version.
+              What clients say, when they are ready to share it.
             </h1>
           </Reveal>
           <Reveal delay={0.08} className="mt-10 max-w-2xl">
             <p className="text-base leading-relaxed text-muted">
               This page exists so that when client feedback is real, it has a place. Until then,
-              it states the truth plainly — including the part that is uncomfortable for a
-              marketing site.
+              it states the truth plainly, including the fact that there is no published feedback
+              yet.
             </p>
           </Reveal>
         </Container>
@@ -40,7 +40,7 @@ export default function TestimonialsPage() {
               <div className="col-span-12 p-8 sm:p-14 lg:col-span-8">
                 <div className="flex items-center gap-3">
                   <span aria-hidden className="size-2 bg-emerald" />
-                  <p className="meta-label text-muted">STATUS — NO PUBLIC TESTIMONIALS</p>
+                  <p className="meta-label text-muted">STATUS / NO PUBLIC TESTIMONIALS</p>
                 </div>
                 <h2 id="empty-heading" className="display mt-10 text-3xl leading-tight sm:text-5xl">
                   We will not fill this page with invented praise.
