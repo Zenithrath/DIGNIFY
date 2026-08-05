@@ -14,7 +14,7 @@ export function BrandLogo({ tone = "ink", className }: {
       height={724}
       sizes="(max-width: 768px) 120px, 160px"
       priority
-      className={cn("h-16 w-auto", tone === "ink" && "brightness-0", className)}
+      className={cn("brand-logo h-16 w-auto", tone === "paper" && "brand-logo--paper", className)}
     />
   );
 }
