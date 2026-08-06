@@ -19,7 +19,7 @@ export function FeaturedWork() {
       style={{ clipPath: "polygon(0 4%, 100% 0, 100% 100%, 0 100%)" }}
     >
       <Container>
-        <SectionHeader index="04" label="FEATURED WORK" title="Selected systems, honestly labeled." tone="dark" id="featured-heading" />
+        <SectionHeader index="03" label="FEATURED WORK" title="Selected systems, honestly labeled." tone="dark" id="featured-heading" />
       </Container>
 
       <div className="mt-14 space-y-16 sm:mt-20 sm:space-y-20">

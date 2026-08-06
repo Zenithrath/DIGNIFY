@@ -4,6 +4,8 @@ import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/layout/brand";
+import { ProcessGrid } from "@/components/about/process-grid";
+import { Differentiators } from "@/components/about/differentiators";
 import { about, team } from "@/content/team";
 import { studioValues } from "@/content/values";
 import dijeImg from "@/dije.png";
@@ -41,6 +43,36 @@ export default function AboutPage() {
               transparent, and deliberately free of hype.
             </p>
           </Reveal>
+        </Container>
+      </section>
+
+      <section aria-labelledby="positioning-heading" className="border-b border-line bg-cream py-20 sm:py-28">
+        <Container>
+          <div className="grid grid-cols-12 gap-x-4 gap-y-10">
+            <Reveal className="col-span-12 lg:col-span-3">
+              <p className="meta-label text-emerald-deep">/ POSITIONING</p>
+            </Reveal>
+            <Reveal delay={0.06} className="col-span-12 lg:col-span-9">
+              <h2 id="positioning-heading" className="display max-w-5xl text-3xl leading-tight sm:text-5xl">
+                A small studio with a strict standard: structure before style, clarity before
+                cleverness.
+              </h2>
+            </Reveal>
+            <Reveal className="col-span-12 lg:col-span-4 lg:col-start-4">
+              <p className="text-base leading-relaxed text-muted">
+                Dignify is a digital studio founded by Dije and Ignas. Dije leads front end, UI UX,
+                AI prompting, and automation. Ignas leads back end, SEO, and quality assurance.
+                Together, we build modular systems and communicate clearly throughout the work.
+              </p>
+            </Reveal>
+            <Reveal delay={0.08} className="col-span-12 lg:col-span-4 lg:col-start-8">
+              <p className="text-base leading-relaxed text-muted">
+                Every project is treated as a product decision, not a decoration exercise. If a
+                feature does not make the system clearer or the work lighter, it gets cut before it
+                is built.
+              </p>
+            </Reveal>
+          </div>
         </Container>
       </section>
 
@@ -89,6 +121,8 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      <ProcessGrid />
+
       <section aria-labelledby="values-heading" className="bg-paper py-20 sm:py-28">
         <Container>
           <Reveal>
@@ -115,6 +149,8 @@ export default function AboutPage() {
           </div>
         </Container>
       </section>
+
+      <Differentiators />
 
       <section
         aria-labelledby="name-heading"

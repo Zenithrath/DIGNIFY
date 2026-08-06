@@ -8,11 +8,11 @@ export function ProcessGrid() {
   return (
     <section
       aria-labelledby="process-heading"
-      className="bg-paper py-24 sm:py-32"
+      className="bg-paper py-20 sm:py-28"
       style={{ clipPath: "polygon(0 4%, 100% 0, 100% 100%, 0 100%)" }}
     >
       <Container>
-        <SectionHeader index="05" label="PROCESS" title="A sequence we actually follow." id="process-heading" />
+        <SectionHeader index="05" label="HOW WE WORK" title="A sequence we actually follow." id="process-heading" />
 
         <div className="mt-14 grid grid-cols-12 gap-x-4 gap-y-0">
           <Reveal className="col-span-12 lg:col-span-4">

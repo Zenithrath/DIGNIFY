@@ -13,7 +13,7 @@ export function FinalCta() {
       <Container>
         <div className="grid grid-cols-12 gap-x-4">
           <Reveal className="col-span-12 lg:col-span-9">
-            <p className="meta-label text-emerald">/ 07 / NEXT STEP</p>
+            <p className="meta-label text-emerald">/ 04 / NEXT STEP</p>
             <h2 id="cta-heading" className="display mt-8 text-[clamp(3rem,8.5vw,8.5rem)]">
               Let&apos;s build something
               <br />

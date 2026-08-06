@@ -12,10 +12,10 @@ export function ServiceIndex() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section aria-labelledby="services-heading" id="services" className="bg-paper pb-24 sm:pb-32">
+    <section aria-labelledby="services-heading" id="services" className="bg-paper pt-24 pb-24 sm:pt-32 sm:pb-32">
       <Container>
         <SectionHeader
-          index="03"
+          index="02"
           label="SERVICES"
           title="What we do, and what we deliberately do not."
           id="services-heading"
