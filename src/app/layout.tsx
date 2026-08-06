@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     "digital studio",
     ...seo.serviceTerms,
   ],
+  verification: {
+    google: "GjrR4z1xGp9nSxeH0cZCnzHOfRIJGtHbG3x-BG5oKu8",
+  },
   alternates: { canonical: "/" },
   openGraph: {
     title: `${site.name} Digital Studio`,
