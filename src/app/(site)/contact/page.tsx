@@ -3,13 +3,18 @@ import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { ContactForm } from "@/components/forms/contact-form";
 import { site } from "@/content/site";
+import { seo } from "@/content/seo";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description:
-    "Start a project with Dignify. Tell us what you are building and we will explain how we can help.",
+  title: seo.contact.title,
+  description: seo.contact.description,
   alternates: { canonical: "/contact" },
-  openGraph: { title: "Contact · Dignify", url: "/contact" },
+  openGraph: {
+    title: `${seo.contact.title} | Dignify`,
+    description: seo.contact.description,
+    url: "/contact",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Contact Dignify" }],
+  },
 };
 
 export default function ContactPage() {

@@ -2,29 +2,50 @@ import type { Metadata, Viewport } from "next";
 import { fontDisplay, fontMono, fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { site } from "@/content/site";
+import { organizationJsonLd, seo } from "@/content/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 import { THEME_KEY } from "@/lib/theme";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: site.name,
-    template: `%s · ${site.name}`,
+    default: `${site.name} Digital Studio`,
+    template: `%s | ${site.name}`,
   },
   description: site.description,
+  applicationName: site.name,
+  authors: [{ name: "Dije and Ignas", url: site.url }],
+  creator: "Dije and Ignas",
+  publisher: site.name,
+  category: "technology",
+  keywords: [
+    "Dignify",
+    "digital studio",
+    ...seo.serviceTerms,
+  ],
   alternates: { canonical: "/" },
   openGraph: {
-    title: site.name,
+    title: `${site.name} Digital Studio`,
     description: site.description,
     url: "/",
     siteName: site.name,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Dignify Digital Studio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: site.name,
+    title: `${site.name} Digital Studio`,
     description: site.description,
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
@@ -53,6 +74,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
       <body className="flex min-h-full flex-col bg-paper font-sans text-ink-text">
+        <JsonLd data={organizationJsonLd} />
         {children}
       </body>
     </html>

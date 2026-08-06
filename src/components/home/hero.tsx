@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { seo } from "@/content/seo";
 
 const marqueeItems = [
   "WEB DEVELOPMENT",
@@ -96,6 +97,9 @@ export function Hero() {
 
           <p className="hero-item mt-5 max-w-[21rem] px-3 text-center text-sm leading-relaxed text-muted-dark sm:mt-10 sm:max-w-md sm:px-0 sm:text-base" style={{ animationDelay: "0.5s" }}>
             We design interfaces, build websites, and automate workflows with a working style that is modular, transparent, and deliberately free of hype.
+          </p>
+          <p className="hero-item meta-label mt-4 max-w-md px-3 text-center text-emerald" style={{ animationDelay: "0.53s" }}>
+            {seo.bilingualServiceLine}
           </p>
         </div>
 

@@ -3,13 +3,18 @@ import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { testimonialsState } from "@/content/testimonials";
+import { seo } from "@/content/seo";
 
 export const metadata: Metadata = {
-  title: "Testimonials",
-  description:
-    "Client testimonials for Dignify. No testimonials are published yet. We will share real client feedback when we have permission to publish it.",
+  title: seo.testimonials.title,
+  description: seo.testimonials.description,
   alternates: { canonical: "/testimonials" },
-  openGraph: { title: "Testimonials · Dignify", url: "/testimonials" },
+  openGraph: {
+    title: seo.testimonials.title,
+    description: seo.testimonials.description,
+    url: "/testimonials",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Dignify testimonials" }],
+  },
 };
 
 export default function TestimonialsPage() {

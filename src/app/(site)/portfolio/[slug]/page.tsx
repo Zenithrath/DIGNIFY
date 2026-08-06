@@ -7,6 +7,8 @@ import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { ProjectPlate } from "@/components/portfolio/project-plate";
+import { JsonLd } from "@/components/seo/json-ld";
+import { site } from "@/content/site";
 import { projects, getProject } from "@/content/projects";
 import { formatYearIndex } from "@/lib/utils";
 
@@ -27,10 +29,11 @@ export async function generateMetadata({
     description: project.summary,
     alternates: { canonical: `/portfolio/${project.slug}` },
     openGraph: {
-      title: `${project.title} · Dignify`,
+      title: `${project.title} | Dignify`,
       description: project.summary,
       url: `/portfolio/${project.slug}`,
       type: "article",
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: `${project.title} case study` }],
     },
   };
 }
@@ -41,9 +44,36 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
   if (!project) notFound();
 
   const nextProject = getProject(project.nextSlug);
+  const projectUrl = `${site.url}/portfolio/${project.slug}`;
+  const projectJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Dignify", item: site.url },
+          { "@type": "ListItem", position: 2, name: "Portfolio", item: `${site.url}/portfolio` },
+          { "@type": "ListItem", position: 3, name: project.title, item: projectUrl },
+        ],
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": `${projectUrl}#case-study`,
+        name: project.title,
+        url: projectUrl,
+        description: project.summary,
+        copyrightYear: project.year,
+        genre: project.status,
+        keywords: project.tech,
+        creator: { "@id": `${site.url}/#organization` },
+        isPartOf: { "@id": `${site.url}/#website` },
+      },
+    ],
+  };
 
   return (
     <>
+      <JsonLd data={projectJsonLd} />
       <section aria-labelledby="case-heading" className="bg-ink py-20 text-paper sm:py-28">
         <Container>
           <Reveal>

@@ -4,14 +4,19 @@ import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { services, engagement } from "@/content/services";
 import { site } from "@/content/site";
+import { seo } from "@/content/seo";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Services",
-  description:
-    "Website development, UI/UX design, AI solutions, n8n workflow automation, and API integration from Dignify.",
+  title: seo.services.title,
+  description: seo.services.description,
   alternates: { canonical: "/services" },
-  openGraph: { title: "Services · Dignify", url: "/services" },
+  openGraph: {
+    title: `${seo.services.title} | Dignify`,
+    description: seo.services.description,
+    url: "/services",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Dignify services" }],
+  },
 };
 
 export default function ServicesPage() {

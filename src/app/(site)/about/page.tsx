@@ -8,17 +8,22 @@ import { ProcessGrid } from "@/components/about/process-grid";
 import { Differentiators } from "@/components/about/differentiators";
 import { about, team } from "@/content/team";
 import { studioValues } from "@/content/values";
+import { seo } from "@/content/seo";
 import dijeImg from "@/dije.png";
 import ignasImg from "@/ignas.png";
 
 const memberPhotos = [dijeImg, ignasImg] as const;
 
 export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Dignify is a digital studio founded by two people, Dije and Ignas. We combine design, development, and automation in one small team.",
+  title: seo.about.title,
+  description: seo.about.description,
   alternates: { canonical: "/about" },
-  openGraph: { title: "About · Dignify", url: "/about" },
+  openGraph: {
+    title: `${seo.about.title} | Dignify`,
+    description: seo.about.description,
+    url: "/about",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "About Dignify" }],
+  },
 };
 
 export default function AboutPage() {
