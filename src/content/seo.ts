@@ -4,7 +4,7 @@ export const seo = {
   home: {
     title: "Dignify | Website Development, UI/UX, AI & Automation",
     description:
-      "Dignify is a digital studio for website development, UI/UX, AI, n8n automation, and API integration. Jasa pembuatan website, desain UI/UX, solusi AI, automasi n8n, dan integrasi API.",
+      "Dignify is a digital studio for website development, UI/UX, AI, n8n automation, and API integration. Browse Dignify projects across websites, interfaces, AI tools, and automation. Jasa pembuatan website, desain UI/UX, solusi AI, automasi n8n, dan integrasi API.",
   },
   services: {
     title: "Digital Services | Jasa Website, UI/UX & AI",
@@ -14,7 +14,7 @@ export const seo = {
   portfolio: {
     title: "Portfolio Website, UI/UX & Automation",
     description:
-      "Selected Dignify work across websites, interfaces, AI tools, and automation. Portfolio proyek website, UI/UX, solusi AI, dan automasi yang dilabeli sebagai client, internal, atau concept project.",
+      "Dignify projects: selected work across websites, interfaces, AI tools, and automation. Portfolio proyek website, UI/UX, solusi AI, dan automasi yang dilabeli sebagai client, internal, atau concept project.",
   },
   about: {
     title: "About Dignify | Studio Digital",

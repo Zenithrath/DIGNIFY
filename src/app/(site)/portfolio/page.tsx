@@ -30,8 +30,8 @@ export default function PortfolioPage() {
           </Reveal>
           <Reveal delay={0.08} className="mt-10 max-w-2xl">
             <p className="text-base leading-relaxed text-muted">
-              Every entry is labeled clearly as client work, internal work, or a concept
-              exploration. Studio experiments are never presented as client results.
+              Every Dignify project is labeled clearly as client work, internal work, or a
+              concept exploration. Studio experiments are never presented as client results.
             </p>
           </Reveal>
         </Container>

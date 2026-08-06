@@ -20,6 +20,9 @@ export function FeaturedWork() {
     >
       <Container>
         <SectionHeader index="03" label="FEATURED WORK" title="Selected systems, honestly labeled." tone="dark" id="featured-heading" />
+        <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-dark">
+          A look at Dignify projects: client work, internal work, and concepts — each labeled with the truth.
+        </p>
       </Container>
 
       <div className="mt-14 space-y-16 sm:mt-20 sm:space-y-20">
