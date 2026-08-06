@@ -6,43 +6,53 @@ import bem3 from "@/portfolio/bem3.png";
 import arkbot1 from "@/portfolio/arkbot1.png";
 import arkbot2 from "@/portfolio/arkbot2.png";
 import arkbot3 from "@/portfolio/arkbot3.png";
+import dije1 from "@/portfolio/dije1.png";
+import dije2 from "@/portfolio/dije2.png";
+import dije3 from "@/portfolio/dije3.png";
 import dignify1 from "@/portfolio/dignify1.png";
 import dignify2 from "@/portfolio/dignify2.png";
 import dignify3 from "@/portfolio/dignify3.png";
+import tpp1 from "@/portfolio/tpp1.png";
+import tpp2 from "@/portfolio/tpp2.png";
+import tpp3 from "@/portfolio/tpp3.png";
 
 export const projects: Project[] = [
   {
-    slug: "dignify-studio-site",
-    title: "Dignify Studio Site",
+    slug: "tlaga-pratama-persada",
+    title: "Tlaga Pratama Persada",
     category: "Website",
-    status: "Internal Project",
+    status: "Concept Project",
     year: 2026,
     summary:
-      "The studio's own website. An editorial, industrial modern system that shows the standard Dignify brings to client work.",
+      "An unofficial redesign concept for Tlaga Pratama Persada, a Balikpapan industrial supplier. A single-page site for abrasives, packing solutions, and industrial consumables.",
     overview:
-      "This is our first internal project and the clearest example of how we work. The site brings together modular grids, editorial hierarchy, restrained accents, typed content, and accessible markup in one working product.",
+      "A concept redesign of the web presence for Tlaga Pratama Persada, a Balikpapan-based general supplier serving mining, construction, shipyards, and manufacturing. The concept covers the company profile, product lines, brand partnerships, services, and contact on one page.",
     challenge:
-      "A studio run by two people needs one site that explains the services, earns trust, and shows the quality of the work. We chose a deliberate system instead of a generic agency template.",
+      "An industrial supplier has to earn trust fast. The concept needed to organize a broad product range — abrasives, packing solutions, and other consumables — into one page without turning it into an unstructured catalog.",
     approach:
-      "We set the visual rules first: two monochrome surfaces, two accents, three typefaces, and one grid. The content lives in typed data files, which lets us update the site without rewriting the layout.",
+      "We built the page around a single structure: a strong hero, a compact about section, product highlights grouped by product line codes, brand partners, services, and a contact path. Every product has a direct WhatsApp inquiry link.",
     solution:
-      "The result is a site with seven pages: an editorial home, detailed services, a filterable portfolio, case studies, an about page, an honest testimonial state, and a contact form. The visual plates use SVG and geometry, so the site does not depend on a large image library.",
+      "A single-page site that presents the company and its products clearly. Product lines use the ABR, PKG, and CON codes, and every section moves the visitor toward a concrete next step, mostly through WhatsApp.",
     process: [
-      { step: "Identity", detail: "Established the monochrome foundation, accent rules, and typography scale before any layout." },
-      { step: "System", detail: "Defined reusable primitives: sections, rules, tags, buttons, and reveal behavior." },
-      { step: "Content", detail: "Wrote the typed content layer for services, projects, process, and values before building the pages." },
-      { step: "Implementation", detail: "Built the routes on the server and added client components only where filters, forms, or motion need them." },
-      { step: "Validation", detail: "Ran lint, type checking, and a production build; audited content integrity and accessibility." },
+      { step: "Brief", detail: "Studied the company's product range, sectors, and contact channels." },
+      { step: "Structure", detail: "Planned one page with clear anchors for profile, products, brands, services, and contact." },
+      { step: "Design", detail: "Set an industrial tone with product photography and section codes." },
+      { step: "Build", detail: "Implemented the page with Next.js and TypeScript." },
+      { step: "Disclaimer", detail: "Marked the concept as unofficial so it is never confused with the company's real presence." },
     ],
     gallery: [
-      { index: 1, caption: "Hero composition: oversized display type over a geometric system", src: dignify1 },
-      { index: 2, caption: "Service index: numbered editorial rows instead of generic cards", src: dignify2 },
-      { index: 3, caption: "Case study layout: boxed sections with technical metadata", src: dignify3 },
+      { index: 1, caption: "Hero: industrial positioning and the product focus", src: tpp1 },
+      { index: 2, caption: "Product highlights: abrasives and packing lines with inquiry paths", src: tpp2 },
+      { index: 3, caption: "Services and contact: support options and a WhatsApp-first path", src: tpp3 },
     ],
-    cover: dignify1,
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    cover: tpp1,
+    tech: ["Next.js", "TypeScript"],
+    links: [
+      { label: "Live demo", href: "https://telaga-pratama-persada.vercel.app/" },
+      { label: "Source code", href: "https://github.com/Zenithrath/TelagaPratamaPersada" },
+    ],
     reflection:
-      "Building our own site made our process clearer. A small team moves faster when the visual rules and content structure are written down. We also kept the claims close to the work we have actually done.",
+      "The concept proved that an industrial company profile does not need to be dull. Clear codes, honest structure, and one strong contact path do the work.",
     nextSlug: "bem-vokasi-ub-2025",
   },
   {
@@ -77,6 +87,78 @@ export const projects: Project[] = [
     tech: ["TypeScript", "React", "Tailwind CSS"],
     reflection:
       "Working inside the organization showed us what the site needed after launch. The editing order system became the practical way for the cabinet to keep content current.",
+    nextSlug: "djibril-rangga-deja",
+  },
+  {
+    slug: "djibril-rangga-deja",
+    title: "Djibril Rangga Deja",
+    category: "Website",
+    status: "Internal Project",
+    year: 2026,
+    summary:
+      "The personal portfolio site of Djibril Rangga Deja, one half of the Dignify studio. A single page for profile, selected work, skills, certificates, and experience.",
+    overview:
+      "The personal site of Djibril, who handles the AI and automation side of the studio. It presents his profile, selected work, skill set, certificates, work experience, and contact channels in a single scrolling page.",
+    challenge:
+      "A personal site for an AI engineer needs to prove the work without bloating the page. It also has to give visitors a clear path to his CV and contact channels.",
+    approach:
+      "We organized the page into numbered sections: profile, selected work, skills, certificates, experience, and contact. Work items carry category filters, and contact is always one click away.",
+    solution:
+      "A single-page portfolio that covers the essentials. Selected work includes the Dignify studio site, the BEM Vokasi site, the Tlaga Pratama Persada concept, the Sentinel IoT system, the Arkbot audit assistant, and the Arka helpdesk bot.",
+    process: [
+      { step: "Profile", detail: "Defined the positioning: AI engineer focused on n8n workflows and automation." },
+      { step: "Structure", detail: "Planned numbered sections from profile to contact." },
+      { step: "Work index", detail: "Listed the real projects with filters and details." },
+      { step: "Credentials", detail: "Added certificates and work experience with honest labels." },
+      { step: "Contact", detail: "Built the contact path with CV download, email, and WhatsApp." },
+    ],
+    gallery: [
+      { index: 1, caption: "Hero: positioning and profile over the work index", src: dije1 },
+      { index: 2, caption: "Selected work: the project list with filters", src: dije2 },
+      { index: 3, caption: "Skills and credentials: tools, certificates, and experience", src: dije3 },
+    ],
+    cover: dije1,
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    links: [
+      { label: "Live demo", href: "https://djibril-rangga.vercel.app/" },
+      { label: "Source code", href: "https://github.com/Zenithrath/portofolio" },
+    ],
+    reflection:
+      "Building the founder's own site kept the studio honest: the work shown on it is real work, labeled the same way we label everything else.",
+    nextSlug: "dignify-studio-site",
+  },
+  {
+    slug: "dignify-studio-site",
+    title: "Dignify Studio Site",
+    category: "Website",
+    status: "Internal Project",
+    year: 2026,
+    summary:
+      "The studio's own website. An editorial, industrial modern system that shows the standard Dignify brings to client work.",
+    overview:
+      "This is our first internal project and the clearest example of how we work. The site brings together modular grids, editorial hierarchy, restrained accents, typed content, and accessible markup in one working product.",
+    challenge:
+      "A studio run by two people needs one site that explains the services, earns trust, and shows the quality of the work. We chose a deliberate system instead of a generic agency template.",
+    approach:
+      "We set the visual rules first: two monochrome surfaces, two accents, three typefaces, and one grid. The content lives in typed data files, which lets us update the site without rewriting the layout.",
+    solution:
+      "The result is a site with seven pages: an editorial home, detailed services, a filterable portfolio, case studies, an about page, an honest testimonial state, and a contact form. The visual plates use SVG and geometry, so the site does not depend on a large image library.",
+    process: [
+      { step: "Identity", detail: "Established the monochrome foundation, accent rules, and typography scale before any layout." },
+      { step: "System", detail: "Defined reusable primitives: sections, rules, tags, buttons, and reveal behavior." },
+      { step: "Content", detail: "Wrote the typed content layer for services, projects, process, and values before building the pages." },
+      { step: "Implementation", detail: "Built the routes on the server and added client components only where filters, forms, or motion need them." },
+      { step: "Validation", detail: "Ran lint, type checking, and a production build; audited content integrity and accessibility." },
+    ],
+    gallery: [
+      { index: 1, caption: "Hero composition: oversized display type over a geometric system", src: dignify1 },
+      { index: 2, caption: "Service index: numbered editorial rows instead of generic cards", src: dignify2 },
+      { index: 3, caption: "Case study layout: boxed sections with technical metadata", src: dignify3 },
+    ],
+    cover: dignify1,
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    reflection:
+      "Building our own site made our process clearer. A small team moves faster when the visual rules and content structure are written down. We also kept the claims close to the work we have actually done.",
     nextSlug: "arkananta-ai-audit-assistant",
   },
   {
@@ -111,7 +193,7 @@ export const projects: Project[] = [
     tech: ["n8n", "GPT", "DeepSeek", "Google Drive", "RAG"],
     reflection:
       "The most important rule was simple: the assistant must show a source for every answer. That keeps the tool useful for audit work and gives the team something they can verify.",
-    nextSlug: "dignify-studio-site",
+    nextSlug: "tlaga-pratama-persada",
   },
 ];
 

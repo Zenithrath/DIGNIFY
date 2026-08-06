@@ -112,6 +112,29 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
                     <dd className="text-paper">{project.year}</dd>
                   </div>
                 </dl>
+                {project.links ? (
+                  <div className="border-t border-line-dark pt-4">
+                    <p className="meta-label text-muted-dark">LINKS</p>
+                    <ul className="mt-3 space-y-2 text-sm">
+                      {project.links.map((link) => (
+                        <li key={link.label}>
+                          <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="group inline-flex items-center gap-2 text-paper transition-colors hover:text-emerald"
+                          >
+                            {link.label}
+                            <ArrowUpRight
+                              aria-hidden
+                              className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                            />
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
               </div>
             </Reveal>
           </div>
