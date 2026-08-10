@@ -36,17 +36,38 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  // Auto-create bucket if not present
+  try {
+    await supabase.storage.createBucket(BUCKET, {
+      public: true,
+      allowedMimeTypes: ALLOWED_TYPES,
+      fileSizeLimit: `${MAX_SIZE_MB}MB`,
+    });
+  } catch {
+    // Bucket might already exist, continue
+  }
+
   const ext = file.name.split(".").pop() ?? "jpg";
   const fileName = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
   const arrayBuffer = await file.arrayBuffer();
   const buffer = new Uint8Array(arrayBuffer);
 
-  const { error } = await supabase.storage
+  let { error } = await supabase.storage
     .from(BUCKET)
     .upload(fileName, buffer, {
       contentType: file.type,
       upsert: false,
     });
+
+  // Retry once if bucket was created just in time
+  if (error && error.message.includes("not found")) {
+    await supabase.storage.createBucket(BUCKET, { public: true }).catch(() => {});
+    const retry = await supabase.storage.from(BUCKET).upload(fileName, buffer, {
+      contentType: file.type,
+      upsert: false,
+    });
+    error = retry.error;
+  }
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
