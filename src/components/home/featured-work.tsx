@@ -6,12 +6,15 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { Reveal } from "@/components/ui/reveal";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { ProjectPlate } from "@/components/portfolio/project-plate";
-import { projects } from "@/content/projects";
+import { projects as staticProjects } from "@/content/projects";
+import { fetchProjectsFromDb } from "@/lib/cms-store";
 import { formatYearIndex } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 
-export function FeaturedWork() {
-  const featured = projects.slice(0, 3);
+export async function FeaturedWork() {
+  const allProjects = await fetchProjectsFromDb().catch(() => staticProjects);
+  const featured = allProjects.slice(0, 3);
+
   return (
     <section
       aria-labelledby="featured-heading"
@@ -42,9 +45,9 @@ export function FeaturedWork() {
                     )}
                   >
                     <div className="relative h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.015]">
-                      {project.cover ? (
+                      {project.cover || project.coverUrl ? (
                         <Image
-                          src={project.cover}
+                          src={project.coverUrl ?? project.cover!}
                           alt={`${project.title} project preview`}
                           fill
                           sizes="(min-width: 1024px) 66vw, 100vw"

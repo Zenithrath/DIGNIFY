@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { Resend } from "resend";
 import { site } from "@/content/site";
 import { buildEnquiryEmail } from "@/lib/contact-email";
+import { addContactSubmissionStore } from "@/lib/cms-store";
 
 const required = ["name", "email", "service", "budget", "timeline", "description"] as const;
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -37,17 +38,28 @@ export async function POST(request: NextRequest) {
     return Response.json({ errors }, { status: 400 });
   }
 
+  const reference = `DGN-${Date.now().toString(36).toUpperCase()}`;
+
+  // Store submission in Admin CMS Store
+  addContactSubmissionStore({
+    reference,
+    name: String(payload.name || ""),
+    email: String(payload.email || ""),
+    company: payload.company ? String(payload.company) : undefined,
+    service: String(payload.service || ""),
+    budget: String(payload.budget || ""),
+    timeline: String(payload.timeline || ""),
+    description: String(payload.description || ""),
+    referenceUrl: payload.reference ? String(payload.reference) : undefined,
+  });
+
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    return Response.json(
-      { errors: { form: "Email delivery is not configured. Please contact us directly." } },
-      { status: 503 },
-    );
+    // If no Resend API Key is set, still accept submission locally for CMS viewing
+    return Response.json({ ok: true, reference, note: "Submission saved in admin CMS." }, { status: 200 });
   }
 
-  const reference = `DGN-${Date.now().toString(36).toUpperCase()}`;
   const { subject, html, text } = buildEnquiryEmail(payload, reference);
-
   const resend = new Resend(apiKey);
   const replyToEmail = typeof payload.email === "string" ? payload.email.trim() : "";
   const { error } = await resend.emails.send({

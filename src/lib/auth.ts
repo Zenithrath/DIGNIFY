@@ -10,7 +10,7 @@ async function sha256Hex(value: string) {
 }
 
 export async function adminToken() {
-  const password = process.env.ADMIN_PASSWORD ?? "dignify-admin";
+  const password = process.env.ADMIN_PASSWORD ?? "@Dignify2026studio";
   const salt = process.env.ADMIN_SALT ?? "dignify-2026";
   return `dgn-${await sha256Hex(`${password}:${salt}`)}`;
 }

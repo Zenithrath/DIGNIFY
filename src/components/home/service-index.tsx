@@ -1,15 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Plus } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Button } from "@/components/ui/button";
-import { services } from "@/content/services";
+import { services as staticServices } from "@/content/services";
+import type { Service } from "@/content/types";
 import { cn } from "@/lib/utils";
 
 export function ServiceIndex() {
   const [open, setOpen] = useState<number | null>(0);
+  const [services, setServices] = useState<Service[]>(staticServices);
+
+  useEffect(() => {
+    let active = true;
+    fetch("/api/admin/services")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (active && data?.services && data.services.length > 0) {
+          setServices(data.services);
+        }
+      })
+      .catch(() => {});
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   return (
     <section aria-labelledby="services-heading" id="services" className="bg-paper pt-24 pb-24 sm:pt-32 sm:pb-32">

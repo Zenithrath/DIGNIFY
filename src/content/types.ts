@@ -15,6 +15,7 @@ export interface ProjectGalleryPlate {
   index: number;
   caption: string;
   src?: StaticImageData;
+  url?: string;
 }
 
 export interface Project {
@@ -31,6 +32,7 @@ export interface Project {
   process: Array<{ step: string; detail: string }>;
   gallery: ProjectGalleryPlate[];
   cover?: StaticImageData;
+  coverUrl?: string;
   tech: string[];
   links?: Array<{ label: string; href: string }>;
   reflection: string;

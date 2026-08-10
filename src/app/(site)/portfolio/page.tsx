@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { PortfolioGrid } from "@/components/portfolio/portfolio-grid";
-import { projects } from "@/content/projects";
+import { projects as staticProjects } from "@/content/projects";
+import { fetchProjectsFromDb } from "@/lib/cms-store";
 import { seo } from "@/content/seo";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: seo.portfolio.title,
@@ -17,13 +20,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PortfolioPage() {
+export default async function PortfolioPage() {
+  const allProjects = await fetchProjectsFromDb().catch(() => staticProjects);
   return (
     <>
       <section aria-labelledby="portfolio-heading" className="border-b border-line bg-paper py-24 sm:py-32">
         <Container>
           <Reveal>
-            <p className="meta-label text-emerald-deep">/ PORTFOLIO / {String(projects.length).padStart(2, "0")} SYSTEMS</p>
+            <p className="meta-label text-emerald-deep">/ PORTFOLIO / {String(allProjects.length).padStart(2, "0")} SYSTEMS</p>
             <h1 id="portfolio-heading" className="display mt-6 max-w-5xl text-[clamp(2.75rem,7vw,7rem)]">
               Work, indexed and labeled honestly.
             </h1>

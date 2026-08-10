@@ -9,20 +9,32 @@ import { StatusBadge } from "@/components/ui/status-badge";
 import { ProjectPlate } from "@/components/portfolio/project-plate";
 import { JsonLd } from "@/components/seo/json-ld";
 import { site } from "@/content/site";
-import { projects, getProject } from "@/content/projects";
+import { projects as staticProjects, getProject as getStaticProject } from "@/content/projects";
+import { fetchProjectsFromDb } from "@/lib/cms-store";
 import { formatYearIndex } from "@/lib/utils";
 
-export const dynamicParams = false;
+export const dynamic = "force-dynamic";
+export const dynamicParams = true;
 
-export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
+export async function generateStaticParams() {
+  return staticProjects.map((project) => ({ slug: project.slug }));
+}
+
+async function getProjectFromDb(slug: string) {
+  try {
+    const all = await fetchProjectsFromDb();
+    const found = all.find((p) => p.slug === slug);
+    return found ?? getStaticProject(slug) ?? null;
+  } catch {
+    return getStaticProject(slug) ?? null;
+  }
 }
 
 export async function generateMetadata({
   params,
 }: PageProps<"/portfolio/[slug]">): Promise<Metadata> {
   const { slug } = await params;
-  const project = getProject(slug);
+  const project = await getProjectFromDb(slug);
   if (!project) return {};
   return {
     title: project.title,
@@ -40,10 +52,11 @@ export async function generateMetadata({
 
 export default async function PortfolioDetailPage({ params }: PageProps<"/portfolio/[slug]">) {
   const { slug } = await params;
-  const project = getProject(slug);
+  const project = await getProjectFromDb(slug);
   if (!project) notFound();
+  const allProjects = await fetchProjectsFromDb().catch(() => staticProjects);
 
-  const nextProject = getProject(project.nextSlug);
+  const nextProject = allProjects.find((p) => p.slug === project.nextSlug) ?? null;
   const projectUrl = `${site.url}/portfolio/${project.slug}`;
   const projectJsonLd = {
     "@context": "https://schema.org",
@@ -259,9 +272,9 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
               <Reveal key={plate.index} delay={i * 0.06} className={i === 0 ? "col-span-12" : "col-span-12 md:col-span-6"}>
                 <figure>
                   <div className="relative aspect-[16/8] overflow-hidden border border-line">
-                    {plate.src ? (
+                    {plate.src || plate.url ? (
                       <Image
-                        src={plate.src}
+                        src={plate.url ?? plate.src!}
                         alt={`${project.title} ${plate.caption}`}
                         fill
                         sizes="(min-width: 768px) 50vw, 100vw"
@@ -348,9 +361,9 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
               >
                 <div className="col-span-12 aspect-[16/6] overflow-hidden border border-line sm:aspect-[16/7] lg:col-span-9">
                   <div className="relative h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.01]">
-                    {nextProject.cover ? (
+                    {nextProject.cover || nextProject.coverUrl ? (
                       <Image
-                        src={nextProject.cover}
+                        src={nextProject.coverUrl ?? nextProject.cover!}
                         alt={`${nextProject.title} project preview`}
                         fill
                         sizes="(min-width: 1024px) 75vw, 100vw"
@@ -359,7 +372,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
                     ) : (
                       <ProjectPlate
                         slug={nextProject.slug}
-                        index={formatYearIndex(projects.indexOf(nextProject) + 1)}
+                        index={formatYearIndex(allProjects.indexOf(nextProject) + 1)}
                         category={nextProject.category}
                         year={nextProject.year}
                       />

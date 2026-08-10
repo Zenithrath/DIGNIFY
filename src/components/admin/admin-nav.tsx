@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 const adminNav = [
   { href: "/admin", label: "Dashboard", index: "01" },
   { href: "/admin/portfolio", label: "Portfolio", index: "02" },
-  { href: "/admin/content", label: "Content", index: "03" },
-  { href: "/admin/media", label: "Media", index: "04" },
+  { href: "/admin/services", label: "Services", index: "03" },
+  { href: "/admin/contact", label: "Contact", index: "04" },
 ] as const;
 
 export function AdminNav() {
@@ -17,7 +17,11 @@ export function AdminNav() {
   return (
     <ul>
       {adminNav.map((item) => {
-        const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
+        const active =
+          item.href === "/admin"
+            ? pathname === "/admin"
+            : pathname === item.href || pathname.startsWith(`${item.href}/`);
+
         return (
           <li key={item.href} className="border-b border-line-dark">
             <Link
@@ -25,7 +29,7 @@ export function AdminNav() {
               aria-current={active ? "page" : undefined}
               className={cn(
                 "flex items-baseline justify-between px-5 py-4 transition-colors",
-                active ? "bg-surface text-emerald" : "hover:bg-surface",
+                active ? "bg-surface text-emerald" : "hover:bg-surface text-paper",
               )}
             >
               <span className="font-mono text-[0.6875rem] uppercase tracking-[0.14em]">

@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
-import { services, engagement } from "@/content/services";
+import { services as staticServices, engagement } from "@/content/services";
+import { fetchServicesFromDb } from "@/lib/cms-store";
 import { site } from "@/content/site";
 import { seo } from "@/content/seo";
 import { cn } from "@/lib/utils";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: seo.services.title,
@@ -19,7 +22,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const services = await fetchServicesFromDb().catch(() => staticServices);
+
   return (
     <>
       <section aria-labelledby="services-hero" className="bg-ink py-24 text-paper sm:py-32">

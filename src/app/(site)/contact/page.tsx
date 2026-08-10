@@ -4,6 +4,9 @@ import { Reveal } from "@/components/ui/reveal";
 import { ContactForm } from "@/components/forms/contact-form";
 import { site } from "@/content/site";
 import { seo } from "@/content/seo";
+import { fetchStudioSettingsFromDb } from "@/lib/cms-store";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: seo.contact.title,
@@ -17,7 +20,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const studioSettings = await fetchStudioSettingsFromDb().catch(() => null);
+  const email = studioSettings?.email ?? site.email;
+  const location = studioSettings?.location ?? site.location;
+
   return (
     <>
       <section aria-labelledby="contact-heading" className="bg-ink py-24 text-paper sm:py-32">
@@ -42,16 +49,16 @@ export default function ContactPage() {
                   <dt className="meta-label text-muted-dark">EMAIL</dt>
                   <dd>
                     <a
-                      href={`mailto:${site.email}`}
+                      href={`mailto:${email}`}
                       className="meta-label text-paper transition-colors hover:text-emerald"
                     >
-                      {site.email}
+                      {email}
                     </a>
                   </dd>
                 </div>
                 <div className="flex justify-between border-b border-line-dark py-3">
                   <dt className="meta-label text-muted-dark">MODE</dt>
-                  <dd className="meta-label text-paper">{site.location}</dd>
+                  <dd className="meta-label text-paper">{location}</dd>
                 </div>
                 <div className="flex justify-between py-3">
                   <dt className="meta-label text-muted-dark">POLICY</dt>

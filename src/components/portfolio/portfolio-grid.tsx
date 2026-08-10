@@ -1,12 +1,12 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { ProjectPlate } from "@/components/portfolio/project-plate";
-import { projects, filterOptions } from "@/content/projects";
+import { projects as staticProjects, filterOptions } from "@/content/projects";
 import type { FilterKey, Project } from "@/content/types";
 import { cn } from "@/lib/utils";
 
@@ -36,9 +36,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         )}
       >
         <div className="relative h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.015]">
-          {project.cover ? (
+          {project.cover || project.coverUrl ? (
             <Image
-              src={project.cover}
+              src={project.coverUrl ?? project.cover!}
               alt={`${project.title} project preview`}
               fill
               sizes="(min-width: 1024px) 66vw, 100vw"
@@ -72,6 +72,23 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
 export function PortfolioGrid() {
   const [filter, setFilter] = useState<FilterKey>(() => readHash());
+  const [projects, setProjects] = useState<Project[]>(staticProjects);
+
+  useEffect(() => {
+    let active = true;
+    fetch("/api/admin/portfolio")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (active && data?.projects && data.projects.length > 0) {
+          setProjects(data.projects);
+        }
+      })
+      .catch(() => {});
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const counts = useMemo(() => {
     const map = new Map<FilterKey, number>();
@@ -80,7 +97,7 @@ export function PortfolioGrid() {
       map.set(key, projects.filter((p) => matches(p, key)).length);
     }
     return map;
-  }, []);
+  }, [projects]);
 
   const visible = projects.filter((p) => matches(p, filter));
 

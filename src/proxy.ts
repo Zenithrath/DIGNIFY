@@ -7,12 +7,12 @@ export async function proxy(request: NextRequest) {
   const token = request.cookies.get(ADMIN_COOKIE)?.value;
   const isLoggedIn = await isAdminToken(token);
 
-  if (!isLoggedIn && pathname !== "/admin/login") {
-    const loginUrl = new URL("/admin/login", request.url);
+  if (!isLoggedIn && pathname.startsWith("/admin")) {
+    const loginUrl = new URL("/halaman-login-dignify", request.url);
     return NextResponse.redirect(loginUrl);
   }
 
-  if (isLoggedIn && pathname === "/admin/login") {
+  if (isLoggedIn && pathname === "/halaman-login-dignify") {
     const adminUrl = new URL("/admin", request.url);
     return NextResponse.redirect(adminUrl);
   }
@@ -21,5 +21,5 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*"],
+  matcher: ["/admin/:path*", "/halaman-login-dignify"],
 };
