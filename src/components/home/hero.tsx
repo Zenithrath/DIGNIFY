@@ -65,8 +65,8 @@ export function Hero({ copy = enHomeCopy.hero }: { copy?: HeroCopy }) {
         </div>
       </div>
 
-      <Container className="relative z-10 flex min-w-0 flex-1 flex-col pt-5 sm:pt-10">
-        <div className="flex flex-none flex-col items-center justify-center py-7 sm:flex-1 sm:py-12">
+      <Container className="relative z-10 flex min-w-0 flex-1 flex-col items-center pt-5 sm:pt-10">
+        <div className="flex w-full max-w-3xl flex-col items-center justify-center py-7 sm:flex-1 sm:py-12">
           <div className="hero-item text-center" style={{ animationDelay: "0.12s" }}>
             <p className="meta-label mb-4 text-emerald sm:mb-6">{copy.label}</p>
             <h1
@@ -89,7 +89,7 @@ export function Hero({ copy = enHomeCopy.hero }: { copy?: HeroCopy }) {
           </p>
         </div>
 
-        <div className="hero-item flex w-full min-w-0 flex-col items-stretch justify-center gap-3 pb-5 sm:flex-row sm:items-center sm:pb-8" style={{ animationDelay: "0.56s" }}>
+        <div className="hero-item flex w-full max-w-3xl min-w-0 flex-col items-stretch justify-center gap-3 pb-5 sm:flex-row sm:items-center sm:pb-8" style={{ animationDelay: "0.56s" }}>
           <Button href={copy.primaryCta.href} variant="emerald" size="lg" className="w-full max-w-full sm:w-auto" arrow>
             {copy.primaryCta.label}
           </Button>
