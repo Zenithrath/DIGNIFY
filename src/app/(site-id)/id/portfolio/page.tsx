@@ -55,7 +55,7 @@ export default async function IndonesianPortfolioPage() {
         </Container>
       </section>
 
-      <PortfolioGrid lang="id" />
+      <PortfolioGrid lang="id" initialProjects={allProjects} />
     </div>
   );
 }

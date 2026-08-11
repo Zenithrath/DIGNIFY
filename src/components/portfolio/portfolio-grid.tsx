@@ -71,11 +71,12 @@ function ProjectCard({ project, index, lang }: { project: Project; index: number
   );
 }
 
-export function PortfolioGrid({ lang = "en" }: { lang?: "en" | "id" }) {
+export function PortfolioGrid({ lang = "en", initialProjects }: { lang?: "en" | "id"; initialProjects?: Project[] }) {
   const [filter, setFilter] = useState<FilterKey>(() => readHash());
-  const [projects, setProjects] = useState<Project[]>(staticProjects);
+  const [projects, setProjects] = useState<Project[]>(initialProjects ?? staticProjects);
 
   useEffect(() => {
+    if (initialProjects) return;
     let active = true;
     fetch("/api/admin/portfolio")
       .then((res) => (res.ok ? res.json() : null))
@@ -89,7 +90,7 @@ export function PortfolioGrid({ lang = "en" }: { lang?: "en" | "id" }) {
     return () => {
       active = false;
     };
-  }, []);
+  }, [initialProjects]);
 
   const counts = useMemo(() => {
     const map = new Map<FilterKey, number>();

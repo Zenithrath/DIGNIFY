@@ -49,7 +49,7 @@ export default async function PortfolioPage() {
       <section aria-label="Portfolio index" className="bg-paper py-16 sm:py-20">
         <Container>
           <h2 className="sr-only">All projects</h2>
-          <PortfolioGrid />
+          <PortfolioGrid initialProjects={allProjects} />
         </Container>
       </section>
     </>

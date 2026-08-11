@@ -30,8 +30,13 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Title and slug are required" }, { status: 400 });
   }
 
-  const saved = await saveProjectStore(body);
-  return NextResponse.json({ ok: true, project: saved });
+  try {
+    const saved = await saveProjectStore(body);
+    return NextResponse.json({ ok: true, project: saved });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Unknown error";
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 }
 
 export async function DELETE(request: NextRequest) {
@@ -44,8 +49,13 @@ export async function DELETE(request: NextRequest) {
     return NextResponse.json({ error: "Slug query param required" }, { status: 400 });
   }
 
-  const success = await deleteProjectStore(slug);
-  return NextResponse.json({ ok: success });
+  try {
+    const success = await deleteProjectStore(slug);
+    return NextResponse.json({ ok: success });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Unknown error";
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 }
 
 export async function PATCH(request: NextRequest) {

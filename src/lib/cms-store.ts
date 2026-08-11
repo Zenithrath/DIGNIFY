@@ -85,7 +85,7 @@ export async function fetchProjectsFromDb(): Promise<Project[]> {
           coverUrl: row.cover_url || initialMatch?.coverUrl || undefined,
           featured: row.featured ?? false,
           tech: row.tech || initialMatch?.tech || [],
-          links: initialMatch?.links,
+          links: row.links || initialMatch?.links,
           reflection: row.reflection || initialMatch?.reflection || "",
           nextSlug: row.next_slug || initialMatch?.nextSlug || "",
         };
@@ -121,28 +121,29 @@ export async function saveProjectStore(project: Project): Promise<Project> {
     memoryProjects.unshift(project);
   }
 
-  try {
-    await supabase.from("projects").upsert({
-      slug: project.slug,
-      title: project.title,
-      category: project.category,
-      status: project.status,
-      year: project.year,
-      summary: project.summary,
-      overview: project.overview,
-      challenge: project.challenge,
-      approach: project.approach,
-      solution: project.solution,
-      process: project.process,
-      gallery: project.gallery,
-      tech: project.tech,
-      reflection: project.reflection,
-      next_slug: project.nextSlug,
-      cover_url: project.coverUrl ?? null,
-      featured: project.featured ?? false,
-    });
-  } catch {
-    // continue
+  const { error } = await supabase.from("projects").upsert({
+    slug: project.slug,
+    title: project.title,
+    category: project.category,
+    status: project.status,
+    year: project.year,
+    summary: project.summary,
+    overview: project.overview,
+    challenge: project.challenge,
+    approach: project.approach,
+    solution: project.solution,
+    process: project.process,
+    gallery: project.gallery,
+    tech: project.tech,
+    links: project.links ?? null,
+    reflection: project.reflection,
+    next_slug: project.nextSlug,
+    cover_url: project.coverUrl ?? null,
+    featured: project.featured ?? false,
+  });
+
+  if (error) {
+    throw new Error(`Supabase save failed: ${error.message}`);
   }
 
   return project;
@@ -151,10 +152,9 @@ export async function saveProjectStore(project: Project): Promise<Project> {
 export async function deleteProjectStore(slug: string): Promise<boolean> {
   deletedProjectSlugs.add(slug);
   memoryProjects = memoryProjects.filter((p) => p.slug !== slug);
-  try {
-    await supabase.from("projects").delete().eq("slug", slug);
-  } catch {
-    // continue
+  const { error } = await supabase.from("projects").delete().eq("slug", slug);
+  if (error) {
+    throw new Error(`Supabase delete failed: ${error.message}`);
   }
   return true;
 }

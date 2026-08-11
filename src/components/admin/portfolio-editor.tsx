@@ -178,6 +178,7 @@ export function PortfolioEditorForm({ initialProject, heading }: PortfolioEditor
       links: linksList,
       reflection: reflection.trim(),
       nextSlug: nextSlug.trim() || "dignify-studio-site",
+      featured: initialProject?.featured ?? false,
     };
 
     try {

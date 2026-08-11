@@ -15,11 +15,19 @@ CREATE TABLE IF NOT EXISTS public.projects (
   solution TEXT,
   process JSONB,
   gallery JSONB,
+  cover_url TEXT,
+  featured BOOLEAN DEFAULT false,
   tech JSONB,
+  links JSONB,
   reflection TEXT,
   next_slug TEXT,
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
+
+-- Migration for existing projects tables (safe to re-run)
+ALTER TABLE public.projects ADD COLUMN IF NOT EXISTS cover_url TEXT;
+ALTER TABLE public.projects ADD COLUMN IF NOT EXISTS featured BOOLEAN DEFAULT false;
+ALTER TABLE public.projects ADD COLUMN IF NOT EXISTS links JSONB;
 
 -- 2. Services Table
 CREATE TABLE IF NOT EXISTS public.services (
