@@ -98,3 +98,24 @@ export const engagement = [
       "Documented code, editable content, and a clear explanation of how to extend the system after launch.",
   },
 ] as const;
+
+export const engagementId = [
+  {
+    index: "A",
+    title: "Pemetaan Awal",
+    detail:
+      "Kami bicarakan masalahnya, batasan-batasannya, dan hasil yang diharapkan sebelum desain atau kode dimulai.",
+  },
+  {
+    index: "B",
+    title: "Pembangunan",
+    detail:
+      "Desain dan development jalan dalam satu alur kerja. Kamu melihat progres yang nyata dan bisa dicek dalam milestone berkala.",
+  },
+  {
+    index: "C",
+    title: "Serah Terima",
+    detail:
+      "Kode terdokumentasi, konten yang mudah diedit, dan penjelasan jelas cara mengembangkan sistem setelah diluncurkan.",
+  },
+] as const;

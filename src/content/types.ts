@@ -33,6 +33,7 @@ export interface Project {
   gallery: ProjectGalleryPlate[];
   cover?: StaticImageData;
   coverUrl?: string;
+  featured?: boolean;
   tech: string[];
   links?: Array<{ label: string; href: string }>;
   reflection: string;

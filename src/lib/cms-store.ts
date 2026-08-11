@@ -83,6 +83,7 @@ export async function fetchProjectsFromDb(): Promise<Project[]> {
           gallery: row.gallery && row.gallery.length > 0 ? row.gallery : (initialMatch?.gallery || []),
           cover: row.cover_url ? undefined : initialMatch?.cover,
           coverUrl: row.cover_url || initialMatch?.coverUrl || undefined,
+          featured: row.featured ?? false,
           tech: row.tech || initialMatch?.tech || [],
           links: initialMatch?.links,
           reflection: row.reflection || initialMatch?.reflection || "",
@@ -138,6 +139,7 @@ export async function saveProjectStore(project: Project): Promise<Project> {
       reflection: project.reflection,
       next_slug: project.nextSlug,
       cover_url: project.coverUrl ?? null,
+      featured: project.featured ?? false,
     });
   } catch {
     // continue
@@ -155,6 +157,15 @@ export async function deleteProjectStore(slug: string): Promise<boolean> {
     // continue
   }
   return true;
+}
+
+export async function setProjectFeaturedStore(slug: string, featured: boolean): Promise<Project | null> {
+  const current = await fetchProjectsFromDb();
+  const project = current.find((p) => p.slug === slug);
+  if (!project) return null;
+  const updated = { ...project, featured };
+  await saveProjectStore(updated);
+  return updated;
 }
 
 // --- SERVICES STORE ---

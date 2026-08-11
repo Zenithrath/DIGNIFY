@@ -18,7 +18,7 @@ export const webDevelopment = {
       slug: "portfolio-website-development",
       title: "Portfolio Website Development",
       description:
-        "Personal and studio portfolios that present work, experience, and skills with structure — designed to be found, not just looked at.",
+        "Personal and studio portfolios that present work, experience, and skills with structure, designed to be found, not just looked at.",
       deliverables: ["Project index and case study pages", "Category and filter navigation", "Contact and CV paths"],
     },
     {
@@ -32,7 +32,7 @@ export const webDevelopment = {
       slug: "front-end-development",
       title: "Front-End Development",
       description:
-        "Clean, typed implementation of your interface — from Figma design to working, accessible website code.",
+        "Clean, typed implementation of your interface, from Figma design to working, accessible website code.",
       deliverables: ["Design-to-code implementation", "Semantic and accessible markup", "Component systems you can extend"],
     },
     {
@@ -59,7 +59,7 @@ export const webDevelopment = {
     {
       index: "B",
       title: "Design",
-      detail: "Structure, content hierarchy, and interface direction — approved before build.",
+      detail: "Structure, content hierarchy, and interface direction, approved before build.",
     },
     {
       index: "C",
@@ -76,7 +76,7 @@ export const webDevelopment = {
     {
       question: "What types of websites does Dignify build?",
       answer:
-        "Landing pages, portfolio websites, company profiles, and custom web experiences — including responsive development and front-end work for existing designs.",
+        "Landing pages, portfolio websites, company profiles, and custom web experiences, including responsive development and front-end work for existing designs.",
     },
     {
       question: "Can you build from an existing Figma design?",
@@ -86,7 +86,7 @@ export const webDevelopment = {
     {
       question: "Are the websites responsive?",
       answer:
-        "Yes. Every website is designed and tested for desktop, tablet, and mobile — not scaled down as an afterthought.",
+        "Yes. Every website is designed and tested for desktop, tablet, and mobile, not scaled down as an afterthought.",
     },
     {
       question: "Can I use my own domain?",

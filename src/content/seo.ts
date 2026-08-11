@@ -14,17 +14,42 @@ export const seo = {
   services: {
     title: "Digital Services | Web Design, AI & Automation",
     description:
-      "Website development, UI/UX design, AI solutions, n8n automation, and API integration — delivered with clear scope and documented handover.",
+      "Website development, UI/UX design, AI solutions, n8n automation, and API integration, delivered with clear scope and documented handover.",
+  },
+  servicesId: {
+    title: "Layanan Digital | Web Design, AI & Otomasi",
+    description:
+      "Jasa web development, desain UI/UX, solusi AI, otomasi n8n, dan integrasi API, dengan scope yang jelas dan serah terima terdokumentasi.",
   },
   portfolio: {
     title: "Portfolio | Websites, Interfaces & Automation",
     description:
       "Dignify projects: selected work across websites, interfaces, AI tools, and automation, labeled honestly as client, internal, or concept projects.",
   },
-  about: {
-    title: "About Dignify | A Digital Studio Built by Dije & Ignas",
+  portfolioId: {
+    title: "Portfolio Dignify | Website, UI/UX & Otomasi",
     description:
-      "Dignify is a small digital studio founded by Dije and Ignas, working on websites, UI/UX, AI solutions, automation, and system integrations.",
+      "Karya pilihan Dignify: website, antarmuka, AI, dan otomasi, diberi label jujur sebagai proyek klien, internal, atau konsep.",
+  },
+  aboutId: {
+    title: "Tentang Dignify | Studio Digital Kecil oleh Dije, Ignas & Daniel",
+    description:
+      "Dignify adalah studio digital kecil yang dibangun Dije, Ignas, dan Daniel. Kami mengerjakan website, UI/UX, solusi AI, otomasi, dan integrasi sistem.",
+  },
+  contactId: {
+    title: "Kontak Dignify | Mulai Proyek Website atau Otomasi",
+    description:
+      "Hubungi Dignify untuk jasa pembuatan website, UI/UX, AI, otomasi n8n, atau integrasi API. Konsultasi gratis untuk memetakan proyekmu.",
+  },
+  testimonialsId: {
+    title: "Testimoni | Dignify Digital Studio",
+    description:
+      "Dignify hanya menampilkan testimoni asli dari klien dengan izin. Tidak ada review karangan atau klaim palsu.",
+  },
+  about: {
+    title: "About Dignify | A Digital Studio Built by Dije, Ignas & Daniel",
+    description:
+      "Dignify is a small digital studio built by Dije, Ignas, and Daniel, working on websites, UI/UX, AI solutions, automation, and system integrations.",
   },
   contact: {
     title: "Contact Dignify | Start a Web or Automation Project",
@@ -65,8 +90,6 @@ export const seo = {
     "API integration",
     "integrasi API",
   ],
-  bilingualServiceLine:
-    "Also for Indonesian teams: jasa pembuatan website, desain UI/UX, solusi AI, automasi n8n, dan integrasi API.",
   indonesianServices: [
     {
       title: "Jasa Pembuatan Website",
@@ -76,7 +99,7 @@ export const seo = {
     {
       title: "Jasa Landing Page",
       description:
-        "Halaman satu layar untuk peluncuran produk, kampanye, atau promosi — cepat dimuat dan jelas mengarahkan pengunjung ke satu tindakan.",
+        "Halaman satu layar untuk peluncuran produk, kampanye, atau promosi, cepat dimuat dan jelas mengarahkan pengunjung ke satu tindakan.",
     },
     {
       title: "Website Company Profile",
@@ -91,7 +114,7 @@ export const seo = {
     {
       title: "Front-End Development",
       description:
-        "Implementasi antarmuka dengan kode yang rapi, cepat, dan mudah dirawat — dari desain Figma menjadi website yang benar-benar berfungsi.",
+        "Implementasi antarmuka dengan kode yang rapi, cepat, dan mudah dirawat, dari desain Figma menjadi website yang benar-benar berfungsi.",
     },
   ],
 } as const;
@@ -110,6 +133,7 @@ export const organizationJsonLd = {
       founder: [
         { "@type": "Person", name: "Dije" },
         { "@type": "Person", name: "Ignas" },
+        { "@type": "Person", name: "Daniel" },
       ],
       contactPoint: {
         "@type": "ContactPoint",

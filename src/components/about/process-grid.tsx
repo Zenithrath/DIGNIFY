@@ -1,10 +1,27 @@
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Reveal } from "@/components/ui/reveal";
-import { processSteps } from "@/content/process";
+import { processSteps, processStepsId } from "@/content/process";
 import { formatYearIndex } from "@/lib/utils";
 
-export function ProcessGrid() {
+const copy = {
+  en: {
+    label: "HOW WE WORK",
+    title: "A sequence we actually follow.",
+    body: "Five phases, in order, with explicit outputs between them. The sequence exists so that surprises happen during discovery, not late in production.",
+    seq: "SEQ / 05 STEPS",
+  },
+  id: {
+    label: "CARA KAMI BEKERJA",
+    title: "Urutan yang benar-benar kami jalankan.",
+    body: "Lima tahap berurutan, dengan output yang jelas di antara tahap-tahapnya. Urutannya dibuat supaya kejutan terjadi di tahap discovery, bukan di akhir produksi.",
+    seq: "SEQ / 05 TAHAP",
+  },
+} as const;
+
+export function ProcessGrid({ lang = "en" }: { lang?: "en" | "id" }) {
+  const steps = lang === "id" ? processStepsId : processSteps;
+  const t = copy[lang];
   return (
     <section
       aria-labelledby="process-heading"
@@ -12,22 +29,21 @@ export function ProcessGrid() {
       style={{ clipPath: "polygon(0 4%, 100% 0, 100% 100%, 0 100%)" }}
     >
       <Container>
-        <SectionHeader index="05" label="HOW WE WORK" title="A sequence we actually follow." id="process-heading" />
+        <SectionHeader index="05" label={t.label} title={t.title} id="process-heading" />
 
         <div className="mt-14 grid grid-cols-12 gap-x-4 gap-y-0">
           <Reveal className="col-span-12 lg:col-span-4">
             <div className="lg:sticky lg:top-24">
               <p className="max-w-sm text-base leading-relaxed text-muted">
-                Five phases, in order, with explicit outputs between them. The sequence exists so
-                that surprises happen during discovery, not late in production.
+                {t.body}
               </p>
-              <p className="meta-label mt-8 text-emerald-deep">SEQ / 05 STEPS</p>
+              <p className="meta-label mt-8 text-emerald-deep">{t.seq}</p>
             </div>
           </Reveal>
 
           <div className="col-span-12 mt-10 lg:col-span-7 lg:col-start-6 lg:mt-0">
             <ol className="border-t border-line">
-              {processSteps.map((step, i) => (
+              {steps.map((step, i) => (
                 <li key={step.index} className="border-b border-line">
                   <Reveal delay={i * 0.05}>
                     <div className="group grid grid-cols-12 items-baseline gap-x-4 py-7 transition-colors hover:bg-pure">

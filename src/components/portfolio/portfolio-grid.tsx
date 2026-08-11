@@ -22,11 +22,12 @@ function readHash() {
   return (filterOptions as readonly string[]).includes(hash) ? (hash as FilterKey) : "All";
 }
 
-function ProjectCard({ project, index }: { project: Project; index: number }) {
+function ProjectCard({ project, index, lang }: { project: Project; index: number; lang: "en" | "id" }) {
   const wide = index % 2 === 0;
+  const base = lang === "id" ? "/id/portfolio" : "/portfolio";
   return (
     <Link
-      href={`/portfolio/${project.slug}`}
+      href={`${base}/${project.slug}`}
       className="group grid grid-cols-12 items-center gap-x-4 gap-y-6"
     >
       <div
@@ -62,7 +63,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         <h3 className="display mt-4 text-3xl sm:text-4xl">{project.title}</h3>
         <p className="mt-3 text-sm leading-relaxed text-muted">{project.summary}</p>
         <p className="mt-5 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-ink-text transition-colors group-hover:text-emerald-deep">
-          Read case study
+          {lang === "id" ? "Baca studi kasus" : "Read case study"}
           <ArrowUpRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </p>
       </div>
@@ -70,7 +71,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   );
 }
 
-export function PortfolioGrid() {
+export function PortfolioGrid({ lang = "en" }: { lang?: "en" | "id" }) {
   const [filter, setFilter] = useState<FilterKey>(() => readHash());
   const [projects, setProjects] = useState<Project[]>(staticProjects);
 
@@ -111,7 +112,7 @@ export function PortfolioGrid() {
       <div
         className="flex flex-wrap items-center gap-2 border border-line bg-paper p-2"
         role="group"
-        aria-label="Filter projects by category"
+        aria-label={lang === "id" ? "Filter proyek berdasarkan kategori" : "Filter projects by category"}
       >
         {filterOptions.map((option) => {
           const key = option as FilterKey;
@@ -141,18 +142,22 @@ export function PortfolioGrid() {
       <ul className="mt-14 space-y-16 sm:space-y-20">
         {visible.map((project, i) => (
           <li key={project.slug} className="list-none">
-            <ProjectCard project={project} index={i} />
+            <ProjectCard project={project} index={i} lang={lang} />
           </li>
         ))}
       </ul>
 
       {visible.length === 0 ? (
-        <p className="meta-label mt-14 text-muted">NO PROJECTS IN THIS CATEGORY YET.</p>
+        <p className="meta-label mt-14 text-muted">
+          {lang === "id" ? "BELUM ADA PROYEK DI KATEGORI INI." : "NO PROJECTS IN THIS CATEGORY YET."}
+        </p>
       ) : null}
 
       <div className="mt-16 border-t border-line pt-8">
         <p className="meta-label text-muted">
-          ALL PROJECTS ARE LABELED HONESTLY / CLIENT, INTERNAL, OR CONCEPT.
+          {lang === "id"
+            ? "SEMUA PROYEK BERLABEL JUJUR / KLIEN, INTERNAL, ATAU KONSEP."
+            : "ALL PROJECTS ARE LABELED HONESTLY / CLIENT, INTERNAL, OR CONCEPT."}
         </p>
       </div>
     </div>

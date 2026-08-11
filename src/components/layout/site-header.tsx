@@ -47,7 +47,7 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header id="top" className="sticky top-0 z-40 border-b border-line bg-paper">
+    <header id="top" className="site-header sticky top-0 z-40 border-b border-line-dark bg-ink text-paper">
       <div inert={open || undefined} className={cn(open && "invisible")}>
         <Container className="flex h-16 items-center justify-between gap-6">
           <Link
@@ -55,7 +55,7 @@ export function SiteHeader() {
             aria-label={`${site.name} home`}
             className="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald"
           >
-            <BrandLockup />
+            <BrandLockup tone="paper" />
           </Link>
 
           <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
@@ -69,7 +69,7 @@ export function SiteHeader() {
                   aria-current={active ? "page" : undefined}
                   className={cn(
                     "font-mono text-[0.6875rem] font-medium uppercase tracking-[0.14em] transition-colors duration-300",
-                    active ? "text-emerald-deep" : "text-muted hover:text-ink-text",
+                    active ? "text-emerald" : "text-muted-dark hover:text-paper",
                   )}
                 >
                   <span
@@ -86,9 +86,9 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <LanguageSwitcher className="hidden md:flex" />
-            <ThemeToggle className="hidden md:flex" />
-            <Button href="/contact" variant="emerald" size="md" className="hidden md:inline-flex">
+            <LanguageSwitcher tone="dark" className="hidden md:flex" />
+            <ThemeToggle tone="dark" className="hidden md:flex" />
+            <Button href={isIndonesian ? "/id/contact" : "/contact"} variant="emerald" size="md" className="hidden md:inline-flex">
               {ctaLabel}
             </Button>
             <button
@@ -98,7 +98,7 @@ export function SiteHeader() {
               aria-expanded={open}
               aria-controls="mobile-menu"
               onClick={() => setOpen((v) => !v)}
-              className="inline-flex size-10 items-center justify-center border border-line text-ink-text transition-colors hover:bg-ink hover:text-paper lg:hidden"
+              className="inline-flex size-10 items-center justify-center border border-line-dark text-paper transition-colors hover:bg-surface lg:hidden"
             >
               {open ? <X aria-hidden className="size-5" /> : <Menu aria-hidden className="size-5" />}
             </button>
@@ -156,7 +156,7 @@ export function SiteHeader() {
           <div className="border-t border-line-dark px-5 py-5">
             <div className="mb-5 flex items-center gap-3">
               <LanguageSwitcher tone="dark" />
-              <ThemeToggle className="flex" />
+              <ThemeToggle tone="dark" className="flex" />
             </div>
             <p className="meta-label text-muted-dark">NEW PROJECT ENQUIRY</p>
             <a

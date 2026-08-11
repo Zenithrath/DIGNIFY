@@ -8,9 +8,15 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { Button } from "@/components/ui/button";
 import { services as staticServices } from "@/content/services";
 import type { Service } from "@/content/types";
+import { enHomeCopy } from "@/content/home-copy";
+import type { ServiceIndexCopy } from "@/content/home-copy";
 import { cn } from "@/lib/utils";
 
-export function ServiceIndex() {
+export function ServiceIndex({
+  copy = enHomeCopy.serviceIndex,
+}: {
+  copy?: ServiceIndexCopy;
+}) {
   const [open, setOpen] = useState<number | null>(0);
   const [services, setServices] = useState<Service[]>(staticServices);
 
@@ -35,8 +41,8 @@ export function ServiceIndex() {
       <Container>
         <SectionHeader
           index="02"
-          label="SERVICES"
-          title="What we do, and what we deliberately do not."
+          label={copy.label}
+          title={copy.title}
           id="services-heading"
         />
 
@@ -96,7 +102,7 @@ export function ServiceIndex() {
                         <p className="text-base leading-relaxed text-muted">{service.description}</p>
                       </div>
                       <div className="col-span-12 mt-8 md:col-span-5 md:col-start-8 md:mt-0">
-                        <p className="meta-label mb-4 text-muted">DELIVERABLES</p>
+                        <p className="meta-label mb-4 text-muted">{copy.deliverablesLabel}</p>
                         <ul className="space-y-3">
                           {service.deliverables.map((item) => (
                             <li key={item} className="flex items-start gap-3 text-sm text-ink-text">
@@ -126,14 +132,14 @@ export function ServiceIndex() {
 
         <div className="mt-10 flex flex-col gap-4 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="meta-label hidden text-muted sm:block">
-            FRONT END DEVELOPMENT IS PART OF EVERY BUILD.
+            {copy.footnote}
           </p>
           <div className="flex flex-wrap items-center gap-4">
-            <Link href="/web-development" className="link-underline font-mono text-xs uppercase tracking-[0.14em] text-ink-text">
-              Web Development Services
+            <Link href={copy.serviceLink.href} className="link-underline font-mono text-xs uppercase tracking-[0.14em] text-ink-text">
+              {copy.serviceLink.label}
             </Link>
-            <Button href="/services" variant="outline" arrow>
-              All Services
+            <Button href={copy.allServicesLink.href} variant="outline" arrow>
+              {copy.allServicesLink.label}
             </Button>
           </div>
         </div>

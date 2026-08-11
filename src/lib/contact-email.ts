@@ -45,10 +45,13 @@ export function buildEnquiryEmail(payload: EnquiryPayload, reference: string) {
     `Reference: ${reference}`,
     "",
     ...rows
-      .map(({ label, field }) => `${label}: ${clean(payload[field]) || "—"}`)
-      .filter((line) => !line.endsWith("—")),
+      .map(({ label, field }) => {
+        const value = clean(payload[field]);
+        return value ? `${label}: ${value}` : "";
+      })
+      .filter(Boolean),
     "",
-    `Description:\n${clean(payload.description) || "—"}`,
+    `Description:\n${clean(payload.description) || "(Not provided)"}`,
     referenceLink ? `\nReference link: ${referenceLink}` : "",
     "",
   ].join("\n");
@@ -94,5 +97,5 @@ export function buildEnquiryEmail(payload: EnquiryPayload, reference: string) {
   </body>
 </html>`;
 
-  return { subject: `New enquiry ${reference} — ${service || "Dignify"}`, html, text };
+  return { subject: `New enquiry ${reference} · ${service || "Dignify"}`, html, text };
 }

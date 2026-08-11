@@ -1,20 +1,13 @@
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
-import { seo } from "@/content/seo";
+import { enHomeCopy } from "@/content/home-copy";
+import type { HeroCopy } from "@/content/home-copy";
 
-const marqueeItems = [
-  "WEB DEVELOPMENT",
-  "UI/UX DESIGN",
-  "AI SOLUTIONS",
-  "N8N AUTOMATION",
-  "API INTEGRATION",
-];
-
-export function Hero() {
+export function Hero({ copy = enHomeCopy.hero }: { copy?: HeroCopy }) {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative flex min-h-[31rem] flex-col overflow-hidden bg-ink text-paper sm:min-h-[calc(100svh-4rem)] lg:min-h-screen"
+      className="relative flex min-h-[calc(100svh-4rem)] flex-col overflow-hidden bg-ink text-paper"
     >
       <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
         <svg width="100%" height="100%">
@@ -35,11 +28,7 @@ export function Hero() {
           <div className="size-28 rounded-full border-2 border-line-dark/70 sm:size-40 lg:size-52 lg:border-[3px]" />
         </div>
 
-        <div className="hero-item absolute right-[4%] top-[12%] sm:right-[6%] sm:top-[14%]" style={{ animationDelay: "0.5s" }}>
-          <div className="spin-slow size-16 rounded-full border-2 border-emerald/50 sm:size-24 lg:size-32 lg:border-[3px]" />
-        </div>
-
-        <div className="hero-item absolute right-[2%] bottom-[24%] sm:right-[13%]" style={{ animationDelay: "0.55s" }}>
+        <div className="hero-item absolute right-[4%] bottom-[24%] sm:right-[13%]" style={{ animationDelay: "0.5s" }}>
           <div className="size-12 rounded-full border-2 border-line-dark/60 sm:size-16 lg:size-20 lg:border-[3px]" />
         </div>
 
@@ -79,50 +68,36 @@ export function Hero() {
       <Container className="relative z-10 flex min-w-0 flex-1 flex-col pt-5 sm:pt-10">
         <div className="flex flex-none flex-col items-center justify-start py-7 sm:flex-1 sm:justify-center sm:py-12">
           <div className="hero-item text-center" style={{ animationDelay: "0.12s" }}>
-            <p className="meta-label mb-4 text-emerald sm:mb-6">CREATIVE AGENCY</p>
+            <p className="meta-label mb-4 text-emerald sm:mb-6">{copy.label}</p>
             <h1
               id="hero-heading"
               className="display max-w-full px-3 text-[clamp(2rem,9vw,5rem)] leading-[0.95] sm:px-0"
             >
-              <span className="word-reveal" style={{ animationDelay: "0.18s" }}>Digital</span>{" "}
-              <span className="word-reveal" style={{ animationDelay: "0.24s" }}>Studio</span>
+              <span className="word-reveal" style={{ animationDelay: "0.18s" }}>{copy.heading.line1[0]}</span>{" "}
+              <span className="word-reveal" style={{ animationDelay: "0.24s" }}>{copy.heading.line1[1]}</span>
               <br />
-              <span className="word-reveal" style={{ animationDelay: "0.32s" }}>Built</span>{" "}
-              <span className="word-reveal" style={{ animationDelay: "0.38s" }}>with</span>{" "}
+              <span className="word-reveal" style={{ animationDelay: "0.32s" }}>{copy.heading.line2[0]}</span>{" "}
+              <span className="word-reveal" style={{ animationDelay: "0.38s" }}>{copy.heading.line2[1]}</span>{" "}
               <span className="word-reveal word-reveal--break-mobile" style={{ animationDelay: "0.44s" }}>
-                <span className="relative mt-2 inline-block bg-emerald px-3 text-ink sm:ml-4 sm:mt-0">Clarity</span>
+                <span className="relative mt-2 inline-block bg-emerald px-3 text-ink sm:ml-4 sm:mt-0">{copy.heading.highlight}</span>
               </span>
             </h1>
           </div>
 
           <p className="hero-item mt-5 max-w-[21rem] px-3 text-center text-sm leading-relaxed text-muted-dark sm:mt-10 sm:max-w-md sm:px-0 sm:text-base" style={{ animationDelay: "0.5s" }}>
-            We design interfaces, build websites, and automate workflows with a working style that is modular, transparent, and deliberately free of hype.
-          </p>
-          <p className="hero-item meta-label mt-4 max-w-md px-3 text-center text-emerald" style={{ animationDelay: "0.53s" }}>
-            {seo.bilingualServiceLine}
+            {copy.sub}
           </p>
         </div>
 
         <div className="hero-item flex w-full min-w-0 flex-col items-stretch justify-center gap-3 pb-5 sm:flex-row sm:items-center sm:pb-8" style={{ animationDelay: "0.56s" }}>
-          <Button href="/contact" variant="emerald" size="lg" className="w-full max-w-full sm:w-auto" arrow>
-            Start a Project
+          <Button href={copy.primaryCta.href} variant="emerald" size="lg" className="w-full max-w-full sm:w-auto" arrow>
+            {copy.primaryCta.label}
           </Button>
-          <Button href="/portfolio" variant="outlineLight" size="lg" className="w-full max-w-full sm:w-auto" arrow>
-            View Portfolio
+          <Button href={copy.secondaryCta.href} variant="outlineLight" size="lg" className="w-full max-w-full sm:w-auto" arrow>
+            {copy.secondaryCta.label}
           </Button>
         </div>
       </Container>
-
-      <div className="hero-item border-t border-line-dark bg-surface py-3 overflow-hidden" style={{ animationDelay: "0.62s" }}>
-        <div className="marquee-track flex items-center gap-6 whitespace-nowrap">
-          {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, i) => (
-            <span key={i} className="flex items-center gap-6">
-              <span className="display text-sm tracking-wider text-muted-dark">{item}</span>
-              <span className="text-emerald" aria-hidden>✦</span>
-            </span>
-          ))}
-        </div>
-      </div>
     </section>
   );
 }

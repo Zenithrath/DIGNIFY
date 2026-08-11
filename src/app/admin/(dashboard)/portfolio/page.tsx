@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Plus, Edit2, Trash2, Search, ExternalLink } from "lucide-react";
+import { Plus, Edit2, Trash2, Search, ExternalLink, Star } from "lucide-react";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import type { Project } from "@/content/types";
@@ -47,6 +47,28 @@ export default function AdminPortfolioPage() {
       alert("Failed to delete project");
     } finally {
       setDeletingSlug(null);
+    }
+  }
+
+  async function handleToggleFeatured(project: Project) {
+    try {
+      const res = await fetch("/api/admin/portfolio", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ slug: project.slug, featured: !project.featured }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setProjects((prev) =>
+          prev.map((p) =>
+            p.slug === project.slug ? (data.project ?? { ...p, featured: !p.featured }) : p
+          )
+        );
+      } else {
+        alert("Failed to update featured status");
+      }
+    } catch {
+      alert("Failed to update featured status");
     }
   }
 
@@ -136,6 +158,11 @@ export default function AdminPortfolioPage() {
                   <td className="px-5 py-4">
                     <div className="flex items-center gap-2">
                       <span className="font-semibold text-paper text-sm">{project.title}</span>
+                      {project.featured ? (
+                        <span className="border border-emerald/60 bg-emerald/10 px-1.5 py-0.5 text-[0.625rem] uppercase tracking-wider text-emerald">
+                          Featured
+                        </span>
+                      ) : null}
                       <a
                         href={`/portfolio/${project.slug}`}
                         target="_blank"
@@ -165,6 +192,19 @@ export default function AdminPortfolioPage() {
                   </td>
                   <td className="px-5 py-4 text-right">
                     <div className="flex items-center justify-end gap-2">
+                      <button
+                        onClick={() => handleToggleFeatured(project)}
+                        title={project.featured ? "Remove from featured" : "Mark as featured"}
+                        aria-pressed={Boolean(project.featured)}
+                        className={cn(
+                          "flex size-8 items-center justify-center border transition-colors",
+                          project.featured
+                            ? "border-emerald bg-emerald/10 text-emerald"
+                            : "border-line-dark text-muted-dark hover:border-emerald hover:text-emerald",
+                        )}
+                      >
+                        <Star className="size-3.5" fill={project.featured ? "currentColor" : "none"} />
+                      </button>
                       <Link
                         href={`/admin/portfolio/${project.slug}`}
                         className="flex size-8 items-center justify-center border border-line-dark text-muted-dark hover:border-emerald hover:text-emerald transition-colors"

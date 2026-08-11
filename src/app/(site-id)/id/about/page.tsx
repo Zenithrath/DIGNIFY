@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/layout/brand";
 import { ProcessGrid } from "@/components/about/process-grid";
 import { Differentiators } from "@/components/about/differentiators";
-import { about, team } from "@/content/team";
-import { studioValues } from "@/content/values";
+import { aboutId, team } from "@/content/team";
+import { studioValuesId } from "@/content/values";
 import { seo } from "@/content/seo";
 import dijeImg from "@/dije.png";
 import ignasImg from "@/ignas.png";
@@ -16,90 +16,89 @@ import danielImg from "@/daniel.png";
 const memberPhotos = [dijeImg, ignasImg, danielImg] as const;
 
 export const metadata: Metadata = {
-  title: seo.about.title,
-  description: seo.about.description,
+  title: seo.aboutId.title,
+  description: seo.aboutId.description,
   alternates: {
-    canonical: "/about",
+    canonical: "/id/about",
     languages: { en: "/about", id: "/id/about", "x-default": "/about" },
   },
   openGraph: {
-    title: `${seo.about.title} | Dignify`,
-    description: seo.about.description,
-    url: "/about",
-    locale: "en_US",
-    alternateLocale: ["id_ID"],
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "About Dignify" }],
+    title: seo.aboutId.title,
+    description: seo.aboutId.description,
+    url: "/id/about",
+    locale: "id_ID",
+    alternateLocale: ["en_US"],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Tentang Dignify" }],
   },
 };
 
-export default function AboutPage() {
+export default function IndonesianAboutPage() {
   return (
-    <>
+    <div lang="id">
       <section
-        aria-labelledby="about-heading"
+        aria-labelledby="id-about-heading"
         className="bg-ink py-24 text-paper sm:py-32"
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 92%, 0 100%)" }}
       >
         <Container>
           <Reveal>
-            <p className="meta-label text-emerald">/ ABOUT THE STUDIO</p>
-            <h1 id="about-heading" className="display mt-6 max-w-5xl text-[clamp(2.75rem,7vw,7rem)]">
+            <p className="meta-label text-emerald">/ TENTANG STUDIO</p>
+            <h1 id="id-about-heading" className="display mt-6 max-w-5xl text-[clamp(2.75rem,7vw,7rem)]">
               Three people. One standard.
             </h1>
           </Reveal>
           <Reveal delay={0.08} className="mt-12 max-w-2xl">
             <p className="text-base leading-relaxed text-muted-dark sm:text-lg">
-              Dignify is a small digital studio built by Dije, Ignas, and Daniel. We design interfaces,
-              build websites, and automate workflows with a working style that is modular,
-              transparent, and deliberately free of hype.
+              Dignify adalah studio digital kecil yang dibangun Dije, Ignas, dan Daniel. Kami mendesain
+              antarmuka, membangun website, dan mengotomasi alur kerja dengan gaya kerja yang
+              modular, transparan, dan sengaja jauh dari gimmick.
             </p>
           </Reveal>
         </Container>
       </section>
 
-      <section aria-labelledby="positioning-heading" className="border-b border-line bg-cream py-20 sm:py-28">
+      <section aria-labelledby="id-positioning-heading" className="border-b border-line bg-cream py-20 sm:py-28">
         <Container>
           <div className="grid grid-cols-12 gap-x-4 gap-y-10">
             <Reveal className="col-span-12 lg:col-span-3">
-              <p className="meta-label text-emerald-deep">/ POSITIONING</p>
+              <p className="meta-label text-emerald-deep">/ POSISI</p>
             </Reveal>
             <Reveal delay={0.06} className="col-span-12 lg:col-span-9">
-              <h2 id="positioning-heading" className="display max-w-5xl text-3xl leading-tight sm:text-5xl">
-                A small studio with a strict standard: structure before style, clarity before
-                cleverness.
+              <h2 id="id-positioning-heading" className="display max-w-5xl text-3xl leading-tight sm:text-5xl">
+                A small studio with a strict standard: structure before style, clarity before cleverness.
               </h2>
             </Reveal>
             <Reveal className="col-span-12 lg:col-span-4 lg:col-start-4">
               <p className="text-base leading-relaxed text-muted">
-                Dignify is a digital studio built by Dije, Ignas, and Daniel. Dije leads front end,
-                automation, and social. Daniel leads back end and database. Ignas leads SEO and
-                planning. Together, we build modular systems and communicate clearly throughout the
-                work.
+                Dignify adalah studio digital yang dibangun oleh Dije, Ignas, dan Daniel. Dije pegang
+                front end, otomasi, dan media sosial. Daniel pegang back end dan database. Ignas
+                pegang SEO dan perencanaan. Bareng-bareng kami membangun sistem yang modular dan
+                komunikasi yang jelas selama proses kerja.
               </p>
             </Reveal>
             <Reveal delay={0.08} className="col-span-12 lg:col-span-4 lg:col-start-8">
               <p className="text-base leading-relaxed text-muted">
-                Every project is treated as a product decision, not a decoration exercise. If a
-                feature does not make the system clearer or the work lighter, it gets cut before it
-                is built.
+                Setiap proyek diperlakukan sebagai keputusan produk, bukan ajang dekorasi. Kalau
+                sebuah fitur tidak membuat sistemnya lebih jelas atau kerjanya lebih ringan, fitur
+                itu dipangkas sebelum dibangun.
               </p>
             </Reveal>
           </div>
         </Container>
       </section>
 
-      <section aria-labelledby="origin-heading" className="bg-paper py-20 sm:py-28">
+      <section aria-labelledby="id-origin-heading" className="bg-paper py-20 sm:py-28">
         <Container>
           <div className="grid grid-cols-12 gap-x-4 gap-y-10">
             <Reveal className="col-span-12 lg:col-span-3">
-              <p className="meta-label text-emerald-deep">/ ORIGIN</p>
+              <p className="meta-label text-emerald-deep">/ ASAL-USUL</p>
             </Reveal>
             <Reveal delay={0.06} className="col-span-12 lg:col-span-8 lg:col-start-5">
-              <h2 id="origin-heading" className="display text-3xl sm:text-4xl">
-                Why the studio exists.
+              <h2 id="id-origin-heading" className="display text-3xl sm:text-4xl">
+                Kenapa studio ini ada.
               </h2>
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-                {about.origin}
+                {aboutId.origin}
               </p>
             </Reveal>
           </div>
@@ -107,7 +106,7 @@ export default function AboutPage() {
       </section>
 
       <section
-        aria-labelledby="mission-heading"
+        aria-labelledby="id-mission-heading"
         className="bg-cream py-20 sm:py-28"
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 94%, 0 100%)" }}
       >
@@ -115,19 +114,23 @@ export default function AboutPage() {
           <Reveal>
             <div className="grid grid-cols-12 gap-x-4">
               <div className="col-span-12 lg:col-span-8">
-                <p className="meta-label text-emerald-deep">/ MISSION</p>
-                <h2 id="mission-heading" className="display mt-6 text-3xl leading-tight sm:text-5xl">
-                  {about.mission}
+                <p className="meta-label text-emerald-deep">/ MISI</p>
+                <h2 id="id-mission-heading" className="display mt-6 text-3xl leading-tight sm:text-5xl">
+                  To build digital systems that respect the people who use them and the people who
+                  maintain them.
                 </h2>
+                <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted">
+                  {aboutId.mission}
+                </p>
               </div>
               <div className="col-span-12 mt-10 lg:col-span-3 lg:col-start-10 lg:mt-0">
                 <div className="border border-line p-6">
-                  <p className="meta-label text-muted">FOUNDED BY</p>
+                  <p className="meta-label text-muted">DIGAGAS OLEH</p>
                   <p className="mt-3 text-2xl">
                     {team.filter((m) => m.founder).map((m) => m.name).join(" + ")}
                   </p>
-                  <p className="meta-label mt-4 text-muted">ESTABLISHED AS A STUDIO</p>
-                  <p className="mt-1 text-sm text-ink-text">Working as an independent studio</p>
+                  <p className="meta-label mt-4 text-muted">BERDIRI SEBAGAI STUDIO</p>
+                  <p className="mt-1 text-sm text-ink-text">Bekerja sebagai studio independen</p>
                 </div>
               </div>
             </div>
@@ -135,20 +138,20 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <ProcessGrid />
+      <ProcessGrid lang="id" />
 
-      <section aria-labelledby="values-heading" className="bg-paper py-20 sm:py-28">
+      <section aria-labelledby="id-values-heading" className="bg-paper py-20 sm:py-28">
         <Container>
           <Reveal>
             <div className="border-b border-line pb-6">
-              <p className="meta-label text-emerald-deep">/ VALUES</p>
-              <h2 id="values-heading" className="display mt-6 text-4xl">
-                The rules we work by.
+              <p className="meta-label text-emerald-deep">/ NILAI</p>
+              <h2 id="id-values-heading" className="display mt-6 text-4xl">
+                Aturan yang kami pegang.
               </h2>
             </div>
           </Reveal>
           <div className="mt-10 grid grid-cols-12 gap-x-4 gap-y-0">
-            {studioValues.map((value, i) => (
+            {studioValuesId.map((value, i) => (
               <Reveal key={value.index} delay={i * 0.06} className="col-span-12 sm:col-span-6 lg:col-span-3">
                 <div className="border border-line p-8 h-full">
                   <div className="flex items-baseline justify-between">
@@ -164,10 +167,10 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <Differentiators />
+      <Differentiators lang="id" />
 
       <section
-        aria-labelledby="name-heading"
+        aria-labelledby="id-name-heading"
         className="bg-ink py-20 text-paper sm:py-28"
         style={{ clipPath: "polygon(0 4%, 100% 0, 100% 100%, 0 100%)" }}
       >
@@ -177,25 +180,25 @@ export default function AboutPage() {
               <BrandLogo tone="paper" className="h-24" />
             </Reveal>
             <Reveal delay={0.08} className="col-span-12 lg:col-span-8">
-              <p className="meta-label text-emerald">/ THE NAME</p>
-              <h2 id="name-heading" className="display mt-6 text-4xl sm:text-5xl">
-                Why &ldquo;Dignify&rdquo;
+              <p className="meta-label text-emerald">/ TENTANG NAMA</p>
+              <h2 id="id-name-heading" className="display mt-6 text-4xl sm:text-5xl">
+                Kenapa &ldquo;Dignify&rdquo;
               </h2>
               <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-dark">
-                {about.nameMeaning}
+                {aboutId.nameMeaning}
               </p>
             </Reveal>
           </div>
         </Container>
       </section>
 
-      <section aria-labelledby="team-heading" className="bg-paper py-20 sm:py-28">
+      <section aria-labelledby="id-team-heading" className="bg-paper py-20 sm:py-28">
         <Container>
           <Reveal>
             <div className="border-b border-line pb-6">
-              <p className="meta-label text-emerald-deep">/ TEAM / 03 PEOPLE</p>
-              <h2 id="team-heading" className="display mt-6 text-4xl">
-                The people who answer the emails.
+              <p className="meta-label text-emerald-deep">/ TIM / 03 ORANG</p>
+              <h2 id="id-team-heading" className="display mt-6 text-4xl">
+                Orang-orang yang membalas email.
               </h2>
             </div>
           </Reveal>
@@ -211,7 +214,7 @@ export default function AboutPage() {
                     <div className="absolute bottom-5 left-5 h-10 w-px bg-line-dark/40 z-10" />
                     <Image
                       src={memberPhotos[i]}
-                      alt={`Portrait of ${member.name}`}
+                      alt={`Potret ${member.name}`}
                       fill
                       sizes="(min-width: 768px) 30vw, 60vw"
                       className="object-cover object-top scale-[1.02]"
@@ -262,35 +265,35 @@ export default function AboutPage() {
           </div>
           <Reveal className="mt-14">
             <p className="max-w-2xl text-sm leading-relaxed text-muted">
-              These are the roles we actually handle. If you want to know more about a specific
-              area of experience, ask us directly.
+              Ini peran yang benar-benar kami pegang. Kalau mau tahu lebih dalam soal salah satu
+              bidangnya, tanya langsung saja.
             </p>
           </Reveal>
         </Container>
       </section>
 
-      <section aria-labelledby="about-cta" className="bg-paper pb-24 sm:pb-32">
+      <section aria-labelledby="id-about-cta" className="bg-paper pb-24 sm:pb-32">
         <Container>
           <Reveal>
             <div className="flex flex-col items-start justify-between gap-8 border border-line bg-ink p-8 text-paper sm:flex-row sm:items-center sm:p-12">
               <div>
                 <p className="meta-label text-emerald">THREE PEOPLE, ONE STANDARD</p>
-                <h2 id="about-cta" className="display mt-4 text-4xl sm:text-5xl">
-                  Talk to us directly.
+                <h2 id="id-about-cta" className="display mt-4 text-4xl sm:text-5xl">
+                  Ngobrol langsung dengan kami.
                 </h2>
               </div>
               <div className="flex flex-wrap gap-3">
-                <Button href="/portfolio" variant="outlineLight" size="lg" arrow>
-                  View Portfolio
+                <Button href="/id/portfolio" variant="outlineLight" size="lg" arrow>
+                  Lihat Portfolio
                 </Button>
-                <Button href="/contact" variant="emerald" size="lg" arrow>
-                  Start a Project
+                <Button href="/id/contact" variant="emerald" size="lg" arrow>
+                  Mulai Proyek
                 </Button>
               </div>
             </div>
           </Reveal>
         </Container>
       </section>
-    </>
+    </div>
   );
 }

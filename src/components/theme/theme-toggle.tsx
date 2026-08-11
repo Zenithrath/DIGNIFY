@@ -11,7 +11,7 @@ const options: Array<{ key: ThemePreference; label: string; icon: typeof Sun }> 
   { key: "system", label: "System mode", icon: Monitor },
 ];
 
-export function ThemeToggle({ className }: { className?: string }) {
+export function ThemeToggle({ tone = "light", className }: { tone?: "light" | "dark"; className?: string }) {
   const [pref, setPref] = useState<ThemePreference>("light");
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export function ThemeToggle({ className }: { className?: string }) {
     <div
       role="group"
       aria-label="Color mode"
-      className={cn("flex items-center border border-line", className)}
+      className={cn("flex items-center border", tone === "dark" ? "border-line-dark" : "border-line", className)}
     >
       {options.map(({ key, label, icon: Icon }) => (
         <button
@@ -51,7 +51,11 @@ export function ThemeToggle({ className }: { className?: string }) {
           onClick={() => select(key)}
           className={cn(
             "inline-flex size-9 items-center justify-center transition-colors duration-300",
-            pref === key ? "bg-emerald text-ink" : "text-muted hover:bg-pure hover:text-ink-text",
+            pref === key
+              ? "bg-emerald text-ink"
+              : tone === "dark"
+                ? "text-muted-dark hover:bg-surface hover:text-paper"
+                : "text-muted hover:bg-pure hover:text-ink-text",
           )}
         >
           <Icon aria-hidden className="size-4" />

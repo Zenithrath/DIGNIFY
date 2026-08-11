@@ -32,7 +32,7 @@ async function getProjectFromDb(slug: string) {
 
 export async function generateMetadata({
   params,
-}: PageProps<"/portfolio/[slug]">): Promise<Metadata> {
+}: PageProps<"/id/portfolio/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const project = await getProjectFromDb(slug);
   if (!project) return {};
@@ -40,7 +40,7 @@ export async function generateMetadata({
     title: project.title,
     description: project.summary,
     alternates: {
-      canonical: `/portfolio/${project.slug}`,
+      canonical: `/id/portfolio/${project.slug}`,
       languages: {
         en: `/portfolio/${project.slug}`,
         id: `/id/portfolio/${project.slug}`,
@@ -50,23 +50,25 @@ export async function generateMetadata({
     openGraph: {
       title: `${project.title} | Dignify`,
       description: project.summary,
-      url: `/portfolio/${project.slug}`,
+      url: `/id/portfolio/${project.slug}`,
       type: "article",
-      locale: "en_US",
-      alternateLocale: ["id_ID"],
+      locale: "id_ID",
+      alternateLocale: ["en_US"],
       images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: `${project.title} case study` }],
     },
   };
 }
 
-export default async function PortfolioDetailPage({ params }: PageProps<"/portfolio/[slug]">) {
+export default async function IndonesianPortfolioDetailPage({
+  params,
+}: PageProps<"/id/portfolio/[slug]">) {
   const { slug } = await params;
   const project = await getProjectFromDb(slug);
   if (!project) notFound();
   const allProjects = await fetchProjectsFromDb().catch(() => staticProjects);
 
   const nextProject = allProjects.find((p) => p.slug === project.nextSlug) ?? null;
-  const projectUrl = `${site.url}/portfolio/${project.slug}`;
+  const projectUrl = `${site.url}/id/portfolio/${project.slug}`;
   const projectJsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -74,7 +76,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Dignify", item: site.url },
-          { "@type": "ListItem", position: 2, name: "Portfolio", item: `${site.url}/portfolio` },
+          { "@type": "ListItem", position: 2, name: "Portfolio", item: `${site.url}/id/portfolio` },
           { "@type": "ListItem", position: 3, name: project.title, item: projectUrl },
         ],
       },
@@ -89,12 +91,13 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
         keywords: project.tech,
         creator: { "@id": `${site.url}/#organization` },
         isPartOf: { "@id": `${site.url}/#website` },
+        inLanguage: "id",
       },
     ],
   };
 
   return (
-    <>
+    <div lang="id">
       <JsonLd data={projectJsonLd} />
       <section aria-labelledby="case-heading" className="bg-ink py-20 text-paper sm:py-28">
         <Container>
@@ -102,7 +105,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
             <nav aria-label="Breadcrumb" className="border-b border-line-dark pb-4">
               <ol className="flex items-center gap-3 meta-label text-muted-dark">
                 <li>
-                  <Link href="/portfolio" className="transition-colors hover:text-paper">
+                  <Link href="/id/portfolio" className="transition-colors hover:text-paper">
                     PORTFOLIO
                   </Link>
                 </li>
@@ -126,17 +129,17 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
                 </div>
                 <dl className="space-y-2 border-t border-line-dark pt-4 text-sm">
                   <div className="flex justify-between">
-                    <dt className="meta-label text-muted-dark">CATEGORY</dt>
+                    <dt className="meta-label text-muted-dark">KATEGORI</dt>
                     <dd className="text-paper">{project.category}</dd>
                   </div>
                   <div className="flex justify-between">
-                    <dt className="meta-label text-muted-dark">YEAR</dt>
+                    <dt className="meta-label text-muted-dark">TAHUN</dt>
                     <dd className="text-paper">{project.year}</dd>
                   </div>
                 </dl>
                 {project.links ? (
                   <div className="border-t border-line-dark pt-4">
-                    <p className="meta-label text-muted-dark">LINKS</p>
+                    <p className="meta-label text-muted-dark">TAUTAN</p>
                     <ul className="mt-3 space-y-2 text-sm">
                       {project.links.map((link) => (
                         <li key={link.label}>
@@ -167,7 +170,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
         <Container>
           <div className="grid grid-cols-12 gap-x-4 gap-y-10">
             <Reveal className="col-span-12 lg:col-span-3">
-              <p className="meta-label text-emerald-deep">/ 01 / OVERVIEW</p>
+              <p className="meta-label text-emerald-deep">/ 01 / RINGKASAN</p>
             </Reveal>
             <Reveal delay={0.06} className="col-span-12 lg:col-span-9">
               <h2 id="overview-heading" className="display max-w-4xl text-3xl sm:text-5xl">
@@ -183,9 +186,9 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
           <div className="grid grid-cols-12 gap-x-4 gap-y-8">
             <Reveal className="col-span-12 lg:col-span-4">
               <div className="border border-line-dark p-8">
-                <p className="meta-label text-emerald">/ 02 / CHALLENGE</p>
+                <p className="meta-label text-emerald">/ 02 / TANTANGAN</p>
                 <h2 id="challenge-heading" className="display mt-6 text-3xl">
-                  The problem.
+                  Masalahnya.
                 </h2>
               </div>
             </Reveal>
@@ -202,11 +205,11 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
         <Container>
           <div className="grid grid-cols-12 gap-x-4 gap-y-8">
             <Reveal className="col-span-12 lg:col-span-3">
-              <p className="meta-label text-emerald-deep">/ 03 / APPROACH</p>
+              <p className="meta-label text-emerald-deep">/ 03 / PENDEKATAN</p>
             </Reveal>
             <Reveal delay={0.06} className="col-span-12 lg:col-span-9">
               <h2 id="approach-heading" className="display text-2xl sm:text-3xl">
-                How we framed it.
+                Cara kami membingkainya.
               </h2>
               <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted sm:text-lg">
                 {project.approach}
@@ -220,11 +223,11 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
         <Container>
           <div className="grid grid-cols-12 gap-x-4 gap-y-8">
             <Reveal className="col-span-12 lg:col-span-3">
-              <p className="meta-label text-emerald-deep">/ 04 / SOLUTION</p>
+              <p className="meta-label text-emerald-deep">/ 04 / SOLUSI</p>
             </Reveal>
             <Reveal delay={0.06} className="col-span-12 lg:col-span-9">
               <h2 id="solution-heading" className="display text-2xl sm:text-3xl">
-                What we delivered.
+                Yang kami kerjakan.
               </h2>
               <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted sm:text-lg">
                 {project.solution}
@@ -238,9 +241,9 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
         <Container>
           <Reveal>
             <div className="border-b border-line pb-6">
-              <p className="meta-label text-emerald-deep">/ 05 / PROCESS</p>
+              <p className="meta-label text-emerald-deep">/ 05 / PROSES</p>
               <h2 id="process-heading" className="display mt-6 text-4xl">
-                How it came together.
+                Proses pengerjaannya.
               </h2>
             </div>
           </Reveal>
@@ -270,7 +273,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
         <Container>
           <Reveal>
             <div className="border-b border-line pb-6">
-              <p className="meta-label text-emerald-deep">/ 06 / GALLERY</p>
+              <p className="meta-label text-emerald-deep">/ 06 / GALERI</p>
               <h2 id="gallery-heading" className="display mt-6 text-4xl">
                 System plates.
               </h2>
@@ -308,10 +311,10 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
         <Container>
           <div className="grid grid-cols-12 gap-x-4 gap-y-8">
             <Reveal className="col-span-12 lg:col-span-3">
-              <p className="meta-label text-emerald-deep">/ 07 / TECHNOLOGY</p>
+              <p className="meta-label text-emerald-deep">/ 07 / TEKNOLOGI</p>
             </Reveal>
             <Reveal delay={0.06} className="col-span-12 lg:col-span-9">
-              <h2 id="tech-heading" className="meta-label text-muted">THE STACK</h2>
+              <h2 id="tech-heading" className="meta-label text-muted">STACK YANG DIPAKAI</h2>
               <div className="mt-6 flex flex-wrap gap-2">
                 {project.tech.map((item) => (
                   <span key={item} className="meta-label border border-line px-3 py-2 text-ink-text">
@@ -329,23 +332,23 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
           <Reveal>
             <div className="grid grid-cols-12 border border-line bg-ink text-paper">
               <div className="col-span-12 p-8 sm:p-12 lg:col-span-8">
-                <p className="meta-label text-emerald">/ 08 / REFLECTION</p>
+                <p className="meta-label text-emerald">/ 08 / REFLEKSI</p>
                 <h2 id="reflection-heading" className="sr-only">
-                  Reflection
+                  Refleksi
                 </h2>
                 <blockquote className="mt-8 text-xl leading-snug sm:text-2xl">
                   {project.reflection}
                 </blockquote>
               </div>
               <div className="col-span-12 border-t border-line-dark p-8 sm:p-12 lg:col-span-4 lg:border-l lg:border-t-0">
-                <p className="meta-label text-muted-dark">PROJECT STATUS</p>
+                <p className="meta-label text-muted-dark">STATUS PROYEK</p>
                 <StatusBadge status={project.status} tone="dark" className="mt-4" />
                 <p className="mt-8 text-sm leading-relaxed text-muted-dark">
                   {project.status === "Concept Project"
-                    ? "A design exploration produced by the studio. It was not shipped and is not presented as a client result."
+                    ? "Eksplorasi desain yang dibuat studio. Tidak pernah diluncurkan, dan tidak ditampilkan sebagai hasil klien."
                     : project.status === "Client Project"
-                      ? "Work delivered for a real client or organization, produced by the Dignify studio."
-                      : "Work produced for and by the Dignify studio itself."}
+                      ? "Pekerjaan yang dikerjakan untuk klien atau organisasi sungguhan, diproduksi oleh studio Dignify."
+                      : "Pekerjaan yang dibuat untuk dan oleh studio Dignify sendiri."}
                 </p>
               </div>
             </div>
@@ -359,13 +362,13 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
             <Reveal>
               <div className="border-t border-line pt-6">
                 <p id="next-heading" className="meta-label text-muted">
-                  / 09 / NEXT PROJECT
+                  / 09 / PROYEK BERIKUTNYA
                 </p>
               </div>
             </Reveal>
             <Reveal delay={0.06}>
               <Link
-                href={`/portfolio/${nextProject.slug}`}
+                href={`/id/portfolio/${nextProject.slug}`}
                 className="group mt-6 grid grid-cols-12 items-end gap-x-4 gap-y-6 border-b border-line pb-12"
               >
                 <div className="col-span-12 aspect-[16/6] overflow-hidden border border-line sm:aspect-[16/7] lg:col-span-9">
@@ -395,7 +398,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
                   </div>
                   <h3 className="display mt-4 text-3xl sm:text-4xl">{nextProject.title}</h3>
                   <p className="mt-5 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-ink-text transition-colors group-hover:text-emerald-deep">
-                    Open case study
+                    Buka studi kasus
                     <ArrowUpRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </p>
                 </div>
@@ -404,6 +407,6 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
           </Container>
         </section>
       ) : null}
-    </>
+    </div>
   );
 }

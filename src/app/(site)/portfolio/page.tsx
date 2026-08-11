@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: seo.portfolio.description,
   alternates: {
     canonical: "/portfolio",
-    languages: { en: "/portfolio", id: "/id", "x-default": "/portfolio" },
+    languages: { en: "/portfolio", id: "/id/portfolio", "x-default": "/portfolio" },
   },
   openGraph: {
     title: `${seo.portfolio.title} | Dignify`,

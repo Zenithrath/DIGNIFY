@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   },
   description: seo.home.description,
   applicationName: site.name,
-  authors: [{ name: "Dije and Ignas", url: site.url }],
-  creator: "Dije and Ignas",
+  authors: [{ name: "Dije, Ignas and Daniel", url: site.url }],
+  creator: "Dije, Ignas and Daniel",
   publisher: site.name,
   category: "technology",
   verification: {

@@ -10,10 +10,20 @@ import { projects as staticProjects } from "@/content/projects";
 import { fetchProjectsFromDb } from "@/lib/cms-store";
 import { formatYearIndex } from "@/lib/utils";
 import { cn } from "@/lib/utils";
+import { enHomeCopy } from "@/content/home-copy";
+import type { FeaturedWorkCopy } from "@/content/home-copy";
 
-export async function FeaturedWork() {
+export async function FeaturedWork({
+  copy = enHomeCopy.featuredWork,
+  lang = "en",
+}: {
+  copy?: FeaturedWorkCopy;
+  lang?: "en" | "id";
+}) {
   const allProjects = await fetchProjectsFromDb().catch(() => staticProjects);
-  const featured = allProjects.slice(0, 3);
+  const featuredProjects = allProjects.filter((p) => p.featured);
+  const featured = (featuredProjects.length > 0 ? featuredProjects : allProjects).slice(0, 3);
+  const base = lang === "id" ? "/id/portfolio" : "/portfolio";
 
   return (
     <section
@@ -22,9 +32,9 @@ export async function FeaturedWork() {
       style={{ clipPath: "polygon(0 4%, 100% 0, 100% 100%, 0 100%)" }}
     >
       <Container>
-        <SectionHeader index="03" label="FEATURED WORK" title="Selected systems, honestly labeled." tone="dark" id="featured-heading" />
+        <SectionHeader index="03" label={copy.label} title={copy.title} tone="dark" id="featured-heading" />
         <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-dark">
-          A look at Dignify projects: client work, internal work, and concepts — each labeled with the truth.
+          {copy.intro}
         </p>
       </Container>
 
@@ -35,7 +45,7 @@ export async function FeaturedWork() {
             <Reveal key={project.slug}>
               <Container>
                 <Link
-                  href={`/portfolio/${project.slug}`}
+                  href={`${base}/${project.slug}`}
                   className="group grid grid-cols-12 items-center gap-x-4 gap-y-6"
                 >
                   <div
@@ -77,7 +87,7 @@ export async function FeaturedWork() {
                     <h3 className="display mt-4 text-3xl sm:text-4xl lg:text-5xl">{project.title}</h3>
                     <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-dark">{project.summary}</p>
                     <p className="mt-5 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-paper transition-colors group-hover:text-emerald">
-                      Read case study
+                      {copy.readCaseStudy}
                       <ArrowUpRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </p>
                   </div>
@@ -91,10 +101,10 @@ export async function FeaturedWork() {
       <Container className="mt-16">
         <div className="border-t border-line-dark pt-8 text-center">
           <Link
-            href="/portfolio"
+            href={base}
             className="link-underline font-mono text-xs uppercase tracking-[0.14em] text-paper"
           >
-            View the full index. All work is labeled honestly
+            {copy.footerLink}
           </Link>
         </div>
       </Container>

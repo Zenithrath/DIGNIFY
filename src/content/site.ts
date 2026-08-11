@@ -10,7 +10,7 @@ export const site = {
     "Dignify menyediakan jasa pembuatan website, landing page, company profile, portfolio, dan web development custom untuk bisnis dan personal brand.",
   url: siteUrl,
   email: "studiodignify@gmail.com",
-  foundedBy: "Dije and Ignas",
+  foundedBy: "Dije, Ignas and Daniel",
   location: "Available worldwide · Remote",
   locationId: "Melayani kebutuhan website untuk client di Indonesia",
 } as const;
@@ -26,9 +26,9 @@ export const navLinks = [
 
 export const navLinksId = [
   { href: "/id", label: "Beranda" },
-  { href: "/id/jasa-pembuatan-website", label: "Jasa Website" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/about", label: "Tentang" },
-  { href: "/testimonials", label: "Testimoni" },
-  { href: "/contact", label: "Kontak" },
+  { href: "/id/services", label: "Layanan" },
+  { href: "/id/portfolio", label: "Portfolio" },
+  { href: "/id/about", label: "Tentang" },
+  { href: "/id/testimonials", label: "Testimoni" },
+  { href: "/id/contact", label: "Kontak" },
 ] as const;

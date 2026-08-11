@@ -59,3 +59,63 @@ export const studioValues: ValueItem[] = [
       "A design or feature earns its place by being useful. Everything else is trimmed.",
   },
 ];
+
+export const differentiatorsId: ValueItem[] = [
+  {
+    index: "01",
+    title: "Komunikasi yang Transparan",
+    detail:
+      "Update dengan bahasa sederhana, estimasi yang jujur, tanpa drama. Kamu selalu tahu posisi proyekmu.",
+  },
+  {
+    index: "02",
+    title: "Sistem yang Dipikirkan",
+    detail:
+      "Kami membangun sistem, bukan halaman yang berdiri sendiri. Token yang dipakai bareng, konten yang ter-typing, dan komponen yang reusable bikin perubahan berikutnya lebih mudah.",
+  },
+  {
+    index: "03",
+    title: "Desain & Development dalam Satu Alur",
+    detail:
+      "Orang yang mendesain antarmuka tetap terlibat saat build, jadi keputusan penting tidak hilang di antara file dan tools.",
+  },
+  {
+    index: "04",
+    title: "Otomasi yang Praktis",
+    detail:
+      "Kami otomasi pekerjaan yang buang waktu, dan biarkan bagian yang butuh pertimbangan tetap dikerjakan manusia. Setiap otomasi harus menyelesaikan masalah nyata.",
+  },
+  {
+    index: "05",
+    title: "Konsultasi Gratis",
+    detail:
+      "Percakapan pertama tidak dipungut biaya. Kami akan bilang jujur kalau kami bukan yang paling cocok untuk masalahmu.",
+  },
+];
+
+export const studioValuesId: ValueItem[] = [
+  {
+    index: "01",
+    title: "Kejelasan",
+    detail:
+      "Struktur jelas, bahasa jelas, batasan jelas. Ambigu itu cacat yang kami desain untuk hindari.",
+  },
+  {
+    index: "02",
+    title: "Kerapian",
+    detail:
+      "Detail itu penting: jarak antar elemen, skala huruf, edge case, dan bagian sistem yang tidak terlihat.",
+  },
+  {
+    index: "03",
+    title: "Kejujuran",
+    detail:
+      "Kami bilang apa yang bisa dan tidak bisa kami lakukan. Kami tidak mengarang kredensial atau menghias kenyataan.",
+  },
+  {
+    index: "04",
+    title: "Kegunaan",
+    detail:
+      "Desain atau fitur berhak ada kalau memang berguna. Selain itu, dipangkas.",
+  },
+];

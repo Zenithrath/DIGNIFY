@@ -32,3 +32,36 @@ export const processSteps: ProcessStep[] = [
       "We launch with documentation and a clear next step. We remain available after release when the system needs an update.",
   },
 ];
+
+export const processStepsId: ProcessStep[] = [
+  {
+    index: "01",
+    name: "Discover",
+    detail:
+      "Kami petakan masalahnya dulu: tujuan, pengguna, batasan, dan seperti apa sukses itu sebenarnya. Tanya dulu, jawab kemudian.",
+  },
+  {
+    index: "02",
+    name: "Define",
+    detail:
+      "Hasil discovery kami ubah jadi scope yang jelas: prioritas, deliverable, dan kesepakatan soal kapan sebuah pekerjaan dianggap selesai.",
+  },
+  {
+    index: "03",
+    name: "Design",
+    detail:
+      "Kami desain struktur halaman, antarmuka, dan komponen yang bisa dipakai ulang, yang nanti dipakai saat build.",
+  },
+  {
+    index: "04",
+    name: "Develop",
+    detail:
+      "Kami bangun dengan kode yang rapi dan ter-typing, layout responsif, interaksi yang aksesibel, dan cek performa sejak commit pertama.",
+  },
+  {
+    index: "05",
+    name: "Deliver",
+    detail:
+      "Kami launch dengan dokumentasi dan langkah selanjutnya yang jelas. Setelah rilis pun kami tetap ada kalau sistem perlu pembaruan.",
+  },
+];

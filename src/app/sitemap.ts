@@ -2,105 +2,66 @@ import type { MetadataRoute } from "next";
 import { site } from "@/content/site";
 import { projects } from "@/content/projects";
 
+function pair(enPath: string, idPath: string, priority: number, changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"]) {
+  return [
+    {
+      url: `${site.url}${enPath}`,
+      lastModified: new Date(),
+      changeFrequency,
+      priority,
+      alternates: {
+        languages: { en: `${site.url}${enPath}`, id: `${site.url}${idPath}`, "x-default": `${site.url}${enPath}` },
+      },
+    },
+    {
+      url: `${site.url}${idPath}`,
+      lastModified: new Date(),
+      changeFrequency,
+      priority: priority - 0.05,
+      alternates: {
+        languages: { en: `${site.url}${enPath}`, id: `${site.url}${idPath}`, "x-default": `${site.url}${enPath}` },
+      },
+    },
+  ] satisfies MetadataRoute.Sitemap;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes: MetadataRoute.Sitemap = [
+  const home = pair("/", "/id", 1, "monthly");
+  const webDevelopment = pair("/web-development", "/id/jasa-pembuatan-website", 0.9, "monthly");
+  const services = pair("/services", "/id/services", 0.9, "monthly");
+  const portfolio = pair("/portfolio", "/id/portfolio", 0.9, "monthly");
+  const about = pair("/about", "/id/about", 0.7, "monthly");
+  const testimonials = pair("/testimonials", "/id/testimonials", 0.5, "monthly");
+  const contact = pair("/contact", "/id/contact", 0.8, "monthly");
+
+  const projectRoutes: MetadataRoute.Sitemap = projects.flatMap((project) => [
     {
-      url: site.url,
+      url: `${site.url}/portfolio/${project.slug}`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-      alternates: {
-        languages: { en: site.url, id: `${site.url}/id`, "x-default": site.url },
-      },
-    },
-    {
-      url: `${site.url}/id`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.95,
-      alternates: {
-        languages: { en: site.url, id: `${site.url}/id`, "x-default": site.url },
-      },
-    },
-    {
-      url: `${site.url}/web-development`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
+      changeFrequency: "yearly",
+      priority: 0.6,
       alternates: {
         languages: {
-          en: `${site.url}/web-development`,
-          id: `${site.url}/id/jasa-pembuatan-website`,
-          "x-default": `${site.url}/web-development`,
+          en: `${site.url}/portfolio/${project.slug}`,
+          id: `${site.url}/id/portfolio/${project.slug}`,
+          "x-default": `${site.url}/portfolio/${project.slug}`,
         },
       },
     },
     {
-      url: `${site.url}/id/jasa-pembuatan-website`,
+      url: `${site.url}/id/portfolio/${project.slug}`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-      alternates: {
-        languages: {
-          en: `${site.url}/web-development`,
-          id: `${site.url}/id/jasa-pembuatan-website`,
-          "x-default": `${site.url}/web-development`,
-        },
-      },
-    },
-    {
-      url: `${site.url}/services`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-      alternates: {
-        languages: { en: `${site.url}/services`, id: `${site.url}/id`, "x-default": `${site.url}/services` },
-      },
-    },
-    {
-      url: `${site.url}/portfolio`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-      alternates: {
-        languages: { en: `${site.url}/portfolio`, id: `${site.url}/id`, "x-default": `${site.url}/portfolio` },
-      },
-    },
-    {
-      url: `${site.url}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-      alternates: {
-        languages: { en: `${site.url}/about`, id: `${site.url}/id`, "x-default": `${site.url}/about` },
-      },
-    },
-    {
-      url: `${site.url}/testimonials`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "yearly",
       priority: 0.5,
       alternates: {
-        languages: { en: `${site.url}/testimonials`, id: `${site.url}/id`, "x-default": `${site.url}/testimonials` },
+        languages: {
+          en: `${site.url}/portfolio/${project.slug}`,
+          id: `${site.url}/id/portfolio/${project.slug}`,
+          "x-default": `${site.url}/portfolio/${project.slug}`,
+        },
       },
     },
-    {
-      url: `${site.url}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-      alternates: {
-        languages: { en: `${site.url}/contact`, id: `${site.url}/id`, "x-default": `${site.url}/contact` },
-      },
-    },
-  ];
+  ]);
 
-  const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
-    url: `${site.url}/portfolio/${project.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "yearly",
-    priority: 0.6,
-  }));
-
-  return [...staticRoutes, ...projectRoutes];
+  return [...home, ...webDevelopment, ...services, ...portfolio, ...about, ...testimonials, ...contact, ...projectRoutes];
 }

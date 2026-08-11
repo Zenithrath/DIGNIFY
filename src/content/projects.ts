@@ -28,7 +28,7 @@ export const projects: Project[] = [
     overview:
       "A concept redesign of the web presence for Tlaga Pratama Persada, a Balikpapan-based general supplier serving mining, construction, shipyards, and manufacturing. The concept covers the company profile, product lines, brand partnerships, services, and contact on one page.",
     challenge:
-      "An industrial supplier has to earn trust fast. The concept needed to organize a broad product range — abrasives, packing solutions, and other consumables — into one page without turning it into an unstructured catalog.",
+      "An industrial supplier has to earn trust fast. The concept needed to organize a broad product range (abrasives, packing solutions, and other consumables) into one page without turning it into an unstructured catalog.",
     approach:
       "We built the page around a single structure: a strong hero, a compact about section, product highlights grouped by product line codes, brand partners, services, and a contact path. Every product has a direct WhatsApp inquiry link.",
     solution:
@@ -138,7 +138,7 @@ export const projects: Project[] = [
     overview:
       "This is our first internal project and the clearest example of how we work. The site brings together modular grids, editorial hierarchy, restrained accents, typed content, and accessible markup in one working product.",
     challenge:
-      "A studio run by two people needs one site that explains the services, earns trust, and shows the quality of the work. We chose a deliberate system instead of a generic agency template.",
+      "A studio run by three people needs one site that explains the services, earns trust, and shows the quality of the work. We chose a deliberate system instead of a generic agency template.",
     approach:
       "We set the visual rules first: two monochrome surfaces, two accents, three typefaces, and one grid. The content lives in typed data files, which lets us update the site without rewriting the layout.",
     solution:

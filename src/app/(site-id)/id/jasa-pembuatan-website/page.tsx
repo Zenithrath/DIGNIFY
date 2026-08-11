@@ -75,10 +75,10 @@ export default async function JasaPembuatanWebsitePage() {
             <Reveal delay={0.16} className="col-span-12 mt-10 md:col-span-5 md:col-start-8 md:mt-0">
               <p className="meta-label border-t border-line-dark pt-3 text-emerald">{jasaPembuatanWebsite.hero.meta}</p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Button href="/contact" variant="emerald" size="lg" arrow>
-                  Diskusikan Proyek
+                <Button href="/id/contact" variant="emerald" size="lg" arrow>
+                  Mulai Proyek
                 </Button>
-                <Button href="/portfolio" variant="outlineLight" size="lg">
+                <Button href="/id/portfolio" variant="outlineLight" size="lg">
                   Lihat Portfolio
                 </Button>
               </div>
@@ -93,7 +93,7 @@ export default async function JasaPembuatanWebsitePage() {
             <div className="border-b border-line pb-6">
               <p className="meta-label text-emerald-deep">/ APA YANG KAMI BUAT</p>
               <h2 id="jpw-services-heading" className="display mt-6 max-w-4xl text-4xl sm:text-5xl">
-                Layanan pembuatan website sesuai kebutuhan project.
+                Layanan pembuatan website, dipilih sesuai masalah yang sebenarnya.
               </h2>
             </div>
           </Reveal>
@@ -137,40 +137,13 @@ export default async function JasaPembuatanWebsitePage() {
         </Container>
       </section>
 
-      <section aria-labelledby="jpw-coding-heading" className="border-t border-line bg-cream py-20 sm:py-28">
-        <Container>
-          <Reveal>
-            <div className="grid grid-cols-12 gap-x-4 gap-y-8">
-              <div className="col-span-12 lg:col-span-5">
-                <p className="meta-label text-emerald-deep">/ JASA CODING WEBSITE</p>
-                <h2 id="jpw-coding-heading" className="display mt-6 text-4xl sm:text-5xl">
-                  Jasa Coding Website untuk Berbagai Kebutuhan
-                </h2>
-              </div>
-              <div className="col-span-12 lg:col-span-6 lg:col-start-7">
-                <p className="text-base leading-relaxed text-muted">
-                  Dignify membantu pembuatan website custom mulai dari landing page, portfolio,
-                  company profile hingga front-end development. Layanan seperti ini terkadang juga
-                  dicari sebagai jasa joki web atau joki website, tetapi setiap project di Dignify
-                  dikerjakan dengan scope, kebutuhan, dan hasil yang jelas.
-                </p>
-                <p className="mt-6 text-base leading-relaxed text-muted">
-                  Website yang dihasilkan responsif di desktop, tablet, dan mobile — dan dapat
-                  dihubungkan ke domain serta hosting sesuai kebutuhan project.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-        </Container>
-      </section>
-
       <section aria-labelledby="jpw-process-heading" className="border-t border-line bg-paper py-20 sm:py-28">
         <Container>
           <Reveal>
             <div className="border-b border-line pb-6">
               <p className="meta-label text-emerald-deep">/ DARI DESAIN HINGGA DEPLOY</p>
               <h2 id="jpw-process-heading" className="display mt-6 text-4xl sm:text-5xl">
-                Proses yang membuat hasilnya jelas.
+                Proses yang bikin hasilnya tetap jelas.
               </h2>
             </div>
           </Reveal>
@@ -195,16 +168,16 @@ export default async function JasaPembuatanWebsitePage() {
         <Container>
           <Reveal>
             <div className="border-b border-line-dark pb-6">
-              <p className="meta-label text-emerald">/ PORTFOLIO PILIHAN</p>
+              <p className="meta-label text-emerald">/ KARYA PILIHAN</p>
               <h2 id="jpw-work-heading" className="display mt-6 text-4xl sm:text-5xl">
-                Website yang dibuat untuk company profile, portfolio, dan lainnya.
+                Website yang kami buat untuk company profile, portfolio, dan lainnya.
               </h2>
             </div>
           </Reveal>
           <ul className="mt-10 divide-y divide-line-dark border-b border-line-dark">
             {featured.map((project, i) => (
               <li key={project.slug}>
-                <Link href={`/portfolio/${project.slug}`} className="group grid grid-cols-12 items-center gap-x-4 gap-y-3 py-7 transition-colors hover:bg-surface/40 sm:py-8">
+                <Link href={`/id/portfolio/${project.slug}`} className="group grid grid-cols-12 items-center gap-x-4 gap-y-3 py-7 transition-colors hover:bg-surface/40 sm:py-8">
                   <span className="col-span-2 meta-label text-muted-dark">/{String(i + 1).padStart(2, "0")}</span>
                   <span className="col-span-9 sm:col-span-5">
                     <span className="display text-2xl text-paper transition-colors group-hover:text-emerald sm:text-3xl">{project.title}</span>
@@ -219,7 +192,7 @@ export default async function JasaPembuatanWebsitePage() {
             ))}
           </ul>
           <div className="mt-10">
-            <Button href="/portfolio" variant="outlineLight" arrow>
+            <Button href="/id/portfolio" variant="outlineLight" arrow>
               Lihat portfolio lengkap
             </Button>
           </div>
@@ -233,7 +206,7 @@ export default async function JasaPembuatanWebsitePage() {
               <div className="border-b border-line pb-6">
                 <p className="meta-label text-emerald-deep">/ FAQ</p>
                 <h2 id="jpw-faq-heading" className="display mt-6 text-4xl">
-                  Pertanyaan yang sering diajukan.
+                  Pertanyaan umum, dijawab terus terang.
                 </h2>
               </div>
             </Reveal>
@@ -258,18 +231,18 @@ export default async function JasaPembuatanWebsitePage() {
         <Container>
           <Reveal>
             <p className="meta-label text-emerald">/ LANGKAH BERIKUTNYA</p>
-            <h2 id="jpw-cta-heading" className="display mt-8 text-[clamp(3rem,8.5vw,8.5rem)]">
-              Mari bangun sesuatu
+<h2 id="jpw-cta-heading" className="display mt-8 text-[clamp(3rem,8.5vw,8.5rem)]">
+              Let&apos;s build something
               <br />
-              yang jelas.
+              clear.
             </h2>
             <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-dark">
-              Percakapan singkat tentang website Anda, scope, dan kendalanya. Kami akan menyampaikan
-              dengan jujur apakah kami cocok untuk project tersebut.
+              Obrolan singkat dan terarah soal website kamu: tujuannya, lingkupnya, dan kendalanya.
+              Kami akan bilang jujur kalau kami cocok atau tidak.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
-              <Button href="/contact" variant="emerald" size="lg" arrow>
-                Diskusikan Proyek
+              <Button href="/id/contact" variant="emerald" size="lg" arrow>
+                Mulai Proyek
               </Button>
               <Button href={`mailto:${site.email}`} variant="outlineLight" size="lg">
                 {site.email}

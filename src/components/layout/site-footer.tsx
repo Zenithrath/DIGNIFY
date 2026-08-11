@@ -9,10 +9,10 @@ import type { Locale } from "@/lib/locale";
 const footerNavId = [
   { href: "/id", label: "Beranda" },
   { href: "/id/jasa-pembuatan-website", label: "Jasa Pembuatan Website" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/about", label: "Tentang Dignify" },
-  { href: "/testimonials", label: "Testimoni" },
-  { href: "/contact", label: "Kontak" },
+  { href: "/id/portfolio", label: "Portfolio" },
+  { href: "/id/about", label: "Tentang Dignify" },
+  { href: "/id/testimonials", label: "Testimoni" },
+  { href: "/id/contact", label: "Kontak" },
 ] as const;
 
 const footerServicesId = [

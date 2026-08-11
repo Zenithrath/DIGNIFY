@@ -2,8 +2,10 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { site } from "@/content/site";
+import { enHomeCopy } from "@/content/home-copy";
+import type { FinalCtaCopy } from "@/content/home-copy";
 
-export function FinalCta() {
+export function FinalCta({ copy = enHomeCopy.finalCta }: { copy?: FinalCtaCopy }) {
   return (
     <section
       aria-labelledby="cta-heading"
@@ -13,22 +15,21 @@ export function FinalCta() {
       <Container>
         <div className="grid grid-cols-12 gap-x-4">
           <Reveal className="col-span-12 lg:col-span-9">
-            <p className="meta-label text-emerald">/ 04 / NEXT STEP</p>
+            <p className="meta-label text-emerald">{copy.label}</p>
             <h2 id="cta-heading" className="display mt-8 text-[clamp(3rem,8.5vw,8.5rem)]">
-              Let&apos;s build something
+              {copy.heading[0]}
               <br />
-              clear.
+              {copy.heading[1]}
             </h2>
           </Reveal>
           <Reveal delay={0.1} className="col-span-12 mt-10 lg:col-span-3 lg:col-start-10 lg:mt-0">
             <div className="border border-line-dark p-8">
               <p className="text-sm leading-relaxed text-muted-dark">
-                A focused conversation about your project, its scope, and its constraints. We will
-                tell you clearly whether we are the right fit.
+                {copy.box}
               </p>
               <div className="mt-8 flex flex-col gap-3">
-                <Button href="/contact" variant="emerald" size="lg" arrow>
-                  Start a Project
+                <Button href={copy.primaryCta.href} variant="emerald" size="lg" arrow>
+                  {copy.primaryCta.label}
                 </Button>
                 <Button href={`mailto:${site.email}`} variant="outlineLight" size="lg">
                   {site.email}

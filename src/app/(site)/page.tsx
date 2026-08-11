@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/home/hero";
-import { HeroTileLoader } from "@/components/home/hero-tile-loader";
 import { ServiceIndex } from "@/components/home/service-index";
 import { FeaturedWork } from "@/components/home/featured-work";
 import { FinalCta } from "@/components/home/final-cta";
 import { seo } from "@/content/seo";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: { absolute: seo.home.title },
@@ -26,7 +27,6 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <HeroTileLoader />
       <Hero />
       <ServiceIndex />
       <FeaturedWork />

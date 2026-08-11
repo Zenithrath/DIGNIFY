@@ -7,3 +7,13 @@ export const testimonialsState = {
     "Date of the engagement",
   ],
 } as const;
+
+export const testimonialsStateId = {
+  published: false,
+  note: "Dignify masih studio muda dan belum punya testimoni klien yang dipublikasikan. Kalau sudah ada klien yang kasih izin, kami akan tulis feedback aslinya di sini.",
+  whatWeWillShow: [
+    "Kutipan langsung dari klien yang namanya dicantumkan",
+    "Konteks dan lingkup proyek",
+    "Tanggal kerja sama",
+  ],
+} as const;
