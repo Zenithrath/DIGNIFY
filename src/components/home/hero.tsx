@@ -66,7 +66,7 @@ export function Hero({ copy = enHomeCopy.hero }: { copy?: HeroCopy }) {
       </div>
 
       <Container className="relative z-10 flex min-w-0 flex-1 flex-col pt-5 sm:pt-10">
-        <div className="flex flex-none flex-col items-center justify-start py-7 sm:flex-1 sm:justify-center sm:py-12">
+        <div className="flex flex-none flex-col items-center justify-center py-7 sm:flex-1 sm:py-12">
           <div className="hero-item text-center" style={{ animationDelay: "0.12s" }}>
             <p className="meta-label mb-4 text-emerald sm:mb-6">{copy.label}</p>
             <h1
