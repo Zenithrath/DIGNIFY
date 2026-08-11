@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Plus } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -123,11 +124,18 @@ export function ServiceIndex() {
           })}
         </ul>
 
-        <div className="mt-10 flex items-center justify-between">
-          <p className="meta-label hidden text-muted sm:block">FRONT END DEVELOPMENT IS PART OF EVERY BUILD.</p>
-          <Button href="/services" variant="outline" arrow>
-            All Services
-          </Button>
+        <div className="mt-10 flex flex-col gap-4 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <p className="meta-label hidden text-muted sm:block">
+            FRONT END DEVELOPMENT IS PART OF EVERY BUILD.
+          </p>
+          <div className="flex flex-wrap items-center gap-4">
+            <Link href="/web-development" className="link-underline font-mono text-xs uppercase tracking-[0.14em] text-ink-text">
+              Web Development Services
+            </Link>
+            <Button href="/services" variant="outline" arrow>
+              All Services
+            </Button>
+          </div>
         </div>
       </Container>
     </section>

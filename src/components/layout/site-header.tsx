@@ -8,16 +8,23 @@ import { BrandLockup } from "./brand";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { navLinks, site } from "@/content/site";
+import { currentLocale } from "@/lib/locale";
+import { navLinks, navLinksId, site } from "@/content/site";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { LanguageSwitcher } from "./language-switcher";
 
 function isActive(pathname: string, href: string) {
-  if (href === "/") return pathname === "/";
+  if (href === "/" || href === "/id") return pathname === href;
   return pathname.startsWith(href);
 }
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const locale = currentLocale(pathname);
+  const isIndonesian = locale === "id";
+  const links = isIndonesian ? navLinksId : navLinks;
+  const brandHref = isIndonesian ? "/id" : "/";
+  const ctaLabel = isIndonesian ? "Diskusikan Proyek" : "Start a Project";
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -44,7 +51,7 @@ export function SiteHeader() {
       <div inert={open || undefined} className={cn(open && "invisible")}>
         <Container className="flex h-16 items-center justify-between gap-6">
           <Link
-            href="/"
+            href={brandHref}
             aria-label={`${site.name} home`}
             className="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald"
           >
@@ -52,7 +59,7 @@ export function SiteHeader() {
           </Link>
 
           <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
-            {navLinks.map((link) => {
+            {links.map((link) => {
               const active = isActive(pathname, link.href);
               return (
                 <Link
@@ -79,9 +86,10 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <LanguageSwitcher className="hidden md:flex" />
             <ThemeToggle className="hidden md:flex" />
             <Button href="/contact" variant="emerald" size="md" className="hidden md:inline-flex">
-              Start a Project
+              {ctaLabel}
             </Button>
             <button
               ref={triggerRef}
@@ -120,7 +128,7 @@ export function SiteHeader() {
           </Container>
           <nav aria-label="Mobile" className="flex-1 overflow-y-auto">
             <ul className="divide-y divide-line-dark">
-              {navLinks.map((link, i) => {
+              {links.map((link, i) => {
                 const active = isActive(pathname, link.href);
                 return (
                   <li key={link.href}>
@@ -146,7 +154,10 @@ export function SiteHeader() {
             </ul>
           </nav>
           <div className="border-t border-line-dark px-5 py-5">
-            <ThemeToggle className="mb-5 flex" />
+            <div className="mb-5 flex items-center gap-3">
+              <LanguageSwitcher tone="dark" />
+              <ThemeToggle className="flex" />
+            </div>
             <p className="meta-label text-muted-dark">NEW PROJECT ENQUIRY</p>
             <a
               href={`mailto:${site.email}`}

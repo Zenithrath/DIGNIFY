@@ -22,7 +22,7 @@ export const team = [
       "QA and Testing",
     ],
     initials: "IG",
-    portfolioUrl: "https://dignify.studio",
+    portfolioUrl: null,
     githubUrl: null,
   },
 ] as const;

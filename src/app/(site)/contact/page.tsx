@@ -11,11 +11,16 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: seo.contact.title,
   description: seo.contact.description,
-  alternates: { canonical: "/contact" },
+  alternates: {
+    canonical: "/contact",
+    languages: { en: "/contact", id: "/id", "x-default": "/contact" },
+  },
   openGraph: {
     title: `${seo.contact.title} | Dignify`,
     description: seo.contact.description,
     url: "/contact",
+    locale: "en_US",
+    alternateLocale: ["id_ID"],
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Contact Dignify" }],
   },
 };

@@ -6,23 +6,24 @@ import { seo } from "@/content/seo";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Jasa Website, UI/UX, AI & Automasi n8n",
-  description: seo.home.description,
+  title: { absolute: seo.homeId.title },
+  description: seo.homeId.description,
   alternates: {
     canonical: "/id",
     languages: { en: "/", id: "/id", "x-default": "/" },
   },
   openGraph: {
-    title: "Dignify | Jasa Website, UI/UX, AI & Automasi n8n",
-    description: seo.home.description,
+    title: seo.homeId.title,
+    description: seo.homeId.description,
     url: "/id",
     locale: "id_ID",
+    alternateLocale: ["en_US"],
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Dignify studio digital" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dignify | Jasa Website, UI/UX, AI & Automasi n8n",
-    description: seo.home.description,
+    title: seo.homeId.title,
+    description: seo.homeId.description,
     images: ["/opengraph-image"],
   },
 };
@@ -32,8 +33,8 @@ const indonesianPageJsonLd = {
   "@type": "WebPage",
   "@id": `${site.url}/id#webpage`,
   url: `${site.url}/id`,
-  name: "Dignify | Jasa Website, UI/UX, AI & Automasi n8n",
-  description: seo.home.description,
+  name: seo.homeId.title,
+  description: seo.homeId.description,
   inLanguage: "id",
   isPartOf: { "@id": `${site.url}/#website` },
   about: seo.indonesianServices.map((service) => ({
@@ -48,33 +49,36 @@ export default function IndonesianHomePage() {
   return (
     <div lang="id">
       <JsonLd data={indonesianPageJsonLd} />
-      <section className="bg-ink py-24 text-paper sm:py-32">
+      <section aria-labelledby="id-hero-heading" className="bg-ink py-24 text-paper sm:py-32">
         <Container>
           <p className="meta-label text-emerald">/ STUDIO DIGITAL</p>
-          <h1 className="display mt-6 max-w-5xl text-[clamp(2.75rem,7vw,7rem)]">
-            Jasa website, UI/UX, AI, dan automasi yang dibangun dengan jelas.
+          <h1 id="id-hero-heading" className="display mt-6 max-w-5xl text-[clamp(2.75rem,7vw,7rem)]">
+            Jasa pembuatan website yang dibangun dengan jelas.
           </h1>
           <p className="mt-10 max-w-2xl text-base leading-relaxed text-muted-dark sm:text-lg">
-            Dignify adalah digital studio yang membantu tim merancang website, antarmuka, solusi AI,
-            workflow n8n, dan integrasi API. Kami bekerja secara modular, transparan, dan tanpa klaim
-            yang berlebihan.
+            Dignify menyediakan jasa pembuatan website — landing page, website company profile,
+            website portfolio, hingga front-end development custom. Setiap project dikerjakan
+            dengan scope yang jelas, desain yang konsisten, dan kode yang mudah dirawat.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Button href="/contact" variant="emerald" size="lg" arrow>
+            <Button href="/id/jasa-pembuatan-website" variant="emerald" size="lg" arrow>
+              Lihat Layanan Website
+            </Button>
+            <Button href="/contact" variant="outlineLight" size="lg" arrow>
               Diskusikan Proyek
             </Button>
-            <Button href="/portfolio" variant="outlineLight" size="lg" arrow>
+            <Button href="/portfolio" variant="outlineLight" size="lg">
               Lihat Portfolio
             </Button>
           </div>
         </Container>
       </section>
 
-      <section className="bg-paper py-20 sm:py-28">
+      <section aria-labelledby="id-services-heading" className="bg-paper py-20 sm:py-28">
         <Container>
           <p className="meta-label text-emerald-deep">/ LAYANAN</p>
-          <h2 className="display mt-6 max-w-4xl text-4xl sm:text-5xl">
-            Layanan digital untuk pekerjaan yang perlu berjalan dengan rapi.
+          <h2 id="id-services-heading" className="display mt-6 max-w-4xl text-4xl sm:text-5xl">
+            Layanan pembuatan website untuk kebutuhan bisnis dan personal brand.
           </h2>
           <div className="mt-12 border-t border-line">
             {seo.indonesianServices.map((service, index) => (
@@ -89,13 +93,19 @@ export default function IndonesianHomePage() {
               </article>
             ))}
           </div>
+          <div className="mt-10 flex items-center justify-between">
+            <p className="meta-label hidden text-muted sm:block">FRONT-END DEVELOPMENT ADALAH BAGIAN DARI SETIAP PEMBUATAN WEBSITE.</p>
+            <Button href="/id/jasa-pembuatan-website" variant="outline" arrow>
+              Detail Layanan
+            </Button>
+          </div>
         </Container>
       </section>
 
-      <section className="border-t border-line bg-cream py-20 sm:py-28">
+      <section aria-labelledby="id-bilingual-heading" className="border-t border-line bg-cream py-20 sm:py-28">
         <Container>
           <p className="meta-label text-emerald-deep">/ BAHASA INDONESIA & ENGLISH</p>
-          <h2 className="display mt-6 max-w-4xl text-4xl sm:text-5xl">
+          <h2 id="id-bilingual-heading" className="display mt-6 max-w-4xl text-4xl sm:text-5xl">
             Ceritakan kebutuhan proyekmu, dalam Bahasa Indonesia atau English.
           </h2>
           <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted">

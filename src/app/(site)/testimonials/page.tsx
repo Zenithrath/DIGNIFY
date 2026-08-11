@@ -8,11 +8,16 @@ import { seo } from "@/content/seo";
 export const metadata: Metadata = {
   title: seo.testimonials.title,
   description: seo.testimonials.description,
-  alternates: { canonical: "/testimonials" },
+  alternates: {
+    canonical: "/testimonials",
+    languages: { en: "/testimonials", id: "/id", "x-default": "/testimonials" },
+  },
   openGraph: {
     title: seo.testimonials.title,
     description: seo.testimonials.description,
     url: "/testimonials",
+    locale: "en_US",
+    alternateLocale: ["id_ID"],
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Dignify testimonials" }],
   },
 };

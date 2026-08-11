@@ -17,11 +17,16 @@ const memberPhotos = [dijeImg, ignasImg] as const;
 export const metadata: Metadata = {
   title: seo.about.title,
   description: seo.about.description,
-  alternates: { canonical: "/about" },
+  alternates: {
+    canonical: "/about",
+    languages: { en: "/about", id: "/id", "x-default": "/about" },
+  },
   openGraph: {
     title: `${seo.about.title} | Dignify`,
     description: seo.about.description,
     url: "/about",
+    locale: "en_US",
+    alternateLocale: ["id_ID"],
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "About Dignify" }],
   },
 };
@@ -223,15 +228,17 @@ export default function AboutPage() {
                       ))}
                     </ul>
                     <div className="mt-5 flex flex-wrap items-center gap-5">
-                      <a
-                        href={member.portfolioUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-ink-text transition-colors hover:text-emerald-deep"
-                      >
-                        <span className="link-underline">Portfolio</span>
-                        <span aria-hidden>↗</span>
-                      </a>
+                      {member.portfolioUrl ? (
+                        <a
+                          href={member.portfolioUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-ink-text transition-colors hover:text-emerald-deep"
+                        >
+                          <span className="link-underline">Portfolio</span>
+                          <span aria-hidden>↗</span>
+                        </a>
+                      ) : null}
                       {member.githubUrl ? (
                         <a
                           href={member.githubUrl}

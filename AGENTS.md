@@ -83,7 +83,7 @@ Label projects honestly as:
 - Concept Project
 - Client Project
 
-The `hello@dignify.studio` email and `https://dignify.studio` domain are placeholders; replace them when real ones exist.
+The `studiodignify@gmail.com` email and `https://dignify.my.id` domain are the current production values; replace them if they change. Bilingual SEO structure: EN at root (`/`, `/web-development/`), Indonesian under `/id/` (`/id/`, `/id/jasa-pembuatan-website/`), with hreflang and canonical per locale.
 
 ## Required validation
 

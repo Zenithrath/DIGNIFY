@@ -13,11 +13,16 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: seo.services.title,
   description: seo.services.description,
-  alternates: { canonical: "/services" },
+  alternates: {
+    canonical: "/services",
+    languages: { en: "/services", id: "/id", "x-default": "/services" },
+  },
   openGraph: {
     title: `${seo.services.title} | Dignify`,
     description: seo.services.description,
     url: "/services",
+    locale: "en_US",
+    alternateLocale: ["id_ID"],
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Dignify services" }],
   },
 };

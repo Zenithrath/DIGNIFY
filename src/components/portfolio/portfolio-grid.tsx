@@ -39,7 +39,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           {project.cover || project.coverUrl ? (
             <Image
               src={project.coverUrl ?? project.cover!}
-              alt={`${project.title} project preview`}
+              alt={`${project.title} ${project.category.toLowerCase()} project by Dignify`}
               fill
               sizes="(min-width: 1024px) 66vw, 100vw"
               className="object-cover object-top"

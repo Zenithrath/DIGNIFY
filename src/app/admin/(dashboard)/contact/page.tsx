@@ -11,10 +11,10 @@ export default function AdminContactPage() {
   const [submissions, setSubmissions] = useState<ContactSubmission[]>([]);
   const [settings, setSettings] = useState<StudioContactSettings>({
     name: "Dignify Studio",
-    email: "hello@dignify.studio",
+    email: "studiodignify@gmail.com",
     location: "Indonesia",
-    domain: "https://dignify.studio",
-    description: "Digital Studio for Web Development, UI/UX, and AI Workflows.",
+    domain: "https://dignify.my.id",
+    description: "Jasa pembuatan website, web development, UI/UX, dan AI Workflows.",
   });
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");

@@ -39,12 +39,17 @@ export async function generateMetadata({
   return {
     title: project.title,
     description: project.summary,
-    alternates: { canonical: `/portfolio/${project.slug}` },
+    alternates: {
+      canonical: `/portfolio/${project.slug}`,
+      languages: { en: `/portfolio/${project.slug}`, id: "/id", "x-default": `/portfolio/${project.slug}` },
+    },
     openGraph: {
       title: `${project.title} | Dignify`,
       description: project.summary,
       url: `/portfolio/${project.slug}`,
       type: "article",
+      locale: "en_US",
+      alternateLocale: ["id_ID"],
       images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: `${project.title} case study` }],
     },
   };
@@ -364,7 +369,7 @@ export default async function PortfolioDetailPage({ params }: PageProps<"/portfo
                     {nextProject.cover || nextProject.coverUrl ? (
                       <Image
                         src={nextProject.coverUrl ?? nextProject.cover!}
-                        alt={`${nextProject.title} project preview`}
+                        alt={`${nextProject.title} ${nextProject.category.toLowerCase()} project by Dignify`}
                         fill
                         sizes="(min-width: 1024px) 75vw, 100vw"
                         className="object-cover object-top"

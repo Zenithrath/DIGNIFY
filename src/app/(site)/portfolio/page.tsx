@@ -11,11 +11,16 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: seo.portfolio.title,
   description: seo.portfolio.description,
-  alternates: { canonical: "/portfolio" },
+  alternates: {
+    canonical: "/portfolio",
+    languages: { en: "/portfolio", id: "/id", "x-default": "/portfolio" },
+  },
   openGraph: {
     title: `${seo.portfolio.title} | Dignify`,
     description: seo.portfolio.description,
     url: "/portfolio",
+    locale: "en_US",
+    alternateLocale: ["id_ID"],
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Dignify portfolio" }],
   },
 };

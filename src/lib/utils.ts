@@ -5,7 +5,7 @@ export function cn(...parts: Array<string | false | null | undefined>) {
 const configuredSiteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL ??
-  "https://dignify.studio";
+  "https://dignify.my.id";
 
 function normalizeSiteUrl(value: string) {
   const withProtocol = /^https?:\/\//i.test(value) ? value : `https://${value}`;

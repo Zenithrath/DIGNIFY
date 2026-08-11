@@ -17,6 +17,8 @@ export const metadata: Metadata = {
     title: seo.home.title,
     description: seo.home.description,
     url: "/",
+    locale: "en_US",
+    alternateLocale: ["id_ID"],
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Dignify Digital Studio" }],
   },
 };
