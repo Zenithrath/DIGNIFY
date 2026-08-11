@@ -246,7 +246,7 @@ body {
 }
 
 .site-header {
-  animation: header-drop 0.65s var(--ease-editorial) both;
+  animation: header-drop 0.65s var(--ease-editorial);
 }
 
 @keyframes header-drop {

@@ -47,9 +47,10 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header id="top" className="site-header sticky top-0 z-40 border-b border-line-dark bg-ink text-paper">
-      <div inert={open || undefined} className={cn(open && "invisible")}>
-        <Container className="flex h-16 items-center justify-between gap-6">
+    <>
+      <header id="top" className="site-header sticky top-0 z-40 border-b border-line-dark bg-ink text-paper">
+        <div inert={open || undefined} className={cn(open && "invisible")}>
+          <Container className="flex h-16 items-center justify-between gap-6">
           <Link
             href={brandHref}
             aria-label={`${site.name} home`}
@@ -105,6 +106,7 @@ export function SiteHeader() {
           </div>
         </Container>
       </div>
+      </header>
 
       {open ? (
         <div
@@ -112,7 +114,7 @@ export function SiteHeader() {
           role="dialog"
           aria-modal="true"
           aria-label="Menu"
-          className="menu-enter fixed inset-0 z-40 flex flex-col bg-ink text-paper lg:hidden"
+          className="menu-enter fixed inset-0 z-50 flex flex-col bg-ink text-paper lg:hidden"
         >
           <Container className="flex h-16 items-center justify-between gap-4 border-b border-line-dark">
             <BrandLockup tone="paper" />
@@ -168,6 +170,6 @@ export function SiteHeader() {
           </div>
         </div>
       ) : null}
-    </header>
+    </>
   );
 }
