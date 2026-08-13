@@ -89,7 +89,7 @@ export function Hero({ copy = enHomeCopy.hero }: { copy?: HeroCopy }) {
           </p>
         </div>
 
-        <div className="hero-item flex w-full max-w-3xl min-w-0 flex-col items-stretch gap-3 sm:flex-row sm:items-center" style={{ animationDelay: "0.56s" }}>
+        <div className="hero-item flex w-full max-w-3xl min-w-0 flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center" style={{ animationDelay: "0.56s" }}>
           <Button href={copy.primaryCta.href} variant="emerald" size="lg" className="w-full max-w-full sm:w-auto" arrow>
             {copy.primaryCta.label}
           </Button>

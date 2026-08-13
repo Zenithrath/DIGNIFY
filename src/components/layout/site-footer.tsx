@@ -98,6 +98,16 @@ export function SiteFooter({ locale = "en" }: { locale?: Locale }) {
                   {site.email}
                 </a>
               </li>
+              <li>
+                <a
+                  href={site.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-paper underline decoration-paper/40 underline-offset-4 transition-colors hover:text-emerald hover:decoration-emerald"
+                >
+                  {site.phone}
+                </a>
+              </li>
               <li className="text-muted-dark">{location}</li>
             </ul>
           </div>

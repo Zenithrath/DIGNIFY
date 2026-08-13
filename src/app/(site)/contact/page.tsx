@@ -62,6 +62,19 @@ export default async function ContactPage() {
                   </dd>
                 </div>
                 <div className="flex justify-between border-b border-line-dark py-3">
+                  <dt className="meta-label text-muted-dark">WHATSAPP</dt>
+                  <dd>
+                    <a
+                      href={site.whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="meta-label text-paper transition-colors hover:text-emerald"
+                    >
+                      {site.phone}
+                    </a>
+                  </dd>
+                </div>
+                <div className="flex justify-between border-b border-line-dark py-3">
                   <dt className="meta-label text-muted-dark">MODE</dt>
                   <dd className="meta-label text-paper">{location}</dd>
                 </div>

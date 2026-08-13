@@ -139,6 +139,7 @@ export const organizationJsonLd = {
         "@type": "ContactPoint",
         contactType: "project enquiries",
         email: site.email,
+        telephone: site.phone,
         availableLanguage: ["Indonesian", "English"],
       },
       knowsAbout: seo.serviceTerms,

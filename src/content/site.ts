@@ -10,6 +10,8 @@ export const site = {
     "Dignify menyediakan jasa pembuatan website, landing page, company profile, portfolio, dan web development custom untuk bisnis dan personal brand.",
   url: siteUrl,
   email: "studiodignify@gmail.com",
+  phone: "+62 877-8392-3671",
+  whatsappUrl: "https://wa.me/6287783923671",
   foundedBy: "Dije, Ignas and Daniel",
   location: "Available worldwide · Remote",
   locationId: "Melayani kebutuhan website untuk client di Indonesia",
