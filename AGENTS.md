@@ -85,6 +85,10 @@ Label projects honestly as:
 
 The `studiodignify@gmail.com` email and `https://dignify.my.id` domain are the current production values; replace them if they change. Bilingual SEO structure: EN at root (`/`, `/web-development/`), Indonesian under `/id/` (`/id/`, `/id/jasa-pembuatan-website/`), with hreflang and canonical per locale.
 
+## Indonesian copy style
+
+The approved writing reference for all Indonesian copy is temanumkmkita.com: direct address ("kamu"/"-mu"), short pragmatic sentences, benefit-first headlines, everyday words ("biar", "bikin", "nggak", "udah", "keliatan") over formalisms, and concrete facts — written so it does not read as AI-generated. Avoid stiff phrasings like "di era digital ini", "memanfaatkan", "transformasi digital", "solusi komprehensif", or repetitive "kami membantu/menyediakan" openings.
+
 ## Required validation
 
 Before finishing a meaningful implementation task:

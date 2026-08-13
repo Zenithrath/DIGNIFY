@@ -1,9 +1,9 @@
 export const jasaPembuatanWebsite = {
   hero: {
     label: "/ JASA PEMBUATAN WEBSITE",
-    title: ["Jasa Pembuatan Website", "Built Around Your Brand"],
+    title: ["Jasa Pembuatan Website", "Biar Bisnismu Kelihatan Kredibel"],
     intro:
-      "Dari landing page sampai company profile, kami desain dan bangun website yang cepat, responsif, dan mudah dirawat setelah diluncurkan.",
+      "Dari landing page sampai company profile, kami desain dan bangun website yang cepat, responsif, dan gampang dirawat setelah diluncurkan.",
     meta: "LANDING PAGE · WEBSITE PORTFOLIO · COMPANY PROFILE · FRONT-END DEVELOPMENT",
   },
   services: [
@@ -53,22 +53,22 @@ export const jasaPembuatanWebsite = {
   process: [
     {
       index: "A",
-      title: "Scope",
-      detail: "Kami pastikan tujuan, audiens, dan batasannya dulu, sebelum desain atau kode dimulai.",
+      title: "Petakan",
+      detail: "Tujuan, audiens, dan batasannya kami pastikan dulu, sebelum desain atau kode mulai.",
     },
     {
       index: "B",
       title: "Desain",
-      detail: "Struktur, hierarki konten, dan arah antarmuka, disetujui dulu sebelum dibangun.",
+      detail: "Struktur, hierarki konten, dan arah antarmuka disetujui dulu sebelum dibangun.",
     },
     {
       index: "C",
-      title: "Build",
+      title: "Bangun",
       detail: "Development dengan kode yang rapi dan terketik, dengan milestone yang bisa dicek.",
     },
     {
       index: "D",
-      title: "Deploy",
+      title: "Luncurkan",
       detail: "Luncur di domainmu, lengkap dengan hosting, analitik, dan dokumentasi serah terima.",
     },
   ],

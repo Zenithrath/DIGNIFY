@@ -2,6 +2,7 @@ export const team = [
   {
     name: "Dije",
     role: "Front End, Automation and Social Media",
+    roleId: "Front End, Otomasi & Media Sosial",
     focus: [
       "Front End Development",
       "UI/UX Design",
@@ -16,6 +17,7 @@ export const team = [
   {
     name: "Ignas",
     role: "SEO and Planning",
+    roleId: "SEO & Perencanaan",
     focus: [
       "SEO Planning",
       "Technical SEO",
@@ -29,6 +31,7 @@ export const team = [
   {
     name: "Daniel",
     role: "Back End and Database",
+    roleId: "Back End & Database",
     focus: [
       "Back End Architecture",
       "Database Design",
@@ -51,10 +54,78 @@ export const about = {
 } as const;
 
 export const aboutId = {
-  mission:
-    "Membangun sistem digital yang menghargai penggunanya dan yang merawatnya. Pekerjaan kami tetap tersusun, jelas, dan bebas dari hiasan yang tidak berguna.",
-  origin:
-    "Dignify berangkat dari tiga orang yang terus melihat masalah yang sama di pekerjaan digital: antarmuka yang mengabaikan struktur, kode yang mengabaikan desain, dan proses yang mengabaikan orang yang memakainya. Kami mendirikan Dignify supaya bisa bekerja dengan lebih hati-hati.",
-  nameMeaning:
-    "Dignify artinya memberi nilai dan kejelasan pada sesuatu. Ide itu kami pakai di setiap produk yang kami sentuh, dari antarmuka dan kode di belakangnya, sampai orang yang menggunakannya.",
+  heroTitle: ["Kami Bukan Vendor.", "Kami Partner yang Ikut Mengerjakan."],
+  intro:
+    "Dignify adalah studio digital kecil yang dibangun Dije, Ignas, dan Daniel. Kami ngerjain website, UI/UX, solusi AI, otomasi n8n, dan integrasi API — dengan standar yang sama buat tiap project.",
+  stats: [
+    { value: "03", label: "Orang di studio" },
+    { value: "05", label: "Layanan digital" },
+    { value: "ID", label: "Area kerja" },
+    { value: "24 JAM", label: "Target balas pesan" },
+  ],
+  principles: {
+    title: "Dekat, Praktis, dan Bisa Dicek.",
+    items: [
+      {
+        title: "Area Fokus",
+        detail: "Website, UI/UX, solusi AI, otomasi n8n, dan integrasi API buat bisnis di Indonesia.",
+      },
+      {
+        title: "Respons",
+        detail: "Berusaha balas pesan dalam 24 jam.",
+      },
+      {
+        title: "Cara Kerja",
+        detail: "Mulai dari kebutuhan yang paling prioritas, bukan dari tren.",
+      },
+    ],
+  },
+  story: {
+    title: "Berawal dari Masalah yang Sama.",
+    paragraphs: [
+      "Dignify berangkat dari tiga orang yang terus lihat masalah yang sama di pekerjaan digital: antarmuka yang mengabaikan struktur, kode yang mengabaikan desain, dan proses yang mengabaikan orang yang memakainya.",
+      "Masalahnya selalu sama: yang penting ditaruh paling belakang. Kerja digital sering cuma dikejar biar kelar, nggak dikejar biar jelas. Kami mendirikan Dignify buat kerja dengan lebih hati-hati.",
+    ],
+    quote: "Bukan karena orangnya nggak bisa. Tapi karena yang penting sering ditaruh paling belakang.",
+    quoteAttrib: "Pola yang kami lihat terus di pekerjaan digital",
+  },
+  statement:
+    "Kami nggak cuma nyelesain proyek. Kami ikut jaga hasilnya tetap jelas dan terawat.",
+  workModes: {
+    title: "Satu Standar, Tiga Cara Kami Bekerja.",
+    items: [
+      {
+        index: "A",
+        title: "Kerjaan, bukan sekadar klien",
+        detail:
+          "Kami nggak hilang setelah proyek selesai. Dokumentasi dan struktur bikin hasilnya tetap bisa dirawat.",
+      },
+      {
+        index: "B",
+        title: "Hasil yang bisa dicek",
+        detail:
+          "Kode, scope, dan progress bisa kamu periksa kapan aja. Nggak ada janji kosong.",
+      },
+      {
+        index: "C",
+        title: "Fokus ke kebutuhanmu",
+        detail:
+          "Solusi dipilih dari masalah yang nyata, bukan paket copy-paste yang sama buat semua orang.",
+      },
+    ],
+  },
+  team: {
+    title: "Siapa di Balik Dignify?",
+    lines: {
+      Dije: "Pegang front end, otomasi, dan media sosial.",
+      Ignas: "Pegang SEO dan perencanaan.",
+      Daniel: "Pegang back end dan database.",
+    },
+  },
+  cta: {
+    title: "Masih bingung mau mulai dari mana?",
+    sub: "Ceritakan kebutuhanmu. Kami bantu petakan masalah yang paling prioritas sebelum bicara paket. Konsultasi pertama gratis, tanpa komitmen.",
+    primary: "Konsultasi Gratis",
+    secondary: "Lihat Portfolio",
+  },
 } as const;

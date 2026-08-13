@@ -444,33 +444,33 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
     meta: {
       title: "Jasa UI/UX Design",
       description:
-        "Jasa desain UI/UX dari Dignify: desain antarmuka, user flow, wireframe, design system, dan UI responsif yang dirancang untuk pengguna nyata.",
+        "Jasa desain UI/UX dari Dignify: desain antarmuka, user flow, wireframe, design system, dan UI responsif biar produk digitalmu gampang dipakai.",
     },
     hero: {
       label: "UI/UX DESIGN",
-      title: ["UI/UX Design", "Dibuat untuk Pengguna Nyata"],
+      title: ["UI/UX Design", "Biar Produkmu Gampang Dipakai"],
       intro:
-        "Kami mendesain antarmuka dan alur pengguna yang jelas, konsisten, dan nyaman dipakai — dari wireframe awal sampai desain layar final.",
+        "Kami desain tampilan dan alur yang jelas, konsisten, dan nyaman dipakai — dari wireframe pertama sampai layar final.",
       meta: "WIREFRAME · USER FLOW · DESIGN SYSTEM · PROTOTIPE · UI RESPONSIF",
     },
     scope: {
       label: "YANG BISA DIKERJAKAN",
-      title: "Desain antarmuka, dipilih sesuai masalah yang sebenarnya.",
+      title: "Desain antarmuka, dipilih sesuai masalah yang beneran ada.",
       items: [
         {
           title: "Desain Antarmuka",
           description:
-            "Desain layar untuk website dan aplikasi: layout yang jelas, tipografi konsisten, dan visual yang sesuai brand.",
+            "Desain layar buat website dan aplikasi: layout yang jelas, tipografi konsisten, visual yang sesuai brand.",
           deliverables: [
             "Layout halaman dan layar yang jelas",
             "Tipografi dan jarak yang konsisten",
-            "Arah visual sesuai brand",
+            "Visual yang nyambung sama brand",
           ],
         },
         {
           title: "User Flow & Wireframe",
           description:
-            "Kami petakan dulu bagaimana orang bergerak di dalam produk, sebelum visual dirapikan.",
+            "Kami petakan dulu gimana orang bergerak di dalam produk, sebelum visual dirapikan.",
           deliverables: [
             "Diagram alur pengguna",
             "Wireframe low dan high fidelity",
@@ -480,7 +480,7 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
         {
           title: "Design System",
           description:
-            "Warna, tipografi, dan komponen yang bisa dipakai ulang supaya desain tetap konsisten saat berkembang.",
+            "Warna, huruf, dan komponen yang bisa dipakai ulang, biar desain tetap konsisten pas produknya nambah fitur.",
           deliverables: [
             "Token warna dan tipografi",
             "Pustaka komponen reusable",
@@ -490,20 +490,20 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
         {
           title: "Prototyping",
           description:
-            "Prototipe yang bisa diklik untuk menguji keputusan lebih awal, sebelum kode ditulis.",
+            "Prototipe yang bisa diklik buat nguji keputusan lebih awal, sebelum kode ditulis.",
           deliverables: [
             "Prototipe interaktif",
-            "Dukungan uji pakai",
-            "Iterasi dari masukan pengguna",
+            "Dukungan uji coba pengguna",
+            "Iterasi dari masukan",
           ],
         },
         {
           title: "Desain Responsif",
           description:
-            "Layout yang didesain untuk desktop, tablet, dan mobile sekaligus, bukan dikecilkan belakangan.",
+            "Layout didesain buat desktop, tablet, dan mobile sekaligus — bukan dikecilin belakangan.",
           deliverables: [
             "Breakpoint mobile-first",
-            "Perilaku komponen adaptif",
+            "Komponen yang adaptif",
             "Review lintas perangkat",
           ],
         },
@@ -513,26 +513,26 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
       label: "CARA KERJANYA",
       title: "Dari alur sampai layar final.",
       steps: [
-        { index: "A", title: "Pahami", detail: "Kami pelajari tujuan dan siapa penggunanya." },
-        { index: "B", title: "Susun", detail: "Alur dan wireframe menentukan isi di setiap layar." },
-        { index: "C", title: "Desain", detail: "Desain visual mengubah struktur menjadi antarmuka yang jelas." },
-        { index: "D", title: "Serah Terima", detail: "Layar final dan aset didokumentasikan untuk development." },
+        { index: "A", title: "Pahami", detail: "Kami pelajari dulu tujuannya dan siapa yang bakal pakai." },
+        { index: "B", title: "Susun", detail: "Alur dan wireframe nentuin isi di tiap layar." },
+        { index: "C", title: "Desain", detail: "Visual ngeubah struktur jadi antarmuka yang jelas." },
+        { index: "D", title: "Serah Terima", detail: "Layar final dan aset didokumentasikan buat development." },
       ],
     },
     related: "UI/UX",
     faqs: [
       {
-        question: "Apakah bisa untuk website dan aplikasi?",
+        question: "Bisa untuk website dan aplikasi?",
         answer:
-          "Bisa. Prinsip yang sama berlaku untuk website, dashboard, dan antarmuka aplikasi — kejelasan dulu, hiasan kemudian.",
+          "Bisa. Prinsipnya sama: kejelasan dulu, hiasan kemudian.",
       },
       {
-        question: "Bisa mengikuti brand yang sudah ada?",
+        question: "Bisa ikutin brand yang udah ada?",
         answer:
-          "Bisa. Identitas yang sudah ada kami kembangkan menjadi desain antarmuka yang jelas, tanpa membuat brand baru.",
+          "Bisa. Identitas yang udah ada kami kembangkan jadi desain antarmuka yang jelas, tanpa bikin brand baru.",
       },
       {
-        question: "Apa saja yang didapat?",
+        question: "Apa aja yang kami serahkan?",
         answer:
           "Wireframe, desain layar, design system sederhana, dan dokumentasi yang bisa diikuti tim development.",
       },
@@ -543,43 +543,43 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
     meta: {
       title: "Jasa Solusi AI & Chat AI",
       description:
-        "Fitur AI praktis dari Dignify: chat AI dengan dokumenmu, pencarian dokumen, dukungan konten, olah data, dan integrasi API LLM.",
+        "Fitur AI praktis dari Dignify: chat AI yang jawab dari dokumenmu, pencarian dokumen, dukungan konten, olah data, dan integrasi API LLM.",
     },
     hero: {
       label: "SOLUSI AI",
-      title: ["Solusi AI", "AI yang Praktis dan Sesuai Kebutuhan"],
+      title: ["Solusi AI", "AI yang Nyambung dengan Kerjaanmu"],
       intro:
-        "Kami membangun fitur AI yang mengerjakan hal spesifik dan berguna — menjawab dari dokumenmu, meringkas konten, atau mengolah data — dengan alur yang jelas dan tetap di bawah kendalimu.",
+        "Kami bangun fitur AI yang ngelakuin hal spesifik dan berguna — jawab dari dokumenmu, ringkas konten, atau olah data — dengan alur yang jelas dan tetap di bawah kendalimu.",
       meta: "AI CHAT · PENCARIAN DOKUMEN · DUKUNGAN KONTEN · OLAH DATA · INTEGRASI LLM",
     },
     scope: {
       label: "YANG BISA DIKERJAKAN",
-      title: "Fitur AI yang dipilih untuk pekerjaannya, bukan untuk gimmick.",
+      title: "Fitur AI dipilih buat kerjanya, bukan buat gaya-gayaan.",
       items: [
         {
           title: "Chat dengan AI",
           description:
-            "Chat yang menjawab pakai informasi milikmu sendiri, bukan jawaban umum.",
+            "Chat yang jawab pakai informasi milikmu sendiri, bukan nebak-nebak.",
           deliverables: [
             "Interface chat khusus",
             "Jawaban dari dokumenmu",
-            "Referensi sumber yang jelas",
+            "Sumber jawaban selalu dicantumin",
           ],
         },
         {
           title: "Pencarian Dokumen (RAG)",
           description:
-            "Alat cari dan tanya yang menemukan informasi yang tepat di dalam file dan dokumenmu.",
+            "Alat cari dan tanya yang nemuin informasi yang tepat di dalam file dan dokumenmu.",
           deliverables: [
             "Indeks dan pencarian dokumen",
-            "Jawaban dengan sumber tercantum",
+            "Jawaban lengkap dengan sumber",
             "Mendukung PDF, dokumen, dan halaman",
           ],
         },
         {
           title: "Olah Konten & Data",
           description:
-            "AI yang meringkas, mengklasifikasi, atau mengekstrak data dari konten yang sudah kamu punya.",
+            "AI yang meringkas, ngelompokin, atau ngambil data dari konten yang udah kamu punya.",
           deliverables: [
             "Ringkasan dan poin penting",
             "Klasifikasi dan pelabelan",
@@ -589,7 +589,7 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
         {
           title: "Integrasi API AI",
           description:
-            "AI yang terpasang ke produk atau alur kerja yang sudah ada lewat API.",
+            "AI dipasang ke produk atau alur kerja yang udah ada lewat API.",
           deliverables: [
             "Integrasi API model AI",
             "Desain prompt dan konteks",
@@ -599,10 +599,10 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
         {
           title: "Evaluasi & Pengaman",
           description:
-            "Pengecekan dan batasan supaya jawaban AI tetap akurat dan tidak keluar dari batas pekerjaan.",
+            "Pengecekan dan batasan biar jawaban AI tetap akurat dan nggak keluar dari pekerjaannya.",
           deliverables: [
-            "Pengaturan evaluasi jawaban",
-            "Penanganan kegagalan",
+            "Evaluasi jawaban otomatis",
+            "Penanganan saat gagal",
             "Batasan keamanan dan scope",
           ],
         },
@@ -610,30 +610,30 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
     },
     process: {
       label: "CARA KERJANYA",
-      title: "Dari ide sampai fitur AI yang berfungsi.",
+      title: "Dari ide sampai fitur AI yang beneran jalan.",
       steps: [
-        { index: "A", title: "Petakan", detail: "Kami tentukan tugas spesifik yang harus dikerjakan AI." },
-        { index: "B", title: "Prototipe", detail: "Versi kecil yang berfungsi untuk membuktikan pendekatan." },
-        { index: "C", title: "Bangun", detail: "Alur dibangun dengan pengecekan kualitas." },
-        { index: "D", title: "Review", detail: "Hasil diuji dan disempurnakan bersama kamu." },
+        { index: "A", title: "Petakan", detail: "Kami tentukan tugas spesifik yang harus dikerjain AI." },
+        { index: "B", title: "Prototipe", detail: "Versi kecil yang jalan dulu buat buktiin caranya." },
+        { index: "C", title: "Bangun", detail: "Alurnya dibangun lengkap dengan pengecekan kualitas." },
+        { index: "D", title: "Review", detail: "Hasilnya diuji dan disempurnakan bareng kamu." },
       ],
     },
     related: "Automation",
     faqs: [
       {
-        question: "Apakah AI bisa diandalkan untuk pekerjaan nyata?",
+        question: "AI-nya bisa diandalkan buat kerjaan nyata?",
         answer:
-          "AI berguna kalau ada batasannya. Setiap fitur kami rancang dengan pengecekan sumber dan cadangan, supaya kesalahan bisa ketahuan sejak awal.",
+          "Bisa, selama ada batasannya. Tiap fitur kami rancang dengan pengecekan sumber dan cadangan, biar salahnya ketahuan dari awal.",
       },
       {
-        question: "Apakah perlu tim teknis untuk menjalankannya?",
+        question: "Perlu tim teknis buat jalaninnya?",
         answer:
-          "Tidak. Antarmuka dan alurnya didesain untuk orang yang benar-benar memakainya.",
+          "Nggak. Antarmuka dan alurnya didesain buat orang yang beneran makainya.",
       },
       {
-        question: "Bisa terhubung dengan tools yang sudah ada?",
+        question: "Bisa nyambung ke tools yang udah dipakai?",
         answer:
-          "Bisa. Kebanyakan fitur AI kami hubungkan ke dokumen, data, dan tools yang sudah kamu pakai.",
+          "Bisa. Kebanyakan fitur AI kami sambungkan ke dokumen, data, dan tools yang udah kamu pakai.",
       },
     ],
   },
@@ -646,39 +646,39 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
     },
     hero: {
       label: "OTOMASI",
-      title: ["Otomasi n8n", "Alur Kerja yang Berjalan Sendiri"],
+      title: ["Otomasi n8n", "Kerjaan Rutin yang Jalan Sendiri"],
       intro:
-        "Kami menghubungkan tools-mu dengan n8n supaya pekerjaan rutin berjalan otomatis — lengkap dengan penanganan error, log, dan dokumentasi yang bisa diikuti timmu.",
+        "Kami sambungkan tools-mu dengan n8n biar pekerjaan rutin jalan otomatis — lengkap dengan penanganan error, log, dan dokumentasi yang bisa diikuti timmu.",
       meta: "DESAIN WORKFLOW · INTEGRASI TOOLS · NOTIFIKASI · PENANGANAN ERROR · DOKUMENTASI",
     },
     scope: {
       label: "YANG BISA DIKERJAKAN",
-      title: "Pekerjaan berulang, dirancang sekali dan otomatis setelahnya.",
+      title: "Pekerjaan berulang, dirancang sekali, otomatis seterusnya.",
       items: [
         {
           title: "Otomasi Alur Kerja",
           description:
-            "Proses berulang dirancang sekali, lalu berjalan otomatis.",
+            "Proses berulang dirancang sekali, habis itu jalan sendiri.",
           deliverables: [
             "Arsitektur dan desain workflow",
-            "Jadwal dan pemicu otomatis",
+            "Jalan otomatis sesuai jadwal atau pemicu",
             "Penanganan retry dan kegagalan",
           ],
         },
         {
           title: "Integrasi Tools",
           description:
-            "Tools-mu terhubung: Google Drive, Sheets, Gmail, WhatsApp, form, CRM, dan lainnya.",
+            "Tools-mu disambung: Google Drive, Sheets, Gmail, WhatsApp, form, CRM, dan lainnya.",
           deliverables: [
             "Koneksi ke tools eksternal",
-            "Penanganan kredensial yang aman",
-            "Sinkronisasi data dua arah bila perlu",
+            "Kredensial ditangani aman",
+            "Sinkronisasi dua arah kalau perlu",
           ],
         },
         {
           title: "Notifikasi & Laporan",
           description:
-            "Pembaruan dan ringkasan otomatis dikirim ke tempat yang sudah kamu pakai.",
+            "Update dan ringkasan otomatis dikirim ke tempat yang udah kamu pakai.",
           deliverables: [
             "Notifikasi email dan chat",
             "Laporan dan ringkasan terjadwal",
@@ -688,7 +688,7 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
         {
           title: "Olah & Transformasi Data",
           description:
-            "Data dipindah, dibersihkan, dan diformat antar sistem tanpa salin manual.",
+            "Data dipindah, dibersihkan, dan diformat antar sistem, tanpa copy-paste manual.",
           deliverables: [
             "Pemetaan dan validasi data",
             "Konversi format",
@@ -698,7 +698,7 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
         {
           title: "Dokumentasi & Serah Terima",
           description:
-            "Dokumentasi yang jelas supaya alur kerja bisa dipahami tanpa tim teknis.",
+            "Dokumentasi yang jelas biar workflow-nya bisa dipahami tanpa tim teknis.",
           deliverables: [
             "Dokumen workflow bahasa sederhana",
             "Sesi serah terima pemilik",
@@ -709,30 +709,30 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
     },
     process: {
       label: "CARA KERJANYA",
-      title: "Otomasi yang tetap mudah dipahami.",
+      title: "Otomasi yang tetap gampang dipahami.",
       steps: [
-        { index: "A", title: "Petakan", detail: "Kami petakan pekerjaan berulang yang buang waktu." },
-        { index: "B", title: "Desain", detail: "Alur kerja direncanakan dulu sebelum dijalankan." },
-        { index: "C", title: "Bangun", detail: "Koneksi dan logika dibangun lalu diuji." },
-        { index: "D", title: "Dokumentasikan", detail: "Kamu menerima alur kerja dengan dokumentasi yang jelas." },
+        { index: "A", title: "Petakan", detail: "Kami cari kerjaan berulang yang paling buang waktu." },
+        { index: "B", title: "Desain", detail: "Alur kerja direncanakan di atas kertas dulu." },
+        { index: "C", title: "Bangun", detail: "Koneksi dan logikanya dibangun lalu diuji." },
+        { index: "D", title: "Dokumentasikan", detail: "Workflow diserahkan lengkap dengan dokumentasi yang jelas." },
       ],
     },
     related: "Automation",
     faqs: [
       {
-        question: "Apakah otomasi berarti kehilangan kendali?",
+        question: "Kalau diotomasi, apa nggak kehilangan kendali?",
         answer:
-          "Tidak. Setiap workflow ada log, penanganan error, dan notifikasi, jadi kamu selalu tahu apa yang terjadi.",
+          "Nggak. Setiap workflow ada log, penanganan error, dan notifikasi — kamu selalu tahu apa yang terjadi.",
       },
       {
-        question: "Apa saja yang bisa diotomasi?",
+        question: "Apa aja yang bisa diotomasi?",
         answer:
-          "Sebagian besar pekerjaan digital yang berulang: input data, pengaturan file, notifikasi, dan memindahkan informasi antar tools.",
+          "Sebagian besar kerjaan digital yang berulang: input data, ngatur file, notifikasi, dan mindahin informasi antar tools.",
       },
       {
-        question: "Apakah perlu paham n8n?",
+        question: "Harus paham n8n nggak?",
         answer:
-          "Tidak. Semua kami dokumentasikan dengan bahasa sederhana dan dijelaskan cara kerjanya.",
+          "Nggak harus. Semuanya kami dokumentasikan dengan bahasa sederhana dan kami jelasin cara kerjanya.",
       },
     ],
   },
@@ -745,31 +745,31 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
     },
     hero: {
       label: "INTEGRASI API",
-      title: ["Integrasi API", "Sistem yang Saling Terhubung"],
+      title: ["Integrasi API", "Sistem yang Saling Nyambung"],
       intro:
-        "Kami menghubungkan produkmu dengan layanan eksternal, webhook, dan data internal — dengan pemetaan data yang jelas, retry yang membantu, dan pesan error yang berguna.",
+        "Kami sambungkan produkmu ke layanan eksternal, webhook, dan data internal — dengan pemetaan data yang jelas, retry yang membantu, dan pesan error yang berguna.",
       meta: "REST & GRAPHQL · WEBHOOK · PEMETAAN DATA · TYPED CLIENT · MONITORING",
     },
     scope: {
       label: "YANG BISA DIKERJAKAN",
-      title: "Koneksi yang dibangun di atas kontrak yang jelas.",
+      title: "Koneksi dibangun di atas aturan yang jelas.",
       items: [
         {
           title: "Integrasi REST & GraphQL",
           description:
-            "Produkmu terhubung ke layanan pihak ketiga lewat API-nya.",
+            "Produkmu disambung ke layanan pihak ketiga lewat API-nya.",
           deliverables: [
             "Arsitektur integrasi API",
             "Penanganan autentikasi",
-            "Pengelolaan limit dan kuota",
+            "Kelola rate limit dan kuota",
           ],
         },
         {
           title: "Webhook & Event",
           description:
-            "Pembaruan waktu nyata saat terjadi sesuatu di sistem lain.",
+            "Update waktu nyata pas terjadi sesuatu di sistem lain.",
           deliverables: [
-            "Pengaturan endpoint webhook",
+            "Endpoint webhook disiapkan",
             "Penanganan payload event",
             "Retry pengiriman dan idempotensi",
           ],
@@ -777,17 +777,17 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
         {
           title: "Pemetaan & Transformasi Data",
           description:
-            "Data dari satu sistem dibentuk agar cocok dengan sistem lain.",
+            "Data dari satu sistem dibentuk biar cocok sama sistem lain.",
           deliverables: [
             "Pemetaan dan validasi field",
             "Konversi format",
-            "Nilai default untuk data kosong",
+            "Nilai default buat data kosong",
           ],
         },
         {
           title: "API Client yang Rapi",
           description:
-            "Client dan handler yang ter-typing dan mudah dikembangkan.",
+            "Client dan handler yang ter-typing dan gampang dikembangin.",
           deliverables: [
             "Kode client ter-typing",
             "Penanganan error konsisten",
@@ -797,11 +797,11 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
         {
           title: "Monitoring & Fallback",
           description:
-            "Visibilitas terhadap yang berjalan dan perilaku aman saat terjadi kegagalan.",
+            "Kamu bisa liat apa yang jalan, dan sistem tetap aman pas ada yang gagal.",
           deliverables: [
             "Logging dan pengecekan status",
             "Perilaku fallback yang aman",
-            "Peringatan saat gagal",
+            "Peringatan pas gagal",
           ],
         },
       ],
@@ -810,28 +810,28 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
       label: "CARA KERJANYA",
       title: "Integrasi yang tetap andal setelah rilis.",
       steps: [
-        { index: "A", title: "Petakan", detail: "Kami petakan sistem dan data yang perlu dipindahkan." },
+        { index: "A", title: "Petakan", detail: "Kami petakan sistem dan data yang perlu dipindahin." },
         { index: "B", title: "Desain", detail: "Integrasi direncanakan dengan kontrak yang jelas." },
         { index: "C", title: "Bangun", detail: "Client, handler, dan pemetaan diimplementasikan." },
-        { index: "D", title: "Pantau", detail: "Logging dan fallback menjaga integrasi tetap andal." },
+        { index: "D", title: "Pantau", detail: "Logging dan fallback jaga integrasi tetap andal." },
       ],
     },
     related: "Automation",
     faqs: [
       {
-        question: "Bisa terhubung ke layanan apa saja?",
+        question: "Bisa nyambung ke layanan apa aja?",
         answer:
-          "Sebagian besar platform yang punya API publik bisa diintegrasikan. Kalau tidak punya API, kami cari alternatif yang praktis.",
+          "Sebagian besar platform yang punya API publik bisa diintegrasikan. Kalau nggak ada API-nya, kami cari alternatif yang praktis.",
       },
       {
-        question: "Bagaimana kalau API gagal?",
+        question: "Gimana kalau API-nya gagal?",
         answer:
-          "Kami rancang retry dan fallback, dan kamu dapat pesan error yang jelas, bukan kegagalan senyap.",
+          "Kami rancang retry dan fallback. Kamu dapat pesan error yang jelas, bukan kegagalan senyap.",
       },
       {
-        question: "Apakah integrasinya aman?",
+        question: "Amannya gimana?",
         answer:
-          "Ya. Kredensial disimpan aman, dan akses dibatasi seminimal mungkin untuk kebutuhan integrasi.",
+          "Kredensial disimpan aman, dan akses dibatasi seminimal mungkin buat kebutuhan integrasinya.",
       },
     ],
   },

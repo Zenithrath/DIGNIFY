@@ -232,9 +232,9 @@ export default async function JasaPembuatanWebsitePage() {
           <Reveal>
             <p className="meta-label text-emerald">/ LANGKAH BERIKUTNYA</p>
 <h2 id="jpw-cta-heading" className="display mt-8 text-[clamp(3rem,8.5vw,8.5rem)]">
-              Let&apos;s build something
+              Ayo bikin sesuatu yang
               <br />
-              clear.
+              jelas.
             </h2>
             <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-dark">
               Obrolan singkat dan terarah soal website kamu: tujuannya, lingkupnya, dan kendalanya.

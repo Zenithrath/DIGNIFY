@@ -42,14 +42,14 @@ export default async function IndonesianPortfolioPage() {
               / PORTFOLIO / {String(allProjects.length).padStart(2, "0")} SISTEM
             </p>
             <h1 id="id-portfolio-heading" className="display mt-6 max-w-5xl text-[clamp(2.75rem,7vw,7rem)]">
-              Work, indexed and labeled honestly.
+              Karya yang pernah kami kerjakan.
             </h1>
           </Reveal>
           <Reveal delay={0.08} className="mt-10 max-w-2xl">
             <p className="text-base leading-relaxed text-muted">
-              Setiap proyek Dignify diberi label yang jujur: kerja klien, kerja internal, atau
-              konsep, jadi kamu tahu persis yang kamu lihat. Filter di bawah ini biar nggak
-              berasa sedang menyelam di daftar yang panjang.
+              Tiap proyek ada tandanya: kerja klien, kerja internal, atau konsep. Percobaan studio
+              nggak pernah ditampilin seolah hasil kerja klien. Filter di bawah biar kamu nggak
+              nyasar di daftar yang panjang.
             </p>
           </Reveal>
         </Container>

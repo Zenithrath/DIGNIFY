@@ -115,7 +115,7 @@ const detailCopy: Record<
     scopeLabel: "YANG BISA DIKERJAKAN",
     processLabel: "CARA KERJANYA",
     workLabel: "KARYA TERKAIT",
-    workTitle: "Project yang dibentuk oleh layanan yang sama.",
+    workTitle: "Project yang dibikin dengan layanan yang sama.",
     viewPortfolio: "Lihat portfolio lengkap",
     viewWorkShort: "Lihat Portfolio",
     faqLabel: "FAQ",

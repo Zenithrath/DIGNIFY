@@ -34,7 +34,7 @@ export default async function IndonesianContactPage() {
           <Reveal>
             <p className="meta-label text-emerald">/ KONTAK</p>
             <h1 id="id-contact-heading" className="display mt-6 max-w-5xl text-[clamp(2.75rem,7vw,7rem)]">
-              Tell us what you&apos;re building.
+              Ceritakan apa yang mau kamu bangun.
             </h1>
           </Reveal>
           <div className="mt-12 grid grid-cols-12 gap-x-4">

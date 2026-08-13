@@ -38,12 +38,12 @@ export default async function IdServicesPage() {
           <Reveal>
             <p className="meta-label text-emerald">/ LAYANAN</p>
             <h1 id="id-services-hero" className="display mt-6 max-w-5xl text-[clamp(2.75rem,7vw,7rem)]">
-              Capabilities, stated plainly.
+              Lima layanan, satu cara kerja: jelas.
             </h1>
           </Reveal>
           <div className="mt-12 grid grid-cols-12 gap-x-4">
             <Reveal delay={0.08} className="col-span-12 md:col-span-6 lg:col-span-4">
-              <p className="text-base leading-relaxed text-muted-dark">Lima layanan, satu cara kerja. Kami memetakan masalahnya, merancang struktur yang tepat, dan mengirimkan hasil yang cukup jelas untuk dirawat.</p>
+              <p className="text-base leading-relaxed text-muted-dark">Lima layanan, satu cara kerja. Kami petakan masalahnya, rancang struktur yang tepat, dan kirim hasil yang cukup jelas buat dirawat.</p>
             </Reveal>
             <Reveal delay={0.16} className="col-span-12 mt-10 md:col-span-5 md:col-start-8 md:mt-0">
               <dl className="border-t border-line-dark">

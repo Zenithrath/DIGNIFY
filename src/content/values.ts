@@ -89,7 +89,7 @@ export const differentiatorsId: ValueItem[] = [
     index: "05",
     title: "Konsultasi Gratis",
     detail:
-      "Percakapan pertama tidak dipungut biaya. Kami akan bilang jujur kalau kami bukan yang paling cocok untuk masalahmu.",
+      "Obrolan pertama nggak dipungut biaya. Kami bilang jujur kalau kami bukan yang paling cocok buat masalahmu.",
   },
 ];
 

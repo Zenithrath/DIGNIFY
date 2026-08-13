@@ -23,47 +23,38 @@ function readHash() {
 }
 
 function ProjectCard({ project, index, lang }: { project: Project; index: number; lang: "en" | "id" }) {
-  const wide = index % 2 === 0;
   const base = lang === "id" ? "/id/portfolio" : "/portfolio";
   return (
     <Link
       href={`${base}/${project.slug}`}
-      className="group grid grid-cols-12 items-center gap-x-4 gap-y-6"
+      className="group flex h-full flex-col border border-line bg-pure p-3 transition-colors duration-300 hover:border-emerald-deep"
     >
-      <div
-        className={cn(
-          "col-span-12 aspect-[16/9] overflow-hidden border border-line sm:aspect-[16/8]",
-          wide ? "lg:col-span-8" : "lg:col-span-8 lg:col-start-5",
+      <div className="relative aspect-[16/10] overflow-hidden border border-line bg-ink">
+        {project.cover || project.coverUrl ? (
+          <Image
+            src={project.coverUrl ?? project.cover!}
+            alt={`${project.title} ${project.category.toLowerCase()} project by Dignify`}
+            fill
+            sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
+            className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+          />
+        ) : (
+          <ProjectPlate slug={project.slug} index={String(index + 1).padStart(2, "0")} category={project.category} year={project.year} />
         )}
-      >
-        <div className="relative h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.015]">
-          {project.cover || project.coverUrl ? (
-            <Image
-              src={project.coverUrl ?? project.cover!}
-              alt={`${project.title} ${project.category.toLowerCase()} project by Dignify`}
-              fill
-              sizes="(min-width: 1024px) 66vw, 100vw"
-              className="object-cover object-top"
-            />
-          ) : (
-            <ProjectPlate slug={project.slug} index={String(index + 1).padStart(2, "0")} category={project.category} year={project.year} />
-          )}
-        </div>
       </div>
-      <div
-        className={cn(
-          "col-span-12 lg:col-span-4",
-          wide ? "lg:pl-8" : "lg:col-start-1 lg:row-start-1 lg:pr-8 lg:text-right",
-        )}
-      >
-        <div className={cn("flex flex-wrap items-center gap-3", !wide && "lg:justify-end")}>
+      <div className="flex flex-1 flex-col px-2 pb-3 pt-5">
+        <div className="flex items-center justify-between gap-3">
+          <p className="meta-label text-muted">
+            {project.category} / {project.year}
+          </p>
           <StatusBadge status={project.status} />
-          <span className="meta-label text-muted">{project.category} / {project.year}</span>
         </div>
-        <h3 className="display mt-4 text-3xl sm:text-4xl">{project.title}</h3>
-        <p className="mt-3 text-sm leading-relaxed text-muted">{project.summary}</p>
-        <p className="mt-5 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-ink-text transition-colors group-hover:text-emerald-deep">
-          {lang === "id" ? "Baca studi kasus" : "Read case study"}
+        <h3 className="display mt-3 text-2xl transition-colors duration-300 group-hover:text-emerald-deep">
+          {project.title}
+        </h3>
+        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">{project.summary}</p>
+        <p className="mt-4 inline-flex items-center gap-2 pt-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-ink-text transition-colors duration-300 group-hover:text-emerald-deep">
+          {lang === "id" ? "Lihat Studi Kasus" : "View Case Study"}
           <ArrowUpRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </p>
       </div>
@@ -140,7 +131,7 @@ export function PortfolioGrid({ lang = "en", initialProjects }: { lang?: "en" | 
         })}
       </div>
 
-      <ul className="mt-14 space-y-16 sm:space-y-20">
+      <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((project, i) => (
           <li key={project.slug} className="list-none">
             <ProjectCard project={project} index={i} lang={lang} />
@@ -153,14 +144,6 @@ export function PortfolioGrid({ lang = "en", initialProjects }: { lang?: "en" | 
           {lang === "id" ? "BELUM ADA PROYEK DI KATEGORI INI." : "NO PROJECTS IN THIS CATEGORY YET."}
         </p>
       ) : null}
-
-      <div className="mt-16 border-t border-line pt-8">
-        <p className="meta-label text-muted">
-          {lang === "id"
-            ? "SEMUA PROYEK BERLABEL JUJUR / KLIEN, INTERNAL, ATAU KONSEP."
-            : "ALL PROJECTS ARE LABELED HONESTLY / CLIENT, INTERNAL, OR CONCEPT."}
-        </p>
-      </div>
     </div>
   );
 }

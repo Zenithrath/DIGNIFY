@@ -7,7 +7,7 @@ export const site = {
   description:
     "Dignify builds responsive landing pages, portfolio websites, company profiles and custom digital experiences for brands, businesses and personal projects.",
   descriptionId:
-    "Dignify menyediakan jasa pembuatan website, landing page, company profile, portfolio, dan web development custom untuk bisnis dan personal brand.",
+    "Dignify bantu bisnis dan personal brand bikin website, landing page, company profile, portfolio, dan web development custom yang responsif dan siap dipakai.",
   url: siteUrl,
   email: "studiodignify@gmail.com",
   phone: "+62 877-8392-3671",

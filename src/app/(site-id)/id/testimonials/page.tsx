@@ -33,7 +33,7 @@ export default function IndonesianTestimonialsPage() {
           <Reveal>
             <p className="meta-label text-emerald-deep">/ TESTIMONI</p>
             <h1 id="id-testimonials-heading" className="display mt-6 max-w-5xl text-[clamp(2.75rem,7vw,7rem)]">
-              What clients say, when they are ready to share it.
+              Kata klien, saat mereka siap membagikannya.
             </h1>
           </Reveal>
           <Reveal delay={0.08} className="mt-10 max-w-2xl">
@@ -107,7 +107,7 @@ export default function IndonesianTestimonialsPage() {
             <Reveal delay={0.08} className="col-span-12 lg:col-span-7 lg:col-start-6">
               <ul className="border-t border-line">
                 {[
-                  ["01", "Kutipan jujur saja", "Dipublikasikan apa adanya, dengan namamu dan proyek yang kamu kerjakan."],
+                  ["01", "Kutipan apa adanya", "Dipublikasikan seperti aslinya, dengan namamu dan proyek yang kamu kerjakan."],
                   ["02", "Tanpa edit demi marketing", "Kami minta izin dulu sebelum memangkas atau mengklarifikasi apa pun."],
                   ["03", "Bisa ditarik kapan saja", "Kamu bisa minta testimoni dihapus tanpa syarat."],
                 ].map(([index, title, detail]) => (

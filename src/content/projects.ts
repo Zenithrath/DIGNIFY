@@ -52,7 +52,7 @@ export const projects: Project[] = [
       { label: "Source code", href: "https://github.com/Zenithrath/TelagaPratamaPersada" },
     ],
     reflection:
-      "The concept proved that an industrial company profile does not need to be dull. Clear codes, honest structure, and one strong contact path do the work.",
+      "The concept proved that an industrial company profile does not need to be dull. Clean code, a clear structure, and one strong contact path carry the result.",
     nextSlug: "bem-vokasi-ub-2025",
   },
   {
@@ -109,7 +109,7 @@ export const projects: Project[] = [
       { step: "Profile", detail: "Defined the positioning: AI engineer focused on n8n workflows and automation." },
       { step: "Structure", detail: "Planned numbered sections from profile to contact." },
       { step: "Work index", detail: "Listed the real projects with filters and details." },
-      { step: "Credentials", detail: "Added certificates and work experience with honest labels." },
+      { step: "Credentials", detail: "Added clearly labeled certificates and work experience." },
       { step: "Contact", detail: "Built the contact path with CV download, email, and WhatsApp." },
     ],
     gallery: [
@@ -124,7 +124,7 @@ export const projects: Project[] = [
       { label: "Source code", href: "https://github.com/Zenithrath/portofolio" },
     ],
     reflection:
-      "Building the founder's own site kept the studio honest: the work shown on it is real work, labeled the same way we label everything else.",
+      "The founder's own site follows the same rule as every project in this portfolio: each piece of work is shown for what it actually is.",
     nextSlug: "dignify-studio-site",
   },
   {
@@ -142,7 +142,7 @@ export const projects: Project[] = [
     approach:
       "We set the visual rules first: two monochrome surfaces, two accents, three typefaces, and one grid. The content lives in typed data files, which lets us update the site without rewriting the layout.",
     solution:
-      "The result is a site with seven pages: an editorial home, detailed services, a filterable portfolio, case studies, an about page, an honest testimonial state, and a contact form. The visual plates use SVG and geometry, so the site does not depend on a large image library.",
+      "The result is a site with seven pages: an editorial home, detailed services, a filterable portfolio, case studies, an about page, a testimonials page that reports only what exists, and a contact form. The visual plates use SVG and geometry, so the site does not depend on a large image library.",
     process: [
       { step: "Identity", detail: "Established the monochrome foundation, accent rules, and typography scale before any layout." },
       { step: "System", detail: "Defined reusable primitives: sections, rules, tags, buttons, and reveal behavior." },

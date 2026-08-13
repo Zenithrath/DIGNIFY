@@ -14,7 +14,7 @@ const copy = {
   id: {
     label: "CARA KAMI BEKERJA",
     title: "Urutan yang benar-benar kami jalankan.",
-    body: "Lima tahap berurutan, dengan output yang jelas di antara tahap-tahapnya. Urutannya dibuat supaya kejutan terjadi di tahap discovery, bukan di akhir produksi.",
+    body: "Lima tahap berurutan, dengan output yang jelas di tiap tahapnya. Urutannya dibikin biar kejutan ketahuan di awal, bukan pas di akhir produksi.",
     seq: "SEQ / 05 TAHAP",
   },
 } as const;

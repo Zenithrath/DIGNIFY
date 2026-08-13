@@ -9,7 +9,7 @@ export const seo = {
   homeId: {
     title: "Dignify | Jasa Pembuatan Website & Web Development",
     description:
-      "Dignify menyediakan jasa pembuatan website, landing page, company profile, portfolio, dan web development custom yang responsif untuk bisnis dan personal brand.",
+      "Dignify bantu bikin website, landing page, company profile, portfolio, dan web development custom yang responsif buat bisnis dan personal brand.",
   },
   services: {
     title: "Digital Services | Web Design, AI & Automation",
@@ -19,32 +19,32 @@ export const seo = {
   servicesId: {
     title: "Layanan Digital | Web Design, AI & Otomasi",
     description:
-      "Jasa web development, desain UI/UX, solusi AI, otomasi n8n, dan integrasi API, dengan scope yang jelas dan serah terima terdokumentasi.",
+      "Jasa web development, desain UI/UX, solusi AI, otomasi n8n, dan integrasi API — dengan scope yang jelas dan serah terima yang terdokumentasi.",
   },
   portfolio: {
     title: "Portfolio | Websites, Interfaces & Automation",
     description:
-      "Dignify projects: selected work across websites, interfaces, AI tools, and automation, labeled honestly as client, internal, or concept projects.",
+      "Selected Dignify projects across websites, interfaces, AI tools, and automation — each one marked as client work, internal work, or a concept.",
   },
   portfolioId: {
     title: "Portfolio Dignify | Website, UI/UX & Otomasi",
     description:
-      "Karya pilihan Dignify: website, antarmuka, AI, dan otomasi, diberi label jujur sebagai proyek klien, internal, atau konsep.",
+      "Karya pilihan Dignify: website, antarmuka, AI, dan otomasi — tiap proyek ditandai sebagai kerja klien, internal, atau konsep.",
   },
   aboutId: {
     title: "Tentang Dignify | Studio Digital Kecil oleh Dije, Ignas & Daniel",
     description:
-      "Dignify adalah studio digital kecil yang dibangun Dije, Ignas, dan Daniel. Kami mengerjakan website, UI/UX, solusi AI, otomasi, dan integrasi sistem.",
+      "Dignify adalah studio digital kecil yang dibangun Dije, Ignas, dan Daniel. Kami ngerjain website, UI/UX, solusi AI, otomasi, dan integrasi sistem.",
   },
   contactId: {
     title: "Kontak Dignify | Mulai Proyek Website atau Otomasi",
     description:
-      "Hubungi Dignify untuk jasa pembuatan website, UI/UX, AI, otomasi n8n, atau integrasi API. Konsultasi gratis untuk memetakan proyekmu.",
+      "Hubungi Dignify buat jasa pembuatan website, UI/UX, AI, otomasi n8n, atau integrasi API. Konsultasi gratis buat memetakan proyekmu.",
   },
   testimonialsId: {
     title: "Testimoni | Dignify Digital Studio",
     description:
-      "Dignify hanya menampilkan testimoni asli dari klien dengan izin. Tidak ada review karangan atau klaim palsu.",
+      "Dignify cuma menampilkan testimoni asli dari klien dengan izin. Nggak ada review karangan atau klaim palsu.",
   },
   about: {
     title: "About Dignify | A Digital Studio Built by Dije, Ignas & Daniel",
