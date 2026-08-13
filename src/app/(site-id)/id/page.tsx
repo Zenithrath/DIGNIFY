@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Hero } from "@/components/home/hero";
-import { ServiceIndex } from "@/components/home/service-index";
-import { FeaturedWork } from "@/components/home/featured-work";
+import { Services } from "@/components/home/services";
+import { SelectedWork } from "@/components/home/selected-work";
+import { WhyDignify } from "@/components/home/why-dignify";
+import { Process } from "@/components/home/process";
 import { FinalCta } from "@/components/home/final-cta";
 import { seo } from "@/content/seo";
 import { site } from "@/content/site";
@@ -55,8 +57,10 @@ export default function IndonesianHomePage() {
     <div lang="id">
       <JsonLd data={indonesianPageJsonLd} />
       <Hero copy={idHomeCopy.hero} />
-      <ServiceIndex copy={idHomeCopy.serviceIndex} />
-      <FeaturedWork copy={idHomeCopy.featuredWork} lang="id" />
+      <Services copy={idHomeCopy.services} />
+      <SelectedWork copy={idHomeCopy.selectedWork} lang="id" />
+      <WhyDignify copy={idHomeCopy.why} />
+      <Process copy={idHomeCopy.process} />
       <FinalCta copy={idHomeCopy.finalCta} />
     </div>
   );

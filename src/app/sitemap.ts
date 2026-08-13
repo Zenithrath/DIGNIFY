@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/content/site";
 import { projects } from "@/content/projects";
+import { serviceSlugs } from "@/content/service-details";
 
 function pair(enPath: string, idPath: string, priority: number, changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"]) {
   return [
@@ -34,6 +35,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const testimonials = pair("/testimonials", "/id/testimonials", 0.5, "monthly");
   const contact = pair("/contact", "/id/contact", 0.8, "monthly");
 
+  const serviceRoutes: MetadataRoute.Sitemap = serviceSlugs.flatMap((slug) =>
+    pair(`/services/${slug}`, `/id/services/${slug}`, 0.8, "monthly"),
+  );
+
   const projectRoutes: MetadataRoute.Sitemap = projects.flatMap((project) => [
     {
       url: `${site.url}/portfolio/${project.slug}`,
@@ -63,5 +68,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]);
 
-  return [...home, ...webDevelopment, ...services, ...portfolio, ...about, ...testimonials, ...contact, ...projectRoutes];
+  return [...home, ...webDevelopment, ...services, ...portfolio, ...about, ...testimonials, ...contact, ...serviceRoutes, ...projectRoutes];
 }

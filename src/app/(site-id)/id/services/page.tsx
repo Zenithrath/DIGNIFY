@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
@@ -100,6 +101,18 @@ export default async function IdServicesPage() {
                             {tag}
                           </span>
                         ))}
+                      </div>
+                      <div className="mt-8 border-t pt-6" style={{ borderColor: isDark ? "var(--color-line-dark)" : "var(--color-line)" }}>
+                        <Link
+                          href={service.slug === "website-development" ? "/id/jasa-pembuatan-website" : `/id/services/${service.slug}`}
+                          className={cn(
+                            "meta-label inline-flex items-center gap-2 transition-colors",
+                            isDark ? "text-emerald hover:text-paper" : "text-emerald-deep hover:text-ink",
+                          )}
+                        >
+                          DETAIL
+                          <span aria-hidden>→</span>
+                        </Link>
                       </div>
                     </div>
                   </div>

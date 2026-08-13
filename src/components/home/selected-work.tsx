@@ -11,13 +11,13 @@ import { fetchProjectsFromDb } from "@/lib/cms-store";
 import { formatYearIndex } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 import { enHomeCopy } from "@/content/home-copy";
-import type { FeaturedWorkCopy } from "@/content/home-copy";
+import type { SelectedWorkCopy } from "@/content/home-copy";
 
-export async function FeaturedWork({
-  copy = enHomeCopy.featuredWork,
+export async function SelectedWork({
+  copy = enHomeCopy.selectedWork,
   lang = "en",
 }: {
-  copy?: FeaturedWorkCopy;
+  copy?: SelectedWorkCopy;
   lang?: "en" | "id";
 }) {
   const allProjects = await fetchProjectsFromDb().catch(() => staticProjects);
@@ -27,18 +27,15 @@ export async function FeaturedWork({
 
   return (
     <section
-      aria-labelledby="featured-heading"
-      className="bg-ink py-24 text-paper sm:py-32"
+      aria-labelledby="selected-work-heading"
+      className="bg-paper py-24 sm:py-32"
       style={{ clipPath: "polygon(0 4%, 100% 0, 100% 100%, 0 100%)" }}
     >
       <Container>
-        <SectionHeader index="03" label={copy.label} title={copy.title} tone="dark" id="featured-heading" />
-        <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-dark">
-          {copy.intro}
-        </p>
+        <SectionHeader index="02" label={copy.label} title={copy.title} id="selected-work-heading" />
       </Container>
 
-      <div className="mt-14 space-y-16 sm:mt-20 sm:space-y-20">
+      <div className="mt-14 space-y-16 sm:mt-20 sm:space-y-24">
         {featured.map((project, i) => {
           const wide = i % 2 === 0;
           return (
@@ -50,7 +47,7 @@ export async function FeaturedWork({
                 >
                   <div
                     className={cn(
-                      "col-span-12 aspect-[16/9] overflow-hidden border border-line-dark sm:aspect-[16/8]",
+                      "col-span-12 aspect-[16/9] overflow-hidden border border-line sm:aspect-[16/8]",
                       wide ? "lg:col-span-8" : "lg:col-span-8 lg:col-start-5",
                     )}
                   >
@@ -81,14 +78,19 @@ export async function FeaturedWork({
                     )}
                   >
                     <div className={cn("flex items-center gap-3", !wide && "lg:justify-end")}>
-                      <StatusBadge status={project.status} tone="dark" />
-                      <span className="meta-label text-muted-dark">{project.category} / {project.year}</span>
+                      <StatusBadge status={project.status} />
+                      <span className="meta-label text-muted">
+                        {project.category} / {project.year}
+                      </span>
                     </div>
                     <h3 className="display mt-4 text-3xl sm:text-4xl lg:text-5xl">{project.title}</h3>
-                    <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-dark">{project.summary}</p>
-                    <p className="mt-5 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-paper transition-colors group-hover:text-emerald">
-                      {copy.readCaseStudy}
-                      <ArrowUpRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">{project.summary}</p>
+                    <p className="mt-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-ink-text transition-colors group-hover:text-emerald-deep">
+                      {copy.viewProject}
+                      <ArrowUpRight
+                        aria-hidden
+                        className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      />
                     </p>
                   </div>
                 </Link>
@@ -99,10 +101,10 @@ export async function FeaturedWork({
       </div>
 
       <Container className="mt-16">
-        <div className="border-t border-line-dark pt-8 text-center">
+        <div className="border-t border-line pt-8 text-center">
           <Link
             href={base}
-            className="link-underline font-mono text-xs uppercase tracking-[0.14em] text-paper"
+            className="link-underline font-mono text-xs uppercase tracking-[0.14em] text-ink-text"
           >
             {copy.footerLink}
           </Link>

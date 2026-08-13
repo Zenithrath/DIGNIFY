@@ -1,34 +1,24 @@
 import Link from "next/link";
 import { BrandLogo } from "./brand";
 import { Container } from "@/components/ui/container";
-import { site, navLinks } from "@/content/site";
+import { site, navLinks, navLinksId } from "@/content/site";
 import { services } from "@/content/services";
 import { LanguageSwitcher } from "./language-switcher";
 import type { Locale } from "@/lib/locale";
 
-const footerNavId = [
-  { href: "/id", label: "Beranda" },
-  { href: "/id/jasa-pembuatan-website", label: "Jasa Pembuatan Website" },
-  { href: "/id/portfolio", label: "Portfolio" },
-  { href: "/id/about", label: "Tentang Dignify" },
-  { href: "/id/testimonials", label: "Testimoni" },
-  { href: "/id/contact", label: "Kontak" },
-] as const;
-
 const footerServicesId = [
-  { href: "/id/jasa-pembuatan-website#pembuatan-website", label: "Jasa Pembuatan Website" },
-  { href: "/id/jasa-pembuatan-website#landing-page", label: "Jasa Landing Page" },
-  { href: "/id/jasa-pembuatan-website#company-profile", label: "Website Company Profile" },
-  { href: "/id/jasa-pembuatan-website#portfolio-website", label: "Website Portfolio" },
-  { href: "/id/jasa-pembuatan-website#front-end", label: "Pengembangan Front-End" },
+  { href: "/id/jasa-pembuatan-website", label: "Jasa Pembuatan Website" },
+  { href: "/id/services/ui-ux-design", label: "UI/UX Design" },
+  { href: "/id/services/ai-solutions", label: "Solusi AI" },
+  { href: "/id/services/n8n-automation", label: "Otomasi n8n" },
+  { href: "/id/services/api-integration", label: "Integrasi API" },
 ] as const;
 
 export function SiteFooter({ locale = "en" }: { locale?: Locale }) {
   const year = new Date().getFullYear();
   const isIndonesian = locale === "id";
   const description = isIndonesian ? site.descriptionId : site.description;
-  const location = isIndonesian ? site.locationId : site.location;
-  const menuTitle = isIndonesian ? "MENU" : "MENU";
+  const nav = isIndonesian ? navLinksId : navLinks;
   const servicesTitle = isIndonesian ? "LAYANAN" : "SERVICES";
   const contactTitle = isIndonesian ? "KONTAK" : "CONTACT";
 
@@ -38,16 +28,14 @@ export function SiteFooter({ locale = "en" }: { locale?: Locale }) {
         <div className="grid grid-cols-12 gap-x-4 gap-y-12">
           <div className="col-span-12 lg:col-span-5">
             <BrandLogo tone="paper" />
-            <p className="meta-label mt-3 text-muted-dark">
-              {site.tagline} · {location}
-            </p>
+            <p className="meta-label mt-3 text-muted-dark">Creative Digital Studio</p>
             <p className="mt-8 max-w-sm text-sm leading-relaxed text-muted-dark">{description}</p>
           </div>
 
           <nav aria-label="Footer" className="col-span-6 sm:col-span-4 lg:col-span-2">
-            <p className="meta-label text-muted-dark">{menuTitle}</p>
+            <p className="meta-label text-muted-dark">MENU</p>
             <ul className="mt-4 space-y-1">
-              {(isIndonesian ? footerNavId : navLinks).map((link) => (
+              {nav.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -77,7 +65,11 @@ export function SiteFooter({ locale = "en" }: { locale?: Locale }) {
                 : services.map((service) => (
                     <li key={service.slug}>
                       <Link
-                        href={service.slug === "website-development" ? "/web-development" : `/services#${service.slug}`}
+                        href={
+                          service.slug === "website-development"
+                            ? "/web-development"
+                            : `/services/${service.slug}`
+                        }
                         className="inline-block py-1.5 text-sm text-paper transition-colors hover:text-emerald"
                       >
                         {service.title}
@@ -105,10 +97,9 @@ export function SiteFooter({ locale = "en" }: { locale?: Locale }) {
                   rel="noopener noreferrer"
                   className="text-paper underline decoration-paper/40 underline-offset-4 transition-colors hover:text-emerald hover:decoration-emerald"
                 >
-                  {site.phone}
+                  WhatsApp
                 </a>
               </li>
-              <li className="text-muted-dark">{location}</li>
             </ul>
           </div>
         </div>

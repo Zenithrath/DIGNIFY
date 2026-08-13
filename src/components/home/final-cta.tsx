@@ -9,35 +9,34 @@ export function FinalCta({ copy = enHomeCopy.finalCta }: { copy?: FinalCtaCopy }
   return (
     <section
       aria-labelledby="cta-heading"
-      className="bg-ink py-28 text-paper sm:py-36"
-      style={{ clipPath: "polygon(0 8%, 100% 0, 100% 100%, 0 100%)" }}
+      className="border-t border-line-dark bg-ink py-28 text-paper sm:py-36"
     >
       <Container>
-        <div className="grid grid-cols-12 gap-x-4">
-          <Reveal className="col-span-12 lg:col-span-9">
-            <p className="meta-label text-emerald">{copy.label}</p>
-            <h2 id="cta-heading" className="display mt-8 text-[clamp(3rem,8.5vw,8.5rem)]">
-              {copy.heading[0]}
-              <br />
-              {copy.heading[1]}
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1} className="col-span-12 mt-10 lg:col-span-3 lg:col-start-10 lg:mt-0">
-            <div className="border border-line-dark p-8">
-              <p className="text-sm leading-relaxed text-muted-dark">
-                {copy.box}
-              </p>
-              <div className="mt-8 flex flex-col gap-3">
-                <Button href={copy.primaryCta.href} variant="emerald" size="lg" arrow>
-                  {copy.primaryCta.label}
-                </Button>
-                <Button href={`mailto:${site.email}`} variant="outlineLight" size="lg">
-                  {site.email}
-                </Button>
-              </div>
-            </div>
-          </Reveal>
-        </div>
+        <Reveal>
+          <h2 id="cta-heading" className="display max-w-5xl text-[clamp(2.75rem,7.5vw,7.5rem)] leading-[0.95]">
+            {copy.heading}
+          </h2>
+          <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-dark sm:text-lg">{copy.sub}</p>
+          <div className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
+            <Button href={copy.primaryCta.href} variant="emerald" size="lg" arrow>
+              {copy.primaryCta.label}
+            </Button>
+            <a
+              href={`mailto:${site.email}`}
+              className="font-mono text-xs uppercase tracking-[0.14em] text-paper underline decoration-paper/40 underline-offset-4 transition-colors hover:text-emerald hover:decoration-emerald"
+            >
+              {site.email}
+            </a>
+            <a
+              href={site.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-xs uppercase tracking-[0.14em] text-paper underline decoration-paper/40 underline-offset-4 transition-colors hover:text-emerald hover:decoration-emerald"
+            >
+              WhatsApp
+            </a>
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

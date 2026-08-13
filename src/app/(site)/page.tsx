@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/home/hero";
-import { ServiceIndex } from "@/components/home/service-index";
-import { FeaturedWork } from "@/components/home/featured-work";
+import { Services } from "@/components/home/services";
+import { SelectedWork } from "@/components/home/selected-work";
+import { WhyDignify } from "@/components/home/why-dignify";
+import { Process } from "@/components/home/process";
 import { FinalCta } from "@/components/home/final-cta";
 import { seo } from "@/content/seo";
 
@@ -28,8 +30,10 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <ServiceIndex />
-      <FeaturedWork />
+      <Services />
+      <SelectedWork />
+      <WhyDignify />
+      <Process />
       <FinalCta />
     </>
   );

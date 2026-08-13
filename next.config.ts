@@ -10,6 +10,20 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/services/website-development",
+        destination: "/web-development",
+        permanent: true,
+      },
+      {
+        source: "/id/services/website-development",
+        destination: "/id/jasa-pembuatan-website",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

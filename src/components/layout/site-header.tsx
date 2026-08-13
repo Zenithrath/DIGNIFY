@@ -24,7 +24,7 @@ export function SiteHeader() {
   const isIndonesian = locale === "id";
   const links = isIndonesian ? navLinksId : navLinks;
   const brandHref = isIndonesian ? "/id" : "/";
-  const ctaLabel = isIndonesian ? "Diskusikan Proyek" : "Start a Project";
+  const ctaLabel = isIndonesian ? "Mulai Project" : "Start a Project";
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -161,12 +161,22 @@ export function SiteHeader() {
               <ThemeToggle tone="dark" className="flex" />
             </div>
             <p className="meta-label text-muted-dark">NEW PROJECT ENQUIRY</p>
-            <a
-              href={`mailto:${site.email}`}
-              className="mt-2 inline-block text-sm text-paper underline decoration-paper/40 underline-offset-4 transition-colors hover:text-emerald hover:decoration-emerald"
-            >
-              {site.email}
-            </a>
+            <div className="mt-2 flex flex-col gap-2">
+              <a
+                href={`mailto:${site.email}`}
+                className="inline-block text-sm text-paper underline decoration-paper/40 underline-offset-4 transition-colors hover:text-emerald hover:decoration-emerald"
+              >
+                {site.email}
+              </a>
+              <a
+                href={site.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-sm text-paper underline decoration-paper/40 underline-offset-4 transition-colors hover:text-emerald hover:decoration-emerald"
+              >
+                WhatsApp · {site.phone}
+              </a>
+            </div>
           </div>
         </div>
       ) : null}
