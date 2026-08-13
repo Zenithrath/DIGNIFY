@@ -5,7 +5,7 @@ import { FeaturedWork } from "@/components/home/featured-work";
 import { FinalCta } from "@/components/home/final-cta";
 import { seo } from "@/content/seo";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: { absolute: seo.home.title },
