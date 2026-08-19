@@ -32,9 +32,9 @@ export const seo = {
       "Karya pilihan Dignify dalam jasa pembuatan website, desain UI/UX, AI, dan otomasi — tiap proyek ditandai jujur sebagai kerja klien, internal, atau konsep.",
   },
   aboutId: {
-    title: "Tentang Dignify | Studio Digital Kecil oleh Dije, Ignas & Daniel",
+    title: "Tentang Dignify | Studio Digital Kecil oleh Dije, Ignas, Daniel & Dzaky",
     description:
-      "Dignify adalah studio digital kecil yang dibangun Dije, Ignas, dan Daniel. Kami ngerjain jasa pembuatan website, desain UI/UX, solusi AI, otomasi, dan integrasi sistem.",
+      "Dignify adalah studio digital kecil yang dibangun Dije, Ignas, Daniel, dan Dzaky. Kami ngerjain jasa pembuatan website, desain UI/UX, solusi AI, otomasi, dan integrasi sistem.",
   },
   contactId: {
     title: "Kontak Dignify | Mulai Proyek Pembuatan Website atau Otomasi",
@@ -47,9 +47,9 @@ export const seo = {
       "Dignify cuma menampilkan testimoni asli dari klien dengan izin. Nggak ada review karangan atau klaim palsu.",
   },
   about: {
-    title: "About Dignify | A Digital Studio Built by Dije, Ignas & Daniel",
+    title: "About Dignify | A Digital Studio Built by Dije, Ignas, Daniel & Dzaky",
     description:
-      "Dignify is a small digital studio built by Dije, Ignas, and Daniel, working on websites, UI/UX, AI solutions, automation, and system integrations.",
+      "Dignify is a small digital studio built by Dije, Ignas, Daniel, and Dzaky, working on websites, UI/UX, AI solutions, automation, and system integrations.",
   },
   contact: {
     title: "Contact Dignify | Start a Web or Automation Project",
@@ -154,6 +154,7 @@ export const organizationJsonLd = {
         { "@type": "Person", name: "Dije" },
         { "@type": "Person", name: "Ignas" },
         { "@type": "Person", name: "Daniel" },
+        { "@type": "Person", name: "Dzaky" },
       ],
       contactPoint: {
         "@type": "ContactPoint",

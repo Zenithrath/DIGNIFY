@@ -49,7 +49,7 @@ let memorySubmissions: ContactSubmission[] = [
     email: "alex@example.com",
     company: "Vance Media",
     service: "Website Development",
-    budget: "$2,500 - $5,000",
+    budget: "Rp 15 - 30 juta",
     timeline: "1 Month",
     description: "Looking for a fast Next.js editorial website for our agency redesign.",
     status: "New",

@@ -25,7 +25,14 @@ const budgetOptions = ["Under $1,000", "$1,000 to $3,000", "$3,000 to $5,000", "
 const timelineOptions = ["ASAP", "1 to 3 months", "3 to 6 months", "Flexible", "Not sure yet"];
 
 const serviceOptionsId = [...services.map((s) => s.title), "Lainnya"];
-const budgetOptionsId = ["Di bawah $1.000", "$1.000 - $3.000", "$3.000 - $5.000", "$5.000 - $10.000", "$10.000+", "Belum tahu"];
+const budgetOptionsId = [
+  "Di bawah Rp 5 juta",
+  "Rp 5 - 15 juta",
+  "Rp 15 - 30 juta",
+  "Rp 30 - 60 juta",
+  "Rp 60 juta ke atas",
+  "Belum tahu",
+];
 const timelineOptionsId = ["Segerah mungkin", "1 sampai 3 bulan", "3 sampai 6 bulan", "Fleksibel", "Belum tahu"];
 
 const initialValues: Record<FieldName, string> = {

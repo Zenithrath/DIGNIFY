@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
@@ -7,11 +6,6 @@ import { Button } from "@/components/ui/button";
 import { aboutId, team } from "@/content/team";
 import { seo } from "@/content/seo";
 import { cn } from "@/lib/utils";
-import dijeImg from "@/dije.png";
-import ignasImg from "@/ignas.png";
-import danielImg from "@/daniel.png";
-
-const memberPhotos = [dijeImg, ignasImg, danielImg] as const;
 
 export const metadata: Metadata = {
   title: seo.aboutId.title,
@@ -127,7 +121,7 @@ export default function IndonesianAboutPage() {
         <Container>
           <Reveal>
             <div className="border-b border-line pb-6">
-              <p className="meta-label text-emerald-deep">/ TIM / 03 ORANG</p>
+              <p className="meta-label text-emerald-deep">/ TIM / {team.length} ORANG</p>
               <h2 id="id-team-heading" className="display mt-6 text-4xl">
                 {aboutId.team.title}
               </h2>
@@ -137,14 +131,8 @@ export default function IndonesianAboutPage() {
             {team.map((member, i) => (
               <Reveal key={member.name} delay={i * 0.08} className="col-span-12 md:col-span-6 lg:col-span-4">
                 <article className="flex h-full flex-col border border-line bg-pure p-6 sm:p-8">
-                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-ink">
-                    <Image
-                      src={memberPhotos[i]}
-                      alt={`Potret ${member.name}`}
-                      fill
-                      sizes="(min-width: 1024px) 25vw, 50vw"
-                      className="object-cover object-top"
-                    />
+                  <div className="flex aspect-[4/3] w-full items-center justify-center border border-line bg-ink">
+                    <span className="display text-6xl text-paper sm:text-7xl">{member.initials}</span>
                   </div>
                   <h3 className="display mt-6 text-3xl">{member.name}</h3>
                   <p className="meta-label mt-2 text-emerald-deep">{member.roleId.toUpperCase()}</p>

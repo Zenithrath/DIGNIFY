@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
@@ -10,11 +9,6 @@ import { Differentiators } from "@/components/about/differentiators";
 import { about, team } from "@/content/team";
 import { studioValues } from "@/content/values";
 import { seo } from "@/content/seo";
-import dijeImg from "@/dije.png";
-import ignasImg from "@/ignas.png";
-import danielImg from "@/daniel.png";
-
-const memberPhotos = [dijeImg, ignasImg, danielImg] as const;
 
 export const metadata: Metadata = {
   title: seo.about.title,
@@ -45,7 +39,7 @@ export default function AboutPage() {
           <Reveal>
             <p className="meta-label text-emerald">/ ABOUT THE STUDIO</p>
             <h1 id="about-heading" className="display mt-6 max-w-5xl text-[clamp(2.75rem,7vw,7rem)]">
-              Three people. One standard.
+              Four people. One standard.
             </h1>
           </Reveal>
           <Reveal delay={0.08} className="mt-12 max-w-2xl">
@@ -216,7 +210,7 @@ export default function AboutPage() {
         <Container>
           <Reveal>
             <div className="border-b border-line pb-6">
-              <p className="meta-label text-emerald-deep">/ TEAM / 03 PEOPLE</p>
+              <p className="meta-label text-emerald-deep">/ TEAM / {team.length} PEOPLE</p>
               <h2 id="team-heading" className="display mt-6 text-4xl">
                 The people who answer the emails.
               </h2>
@@ -232,13 +226,9 @@ export default function AboutPage() {
                     <div className="absolute bottom-5 right-5 h-3 w-3 border-b-2 border-r-2 border-emerald z-10" />
                     <div className="absolute top-5 right-5 h-10 w-px bg-line-dark/40 z-10" />
                     <div className="absolute bottom-5 left-5 h-10 w-px bg-line-dark/40 z-10" />
-                    <Image
-                      src={memberPhotos[i]}
-                      alt={`Portrait of ${member.name}`}
-                      fill
-                      sizes="(min-width: 768px) 30vw, 60vw"
-                      className="object-cover object-top scale-[1.02]"
-                    />
+                    <div className="flex h-full w-full items-center justify-center">
+                      <span className="display text-6xl text-paper sm:text-7xl">{member.initials}</span>
+                    </div>
                     <span className="absolute bottom-5 left-5 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-emerald z-10">
                       {String(i + 1).padStart(2, "0")}
                     </span>

@@ -42,6 +42,16 @@ export const team = [
     portfolioUrl: null,
     githubUrl: null,
   },
+  {
+    name: "Dzaky",
+    role: "Business Analyst and QA",
+    roleId: "Business Analyst & QA",
+    focus: ["Business Analysis", "Quality Assurance", "Testing"],
+    initials: "DZ",
+    founder: false,
+    portfolioUrl: null,
+    githubUrl: null,
+  },
 ] as const;
 
 export const about = {
@@ -56,9 +66,9 @@ export const about = {
 export const aboutId = {
   heroTitle: ["Halo, Kami Dignify.", "Studio Digital Kecil yang Jeli."],
   intro:
-    "Dignify adalah studio digital kecil yang dibangun Dije, Ignas, dan Daniel. Kami ngerjain jasa pembuatan website, desain UI/UX, solusi AI, otomasi n8n, dan integrasi API — dengan perhatian yang sama buat tiap project, sekecil apapun.",
+    "Dignify adalah studio digital kecil yang dibangun Dije, Ignas, Daniel, dan Dzaky. Kami ngerjain jasa pembuatan website, desain UI/UX, solusi AI, otomasi n8n, dan integrasi API — dengan perhatian yang sama buat tiap project, sekecil apapun.",
   stats: [
-    { value: "03", label: "Orang di studio" },
+    { value: "04", label: "Orang di studio" },
     { value: "05", label: "Layanan digital" },
     { value: "ID", label: "Area kerja" },
     { value: "24 JAM", label: "Target balas pesan" },
@@ -92,6 +102,7 @@ export const aboutId = {
       Dije: "Pegang front end, otomasi, dan media sosial.",
       Ignas: "Pegang SEO dan perencanaan.",
       Daniel: "Pegang back end dan database.",
+      Dzaky: "Pegang analisis kebutuhan dan QA — testing, dokumentasi, dan jaga kualitas hasil.",
     },
   },
   cta: {
