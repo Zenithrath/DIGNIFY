@@ -13,21 +13,21 @@ export default function NotFound() {
             404
           </h1>
           <p className="display mt-4 max-w-2xl text-3xl sm:text-4xl">
-            Signal lost. This coordinate does not exist.
+            Halaman tidak ditemukan.
           </p>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted">
-            The page you requested was moved, renamed, or never built. The rest of the system is
-            still intact.
+            Halaman yang Anda cari dipindahkan, diganti nama, atau belum pernah dibuat. Sistem lainnya
+            masih berfungsi normal.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button href="/" variant="solid" size="lg" arrow>
-              Back to base
+              Kembali ke beranda
             </Button>
             <Link
               href="/portfolio"
               className="inline-flex items-center px-7 py-4 font-mono text-xs uppercase tracking-[0.14em] text-ink-text underline decoration-line underline-offset-8 transition-colors hover:text-emerald-deep hover:decoration-emerald"
             >
-              View portfolio
+              Lihat portfolio
             </Link>
           </div>
         </Reveal>

@@ -3,17 +3,16 @@ import { BrandLogo } from "./brand";
 import { Container } from "@/components/ui/container";
 import { site, primaryNav } from "@/content/site";
 import { services } from "@/content/services";
-import type { Locale } from "@/lib/locale";
 
 const footerServicesId = [
-  { href: "/id/jasa-pembuatan-website", label: "Jasa Pembuatan Website" },
-  { href: "/id/services/ui-ux-design", label: "UI/UX Design" },
-  { href: "/id/services/ai-solutions", label: "Solusi AI" },
-  { href: "/id/services/n8n-automation", label: "Otomasi n8n" },
-  { href: "/id/services/api-integration", label: "Integrasi API" },
+  { href: "/jasa-pembuatan-website", label: "Jasa Pembuatan Website" },
+  { href: "/services/ui-ux-design", label: "UI/UX Design" },
+  { href: "/services/ai-solutions", label: "Solusi AI" },
+  { href: "/services/n8n-automation", label: "Otomasi n8n" },
+  { href: "/services/api-integration", label: "Integrasi API" },
 ] as const;
 
-export function SiteFooter({ locale = "en" }: { locale?: Locale }) {
+export function SiteFooter({ locale = "id" }: { locale?: "en" | "id" }) {
   const year = new Date().getFullYear();
   const isIndonesian = locale === "id";
   const description = isIndonesian ? site.descriptionId : site.description;

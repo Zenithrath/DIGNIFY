@@ -143,7 +143,7 @@ export const enHomeCopy: {
   },
   why: {
     label: "HOW WE WORK",
-    title: "What we build must fit the need — not just look complex.",
+    title: "What we build must fit the need, not just look complex.",
     items: [
       {
         index: "01",
@@ -182,14 +182,14 @@ export const enHomeCopy: {
 export const idHomeCopy: IdHomeCopy = {
   hero: {
     heading: {
-      line1: "Jasa pembuatan website, desain,",
-      line2: "dan otomasi — dibikin sesuai",
-      highlight: "kebutuhanmu.",
+      line1: "We Don't Do Templates.",
+      line2: "We Build What You",
+      highlight: "Need.",
     },
-    sub: "Halo, kami Dignify! Kami bantu bisnis dan personal brand bikin website, desain UI/UX, solusi AI, otomasi, dan integrasi API. Nggak ada paket template — semua dibangun dari kebutuhanmu, dan hasilnya bisa kamu cek langsung.",
+    sub: "Halo, kami Dignify, studio digital kecil yang bantu bisnis dan personal brand dengan jasa pembuatan website, desain UI/UX, solusi AI, otomasi, dan integrasi API. Semua dibangun dari kebutuhanmu, transparan, dan hasilnya bisa kamu cek langsung.",
     meta: "JASA PEMBUATAN WEBSITE · JASA UI/UX DESIGN · SOLUSI AI · OTOMASI · INTEGRASI API",
-    primaryCta: { label: "Konsultasi Gratis", href: "/id/contact" },
-    secondaryCta: { label: "Lihat Karya Kami", href: "/id/portfolio" },
+    primaryCta: { label: "Konsultasi Gratis", href: "/contact" },
+    secondaryCta: { label: "Lihat Karya Kami", href: "/portfolio" },
   },
   services: {
     label: "LAYANAN",
@@ -201,28 +201,28 @@ export const idHomeCopy: IdHomeCopy = {
         title: "Web Development",
         description:
           "Website buat bisnis, company profile, portfolio, dan landing page yang siap dipakai.",
-        href: "/id/jasa-pembuatan-website",
+        href: "/jasa-pembuatan-website",
       },
       {
         index: "02",
         title: "UI/UX Design",
         description: "Tampilan dan alur yang bikin produk digitalmu gampang dipakai.",
-        href: "/id/services/ui-ux-design",
+        href: "/services/ui-ux-design",
       },
       {
         index: "03",
         title: "Automation",
         description: "Pekerjaan berulang jalan otomatis, nggak semuanya dikerjain manual.",
-        href: "/id/services/n8n-automation",
+        href: "/services/n8n-automation",
       },
       {
         index: "04",
         title: "AI & Integration",
         description: "Tools, API, atau AI disambung ke hal yang memang dibutuhin project.",
-        href: "/id/services/ai-solutions",
+        href: "/services/ai-solutions",
       },
     ],
-    allServicesLink: { label: "Bandingkan semua layanan", href: "/id/services" },
+    allServicesLink: { label: "Bandingkan semua layanan", href: "/services" },
   },
   selectedWork: {
     label: "KARYA PILIHAN",
@@ -247,7 +247,7 @@ export const idHomeCopy: IdHomeCopy = {
       {
         index: "03",
         title: "Bisa dicek kapan aja",
-        detail: "Progres, kode, dan hasilnya transparan. Kamu nggak pernah ditinggal nggak tahu — sampai serah terima.",
+        detail: "Progres, kode, dan hasilnya transparan. Kamu nggak pernah ditinggal nggak tahu, sampai serah terima.",
       },
     ],
   },
@@ -269,7 +269,7 @@ export const idHomeCopy: IdHomeCopy = {
       {
         question: "Berapa harga jasa pembuatan website?",
         answer:
-          "Tergantung kebutuhan dan cakupannya — landing page beda dengan company profile atau website custom. Konsultasi awalnya gratis, jadi kamu bisa ceritain kebutuhanmu dulu dan kami kasih gambaran harga yang jujur. Nggak ada biaya tersembunyi.",
+          "Tergantung kebutuhan dan cakupannya. Landing page beda dengan company profile atau website custom. Konsultasi awalnya gratis, jadi kamu bisa ceritain kebutuhanmu dulu dan kami kasih gambaran harga yang jujur. Nggak ada biaya tersembunyi.",
       },
       {
         question: "Berapa lama pembuatan website selesai?",
@@ -289,13 +289,13 @@ export const idHomeCopy: IdHomeCopy = {
       {
         question: "Gimana cara mulai kerjasama sama Dignify?",
         answer:
-          "Gampang — kirim aja kebutuhanmu lewat halaman kontak atau WhatsApp. Kami balas cepat, dan konsultasi pertamanya gratis. Kalau project-mu ternyata nggak cocok sama kami, kami bilang jujur.",
+          "Gampang. Kirim aja kebutuhanmu lewat halaman kontak atau WhatsApp. Kami balas cepat, dan konsultasi pertamanya gratis. Kalau project-mu ternyata nggak cocok sama kami, kami bilang jujur.",
       },
     ],
   },
   finalCta: {
     heading: "Siap bikin website atau sistem digitalmu?",
     sub: "Ceritakan aja apa yang kamu butuhin. Konsultasi pertama gratis dan nggak ada komitmen. Kalau kami nggak cocok, kami bilang jujur.",
-    primaryCta: { label: "Konsultasi Gratis", href: "/id/contact" },
+    primaryCta: { label: "Konsultasi Gratis", href: "/contact" },
   },
 };

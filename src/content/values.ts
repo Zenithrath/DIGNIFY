@@ -71,7 +71,7 @@ export const differentiatorsId: ValueItem[] = [
     index: "02",
     title: "Sistem yang Dipikirkan",
     detail:
-      "Kami membangun sistem, bukan halaman yang berdiri sendiri. Token yang dipakai bareng, konten yang ter-typing, dan komponen yang reusable bikin perubahan berikutnya lebih mudah.",
+      "Kami membangun sistem, bukan halaman yang berdiri sendiri. Token yang dipakai bareng, konten yang jelas tipenya, dan komponen yang reusable bikin perubahan berikutnya lebih mudah.",
   },
   {
     index: "03",

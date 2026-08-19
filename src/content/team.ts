@@ -66,7 +66,7 @@ export const about = {
 export const aboutId = {
   heroTitle: ["Halo, Kami Dignify.", "Studio Digital Kecil yang Jeli."],
   intro:
-    "Dignify adalah studio digital kecil yang dibangun Dije, Ignas, Daniel, dan Dzaky. Kami ngerjain jasa pembuatan website, desain UI/UX, solusi AI, otomasi n8n, dan integrasi API — dengan perhatian yang sama buat tiap project, sekecil apapun.",
+    "Dignify adalah studio digital kecil yang dibangun Dije, Ignas, Daniel, dan Dzaky. Kami ngerjain jasa pembuatan website, desain UI/UX, solusi AI, otomasi n8n, dan integrasi API dengan perhatian yang sama buat tiap project, sekecil apapun.",
   stats: [
     { value: "04", label: "Orang di studio" },
     { value: "05", label: "Layanan digital" },
@@ -93,7 +93,7 @@ export const aboutId = {
   story: {
     title: "Berawal dari Masalah yang Sama.",
     paragraphs: [
-      "Dignify berangkat dari tiga orang yang terus nemuin masalah yang sama di pekerjaan digital: yang penting sering ditaruh paling belakang. Antarmuka yang mengabaikan struktur, kode yang mengabaikan desain, proses yang mengabaikan orang yang memakainya. Kami mendirikan Dignify buat kerja dengan lebih hati-hati — hasilnya jelas, dan tetap bisa dirawat setelah kami serahkan.",
+      "Dignify berangkat dari tiga orang yang terus nemuin masalah yang sama di pekerjaan digital: yang penting sering ditaruh paling belakang. Antarmuka yang mengabaikan struktur, kode yang mengabaikan desain, proses yang mengabaikan orang yang memakainya. Kami mendirikan Dignify buat kerja dengan lebih hati-hati. Hasilnya jelas dan tetap bisa dirawat setelah kami serahkan.",
     ],
   },
   team: {
@@ -102,7 +102,7 @@ export const aboutId = {
       Dije: "Pegang front end, otomasi, dan media sosial.",
       Ignas: "Pegang SEO dan perencanaan.",
       Daniel: "Pegang back end dan database.",
-      Dzaky: "Pegang analisis kebutuhan dan QA — testing, dokumentasi, dan jaga kualitas hasil.",
+      Dzaky: "Pegang analisis kebutuhan dan QA, testing, dokumentasi, dan jaga kualitas hasil.",
     },
   },
   cta: {

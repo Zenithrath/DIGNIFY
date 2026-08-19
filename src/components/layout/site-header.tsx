@@ -8,22 +8,17 @@ import { BrandLockup } from "./brand";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { currentLocale } from "@/lib/locale";
 import { primaryNav, site } from "@/content/site";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 function isActive(pathname: string, href: string) {
-  if (href === "/" || href === "/id") return pathname === href;
+  if (href === "/") return pathname === href;
   return pathname.startsWith(href);
 }
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const locale = currentLocale(pathname);
-  const isIndonesian = locale === "id";
-  const links = primaryNav(isIndonesian ? "id" : "en");
-  const brandHref = isIndonesian ? "/id" : "/";
-  const ctaLabel = isIndonesian ? "Mulai Project" : "Start a Project";
+  const links = primaryNav("id");
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -51,14 +46,14 @@ export function SiteHeader() {
         <div inert={open || undefined} className={cn(open && "invisible")}>
           <Container className="flex h-16 items-center justify-between gap-6">
           <Link
-            href={brandHref}
-            aria-label={`${site.name} ${isIndonesian ? "beranda" : "home"}`}
+            href="/"
+            aria-label={`${site.name} beranda`}
             className="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald"
           >
             <BrandLockup tone="paper" />
           </Link>
 
-          <nav aria-label={isIndonesian ? "Navigasi utama" : "Primary"} className="hidden items-center gap-7 lg:flex">
+          <nav aria-label="Navigasi utama" className="hidden items-center gap-7 lg:flex">
             {links.map((link) => {
               const active = isActive(pathname, link.href);
               return (
@@ -87,13 +82,13 @@ export function SiteHeader() {
 
           <div className="flex items-center gap-3">
             <ThemeToggle tone="dark" className="hidden md:flex" />
-            <Button href={isIndonesian ? "/id/contact" : "/contact"} variant="emerald" size="md" className="hidden md:inline-flex">
-              {ctaLabel}
+            <Button href="/contact" variant="emerald" size="md" className="hidden md:inline-flex">
+              Mulai Project
             </Button>
             <button
               ref={triggerRef}
               type="button"
-              aria-label={open ? (isIndonesian ? "Tutup menu" : "Close menu") : isIndonesian ? "Buka menu" : "Open menu"}
+              aria-label={open ? "Tutup menu" : "Buka menu"}
               aria-expanded={open}
               aria-controls="mobile-menu"
               onClick={() => setOpen((v) => !v)}
@@ -119,14 +114,14 @@ export function SiteHeader() {
             <button
               ref={closeRef}
               type="button"
-              aria-label={isIndonesian ? "Tutup menu" : "Close menu"}
+              aria-label="Tutup menu"
               onClick={() => setOpen(false)}
               className="inline-flex size-10 items-center justify-center border border-line-dark text-paper transition-colors hover:border-emerald hover:text-emerald"
             >
               <X aria-hidden className="size-5" />
             </button>
           </Container>
-          <nav aria-label={isIndonesian ? "Navigasi seluler" : "Mobile"} className="flex-1 overflow-y-auto">
+          <nav aria-label="Navigasi seluler" className="flex-1 overflow-y-auto">
             <ul className="divide-y divide-line-dark">
               {links.map((link, i) => {
                 const active = isActive(pathname, link.href);
@@ -157,7 +152,7 @@ export function SiteHeader() {
             <div className="mb-5 flex items-center gap-3">
               <ThemeToggle tone="dark" className="flex" />
             </div>
-            <p className="meta-label text-muted-dark">{isIndonesian ? "TANYA SOAL PROYEK BARU" : "NEW PROJECT ENQUIRY"}</p>
+            <p className="meta-label text-muted-dark">TANYA SOAL PROYEK BARU</p>
             <div className="mt-2 flex flex-col gap-2">
               <a
                 href={`mailto:${site.email}`}

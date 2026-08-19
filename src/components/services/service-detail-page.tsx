@@ -28,7 +28,7 @@ const serviceDetailMeta: Record<
 
 const servicePaths: Record<Locale, (slug: string) => string> = {
   en: (slug) => `/services/${slug}`,
-  id: (slug) => `/id/services/${slug}`,
+  id: (slug) => `/services/${slug}`,
 };
 
 export function generateServiceMetadata(
@@ -107,7 +107,7 @@ const detailCopy: Record<
   },
   id: {
     allServices: "Semua Layanan",
-    allServicesHref: "/id/services",
+    allServicesHref: "/services",
     included: "TERMASUK",
     scopeLabel: "YANG BISA DIKERJAKAN",
     processLabel: "CARA KERJANYA",
@@ -122,9 +122,9 @@ const detailCopy: Record<
     ctaSub:
       "Obrolan singkat dan terarah soal project kamu: tujuannya, lingkupnya, dan kendalanya. Kami akan bilang jujur kalau kami cocok atau tidak.",
     startProject: "Mulai Project",
-    startHref: "/id/contact",
-    portfolioHref: "/id/portfolio",
-    projectsPrefix: "/id/portfolio/",
+    startHref: "/contact",
+    portfolioHref: "/portfolio",
+    projectsPrefix: "/portfolio/",
   },
 };
 

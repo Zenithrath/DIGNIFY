@@ -32,7 +32,7 @@ function readHash() {
 }
 
 function ProjectCard({ project, index, lang }: { project: Project; index: number; lang: "en" | "id" }) {
-  const base = lang === "id" ? "/id/portfolio" : "/portfolio";
+  const base = "/portfolio";
   return (
     <Link
       href={`${base}/${project.slug}`}

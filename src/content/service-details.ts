@@ -47,13 +47,13 @@ export const serviceDetailsEn: Record<ServiceSlug, ServiceDetailContent> = {
     meta: {
       title: "UI/UX Design Services",
       description:
-        "Interface design, user flows, wireframes, design systems, and responsive UI by Dignify — designed around real users and real workflows.",
+        "Interface design, user flows, wireframes, design systems, and responsive UI by Dignify. Designed around real users and real workflows.",
     },
     hero: {
       label: "UI/UX DESIGN",
       title: ["UI/UX Design", "Built Around Real Users"],
       intro:
-        "We design interfaces and user flows that are clear, consistent, and easy to use — from early wireframes to the final screen designs.",
+        "We design interfaces and user flows that are clear, consistent, and easy to use, from early wireframes to the final screen designs.",
       meta: "WIREFRAMES · USER FLOWS · DESIGN SYSTEMS · PROTOTYPES · RESPONSIVE UI",
     },
     scope: {
@@ -127,7 +127,7 @@ export const serviceDetailsEn: Record<ServiceSlug, ServiceDetailContent> = {
       {
         question: "Do you design for both websites and apps?",
         answer:
-          "Yes. The same principles apply to websites, dashboards, and app interfaces — clarity first, decoration later.",
+          "Yes. The same principles apply to websites, dashboards, and app interfaces. Clarity first, decoration later.",
       },
       {
         question: "Can you work from an existing brand?",
@@ -153,7 +153,7 @@ export const serviceDetailsEn: Record<ServiceSlug, ServiceDetailContent> = {
       label: "AI SOLUTIONS",
       title: ["AI Solutions", "Practical AI, Scoped to Real Work"],
       intro:
-        "We build AI features that do specific useful things — answer questions from your documents, summarize content, or process data — with the workflow visible and under your control.",
+        "We build AI features that do specific useful things: answer questions from your documents, summarize content, or process data. The workflow stays visible and under your control.",
       meta: "AI CHAT · DOCUMENT SEARCH · CONTENT SUPPORT · DATA PROCESSING · LLM INTEGRATION",
     },
     scope: {
@@ -253,7 +253,7 @@ export const serviceDetailsEn: Record<ServiceSlug, ServiceDetailContent> = {
       label: "AUTOMATION",
       title: ["n8n Automation", "Workflows That Run Themselves"],
       intro:
-        "We connect your tools with n8n so routine work happens automatically — with error handling, logs, and documentation your team can actually follow.",
+        "We connect your tools with n8n so routine work happens automatically, with error handling, logs, and documentation your team can actually follow.",
       meta: "WORKFLOW DESIGN · TOOL INTEGRATION · NOTIFICATIONS · ERROR HANDLING · DOCUMENTATION",
     },
     scope: {
@@ -353,7 +353,7 @@ export const serviceDetailsEn: Record<ServiceSlug, ServiceDetailContent> = {
       label: "API INTEGRATION",
       title: ["API Integration", "Systems That Talk to Each Other"],
       intro:
-        "We connect your product to external services, webhooks, and internal data — with clear data mapping, retries where they help, and useful error messages.",
+        "We connect your product to external services, webhooks, and internal data, with clear data mapping, retries where they help, and useful error messages.",
       meta: "REST & GRAPHQL · WEBHOOKS · DATA MAPPING · TYPED CLIENTS · MONITORING",
     },
     scope: {
@@ -456,7 +456,7 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
       label: "UI/UX DESIGN",
       title: ["UI/UX Design", "Biar Produkmu Gampang Dipakai"],
       intro:
-        "Kami desain tampilan dan alur yang jelas, konsisten, dan nyaman dipakai — dari wireframe pertama sampai layar final.",
+        "Kami desain tampilan dan alur yang jelas, konsisten, dan nyaman dipakai, dari wireframe pertama sampai layar final.",
       meta: "WIREFRAME · USER FLOW · DESIGN SYSTEM · PROTOTIPE · UI RESPONSIF",
     },
     scope: {
@@ -506,7 +506,7 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
         {
           title: "Desain Responsif",
           description:
-            "Layout didesain buat desktop, tablet, dan mobile sekaligus — bukan dikecilin belakangan.",
+            "Layout didesain buat desktop, tablet, dan mobile sekaligus, bukan dikecilin belakangan.",
           deliverables: [
             "Breakpoint mobile-first",
             "Komponen yang adaptif",
@@ -556,7 +556,7 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
       label: "SOLUSI AI",
       title: ["Solusi AI", "AI yang Nyambung dengan Kerjaanmu"],
       intro:
-        "Kami bangun fitur AI yang ngelakuin hal spesifik dan berguna — jawab dari dokumenmu, ringkas konten, atau olah data — dengan alur yang jelas dan tetap di bawah kendalimu.",
+        "Kami bangun fitur AI yang ngelakuin hal spesifik dan berguna. Jawab dari dokumenmu, ringkas konten, atau olah data, dengan alur yang jelas dan tetap di bawah kendalimu.",
       meta: "AI CHAT · PENCARIAN DOKUMEN · DUKUNGAN KONTEN · OLAH DATA · INTEGRASI LLM",
     },
     scope: {
@@ -656,7 +656,7 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
       label: "OTOMASI",
       title: ["Otomasi n8n", "Kerjaan Rutin yang Jalan Sendiri"],
       intro:
-        "Kami sambungkan tools-mu dengan n8n biar pekerjaan rutin jalan otomatis — lengkap dengan penanganan error, log, dan dokumentasi yang bisa diikuti timmu.",
+        "Kami sambungkan tools-mu dengan n8n biar pekerjaan rutin jalan otomatis. Lengkap dengan penanganan error, log, dan dokumentasi yang bisa diikuti timmu.",
       meta: "DESAIN WORKFLOW · INTEGRASI TOOLS · NOTIFIKASI · PENANGANAN ERROR · DOKUMENTASI",
     },
     scope: {
@@ -696,7 +696,7 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
         {
           title: "Olah & Transformasi Data",
           description:
-            "Data dipindah, dibersihkan, dan diformat antar sistem, tanpa copy-paste manual.",
+            "Data dipindah, dibersihkan, dan diformat antar sistem, tanpa copy paste manual.",
           deliverables: [
             "Pemetaan dan validasi data",
             "Konversi format",
@@ -730,7 +730,7 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
       {
         question: "Kalau diotomasi, apa nggak kehilangan kendali?",
         answer:
-          "Nggak. Setiap workflow ada log, penanganan error, dan notifikasi — kamu selalu tahu apa yang terjadi.",
+          "Nggak. Setiap workflow ada log, penanganan error, dan notifikasi. Kamu selalu tahu apa yang terjadi.",
       },
       {
         question: "Apa aja yang bisa diotomasi?",
@@ -756,7 +756,7 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
       label: "INTEGRASI API",
       title: ["Integrasi API", "Sistem yang Saling Nyambung"],
       intro:
-        "Kami sambungkan produkmu ke layanan eksternal, webhook, dan data internal — dengan pemetaan data yang jelas, retry yang membantu, dan pesan error yang berguna.",
+        "Kami sambungkan produkmu ke layanan eksternal, webhook, dan data internal. Dengan pemetaan data yang jelas, retry yang membantu, dan pesan error yang berguna.",
       meta: "REST & GRAPHQL · WEBHOOK · PEMETAAN DATA · TYPED CLIENT · MONITORING",
     },
     scope: {
@@ -796,9 +796,9 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
         {
           title: "API Client yang Rapi",
           description:
-            "Client dan handler yang ter-typing dan gampang dikembangin.",
+            "Client dan handler yang jelas tipenya dan gampang dikembangin.",
           deliverables: [
-            "Kode client ter-typing",
+            "Kode client yang jelas tipenya",
             "Penanganan error konsisten",
             "Endpoint terdokumentasi",
           ],

@@ -56,7 +56,7 @@ export const processStepsId: ProcessStep[] = [
     index: "04",
     name: "Develop",
     detail:
-      "Kami bangun dengan kode yang rapi dan ter-typing, layout responsif, interaksi yang aksesibel, dan cek performa sejak commit pertama.",
+      "Kami bangun dengan kode yang rapi dan jelas tipenya, layout responsif, interaksi yang aksesibel, dan cek performa sejak commit pertama.",
   },
   {
     index: "05",

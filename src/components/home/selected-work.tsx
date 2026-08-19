@@ -23,7 +23,7 @@ export async function SelectedWork({
   const allProjects = await fetchProjectsFromDb().catch(() => staticProjects);
   const featuredProjects = allProjects.filter((p) => p.featured);
   const featured = (featuredProjects.length > 0 ? featuredProjects : allProjects).slice(0, 3);
-  const base = lang === "id" ? "/id/portfolio" : "/portfolio";
+  const base = "/portfolio";
 
   return (
     <section

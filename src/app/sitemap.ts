@@ -17,21 +17,21 @@ function entry(idPath: string, priority: number, changeFrequency: MetadataRoute.
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const home = entry("/id", 1, "monthly");
-  const webDevelopment = entry("/id/jasa-pembuatan-website", 0.9, "monthly");
-  const services = entry("/id/services", 0.9, "monthly");
-  const portfolio = entry("/id/portfolio", 0.9, "monthly");
-  const about = entry("/id/about", 0.7, "monthly");
-  const testimonials = entry("/id/testimonials", 0.5, "monthly");
-  const contact = entry("/id/contact", 0.8, "monthly");
+  const home = entry("/", 1, "monthly");
+  const webDevelopment = entry("/jasa-pembuatan-website", 0.9, "monthly");
+  const services = entry("/services", 0.9, "monthly");
+  const portfolio = entry("/portfolio", 0.9, "monthly");
+  const about = entry("/about", 0.7, "monthly");
+  const testimonials = entry("/testimonials", 0.5, "monthly");
+  const contact = entry("/contact", 0.8, "monthly");
 
   const serviceRoutes: MetadataRoute.Sitemap = serviceSlugs.map((slug) =>
-    entry(`/id/services/${slug}`, 0.8, "monthly"),
+    entry(`/services/${slug}`, 0.8, "monthly"),
   );
 
   const allProjects = await fetchProjectsFromDb().catch(() => projects);
   const projectRoutes: MetadataRoute.Sitemap = allProjects.map((project) =>
-    entry(`/id/portfolio/${project.slug}`, 0.6, "yearly"),
+    entry(`/portfolio/${project.slug}`, 0.6, "yearly"),
   );
 
   return [home, webDevelopment, services, portfolio, about, testimonials, contact, ...serviceRoutes, ...projectRoutes];

@@ -9,7 +9,7 @@ export const seo = {
   homeId: {
     title: "Jasa Pembuatan Website & Web Development | Dignify",
     description:
-      "Jasa pembuatan website, desain web, jasa UI/UX design, landing page, company profile, dan web development custom yang responsif — konsultasi gratis buat petakan kebutuhanmu bersama Dignify.",
+      "Jasa pembuatan website, desain web, jasa UI/UX design, landing page, company profile, dan web development custom yang responsif. Konsultasi gratis buat petakan kebutuhanmu bersama Dignify.",
   },
   services: {
     title: "Digital Services | Web Design, AI & Automation",
@@ -19,17 +19,17 @@ export const seo = {
   servicesId: {
     title: "Jasa Pembuatan Website, UI/UX Design, AI & Otomasi | Dignify",
     description:
-      "Layanan Dignify: jasa pembuatan website, desain UI/UX, jasa web design, solusi AI, otomasi n8n, dan integrasi API — dengan scope jelas dan serah terima yang terdokumentasi.",
+      "Layanan Dignify: jasa pembuatan website, desain UI/UX, jasa web design, solusi AI, otomasi n8n, dan integrasi API dengan scope jelas dan serah terima yang terdokumentasi.",
   },
   portfolio: {
     title: "Portfolio | Websites, Interfaces & Automation",
     description:
-      "Selected Dignify projects across websites, interfaces, AI tools, and automation — each one marked as client work, internal work, or a concept.",
+      "Selected Dignify projects across websites, interfaces, AI tools, and automation. Each one marked as client work, internal work, or a concept.",
   },
   portfolioId: {
-    title: "Portfolio | Jasa Pembuatan Website, UI/UX & Otomasi — Dignify",
+    title: "Portfolio | Jasa Pembuatan Website, UI/UX & Otomasi | Dignify",
     description:
-      "Karya pilihan Dignify dalam jasa pembuatan website, desain UI/UX, AI, dan otomasi — tiap proyek ditandai jujur sebagai kerja klien, internal, atau konsep.",
+      "Karya pilihan Dignify dalam jasa pembuatan website, desain UI/UX, AI, dan otomasi. Tiap proyek ditandai jujur sebagai kerja klien, internal, atau konsep.",
   },
   aboutId: {
     title: "Tentang Dignify | Studio Digital Kecil oleh Dije, Ignas, Daniel & Dzaky",
@@ -69,7 +69,7 @@ export const seo = {
   jasaPembuatanWebsite: {
     title: "Jasa Pembuatan Website & Web Development | Dignify",
     description:
-      "Jasa pembuatan website custom untuk landing page, company profile, portfolio, toko online, dan kebutuhan web development responsif bersama Dignify — dari desain sampai serah terima.",
+      "Jasa pembuatan website custom untuk landing page, company profile, portfolio, toko online, dan kebutuhan web development responsif bersama Dignify, dari desain sampai serah terima.",
   },
   serviceTerms: [
     "website development",

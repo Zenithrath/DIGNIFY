@@ -13,10 +13,10 @@ import "../globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: seo.home.title,
+    default: seo.homeId.title,
     template: `%s | ${site.name}`,
   },
-  description: seo.home.description,
+  description: seo.homeId.description,
   applicationName: site.name,
   authors: [{ name: "Dije, Ignas and Daniel", url: site.url }],
   creator: "Dije, Ignas and Daniel",
@@ -27,29 +27,28 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "/",
-    languages: { en: "/", id: "/id", "x-default": "/" },
+    languages: { id: "/", "x-default": "/" },
   },
   openGraph: {
-    title: seo.home.title,
-    description: seo.home.description,
+    title: seo.homeId.title,
+    description: seo.homeId.description,
     url: "/",
     siteName: site.name,
-    locale: "en_US",
-    alternateLocale: ["id_ID"],
+    locale: "id_ID",
     type: "website",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Dignify Digital Studio",
+        alt: "Dignify studio digital",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: seo.home.title,
-    description: seo.home.description,
+    title: seo.homeId.title,
+    description: seo.homeId.description,
     images: ["/opengraph-image"],
   },
   robots: {
@@ -61,10 +60,10 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = baseViewport;
 
-export default function SiteRootLayout({ children }: { children: React.ReactNode }) {
+export default function IndonesianSiteRootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
-      lang="en"
+      lang="id"
       className={cn(fontSans.variable, fontDisplay.variable, fontMono.variable, "h-full antialiased")}
       suppressHydrationWarning
     >
@@ -81,7 +80,7 @@ export default function SiteRootLayout({ children }: { children: React.ReactNode
         <main id="main" className="flex flex-1 flex-col">
           {children}
         </main>
-        <SiteFooter locale="en" />
+        <SiteFooter locale="id" />
       </body>
     </html>
   );

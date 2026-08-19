@@ -5,8 +5,8 @@ import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { JsonLd } from "@/components/seo/json-ld";
-import { webDevelopment } from "@/content/web-development";
-import { projects as staticProjects } from "@/content/projects";
+import { jasaPembuatanWebsite } from "@/content/jasa-pembuatan-website";
+import { projects as staticProjects, statusLabel } from "@/content/projects";
 import { fetchProjectsFromDb } from "@/lib/cms-store";
 import { site } from "@/content/site";
 import { seo } from "@/content/seo";
@@ -15,35 +15,41 @@ import { cn } from "@/lib/utils";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: seo.webDevelopment.title,
-  description: seo.webDevelopment.description,
+  title: seo.jasaPembuatanWebsite.title,
+  description: seo.jasaPembuatanWebsite.description,
   alternates: {
-    canonical: "/web-development",
-    languages: { en: "/web-development", id: "/id/jasa-pembuatan-website", "x-default": "/web-development" },
+    canonical: "/jasa-pembuatan-website",
+    languages: { id: "/jasa-pembuatan-website", "x-default": "/jasa-pembuatan-website" },
   },
   openGraph: {
-    title: `${seo.webDevelopment.title} | Dignify`,
-    description: seo.webDevelopment.description,
-    url: "/web-development",
-    locale: "en_US",
-    alternateLocale: ["id_ID"],
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Dignify web development services" }],
+    title: seo.jasaPembuatanWebsite.title,
+    description: seo.jasaPembuatanWebsite.description,
+    url: "/jasa-pembuatan-website",
+    locale: "id_ID",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Jasa pembuatan website oleh Dignify" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: seo.jasaPembuatanWebsite.title,
+    description: seo.jasaPembuatanWebsite.description,
+    images: ["/opengraph-image"],
   },
 };
 
 const servicePageJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "@id": `${site.url}/web-development#service`,
-  name: "Web Development",
-  url: `${site.url}/web-development`,
-  description: seo.webDevelopment.description,
+  "@id": `${site.url}/jasa-pembuatan-website#service`,
+  name: "Jasa Pembuatan Website",
+  url: `${site.url}/jasa-pembuatan-website`,
+  description: seo.jasaPembuatanWebsite.description,
   provider: { "@id": `${site.url}/#organization` },
   areaServed: "ID",
   serviceType: "Web Development",
+  inLanguage: "id",
 } as const;
 
-export default async function WebDevelopmentPage() {
+export default async function JasaPembuatanWebsitePage() {
   const allProjects = await fetchProjectsFromDb().catch(() => staticProjects);
   const featured = allProjects.slice(0, 3);
 
@@ -51,24 +57,24 @@ export default async function WebDevelopmentPage() {
     <>
       <JsonLd data={servicePageJsonLd} />
 
-      <section aria-labelledby="wd-hero-heading" className="bg-ink py-24 text-paper sm:py-32">
+      <section aria-labelledby="jpw-hero-heading" className="bg-ink py-24 text-paper sm:py-32">
         <Container>
           <Reveal>
-            <p className="meta-label text-emerald">/ {webDevelopment.hero.label}</p>
-            <h1 id="wd-hero-heading" className="display mt-6 max-w-5xl text-[clamp(2.75rem,7vw,7rem)]">
-              {webDevelopment.hero.title[0]}
+            <p className="meta-label text-emerald">/ {jasaPembuatanWebsite.hero.label}</p>
+            <h1 id="jpw-hero-heading" className="display mt-6 max-w-5xl text-[clamp(2.75rem,7vw,7rem)]">
+              {jasaPembuatanWebsite.hero.title[0]}
               <br />
-              {webDevelopment.hero.title[1]}
+              {jasaPembuatanWebsite.hero.title[1]}
             </h1>
           </Reveal>
           <div className="mt-12 grid grid-cols-12 gap-x-4">
             <Reveal delay={0.08} className="col-span-12 md:col-span-6 lg:col-span-4">
-              <p className="text-base leading-relaxed text-muted-dark">{webDevelopment.hero.intro}</p>
+              <p className="text-base leading-relaxed text-muted-dark">{jasaPembuatanWebsite.hero.intro}</p>
             </Reveal>
             <Reveal delay={0.16} className="col-span-12 mt-10 md:col-span-5 md:col-start-8 md:mt-0">
-              <p className="meta-label border-t border-line-dark pt-3 text-emerald">{webDevelopment.hero.meta}</p>
+              <p className="meta-label border-t border-line-dark pt-3 text-emerald">{jasaPembuatanWebsite.hero.meta}</p>
               <div className="mt-6 flex flex-wrap gap-2">
-                {webDevelopment.stack.map((tag) => (
+                {jasaPembuatanWebsite.stack.map((tag) => (
                   <span key={tag} className="meta-label border border-line-dark px-2 py-1 text-muted-dark">
                     {tag}
                   </span>
@@ -76,10 +82,10 @@ export default async function WebDevelopmentPage() {
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button href="/contact" variant="emerald" size="lg" arrow>
-                  Start a Project
+                  Mulai Proyek
                 </Button>
                 <Button href="/portfolio" variant="outlineLight" size="lg">
-                  View Portfolio
+                  Lihat Portfolio
                 </Button>
               </div>
             </Reveal>
@@ -87,18 +93,18 @@ export default async function WebDevelopmentPage() {
         </Container>
       </section>
 
-      <section aria-labelledby="wd-services-heading" className="bg-paper py-20 sm:py-28">
+      <section aria-labelledby="jpw-services-heading" className="bg-paper py-20 sm:py-28">
         <Container>
           <Reveal>
             <div className="border-b border-line pb-6">
-              <p className="meta-label text-emerald-deep">/ WHAT WE BUILD</p>
-              <h2 id="wd-services-heading" className="display mt-6 max-w-4xl text-4xl sm:text-5xl">
-                Web development services, scoped to the actual problem.
+              <p className="meta-label text-emerald-deep">/ APA YANG KAMI BUAT</p>
+              <h2 id="jpw-services-heading" className="display mt-6 max-w-4xl text-4xl sm:text-5xl">
+                Layanan pembuatan website, dipilih sesuai masalah yang sebenarnya.
               </h2>
             </div>
           </Reveal>
           <div className="mt-10">
-            {webDevelopment.services.map((service, i) => {
+            {jasaPembuatanWebsite.services.map((service, i) => {
               const isDark = i % 2 === 1;
               return (
                 <Reveal key={service.slug}>
@@ -119,7 +125,7 @@ export default async function WebDevelopmentPage() {
                       {service.description}
                     </p>
                     <div className="col-span-12 mt-8 border-t pt-6 lg:col-span-3 lg:col-start-10 lg:mt-0 lg:border-t-0 lg:pt-0" style={{ borderColor: isDark ? "var(--color-line-dark)" : "var(--color-line)" }}>
-                      <p className={cn("meta-label", isDark ? "text-muted-dark" : "text-muted")}>INCLUDES</p>
+                      <p className={cn("meta-label", isDark ? "text-muted-dark" : "text-muted")}>TERMASUK</p>
                       <ul className="mt-4 space-y-3">
                         {service.deliverables.map((item) => (
                           <li key={item} className="flex items-start gap-3 text-sm">
@@ -137,18 +143,18 @@ export default async function WebDevelopmentPage() {
         </Container>
       </section>
 
-      <section aria-labelledby="wd-process-heading" className="border-t border-line bg-cream py-20 sm:py-28">
+      <section aria-labelledby="jpw-process-heading" className="border-t border-line bg-paper py-20 sm:py-28">
         <Container>
           <Reveal>
             <div className="border-b border-line pb-6">
-              <p className="meta-label text-emerald-deep">/ FROM DESIGN TO DEPLOYMENT</p>
-              <h2 id="wd-process-heading" className="display mt-6 text-4xl sm:text-5xl">
-                A process that keeps the result clear.
+              <p className="meta-label text-emerald-deep">/ DARI DESAIN HINGGA DEPLOY</p>
+              <h2 id="jpw-process-heading" className="display mt-6 text-4xl sm:text-5xl">
+                Proses yang bikin hasilnya tetap jelas.
               </h2>
             </div>
           </Reveal>
           <div className="mt-10 grid grid-cols-12 gap-x-4">
-            {webDevelopment.process.map((phase, i) => (
+            {jasaPembuatanWebsite.process.map((phase, i) => (
               <Reveal key={phase.index} delay={i * 0.07} className="col-span-12 sm:col-span-6 lg:col-span-3">
                 <div className="h-full border border-line bg-pure p-8">
                   <div className="flex items-center justify-between">
@@ -163,13 +169,13 @@ export default async function WebDevelopmentPage() {
         </Container>
       </section>
 
-      <section aria-labelledby="wd-work-heading" className="bg-ink py-20 text-paper sm:py-28">
+      <section aria-labelledby="jpw-work-heading" className="bg-ink py-20 text-paper sm:py-28">
         <Container>
           <Reveal>
             <div className="border-b border-line-dark pb-6">
-              <p className="meta-label text-emerald">/ SELECTED WORK</p>
-              <h2 id="wd-work-heading" className="display mt-6 text-4xl sm:text-5xl">
-                Websites built for company profiles, portfolios, and more.
+              <p className="meta-label text-emerald">/ KARYA PILIHAN</p>
+              <h2 id="jpw-work-heading" className="display mt-6 text-4xl sm:text-5xl">
+                Website yang kami buat untuk company profile, portfolio, dan lainnya.
               </h2>
             </div>
           </Reveal>
@@ -182,7 +188,7 @@ export default async function WebDevelopmentPage() {
                     <span className="display text-2xl text-paper transition-colors group-hover:text-emerald sm:text-3xl">{project.title}</span>
                   </span>
                   <span className="col-span-9 col-start-3 flex flex-wrap items-center gap-3 sm:col-span-4 sm:col-start-7">
-                    <StatusBadge status={project.status} tone="dark" />
+                    <StatusBadge status={statusLabel(project.status, "id")} tone="dark" />
                     <span className="meta-label text-muted-dark">{project.category} / {project.year}</span>
                   </span>
                   <span aria-hidden className="col-span-1 hidden justify-end text-emerald sm:flex">↗</span>
@@ -192,25 +198,25 @@ export default async function WebDevelopmentPage() {
           </ul>
           <div className="mt-10">
             <Button href="/portfolio" variant="outlineLight" arrow>
-              View the full portfolio
+              Lihat portfolio lengkap
             </Button>
           </div>
         </Container>
       </section>
 
-      <section aria-labelledby="wd-faq-heading" className="bg-paper py-20 sm:py-28">
+      <section aria-labelledby="jpw-faq-heading" className="bg-paper py-20 sm:py-28">
         <Container>
           <div className="grid grid-cols-12 gap-x-4 gap-y-10">
             <Reveal className="col-span-12 lg:col-span-4">
               <div className="border-b border-line pb-6">
                 <p className="meta-label text-emerald-deep">/ FAQ</p>
-                <h2 id="wd-faq-heading" className="display mt-6 text-4xl">
-                  Common questions, answered plainly.
+                <h2 id="jpw-faq-heading" className="display mt-6 text-4xl">
+                  Pertanyaan umum, dijawab terus terang.
                 </h2>
               </div>
             </Reveal>
             <div className="col-span-12 lg:col-span-7 lg:col-start-6">
-              {webDevelopment.faqs.map((faq) => (
+              {jasaPembuatanWebsite.faqs.map((faq) => (
                 <Reveal key={faq.question}>
                   <details className="group border-b border-line py-6">
                     <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-left">
@@ -226,22 +232,22 @@ export default async function WebDevelopmentPage() {
         </Container>
       </section>
 
-      <section aria-labelledby="wd-cta-heading" className="bg-ink py-24 text-paper sm:py-32" style={{ clipPath: "polygon(0 8%, 100% 0, 100% 100%, 0 100%)" }}>
+      <section aria-labelledby="jpw-cta-heading" className="bg-ink py-24 text-paper sm:py-32" style={{ clipPath: "polygon(0 8%, 100% 0, 100% 100%, 0 100%)" }}>
         <Container>
           <Reveal>
-            <p className="meta-label text-emerald">/ NEXT STEP</p>
-            <h2 id="wd-cta-heading" className="display mt-8 text-[clamp(3rem,8.5vw,8.5rem)]">
-              Let&apos;s build something
+            <p className="meta-label text-emerald">/ LANGKAH BERIKUTNYA</p>
+<h2 id="jpw-cta-heading" className="display mt-8 text-[clamp(3rem,8.5vw,8.5rem)]">
+              Ayo bikin sesuatu yang
               <br />
-              clear.
+              jelas.
             </h2>
             <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-dark">
-              A focused conversation about your website, its scope, and its constraints. We will tell
-              you clearly whether we are the right fit.
+              Obrolan singkat dan terarah soal website kamu: tujuannya, lingkupnya, dan kendalanya.
+              Kami akan bilang jujur kalau kami cocok atau tidak.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Button href="/contact" variant="emerald" size="lg" arrow>
-                Start a Project
+                Mulai Proyek
               </Button>
               <Button href={`mailto:${site.email}`} variant="outlineLight" size="lg">
                 {site.email}

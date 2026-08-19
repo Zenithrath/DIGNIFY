@@ -8,7 +8,7 @@ import { enHomeCopy } from "@/content/home-copy";
 import type { ServicesCopy } from "@/content/home-copy";
 
 function serviceHref(slug: string) {
-  return slug === "website-development" ? "/id/jasa-pembuatan-website" : `/id/services/${slug}`;
+  return slug === "website-development" ? "/jasa-pembuatan-website" : `/services/${slug}`;
 }
 
 export function Services({ copy = enHomeCopy.services }: { copy?: ServicesCopy }) {

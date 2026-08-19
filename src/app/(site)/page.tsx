@@ -1,40 +1,80 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/json-ld";
 import { Hero } from "@/components/home/hero";
 import { Services } from "@/components/home/services";
 import { SelectedWork } from "@/components/home/selected-work";
 import { WhyDignify } from "@/components/home/why-dignify";
 import { Process } from "@/components/home/process";
+import { Faq } from "@/components/home/faq";
 import { FinalCta } from "@/components/home/final-cta";
 import { seo } from "@/content/seo";
-
-export const dynamic = "force-dynamic";
+import { site } from "@/content/site";
+import { idHomeCopy } from "@/content/home-copy";
 
 export const metadata: Metadata = {
-  title: { absolute: seo.home.title },
-  description: seo.home.description,
+  title: { absolute: seo.homeId.title },
+  description: seo.homeId.description,
   alternates: {
     canonical: "/",
-    languages: { en: "/", id: "/id", "x-default": "/" },
+    languages: { id: "/", "x-default": "/" },
   },
   openGraph: {
-    title: seo.home.title,
-    description: seo.home.description,
+    title: seo.homeId.title,
+    description: seo.homeId.description,
     url: "/",
-    locale: "en_US",
-    alternateLocale: ["id_ID"],
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Dignify Digital Studio" }],
+    locale: "id_ID",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Dignify studio digital" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: seo.homeId.title,
+    description: seo.homeId.description,
+    images: ["/opengraph-image"],
   },
 };
 
-export default function HomePage() {
+export const dynamic = "force-dynamic";
+
+const indonesianPageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${site.url}/#webpage`,
+  url: `${site.url}/`,
+  name: seo.homeId.title,
+  description: seo.homeId.description,
+  inLanguage: "id",
+  isPartOf: { "@id": `${site.url}/#website` },
+  about: seo.indonesianServices.map((service) => ({
+    "@type": "Service",
+    name: service.title,
+    description: service.description,
+    provider: { "@id": `${site.url}/#organization` },
+  })),
+} as const;
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${site.url}/#faq`,
+  mainEntity: idHomeCopy.faq.items.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
+} as const;
+
+export default function IndonesianHomePage() {
   return (
-    <>
-      <Hero />
-      <Services />
-      <SelectedWork />
-      <WhyDignify />
-      <Process />
-      <FinalCta />
-    </>
+    <div lang="id">
+      <JsonLd data={indonesianPageJsonLd} />
+      <JsonLd data={faqJsonLd} />
+      <Hero copy={idHomeCopy.hero} />
+      <Services copy={idHomeCopy.services} />
+      <SelectedWork copy={idHomeCopy.selectedWork} lang="id" />
+      <WhyDignify copy={idHomeCopy.why} />
+      <Process copy={idHomeCopy.process} />
+      <Faq copy={idHomeCopy.faq} />
+      <FinalCta copy={idHomeCopy.finalCta} />
+    </div>
   );
 }

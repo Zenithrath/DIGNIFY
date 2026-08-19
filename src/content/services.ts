@@ -78,7 +78,7 @@ export const services: Service[] = [
     description:
       "We connect your tools with n8n so routine work happens without constant copying and checking. Each workflow includes error handling, useful logs, and documentation your team can follow.",
     descriptionId:
-      "Kami sambungkan tools-mu pakai n8n biar kerjaan rutin jalan tanpa harus terus-terusan copy-paste dan ngecek. Tiap alur punya penanganan error, log yang berguna, dan dokumentasi yang bisa diikuti timmu.",
+      "Kami sambungkan tools-mu pakai n8n biar kerjaan rutin jalan tanpa harus terus terusan copy paste dan ngecek. Tiap alur punya penanganan error, log yang berguna, dan dokumentasi yang bisa diikuti timmu.",
     deliverables: [
       "The workflow designed on paper before it is built",
       "Your existing tools connected to each other",
@@ -111,7 +111,7 @@ export const services: Service[] = [
     deliverablesId: [
       "Rencana yang jelas gimana sistemmu bakal disambung",
       "Tools-mu tersambung dan tetap sinkron otomatis",
-      "Data pindah antar sistem tanpa copy-paste manual",
+      "Data pindah antar sistem tanpa copy paste manual",
       "Kalau ada yang rusak, langsung ketahuan dan bisa pulih sendiri",
     ],
     tags: ["REST", "GraphQL", "Webhooks"],

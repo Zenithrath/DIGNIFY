@@ -13,7 +13,7 @@ export const site = {
   email: "studiodignify@gmail.com",
   phone: "+62 877-8392-3671",
   whatsappUrl: "https://wa.me/6287783923671",
-  foundedBy: "Dije, Ignas and Daniel",
+  foundedBy: "Dije, Ignas, Daniel and Dzaky",
   location: "Available worldwide · Remote",
   locationId: "Melayani kebutuhan website untuk client di Indonesia",
 } as const;
@@ -27,15 +27,15 @@ export const navLinks = [
 ] as const;
 
 export const navLinksId = [
-  { href: "/id", label: "Beranda" },
-  { href: "/id/services", label: "Layanan" },
-  { href: "/id/portfolio", label: "Portfolio" },
-  { href: "/id/about", label: "Tentang" },
-  { href: "/id/contact", label: "Kontak" },
+  { href: "/", label: "Beranda" },
+  { href: "/services", label: "Layanan" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/about", label: "Tentang" },
+  { href: "/contact", label: "Kontak" },
 ] as const;
 
 export const testimonialLink = { href: "/testimonials", label: "Testimonials" } as const;
-export const testimonialLinkId = { href: "/id/testimonials", label: "Testimoni" } as const;
+export const testimonialLinkId = { href: "/testimonials", label: "Testimoni" } as const;
 
 export function primaryNav(locale: "en" | "id") {
   const base = locale === "id" ? navLinksId : navLinks;
