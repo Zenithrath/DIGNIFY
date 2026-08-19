@@ -5,6 +5,7 @@ import { Services } from "@/components/home/services";
 import { SelectedWork } from "@/components/home/selected-work";
 import { WhyDignify } from "@/components/home/why-dignify";
 import { Process } from "@/components/home/process";
+import { Faq } from "@/components/home/faq";
 import { FinalCta } from "@/components/home/final-cta";
 import { seo } from "@/content/seo";
 import { site } from "@/content/site";
@@ -51,15 +52,28 @@ const indonesianPageJsonLd = {
   })),
 } as const;
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${site.url}/id#faq`,
+  mainEntity: idHomeCopy.faq.items.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
+} as const;
+
 export default function IndonesianHomePage() {
   return (
     <div lang="id">
       <JsonLd data={indonesianPageJsonLd} />
+      <JsonLd data={faqJsonLd} />
       <Hero copy={idHomeCopy.hero} />
       <Services copy={idHomeCopy.services} />
       <SelectedWork copy={idHomeCopy.selectedWork} lang="id" />
       <WhyDignify copy={idHomeCopy.why} />
       <Process copy={idHomeCopy.process} />
+      <Faq copy={idHomeCopy.faq} />
       <FinalCta copy={idHomeCopy.finalCta} />
     </div>
   );

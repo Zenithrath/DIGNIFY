@@ -5,6 +5,7 @@ export type HeroCopy = {
     highlight: string;
   };
   sub: string;
+  meta: string;
   primaryCta: { label: string; href: string };
   secondaryCta: { label: string; href: string };
 };
@@ -21,6 +22,7 @@ export type ServicesCopy = {
   title: string;
   rows: ServiceRow[];
   allServicesLink: { label: string; href: string };
+  detailed?: boolean;
 };
 
 export type SelectedWorkCopy = {
@@ -60,6 +62,28 @@ export type FinalCtaCopy = {
   primaryCta: { label: string; href: string };
 };
 
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+export type FaqCopy = {
+  index: string;
+  label: string;
+  title: string;
+  items: FaqItem[];
+};
+
+export type IdHomeCopy = {
+  hero: HeroCopy;
+  services: ServicesCopy;
+  selectedWork: SelectedWorkCopy;
+  why: WhyCopy;
+  process: ProcessCopy;
+  faq: FaqCopy;
+  finalCta: FinalCtaCopy;
+};
+
 export const enHomeCopy: {
   hero: HeroCopy;
   services: ServicesCopy;
@@ -75,6 +99,7 @@ export const enHomeCopy: {
       highlight: "needs.",
     },
     sub: "Dignify helps businesses, brands, and projects build websites, interfaces, and digital systems that are clearer and ready to use.",
+    meta: "WEB DEVELOPMENT · UI/UX DESIGN · AI SOLUTIONS · AUTOMATION · API INTEGRATION",
     primaryCta: { label: "View Our Work", href: "/portfolio" },
     secondaryCta: { label: "Start a Project", href: "/contact" },
   },
@@ -154,27 +179,22 @@ export const enHomeCopy: {
   },
 };
 
-export const idHomeCopy: {
-  hero: HeroCopy;
-  services: ServicesCopy;
-  selectedWork: SelectedWorkCopy;
-  why: WhyCopy;
-  process: ProcessCopy;
-  finalCta: FinalCtaCopy;
-} = {
+export const idHomeCopy: IdHomeCopy = {
   hero: {
     heading: {
-      line1: "Website dan sistem digital",
-      line2: "yang dibikin sesuai",
-      highlight: "kebutuhan bisnismu.",
+      line1: "Jasa pembuatan website, desain,",
+      line2: "dan otomasi — dibikin sesuai",
+      highlight: "kebutuhanmu.",
     },
-    sub: "Dignify bantu bisnis, brand, dan project bikin website, interface, dan sistem digital yang jelas, cepat, dan siap dipakai.",
-    primaryCta: { label: "Lihat Karya", href: "/id/portfolio" },
-    secondaryCta: { label: "Mulai Project", href: "/id/contact" },
+    sub: "Halo, kami Dignify! Kami bantu bisnis dan personal brand bikin website, desain UI/UX, solusi AI, otomasi, dan integrasi API. Nggak ada paket template — semua dibangun dari kebutuhanmu, dan hasilnya bisa kamu cek langsung.",
+    meta: "JASA PEMBUATAN WEBSITE · JASA UI/UX DESIGN · SOLUSI AI · OTOMASI · INTEGRASI API",
+    primaryCta: { label: "Konsultasi Gratis", href: "/id/contact" },
+    secondaryCta: { label: "Lihat Karya Kami", href: "/id/portfolio" },
   },
   services: {
     label: "LAYANAN",
-    title: "Yang bisa kami bantu.",
+    title: "Semua yang bisa kami kerjakan untukmu.",
+    detailed: true,
     rows: [
       {
         index: "01",
@@ -205,45 +225,77 @@ export const idHomeCopy: {
     allServicesLink: { label: "Bandingkan semua layanan", href: "/id/services" },
   },
   selectedWork: {
-    label: "PROJECT PILIHAN",
-    title: "Beberapa hal yang udah pernah kami bikin.",
-    viewProject: "Lihat Project",
-    footerLink: "Lihat semua project",
+    label: "KARYA PILIHAN",
+    title: "Beberapa karya yang beneran pernah kami kerjain.",
+    viewProject: "Lihat Studi Kasus",
+    footerLink: "Lihat Semua Karya",
   },
   why: {
     label: "CARA KAMI BEKERJA",
-    title: "Yang kami bangun harus nyambung sama kebutuhannya, bukan sekadar keliatan rumit.",
+    title: "Kerja bareng kami itu kayak gini:",
     items: [
       {
         index: "01",
-        title: "Mulai dari kebutuhan",
-        detail: "Tujuannya kami pahamin dulu, sebelum milih desain atau teknologi.",
+        title: "Dari kebutuhan, bukan tren",
+        detail: "Kami pahamin dulu masalahmu, baru milih desain dan teknologinya. Nggak ada yang dipaksain biar keliatan keren.",
       },
       {
         index: "02",
-        title: "Tetap sederhana",
-        detail: "Kalau bisa dibuat lebih jelas dan ringan, nggak perlu ditambah ribet.",
+        title: "Sederhana itu indah",
+        detail: "Kalau ada cara yang lebih jelas dan ringan, kami pilih itu. Ribet bukan tanda bagus, justru sebaliknya.",
       },
       {
         index: "03",
-        title: "Dibuat buat dipakai",
-        detail: "Responsif, cepat, enak dipakai, dan rapi strukturnya — semuanya diperhitungkan.",
+        title: "Bisa dicek kapan aja",
+        detail: "Progres, kode, dan hasilnya transparan. Kamu nggak pernah ditinggal nggak tahu — sampai serah terima.",
       },
     ],
   },
   process: {
     label: "PROSES",
-    title: "Prosesnya nggak perlu dibuat rumit.",
+    title: "Prosesnya santai, tapi tetap rapi.",
     steps: [
-      { index: "01", name: "Ngobrol", detail: "Ceritakan mau bikin apa." },
-      { index: "02", name: "Susun", detail: "Struktur, arah visual, dan kebutuhan project kami tentukan." },
-      { index: "03", name: "Bangun", detail: "Desain dan development mulai dikerjakan." },
-      { index: "04", name: "Selesai", detail: "Setelah diuji dan dicek bareng, project siap dipakai." },
+      { index: "01", name: "Ngobrol", detail: "Ceritain aja mau bikin apa, sesimpel apapun ceritanya." },
+      { index: "02", name: "Susun", detail: "Struktur, arah desain, dan kebutuhan project kami rapikan dulu." },
+      { index: "03", name: "Bangun", detail: "Desain dan development dikerjain bareng, kamu bisa lihat progresnya." },
+      { index: "04", name: "Selesai", detail: "Diuji, dicek bareng, dan diserahkan lengkap dengan dokumentasinya." },
+    ],
+  },
+  faq: {
+    index: "05",
+    label: "FAQ",
+    title: "Pertanyaan yang sering banget ditanyain.",
+    items: [
+      {
+        question: "Berapa harga jasa pembuatan website?",
+        answer:
+          "Tergantung kebutuhan dan cakupannya — landing page beda dengan company profile atau website custom. Konsultasi awalnya gratis, jadi kamu bisa ceritain kebutuhanmu dulu dan kami kasih gambaran harga yang jujur. Nggak ada biaya tersembunyi.",
+      },
+      {
+        question: "Berapa lama pembuatan website selesai?",
+        answer:
+          "Tergantung cakupan project. Landing page bisa lebih cepat, website company profile atau aplikasi butuh waktu lebih lama. Estimasi waktunya kami tentukan bareng kamu di awal, supaya nggak ada janji yang nggak bisa ditepati.",
+      },
+      {
+        question: "Bisa bikin landing page, company profile, atau toko online?",
+        answer:
+          "Bisa. Jasa pembuatan website kami mencakup landing page, company profile, website portfolio, sampai website custom dengan fitur yang kamu butuhin. Yang penting kami paham dulu tujuannya.",
+      },
+      {
+        question: "Apakah konten website bisa saya kelola sendiri?",
+        answer:
+          "Iya. Kontennya kami siapkan biar bisa kamu ubah sendiri tanpa nunggu developer. Kalau perlu, dokumentasinya juga kami siapkan lengkap.",
+      },
+      {
+        question: "Gimana cara mulai kerjasama sama Dignify?",
+        answer:
+          "Gampang — kirim aja kebutuhanmu lewat halaman kontak atau WhatsApp. Kami balas cepat, dan konsultasi pertamanya gratis. Kalau project-mu ternyata nggak cocok sama kami, kami bilang jujur.",
+      },
     ],
   },
   finalCta: {
-    heading: "Punya sesuatu yang mau dibangun?",
-    sub: "Ceritakan kebutuhanmu. Nanti kami lihat Dignify bisa bantu yang mana.",
-    primaryCta: { label: "Mulai Project", href: "/id/contact" },
+    heading: "Siap bikin website atau sistem digitalmu?",
+    sub: "Ceritakan aja apa yang kamu butuhin. Konsultasi pertama gratis dan nggak ada komitmen. Kalau kami nggak cocok, kami bilang jujur.",
+    primaryCta: { label: "Konsultasi Gratis", href: "/id/contact" },
   },
 };

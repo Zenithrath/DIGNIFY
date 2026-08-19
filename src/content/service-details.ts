@@ -548,9 +548,9 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
     slug: "ai-solutions",
     stack: ["LLM APIs", "RAG", "Prompt Systems"],
     meta: {
-      title: "Jasa Solusi AI & Chat AI",
+      title: "Jasa Solusi AI & Chat AI | Dignify",
       description:
-        "Fitur AI praktis dari Dignify: chat AI yang jawab dari dokumenmu, pencarian dokumen, dukungan konten, olah data, dan integrasi API LLM.",
+        "Jasa solusi AI praktis dari Dignify: chat AI yang jawab dari dokumenmu, pencarian dokumen, dukungan konten, olah data, dan integrasi API LLM.",
     },
     hero: {
       label: "SOLUSI AI",

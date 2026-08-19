@@ -7,9 +7,9 @@ export const seo = {
       "Dignify builds responsive landing pages, portfolio websites, company profiles and custom web experiences for brands, businesses and personal projects.",
   },
   homeId: {
-    title: "Dignify | Jasa Pembuatan Website & Web Development",
+    title: "Jasa Pembuatan Website & Web Development | Dignify",
     description:
-      "Dignify bantu bikin website, landing page, company profile, portfolio, dan web development custom yang responsif buat bisnis dan personal brand.",
+      "Jasa pembuatan website, desain web, jasa UI/UX design, landing page, company profile, dan web development custom yang responsif — konsultasi gratis buat petakan kebutuhanmu bersama Dignify.",
   },
   services: {
     title: "Digital Services | Web Design, AI & Automation",
@@ -17,9 +17,9 @@ export const seo = {
       "Website development, UI/UX design, AI solutions, n8n automation, and API integration, delivered with clear scope and documented handover.",
   },
   servicesId: {
-    title: "Layanan Digital | Web Design, AI & Otomasi",
+    title: "Jasa Pembuatan Website, UI/UX Design, AI & Otomasi | Dignify",
     description:
-      "Jasa web development, desain UI/UX, solusi AI, otomasi n8n, dan integrasi API — dengan scope yang jelas dan serah terima yang terdokumentasi.",
+      "Layanan Dignify: jasa pembuatan website, desain UI/UX, jasa web design, solusi AI, otomasi n8n, dan integrasi API — dengan scope jelas dan serah terima yang terdokumentasi.",
   },
   portfolio: {
     title: "Portfolio | Websites, Interfaces & Automation",
@@ -27,19 +27,19 @@ export const seo = {
       "Selected Dignify projects across websites, interfaces, AI tools, and automation — each one marked as client work, internal work, or a concept.",
   },
   portfolioId: {
-    title: "Portfolio Dignify | Website, UI/UX & Otomasi",
+    title: "Portfolio | Jasa Pembuatan Website, UI/UX & Otomasi — Dignify",
     description:
-      "Karya pilihan Dignify: website, antarmuka, AI, dan otomasi — tiap proyek ditandai sebagai kerja klien, internal, atau konsep.",
+      "Karya pilihan Dignify dalam jasa pembuatan website, desain UI/UX, AI, dan otomasi — tiap proyek ditandai jujur sebagai kerja klien, internal, atau konsep.",
   },
   aboutId: {
     title: "Tentang Dignify | Studio Digital Kecil oleh Dije, Ignas & Daniel",
     description:
-      "Dignify adalah studio digital kecil yang dibangun Dije, Ignas, dan Daniel. Kami ngerjain website, UI/UX, solusi AI, otomasi, dan integrasi sistem.",
+      "Dignify adalah studio digital kecil yang dibangun Dije, Ignas, dan Daniel. Kami ngerjain jasa pembuatan website, desain UI/UX, solusi AI, otomasi, dan integrasi sistem.",
   },
   contactId: {
-    title: "Kontak Dignify | Mulai Proyek Website atau Otomasi",
+    title: "Kontak Dignify | Mulai Proyek Pembuatan Website atau Otomasi",
     description:
-      "Hubungi Dignify buat jasa pembuatan website, UI/UX, AI, otomasi n8n, atau integrasi API. Konsultasi gratis buat memetakan proyekmu.",
+      "Hubungi Dignify buat jasa pembuatan website, jasa UI/UX design, AI, otomasi n8n, atau integrasi API. Konsultasi gratis buat memetakan proyekmu.",
   },
   testimonialsId: {
     title: "Testimoni | Dignify Digital Studio",
@@ -67,9 +67,9 @@ export const seo = {
       "Custom web development for landing pages, company profiles, portfolio websites and responsive digital experiences built by Dignify.",
   },
   jasaPembuatanWebsite: {
-    title: "Jasa Pembuatan Website & Web Development",
+    title: "Jasa Pembuatan Website & Web Development | Dignify",
     description:
-      "Jasa pembuatan website custom untuk landing page, company profile, portfolio, dan kebutuhan web development yang responsif bersama Dignify.",
+      "Jasa pembuatan website custom untuk landing page, company profile, portfolio, toko online, dan kebutuhan web development responsif bersama Dignify — dari desain sampai serah terima.",
   },
   serviceTerms: [
     "website development",
@@ -79,10 +79,20 @@ export const seo = {
     "company profile website",
     "front-end development",
     "jasa pembuatan website",
+    "pembuatan website",
+    "jasa bikin website",
+    "jasa web design",
+    "jasa desain website",
     "jasa web development",
     "jasa coding website",
+    "jasa pembuatan landing page",
+    "jasa website company profile",
     "UI UX design",
+    "jasa UI UX",
+    "jasa UI UX design",
     "desain UI UX",
+    "desain web",
+    "jasa desain UI UX",
     "AI solutions",
     "solusi AI",
     "n8n workflow automation",
@@ -95,6 +105,16 @@ export const seo = {
       title: "Jasa Pembuatan Website",
       description:
         "Kami merancang struktur, tampilan, dan implementasi website yang responsif, mudah digunakan, serta mudah dirawat setelah diluncurkan.",
+    },
+    {
+      title: "Jasa Desain Website",
+      description:
+        "Desain website yang bikin bisnismu keliatan profesional: tata letak yang jelas, tipografi yang rapi, dan alur pengunjung yang terarah.",
+    },
+    {
+      title: "Jasa UI/UX Design",
+      description:
+        "Desain antarmuka dan pengalaman pengguna untuk website maupun aplikasi, dari riset kebutuhan sampai prototipe yang bisa dicoba.",
     },
     {
       title: "Jasa Landing Page",

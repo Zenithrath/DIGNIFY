@@ -103,73 +103,23 @@ export default function IndonesianAboutPage() {
                   <p className="text-base leading-relaxed text-muted sm:text-lg">{paragraph}</p>
                 </Reveal>
               ))}
-              <Reveal delay={0.18}>
-                <blockquote className="mt-10 border-l-2 border-emerald pl-6">
-                  <p className="display text-2xl sm:text-3xl">&ldquo;{aboutId.story.quote}&rdquo;</p>
-                  <p className="meta-label mt-4 text-muted">— {aboutId.story.quoteAttrib.toUpperCase()}</p>
-                </blockquote>
-              </Reveal>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <section
-        aria-labelledby="id-statement-heading"
-        className="bg-ink py-24 text-paper sm:py-32"
-        style={{ clipPath: "polygon(0 4%, 100% 0, 100% 100%, 0 100%)" }}
-      >
-        <Container>
-          <Reveal>
-            <p className="meta-label text-emerald">/ MISI</p>
-            <h2 id="id-statement-heading" className="display mt-8 max-w-5xl text-[clamp(2.25rem,5.5vw,5rem)]">
-              {aboutId.statement}
-            </h2>
-          </Reveal>
-        </Container>
-      </section>
-
-      <section aria-labelledby="id-workmode-heading" className="bg-paper py-20 sm:py-28">
-        <Container>
-          <Reveal>
-            <div className="border-b border-line pb-6">
-              <p className="meta-label text-emerald-deep">/ CARA KAMI KERJA</p>
-              <h2 id="id-workmode-heading" className="display mt-6 text-4xl sm:text-5xl">
-                {aboutId.workModes.title}
-              </h2>
-            </div>
-          </Reveal>
-          <div className="mt-10 grid grid-cols-12 gap-x-4">
-            {aboutId.workModes.items.map((mode, i) => (
-              <Reveal key={mode.index} delay={i * 0.07} className="col-span-12 sm:col-span-6 lg:col-span-4">
-                <div className="h-full border border-line bg-pure p-8">
-                  <div className="flex items-center justify-between">
-                    <span className="meta-label text-muted">/ {String(i + 1).padStart(2, "0")}</span>
-                  </div>
-                  <h3 className="display mt-6 text-2xl">{mode.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted">{mode.detail}</p>
+              <Reveal delay={0.16}>
+                <div aria-labelledby="id-testimonial-note-heading" className="mt-10 border border-line bg-pure p-6 sm:p-8">
+                  <p id="id-testimonial-note-heading" className="meta-label text-emerald-deep">
+                    / SOAL TESTIMONI
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-muted">
+                    Kami nggak nerbitin testimoni sebelum beneran ada — sampai sekarang belum ada satu
+                    pun. Kalau udah ada klien yang kasih izin, testimoni aslinya bakal kami tampilkan di
+                    <Link href="/id/testimonials" className="link-underline mx-1.5 inline text-ink-text hover:text-emerald-deep">
+                      halaman testimoni
+                    </Link>
+                    , apa adanya.
+                  </p>
                 </div>
               </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-            <section aria-labelledby="id-testimonial-note-heading" className="bg-paper pb-20 sm:pb-28">
-        <Container>
-          <Reveal>
-            <div className="border border-line bg-pure p-8">
-              <p className="meta-label text-emerald-deep">/ SOAL TESTIMONI</p>
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
-                Kami nggak nerbitin testimoni sebelum beneran ada — sampai sekarang belum ada satu
-                pun. Kalau udah ada klien yang kasih izin, testimoni aslinya bakal kami tampilkan di
-                <Link href="/id/testimonials" className="link-underline mx-1.5 inline text-ink-text hover:text-emerald-deep">
-                  halaman testimoni
-                </Link>
-                , apa adanya.
-              </p>
             </div>
-          </Reveal>
+          </div>
         </Container>
       </section>
 

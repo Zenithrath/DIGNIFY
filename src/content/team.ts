@@ -54,9 +54,9 @@ export const about = {
 } as const;
 
 export const aboutId = {
-  heroTitle: ["Kami Bukan Vendor.", "Kami Partner yang Ikut Mengerjakan."],
+  heroTitle: ["Halo, Kami Dignify.", "Studio Digital Kecil yang Jeli."],
   intro:
-    "Dignify adalah studio digital kecil yang dibangun Dije, Ignas, dan Daniel. Kami ngerjain website, UI/UX, solusi AI, otomasi n8n, dan integrasi API — dengan standar yang sama buat tiap project.",
+    "Dignify adalah studio digital kecil yang dibangun Dije, Ignas, dan Daniel. Kami ngerjain jasa pembuatan website, desain UI/UX, solusi AI, otomasi n8n, dan integrasi API — dengan perhatian yang sama buat tiap project, sekecil apapun.",
   stats: [
     { value: "03", label: "Orang di studio" },
     { value: "05", label: "Layanan digital" },
@@ -64,54 +64,26 @@ export const aboutId = {
     { value: "24 JAM", label: "Target balas pesan" },
   ],
   principles: {
-    title: "Dekat, Praktis, dan Bisa Dicek.",
+    title: "Dekat, Jujur, dan Bisa Dicek.",
     items: [
       {
-        title: "Area Fokus",
-        detail: "Website, UI/UX, solusi AI, otomasi n8n, dan integrasi API buat bisnis di Indonesia.",
+        title: "Dekat dengan kamu",
+        detail: "Ngobrol langsung sama yang ngerjain, bukan sama admin yang lewat-lewat.",
       },
       {
-        title: "Respons",
-        detail: "Berusaha balas pesan dalam 24 jam.",
+        title: "Balas cepat",
+        detail: "Kami berusaha balas pesanmu dalam 24 jam.",
       },
       {
-        title: "Cara Kerja",
-        detail: "Mulai dari kebutuhan yang paling prioritas, bukan dari tren.",
+        title: "Mulai dari kebutuhan",
+        detail: "Prioritasnya masalahmu, bukan tren atau nafsu pakai teknologi terbaru.",
       },
     ],
   },
   story: {
     title: "Berawal dari Masalah yang Sama.",
     paragraphs: [
-      "Dignify berangkat dari tiga orang yang terus lihat masalah yang sama di pekerjaan digital: antarmuka yang mengabaikan struktur, kode yang mengabaikan desain, dan proses yang mengabaikan orang yang memakainya.",
-      "Masalahnya selalu sama: yang penting ditaruh paling belakang. Kerja digital sering cuma dikejar biar kelar, nggak dikejar biar jelas. Kami mendirikan Dignify buat kerja dengan lebih hati-hati.",
-    ],
-    quote: "Bukan karena orangnya nggak bisa. Tapi karena yang penting sering ditaruh paling belakang.",
-    quoteAttrib: "Pola yang kami lihat terus di pekerjaan digital",
-  },
-  statement:
-    "Kami nggak cuma nyelesain proyek. Kami ikut jaga hasilnya tetap jelas dan terawat.",
-  workModes: {
-    title: "Satu Standar, Tiga Cara Kami Bekerja.",
-    items: [
-      {
-        index: "A",
-        title: "Kerjaan, bukan sekadar klien",
-        detail:
-          "Kami nggak hilang setelah proyek selesai. Dokumentasi dan struktur bikin hasilnya tetap bisa dirawat.",
-      },
-      {
-        index: "B",
-        title: "Hasil yang bisa dicek",
-        detail:
-          "Kode, scope, dan progress bisa kamu periksa kapan aja. Nggak ada janji kosong.",
-      },
-      {
-        index: "C",
-        title: "Fokus ke kebutuhanmu",
-        detail:
-          "Solusi dipilih dari masalah yang nyata, bukan paket copy-paste yang sama buat semua orang.",
-      },
+      "Dignify berangkat dari tiga orang yang terus nemuin masalah yang sama di pekerjaan digital: yang penting sering ditaruh paling belakang. Antarmuka yang mengabaikan struktur, kode yang mengabaikan desain, proses yang mengabaikan orang yang memakainya. Kami mendirikan Dignify buat kerja dengan lebih hati-hati — hasilnya jelas, dan tetap bisa dirawat setelah kami serahkan.",
     ],
   },
   team: {
@@ -124,7 +96,7 @@ export const aboutId = {
   },
   cta: {
     title: "Masih bingung mau mulai dari mana?",
-    sub: "Ceritakan kebutuhanmu. Kami bantu petakan masalah yang paling prioritas sebelum bicara paket. Konsultasi pertama gratis, tanpa komitmen.",
+    sub: "Ceritakan aja kebutuhanmu. Kami bantu petakan masalah yang paling prioritas dulu, sebelum bicara paket. Konsultasi pertama gratis, tanpa komitmen.",
     primary: "Konsultasi Gratis",
     secondary: "Lihat Portfolio",
   },
