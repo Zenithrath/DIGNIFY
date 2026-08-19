@@ -7,7 +7,7 @@ export function Hero({ copy = enHomeCopy.hero }: { copy?: HeroCopy }) {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative flex min-h-[calc(100svh-4rem)] flex-col overflow-hidden bg-ink text-paper"
+      className="relative flex min-h-[calc(100svh-4rem)] flex-col overflow-hidden bg-paper text-ink-text"
     >
       <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
         <svg width="100%" height="100%">
@@ -36,7 +36,7 @@ export function Hero({ copy = enHomeCopy.hero }: { copy?: HeroCopy }) {
           </h1>
 
           <p
-            className="hero-item mt-6 max-w-xl px-3 text-sm leading-relaxed text-muted-dark sm:mt-8 sm:px-0 sm:text-base"
+            className="hero-item mt-6 max-w-xl px-3 text-sm leading-relaxed text-muted sm:mt-8 sm:px-0 sm:text-base"
             style={{ animationDelay: "0.36s" }}
           >
             {copy.sub}
@@ -50,7 +50,7 @@ export function Hero({ copy = enHomeCopy.hero }: { copy?: HeroCopy }) {
           <Button href={copy.primaryCta.href} variant="emerald" size="lg" className="w-full sm:w-auto" arrow>
             {copy.primaryCta.label}
           </Button>
-          <Button href={copy.secondaryCta.href} variant="outlineLight" size="lg" className="w-full sm:w-auto" arrow>
+          <Button href={copy.secondaryCta.href} variant="outline" size="lg" className="w-full sm:w-auto" arrow>
             {copy.secondaryCta.label}
           </Button>
         </div>

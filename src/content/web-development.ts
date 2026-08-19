@@ -1,4 +1,5 @@
 export const webDevelopment = {
+  stack: ["Next.js", "React", "TypeScript", "Tailwind"],
   hero: {
     label: "/ WEB DEVELOPMENT",
     title: ["Web Development", "Built Around Your Brand"],

@@ -9,7 +9,7 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { currentLocale } from "@/lib/locale";
-import { navLinks, navLinksId, site } from "@/content/site";
+import { primaryNav, site } from "@/content/site";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { LanguageSwitcher } from "./language-switcher";
 
@@ -22,7 +22,7 @@ export function SiteHeader() {
   const pathname = usePathname();
   const locale = currentLocale(pathname);
   const isIndonesian = locale === "id";
-  const links = isIndonesian ? navLinksId : navLinks;
+  const links = primaryNav(isIndonesian ? "id" : "en");
   const brandHref = isIndonesian ? "/id" : "/";
   const ctaLabel = isIndonesian ? "Mulai Project" : "Start a Project";
   const [open, setOpen] = useState(false);

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
@@ -161,6 +162,28 @@ export default function AboutPage() {
               </Reveal>
             ))}
           </div>
+        </Container>
+      </section>
+
+      <section aria-labelledby="testimonial-note-heading" className="bg-paper pb-20 sm:pb-28">
+        <Container>
+          <Reveal>
+            <div className="border border-line bg-pure p-8">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
+                <div>
+                  <p className="meta-label text-emerald-deep">/ ON TESTIMONIALS</p>
+                  <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
+                    We don&apos;t publish testimonials until they&apos;re real — none published yet.
+                    When a client gives us permission to share their feedback, it will appear on the
+                    <Link href="/testimonials" className="link-underline mx-1.5 inline text-ink-text hover:text-emerald-deep">
+                      testimonials page
+                    </Link>
+                    , verbatim.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
         </Container>
       </section>
 

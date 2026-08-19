@@ -11,6 +11,7 @@ export type ServiceDetailFaq = {
 
 export type ServiceDetailContent = {
   slug: string;
+  stack: string[];
   meta: {
     title: string;
     description: string;
@@ -42,6 +43,7 @@ export type ServiceSlug = (typeof serviceSlugs)[number];
 export const serviceDetailsEn: Record<ServiceSlug, ServiceDetailContent> = {
   "ui-ux-design": {
     slug: "ui-ux-design",
+    stack: ["Figma", "Design Systems", "Prototyping"],
     meta: {
       title: "UI/UX Design Services",
       description:
@@ -141,6 +143,7 @@ export const serviceDetailsEn: Record<ServiceSlug, ServiceDetailContent> = {
   },
   "ai-solutions": {
     slug: "ai-solutions",
+    stack: ["LLM APIs", "RAG", "Prompt Systems"],
     meta: {
       title: "AI Solutions & AI Chat Development",
       description:
@@ -240,6 +243,7 @@ export const serviceDetailsEn: Record<ServiceSlug, ServiceDetailContent> = {
   },
   "n8n-automation": {
     slug: "n8n-automation",
+    stack: ["n8n", "Webhooks", "Scheduling"],
     meta: {
       title: "n8n Workflow Automation Services",
       description:
@@ -339,6 +343,7 @@ export const serviceDetailsEn: Record<ServiceSlug, ServiceDetailContent> = {
   },
   "api-integration": {
     slug: "api-integration",
+    stack: ["REST", "GraphQL", "Webhooks"],
     meta: {
       title: "API Integration Services",
       description:
@@ -441,6 +446,7 @@ export const serviceDetailsEn: Record<ServiceSlug, ServiceDetailContent> = {
 export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
   "ui-ux-design": {
     slug: "ui-ux-design",
+    stack: ["Figma", "Design Systems", "Prototyping"],
     meta: {
       title: "Jasa UI/UX Design",
       description:
@@ -540,6 +546,7 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
   },
   "ai-solutions": {
     slug: "ai-solutions",
+    stack: ["LLM APIs", "RAG", "Prompt Systems"],
     meta: {
       title: "Jasa Solusi AI & Chat AI",
       description:
@@ -639,6 +646,7 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
   },
   "n8n-automation": {
     slug: "n8n-automation",
+    stack: ["n8n", "Webhooks", "Scheduling"],
     meta: {
       title: "Jasa Otomasi n8n & Workflow Automation",
       description:
@@ -738,6 +746,7 @@ export const serviceDetailsId: Record<ServiceSlug, ServiceDetailContent> = {
   },
   "api-integration": {
     slug: "api-integration",
+    stack: ["REST", "GraphQL", "Webhooks"],
     meta: {
       title: "Jasa Integrasi API",
       description:

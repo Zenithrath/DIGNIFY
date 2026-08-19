@@ -25,11 +25,21 @@ export function LanguageSwitcher({ tone = "light", className }: { tone?: "light"
       aria-label="Language"
       className={cn("flex items-center border", tone === "dark" ? "border-line-dark" : "border-line", className)}
     >
-      <Link href={alternateHref(pathname, "en")} aria-current={locale === "en" ? "true" : undefined} className={itemClass(locale === "en")}>
+      <Link
+        href={alternateHref(pathname, "en")}
+        aria-current={locale === "en" ? "true" : undefined}
+        onClick={() => localStorage.setItem("dignify-lang", "en")}
+        className={itemClass(locale === "en")}
+      >
         EN
       </Link>
       <span aria-hidden className={cn("h-4 w-px", tone === "dark" ? "bg-line-dark" : "bg-line")} />
-      <Link href={alternateHref(pathname, "id")} aria-current={locale === "id" ? "true" : undefined} className={itemClass(locale === "id")}>
+      <Link
+        href={alternateHref(pathname, "id")}
+        aria-current={locale === "id" ? "true" : undefined}
+        onClick={() => localStorage.setItem("dignify-lang", "id")}
+        className={itemClass(locale === "id")}
+      >
         ID
       </Link>
     </div>

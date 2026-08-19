@@ -1,4 +1,5 @@
 import { siteUrl } from "@/lib/utils";
+import { testimonialsState } from "./testimonials";
 
 export const site = {
   name: "Dignify",
@@ -22,7 +23,6 @@ export const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/about", label: "About" },
-  { href: "/testimonials", label: "Testimonials" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
@@ -31,6 +31,14 @@ export const navLinksId = [
   { href: "/id/services", label: "Layanan" },
   { href: "/id/portfolio", label: "Portfolio" },
   { href: "/id/about", label: "Tentang" },
-  { href: "/id/testimonials", label: "Testimoni" },
   { href: "/id/contact", label: "Kontak" },
 ] as const;
+
+export const testimonialLink = { href: "/testimonials", label: "Testimonials" } as const;
+export const testimonialLinkId = { href: "/id/testimonials", label: "Testimoni" } as const;
+
+export function primaryNav(locale: "en" | "id") {
+  const base = locale === "id" ? navLinksId : navLinks;
+  if (!testimonialsState.published) return [...base];
+  return [...base, locale === "id" ? testimonialLinkId : testimonialLink];
+}

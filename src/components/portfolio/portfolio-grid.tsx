@@ -92,6 +92,8 @@ export function PortfolioGrid({ lang = "en", initialProjects }: { lang?: "en" | 
     return map;
   }, [projects]);
 
+  const availableOptions = filterOptions.filter((option) => (counts.get(option as FilterKey) ?? 0) > 0);
+
   const visible = projects.filter((p) => matches(p, filter));
 
   const select = (key: FilterKey) => {
@@ -106,7 +108,7 @@ export function PortfolioGrid({ lang = "en", initialProjects }: { lang?: "en" | 
         role="group"
         aria-label={lang === "id" ? "Filter proyek berdasarkan kategori" : "Filter projects by category"}
       >
-        {filterOptions.map((option) => {
+        {availableOptions.map((option) => {
           const key = option as FilterKey;
           const active = filter === key;
           return (

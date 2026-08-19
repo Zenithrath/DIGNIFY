@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
@@ -144,8 +145,7 @@ export default function IndonesianAboutPage() {
               <Reveal key={mode.index} delay={i * 0.07} className="col-span-12 sm:col-span-6 lg:col-span-4">
                 <div className="h-full border border-line bg-pure p-8">
                   <div className="flex items-center justify-between">
-                    <span className="meta-label text-muted">MODE / {mode.index}</span>
-                    <span className="meta-label text-emerald-deep">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="meta-label text-muted">/ {String(i + 1).padStart(2, "0")}</span>
                   </div>
                   <h3 className="display mt-6 text-2xl">{mode.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted">{mode.detail}</p>
@@ -153,6 +153,24 @@ export default function IndonesianAboutPage() {
               </Reveal>
             ))}
           </div>
+        </Container>
+      </section>
+
+            <section aria-labelledby="id-testimonial-note-heading" className="bg-paper pb-20 sm:pb-28">
+        <Container>
+          <Reveal>
+            <div className="border border-line bg-pure p-8">
+              <p className="meta-label text-emerald-deep">/ SOAL TESTIMONI</p>
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
+                Kami nggak nerbitin testimoni sebelum beneran ada — sampai sekarang belum ada satu
+                pun. Kalau udah ada klien yang kasih izin, testimoni aslinya bakal kami tampilkan di
+                <Link href="/id/testimonials" className="link-underline mx-1.5 inline text-ink-text hover:text-emerald-deep">
+                  halaman testimoni
+                </Link>
+                , apa adanya.
+              </p>
+            </div>
+          </Reveal>
         </Container>
       </section>
 

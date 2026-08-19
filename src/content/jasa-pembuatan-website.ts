@@ -1,4 +1,5 @@
 export const jasaPembuatanWebsite = {
+  stack: ["Next.js", "React", "TypeScript", "Tailwind"],
   hero: {
     label: "/ JASA PEMBUATAN WEBSITE",
     title: ["Jasa Pembuatan Website", "Biar Bisnismu Kelihatan Kredibel"],

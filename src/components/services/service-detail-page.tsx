@@ -192,6 +192,15 @@ export function ServiceDetailPage({
             </Reveal>
             <Reveal delay={0.16} className="col-span-12 mt-10 md:col-span-5 md:col-start-8 md:mt-0">
               <p className="meta-label border-t border-line-dark pt-3 text-emerald">{content.hero.meta}</p>
+              {content.stack.length > 0 ? (
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {content.stack.map((tag) => (
+                    <span key={tag} className="meta-label border border-line-dark px-2 py-1 text-muted-dark">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button href={copy.startHref} variant="emerald" size="lg" arrow>
                   {copy.startProject}
@@ -269,8 +278,7 @@ export function ServiceDetailPage({
               <Reveal key={step.index} delay={i * 0.07} className="col-span-12 sm:col-span-6 lg:col-span-3">
                 <div className="h-full border border-line bg-pure p-8">
                   <div className="flex items-center justify-between">
-                    <span className="meta-label text-muted">PHASE / {step.index}</span>
-                    <span className="meta-label text-emerald-deep">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="meta-label text-muted">/ {String(i + 1).padStart(2, "0")}</span>
                   </div>
                   <h3 className="display mt-6 text-2xl">{step.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted">{step.detail}</p>

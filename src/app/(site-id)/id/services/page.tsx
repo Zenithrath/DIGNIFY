@@ -5,7 +5,6 @@ import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { services as staticServices, engagementId } from "@/content/services";
 import { fetchServicesFromDb } from "@/lib/cms-store";
-import { site } from "@/content/site";
 import { seo } from "@/content/seo";
 import { cn } from "@/lib/utils";
 
@@ -49,7 +48,7 @@ export default async function IdServicesPage() {
               <dl className="border-t border-line-dark">
                 {services.map((service) => (
                   <div key={service.slug} className="flex justify-between border-b border-line-dark py-3">
-                    <dt className="meta-label text-muted-dark">SVC/{service.index}</dt>
+                    <dt className="meta-label text-muted-dark">{service.index}</dt>
                     <dd className="meta-label text-paper">{service.title}</dd>
                   </div>
                 ))}
@@ -73,7 +72,6 @@ export default async function IdServicesPage() {
                 <Reveal>
                   <div className="flex items-center justify-between">
                     <span className={isDark ? "meta-label text-emerald" : "meta-label text-emerald-deep"}>/ {service.index}</span>
-                    <span className={cn("meta-label hidden sm:block", isDark ? "text-muted-dark" : "text-muted")}>SYS / {site.wordmark}</span>
                   </div>
                   <div className="mt-10 grid grid-cols-12 gap-x-4 gap-y-10">
                     <div className="col-span-12 lg:col-span-6">
@@ -88,20 +86,13 @@ export default async function IdServicesPage() {
                     <div className="col-span-12 border-t pt-8 lg:col-span-6 lg:col-start-7" style={{ borderColor: isDark ? "var(--color-line-dark)" : "var(--color-line)" }}>
                       <p className={isDark ? "meta-label text-muted-dark" : "meta-label text-muted"}>YANG DISERAHKAN</p>
                       <ul className="mt-5 space-y-3">
-                        {service.deliverables.map((item) => (
+                        {(service.deliverablesId ?? service.deliverables).map((item) => (
                           <li key={item} className="flex items-start gap-3 text-sm">
                             <span aria-hidden className="mt-[7px] size-1.5 shrink-0 bg-emerald" />
                             <span className={isDark ? "text-paper" : "text-ink-text"}>{item}</span>
                           </li>
                         ))}
                       </ul>
-                      <div className="mt-8 flex flex-wrap gap-2">
-                        {service.tags.map((tag) => (
-                          <span key={tag} className={isDark ? "meta-label border border-line-dark px-2 py-1 text-muted-dark" : "meta-label border border-line px-2 py-1 text-muted"}>
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
                       <div className="mt-8 border-t pt-6" style={{ borderColor: isDark ? "var(--color-line-dark)" : "var(--color-line)" }}>
                         <Link
                           href={service.slug === "website-development" ? "/id/jasa-pembuatan-website" : `/id/services/${service.slug}`}
@@ -138,8 +129,7 @@ export default async function IdServicesPage() {
               <Reveal key={phase.index} delay={i * 0.07} className="col-span-12 sm:col-span-4">
                 <div className="h-full border border-line bg-pure p-8">
                   <div className="flex items-center justify-between">
-                    <span className="meta-label text-muted">PHASE / {phase.index}</span>
-                    <span className="meta-label text-emerald-deep">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="meta-label text-muted">/ {String(i + 1).padStart(2, "0")}</span>
                   </div>
                   <h3 className="display mt-6 text-2xl">{phase.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted">{phase.detail}</p>

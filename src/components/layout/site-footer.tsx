@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BrandLogo } from "./brand";
 import { Container } from "@/components/ui/container";
-import { site, navLinks, navLinksId } from "@/content/site";
+import { site, primaryNav } from "@/content/site";
 import { services } from "@/content/services";
 import { LanguageSwitcher } from "./language-switcher";
 import type { Locale } from "@/lib/locale";
@@ -18,7 +18,7 @@ export function SiteFooter({ locale = "en" }: { locale?: Locale }) {
   const year = new Date().getFullYear();
   const isIndonesian = locale === "id";
   const description = isIndonesian ? site.descriptionId : site.description;
-  const nav = isIndonesian ? navLinksId : navLinks;
+  const nav = primaryNav(isIndonesian ? "id" : "en");
   const servicesTitle = isIndonesian ? "LAYANAN" : "SERVICES";
   const contactTitle = isIndonesian ? "KONTAK" : "CONTACT";
 
