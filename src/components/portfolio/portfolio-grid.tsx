@@ -6,9 +6,18 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { ProjectPlate } from "@/components/portfolio/project-plate";
-import { projects as staticProjects, filterOptions } from "@/content/projects";
+import { projects as staticProjects, filterOptions, statusLabel } from "@/content/projects";
 import type { FilterKey, Project } from "@/content/types";
 import { cn } from "@/lib/utils";
+
+const filterLabels: Record<FilterKey, string> = {
+  All: "Semua",
+  Website: "Website",
+  "UI/UX": "UI/UX",
+  Automation: "Otomasi",
+  Internal: "Proyek Internal",
+  Concept: "Proyek Konsep",
+};
 
 function matches(project: Project, filter: FilterKey) {
   if (filter === "All") return true;
@@ -47,7 +56,7 @@ function ProjectCard({ project, index, lang }: { project: Project; index: number
           <p className="meta-label text-muted">
             {project.category} / {project.year}
           </p>
-          <StatusBadge status={project.status} />
+          <StatusBadge status={statusLabel(project.status, lang)} />
         </div>
         <h3 className="display mt-3 text-2xl transition-colors duration-300 group-hover:text-emerald-deep">
           {project.title}
@@ -124,7 +133,7 @@ export function PortfolioGrid({ lang = "en", initialProjects }: { lang?: "en" | 
                   : "text-muted hover:bg-pure hover:text-ink-text",
               )}
             >
-              {option}
+              {lang === "id" ? filterLabels[key] : option}
               <span aria-hidden className={cn(active ? "text-emerald" : "text-emerald-deep")}>
                 {String(counts.get(key)).padStart(2, "0")}
               </span>

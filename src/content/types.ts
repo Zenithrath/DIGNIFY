@@ -46,6 +46,7 @@ export interface Service {
   title: string;
   tagline: string;
   description: string;
+  descriptionId?: string;
   deliverables: string[];
   deliverablesId?: string[];
   tags: string[];

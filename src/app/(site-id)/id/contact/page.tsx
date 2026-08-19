@@ -12,14 +12,13 @@ export const metadata: Metadata = {
   description: seo.contactId.description,
   alternates: {
     canonical: "/id/contact",
-    languages: { en: "/contact", id: "/id/contact", "x-default": "/contact" },
+    languages: { id: "/id/contact", "x-default": "/id/contact" },
   },
   openGraph: {
     title: `${seo.contactId.title} | Dignify`,
     description: seo.contactId.description,
     url: "/id/contact",
     locale: "id_ID",
-    alternateLocale: ["en_US"],
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Kontak Dignify" }],
   },
 };

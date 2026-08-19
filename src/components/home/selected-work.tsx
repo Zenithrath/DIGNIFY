@@ -6,7 +6,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { Reveal } from "@/components/ui/reveal";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { ProjectPlate } from "@/components/portfolio/project-plate";
-import { projects as staticProjects } from "@/content/projects";
+import { projects as staticProjects, statusLabel } from "@/content/projects";
 import { fetchProjectsFromDb } from "@/lib/cms-store";
 import { formatYearIndex } from "@/lib/utils";
 import { cn } from "@/lib/utils";
@@ -78,7 +78,7 @@ export async function SelectedWork({
                     )}
                   >
                     <div className={cn("flex items-center gap-3", !wide && "lg:justify-end")}>
-                      <StatusBadge status={project.status} />
+                      <StatusBadge status={statusLabel(project.status, lang)} />
                       <span className="meta-label text-muted">
                         {project.category} / {project.year}
                       </span>

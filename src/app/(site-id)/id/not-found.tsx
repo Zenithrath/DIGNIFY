@@ -24,7 +24,7 @@ export default function NotFound() {
               Kembali ke beranda
             </Button>
             <Link
-              href="/portfolio"
+              href="/id/portfolio"
               className="inline-flex items-center px-7 py-4 font-mono text-xs uppercase tracking-[0.14em] text-ink-text underline decoration-line underline-offset-8 transition-colors hover:text-emerald-deep hover:decoration-emerald"
             >
               Lihat portfolio

@@ -11,7 +11,6 @@ import { cn } from "@/lib/utils";
 import { currentLocale } from "@/lib/locale";
 import { primaryNav, site } from "@/content/site";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
-import { LanguageSwitcher } from "./language-switcher";
 
 function isActive(pathname: string, href: string) {
   if (href === "/" || href === "/id") return pathname === href;
@@ -53,13 +52,13 @@ export function SiteHeader() {
           <Container className="flex h-16 items-center justify-between gap-6">
           <Link
             href={brandHref}
-            aria-label={`${site.name} home`}
+            aria-label={`${site.name} ${isIndonesian ? "beranda" : "home"}`}
             className="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald"
           >
             <BrandLockup tone="paper" />
           </Link>
 
-          <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
+          <nav aria-label={isIndonesian ? "Navigasi utama" : "Primary"} className="hidden items-center gap-7 lg:flex">
             {links.map((link) => {
               const active = isActive(pathname, link.href);
               return (
@@ -87,7 +86,6 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <LanguageSwitcher tone="dark" className="hidden md:flex" />
             <ThemeToggle tone="dark" className="hidden md:flex" />
             <Button href={isIndonesian ? "/id/contact" : "/contact"} variant="emerald" size="md" className="hidden md:inline-flex">
               {ctaLabel}
@@ -95,7 +93,7 @@ export function SiteHeader() {
             <button
               ref={triggerRef}
               type="button"
-              aria-label={open ? "Close menu" : "Open menu"}
+              aria-label={open ? (isIndonesian ? "Tutup menu" : "Close menu") : isIndonesian ? "Buka menu" : "Open menu"}
               aria-expanded={open}
               aria-controls="mobile-menu"
               onClick={() => setOpen((v) => !v)}
@@ -121,14 +119,14 @@ export function SiteHeader() {
             <button
               ref={closeRef}
               type="button"
-              aria-label="Close menu"
+              aria-label={isIndonesian ? "Tutup menu" : "Close menu"}
               onClick={() => setOpen(false)}
               className="inline-flex size-10 items-center justify-center border border-line-dark text-paper transition-colors hover:border-emerald hover:text-emerald"
             >
               <X aria-hidden className="size-5" />
             </button>
           </Container>
-          <nav aria-label="Mobile" className="flex-1 overflow-y-auto">
+          <nav aria-label={isIndonesian ? "Navigasi seluler" : "Mobile"} className="flex-1 overflow-y-auto">
             <ul className="divide-y divide-line-dark">
               {links.map((link, i) => {
                 const active = isActive(pathname, link.href);
@@ -157,10 +155,9 @@ export function SiteHeader() {
           </nav>
           <div className="border-t border-line-dark px-5 py-5">
             <div className="mb-5 flex items-center gap-3">
-              <LanguageSwitcher tone="dark" />
               <ThemeToggle tone="dark" className="flex" />
             </div>
-            <p className="meta-label text-muted-dark">NEW PROJECT ENQUIRY</p>
+            <p className="meta-label text-muted-dark">{isIndonesian ? "TANYA SOAL PROYEK BARU" : "NEW PROJECT ENQUIRY"}</p>
             <div className="mt-2 flex flex-col gap-2">
               <a
                 href={`mailto:${site.email}`}

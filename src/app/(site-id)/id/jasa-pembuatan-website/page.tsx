@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { JsonLd } from "@/components/seo/json-ld";
 import { jasaPembuatanWebsite } from "@/content/jasa-pembuatan-website";
-import { projects as staticProjects } from "@/content/projects";
+import { projects as staticProjects, statusLabel } from "@/content/projects";
 import { fetchProjectsFromDb } from "@/lib/cms-store";
 import { site } from "@/content/site";
 import { seo } from "@/content/seo";
@@ -19,14 +19,13 @@ export const metadata: Metadata = {
   description: seo.jasaPembuatanWebsite.description,
   alternates: {
     canonical: "/id/jasa-pembuatan-website",
-    languages: { en: "/web-development", id: "/id/jasa-pembuatan-website", "x-default": "/web-development" },
+    languages: { id: "/id/jasa-pembuatan-website", "x-default": "/id/jasa-pembuatan-website" },
   },
   openGraph: {
     title: seo.jasaPembuatanWebsite.title,
     description: seo.jasaPembuatanWebsite.description,
     url: "/id/jasa-pembuatan-website",
     locale: "id_ID",
-    alternateLocale: ["en_US"],
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Jasa pembuatan website oleh Dignify" }],
   },
   twitter: {
@@ -189,7 +188,7 @@ export default async function JasaPembuatanWebsitePage() {
                     <span className="display text-2xl text-paper transition-colors group-hover:text-emerald sm:text-3xl">{project.title}</span>
                   </span>
                   <span className="col-span-9 col-start-3 flex flex-wrap items-center gap-3 sm:col-span-4 sm:col-start-7">
-                    <StatusBadge status={project.status} tone="dark" />
+                    <StatusBadge status={statusLabel(project.status, "id")} tone="dark" />
                     <span className="meta-label text-muted-dark">{project.category} / {project.year}</span>
                   </span>
                   <span aria-hidden className="col-span-1 hidden justify-end text-emerald sm:flex">↗</span>

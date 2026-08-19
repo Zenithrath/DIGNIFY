@@ -24,35 +24,35 @@ export const projects: Project[] = [
     status: "Concept Project",
     year: 2026,
     summary:
-      "An unofficial redesign concept for Tlaga Pratama Persada, a Balikpapan industrial supplier. A single-page site for abrasives, packing solutions, and industrial consumables.",
+      "Konsep redesign tidak resmi untuk Tlaga Pratama Persada, pemasok industri di Balikpapan. Situs satu halaman untuk produk abrasive, solusi packing, dan konsumabel industri.",
     overview:
-      "A concept redesign of the web presence for Tlaga Pratama Persada, a Balikpapan-based general supplier serving mining, construction, shipyards, and manufacturing. The concept covers the company profile, product lines, brand partnerships, services, and contact on one page.",
+      "Konsep redesign kehadiran web Tlaga Pratama Persada, supplier umum di Balikpapan yang melayani pertambangan, konstruksi, galangan kapal, dan manufaktur. Konsepnya mencakup profil perusahaan, lini produk, mitra merek, layanan, dan kontak dalam satu halaman.",
     challenge:
-      "An industrial supplier has to earn trust fast. The concept needed to organize a broad product range (abrasives, packing solutions, and other consumables) into one page without turning it into an unstructured catalog.",
+      "Supplier industri harus bisa dipercaya dengan cepat. Konsepnya harus merapikan rentang produk yang luas (abrasive, solusi packing, dan konsumabel lainnya) ke dalam satu halaman tanpa berubah jadi katalog yang berantakan.",
     approach:
-      "We built the page around a single structure: a strong hero, a compact about section, product highlights grouped by product line codes, brand partners, services, and a contact path. Every product has a direct WhatsApp inquiry link.",
+      "Kami bangun halamannya di sekitar satu struktur: hero yang kuat, bagian about yang ringkas, sorotan produk yang dikelompokkan berdasarkan kode lini produk, mitra merek, layanan, dan jalur kontak. Setiap produk punya tautan inquiry langsung ke WhatsApp.",
     solution:
-      "A single-page site that presents the company and its products clearly. Product lines use the ABR, PKG, and CON codes, and every section moves the visitor toward a concrete next step, mostly through WhatsApp.",
+      "Situs satu halaman yang menampilkan perusahaan dan produknya dengan jelas. Lini produk pakai kode ABR, PKG, dan CON, dan setiap bagian mengarahkan pengunjung ke langkah berikutnya yang nyata, sebagian besar lewat WhatsApp.",
     process: [
-      { step: "Brief", detail: "Studied the company's product range, sectors, and contact channels." },
-      { step: "Structure", detail: "Planned one page with clear anchors for profile, products, brands, services, and contact." },
-      { step: "Design", detail: "Set an industrial tone with product photography and section codes." },
-      { step: "Build", detail: "Implemented the page with Next.js and TypeScript." },
-      { step: "Disclaimer", detail: "Marked the concept as unofficial so it is never confused with the company's real presence." },
+      { step: "Brief", detail: "Mempelajari rentang produk, sektor, dan saluran kontak perusahaan." },
+      { step: "Structure", detail: "Merencanakan satu halaman dengan anchor yang jelas untuk profil, produk, merek, layanan, dan kontak." },
+      { step: "Design", detail: "Menetapkan nuansa industri dengan foto produk dan kode bagian." },
+      { step: "Build", detail: "Mengimplementasikan halamannya dengan Next.js dan TypeScript." },
+      { step: "Disclaimer", detail: "Menandai konsep ini sebagai tidak resmi supaya tidak pernah disangka kehadiran resmi perusahaan." },
     ],
     gallery: [
-      { index: 1, caption: "Hero: industrial positioning and the product focus", src: tpp1 },
-      { index: 2, caption: "Product highlights: abrasives and packing lines with inquiry paths", src: tpp2 },
-      { index: 3, caption: "Services and contact: support options and a WhatsApp-first path", src: tpp3 },
+      { index: 1, caption: "Hero: posisi industri dan fokus produk", src: tpp1 },
+      { index: 2, caption: "Sorotan produk: lini abrasive dan packing dengan jalur inquiry", src: tpp2 },
+      { index: 3, caption: "Layanan dan kontak: opsi dukungan dan jalur utama WhatsApp", src: tpp3 },
     ],
     cover: tpp1,
     tech: ["Next.js", "TypeScript"],
     links: [
-      { label: "Live demo", href: "https://telaga-pratama-persada.vercel.app/" },
-      { label: "Source code", href: "https://github.com/Zenithrath/TelagaPratamaPersada" },
+      { label: "Demo langsung", href: "https://telaga-pratama-persada.vercel.app/" },
+      { label: "Kode sumber", href: "https://github.com/Zenithrath/TelagaPratamaPersada" },
     ],
     reflection:
-      "The concept proved that an industrial company profile does not need to be dull. Clean code, a clear structure, and one strong contact path carry the result.",
+      "Konsep ini membuktikan profil perusahaan industri tidak harus membosankan. Kode yang rapi, struktur yang jelas, dan satu jalur kontak yang kuat sudah cukup membawa hasilnya.",
     nextSlug: "bem-vokasi-ub-2025",
   },
   {
@@ -62,31 +62,31 @@ export const projects: Project[] = [
     status: "Client Project",
     year: 2025,
     summary:
-      "Company profile and information site for BEM Vokasi UB 2025. The site was built in house for the cabinet, with an editing order system for the Kominfo ministry.",
+      "Situs company profile dan informasi untuk BEM Vokasi UB 2025. Dibangun di dalam kampus untuk kabinet, lengkap dengan sistem permintaan edit untuk kementerian Kominfo.",
     overview:
-      "The official web presence of BEM Vokasi Universitas Brawijaya for the 2025 period. It covers the cabinet profile, organizational information, and programs across five to seven pages. The requirements came directly from the people who maintained the site.",
+      "Kehadiran web resmi BEM Vokasi Universitas Brawijaya periode 2025. Mencakup profil kabinet, informasi organisasi, dan program dalam lima sampai tujuh halaman. Kebutuhannya datang langsung dari orang-orang yang memelihara situsnya.",
     challenge:
-      "An organization site has two audiences: visitors looking for information and the internal teams who keep that information current. Without a clear content path, the site would go stale the week after launch. The practical problem was making frequent content updates easy for a student cabinet with no dedicated web team.",
+      "Situs organisasi punya dua penonton: pengunjung yang mencari informasi dan tim internal yang menjaga informasinya tetap baru. Tanpa jalur konten yang jelas, situsnya bakal usang seminggu setelah diluncurkan. Masalah praktisnya adalah bikin pembaruan konten yang sering jadi mudah buat kabinet mahasiswa yang tidak punya tim web khusus.",
     approach:
-      "We used TypeScript, React, and Tailwind with shared components so the cabinet could keep each page consistent. The main feature is an order system that gives the Kominfo ministry one clear place to request and track edits.",
+      "Kami pakai TypeScript, React, dan Tailwind dengan komponen bersama supaya kabinet bisa menjaga konsistensi tiap halaman. Fitur utamanya adalah sistem permintaan yang memberi kementerian Kominfo satu tempat yang jelas buat meminta dan melacak edit.",
     solution:
-      "A company profile site with five to seven pages and a working editing order flow. Information is organized by division and program, and the Kominfo ministry can send and track requests in one place.",
+      "Situs company profile dengan lima sampai tujuh halaman dan alur permintaan edit yang berfungsi. Informasi diorganisir per divisi dan program, dan kementerian Kominfo bisa mengirim serta melacak permintaan di satu tempat.",
     process: [
-      { step: "Brief", detail: "Collected requirements from cabinet divisions and the Kominfo ministry." },
-      { step: "Architecture", detail: "Planned the page structure for the profile, programs, divisions, contact, and content flow." },
-      { step: "Build", detail: "Implemented the React site with shared layout components." },
-      { step: "Order system", detail: "Built the editing order flow so content requests are clear and trackable." },
-      { step: "Handover", detail: "Documented how the cabinet maintains content after launch." },
+      { step: "Brief", detail: "Mengumpulkan kebutuhan dari divisi kabinet dan kementerian Kominfo." },
+      { step: "Architecture", detail: "Merencanakan struktur halaman untuk profil, program, divisi, kontak, dan alur konten." },
+      { step: "Build", detail: "Mengimplementasikan situs React dengan komponen layout bersama." },
+      { step: "Order system", detail: "Membangun alur permintaan edit supaya permintaan konten jelas dan bisa dilacak." },
+      { step: "Handover", detail: "Mendokumentasikan cara kabinet memelihara konten setelah diluncurkan." },
     ],
     gallery: [
-      { index: 1, caption: "Profile pages: organizational structure and cabinet information", src: bem1 },
-      { index: 2, caption: "Editing order flow: the Kominfo content request system", src: bem2 },
-      { index: 3, caption: "Program sections: division and program content in a shared layout", src: bem3 },
+      { index: 1, caption: "Halaman profil: struktur organisasi dan informasi kabinet", src: bem1 },
+      { index: 2, caption: "Alur permintaan edit: sistem permintaan konten Kominfo", src: bem2 },
+      { index: 3, caption: "Bagian program: konten divisi dan program dalam satu layout bersama", src: bem3 },
     ],
     cover: bem1,
     tech: ["TypeScript", "React", "Tailwind CSS"],
     reflection:
-      "Working inside the organization showed us what the site needed after launch. The editing order system became the practical way for the cabinet to keep content current.",
+      "Bekerja di dalam organisasinya menunjukkan kebutuhan situsnya setelah diluncurkan. Sistem permintaan edit jadi cara praktis kabinet menjaga kontennya tetap baru.",
     nextSlug: "djibril-rangga-deja",
   },
   {
@@ -96,35 +96,35 @@ export const projects: Project[] = [
     status: "Internal Project",
     year: 2026,
     summary:
-      "The personal portfolio site of Djibril Rangga Deja, one half of the Dignify studio. A single page for profile, selected work, skills, certificates, and experience.",
+      "Situs portfolio pribadi Djibril Rangga Deja, salah satu dari dua pendiri studio Dignify. Satu halaman untuk profil, karya pilihan, keahlian, sertifikat, dan pengalaman.",
     overview:
-      "The personal site of Djibril, who handles the AI and automation side of the studio. It presents his profile, selected work, skill set, certificates, work experience, and contact channels in a single scrolling page.",
+      "Situs pribadi Djibril, yang memegang sisi AI dan otomasi di studio. Menampilkan profil, karya pilihan, keahlian, sertifikat, pengalaman kerja, dan saluran kontak dalam satu halaman gulir.",
     challenge:
-      "A personal site for an AI engineer needs to prove the work without bloating the page. It also has to give visitors a clear path to his CV and contact channels.",
+      "Situs pribadi untuk seorang AI engineer harus membuktikan kerjanya tanpa membuat halamannya menggelembung. Situsnya juga harus memberi pengunjung jalur yang jelas ke CV dan saluran kontaknya.",
     approach:
-      "We organized the page into numbered sections: profile, selected work, skills, certificates, experience, and contact. Work items carry category filters, and contact is always one click away.",
+      "Kami menyusun halamannya dalam bagian bernomor: profil, karya pilihan, keahlian, sertifikat, pengalaman, dan kontak. Tiap karya punya filter kategori, dan kontak selalu satu klik dari mana pun.",
     solution:
-      "A single-page portfolio that covers the essentials. Selected work includes the Dignify studio site, the BEM Vokasi site, the Tlaga Pratama Persada concept, the Sentinel IoT system, the Arkbot audit assistant, and the Arka helpdesk bot.",
+      "Portfolio satu halaman yang mencakup hal-hal penting. Karya pilihannya termasuk situs studio Dignify, situs BEM Vokasi, konsep Tlaga Pratama Persada, sistem IoT Sentinel, asisten audit Arkbot, dan bot helpdesk Arka.",
     process: [
-      { step: "Profile", detail: "Defined the positioning: AI engineer focused on n8n workflows and automation." },
-      { step: "Structure", detail: "Planned numbered sections from profile to contact." },
-      { step: "Work index", detail: "Listed the real projects with filters and details." },
-      { step: "Credentials", detail: "Added clearly labeled certificates and work experience." },
-      { step: "Contact", detail: "Built the contact path with CV download, email, and WhatsApp." },
+      { step: "Profile", detail: "Menetapkan posisi: AI engineer yang fokus ke workflow n8n dan otomasi." },
+      { step: "Structure", detail: "Merencanakan bagian bernomor dari profil sampai kontak." },
+      { step: "Work index", detail: "Mendaftar proyek yang beneran ada, lengkap dengan filter dan detail." },
+      { step: "Credentials", detail: "Menambahkan sertifikat dan pengalaman kerja yang dilabeli jelas." },
+      { step: "Contact", detail: "Membangun jalur kontak dengan unduhan CV, email, dan WhatsApp." },
     ],
     gallery: [
-      { index: 1, caption: "Hero: positioning and profile over the work index", src: dije1 },
-      { index: 2, caption: "Selected work: the project list with filters", src: dije2 },
-      { index: 3, caption: "Skills and credentials: tools, certificates, and experience", src: dije3 },
+      { index: 1, caption: "Hero: posisi dan profil di atas indeks karya", src: dije1 },
+      { index: 2, caption: "Karya pilihan: daftar proyek dengan filter", src: dije2 },
+      { index: 3, caption: "Keahlian dan sertifikat: tools, sertifikat, dan pengalaman", src: dije3 },
     ],
     cover: dije1,
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     links: [
-      { label: "Live demo", href: "https://djibril-rangga.vercel.app/" },
-      { label: "Source code", href: "https://github.com/Zenithrath/portofolio" },
+      { label: "Demo langsung", href: "https://djibril-rangga.vercel.app/" },
+      { label: "Kode sumber", href: "https://github.com/Zenithrath/portofolio" },
     ],
     reflection:
-      "The founder's own site follows the same rule as every project in this portfolio: each piece of work is shown for what it actually is.",
+      "Situs pribadi pendirinya mengikuti aturan yang sama dengan semua proyek di portfolio ini: setiap karya ditampilkan sesuai kenyataannya.",
     nextSlug: "dignify-studio-site",
   },
   {
@@ -134,31 +134,31 @@ export const projects: Project[] = [
     status: "Internal Project",
     year: 2026,
     summary:
-      "The studio's own website. An editorial, industrial modern system that shows the standard Dignify brings to client work.",
+      "Situs web studio sendiri. Sistem editorial bergaya industrial modern yang menunjukkan standar yang Dignify bawa ke pekerjaan klien.",
     overview:
-      "This is our first internal project and the clearest example of how we work. The site brings together modular grids, editorial hierarchy, restrained accents, typed content, and accessible markup in one working product.",
+      "Ini proyek internal pertama kami dan contoh paling jelas cara kami bekerja. Situs ini menggabungkan grid modular, hierarki editorial, aksen yang dibatasi, konten terketik, dan markup yang bisa diakses dalam satu produk yang berfungsi.",
     challenge:
-      "A studio run by three people needs one site that explains the services, earns trust, and shows the quality of the work. We chose a deliberate system instead of a generic agency template.",
+      "Studio yang dijalankan tiga orang butuh satu situs yang menjelaskan layanan, membangun kepercayaan, dan menunjukkan kualitas kerjanya. Kami memilih sistem yang disengaja, bukan template agensi generik.",
     approach:
-      "We set the visual rules first: two monochrome surfaces, two accents, three typefaces, and one grid. The content lives in typed data files, which lets us update the site without rewriting the layout.",
+      "Kami menetapkan aturan visualnya dulu: dua permukaan monokrom, dua aksen, tiga tipografi, dan satu grid. Kontennya hidup di file data terketik, jadi kami bisa memperbarui situsnya tanpa menulis ulang layout.",
     solution:
-      "The result is a site with seven pages: an editorial home, detailed services, a filterable portfolio, case studies, an about page, a testimonials page that reports only what exists, and a contact form. The visual plates use SVG and geometry, so the site does not depend on a large image library.",
+      "Hasilnya situs dengan tujuh halaman: beranda editorial, layanan yang detail, portfolio yang bisa difilter, studi kasus, halaman tentang, halaman testimoni yang hanya melaporkan apa yang ada, dan formulir kontak. Lembaran visualnya memakai SVG dan geometri, jadi situsnya tidak bergantung pada pustaka gambar yang besar.",
     process: [
-      { step: "Identity", detail: "Established the monochrome foundation, accent rules, and typography scale before any layout." },
-      { step: "System", detail: "Defined reusable primitives: sections, rules, tags, buttons, and reveal behavior." },
-      { step: "Content", detail: "Wrote the typed content layer for services, projects, process, and values before building the pages." },
-      { step: "Implementation", detail: "Built the routes on the server and added client components only where filters, forms, or motion need them." },
-      { step: "Validation", detail: "Ran lint, type checking, and a production build; audited content integrity and accessibility." },
+      { step: "Identity", detail: "Menetapkan fondasi monokrom, aturan aksen, dan skala tipografi sebelum layout apa pun." },
+      { step: "System", detail: "Mendefinisikan primitif yang bisa dipakai ulang: bagian, garis, tag, tombol, dan perilaku reveal." },
+      { step: "Content", detail: "Menulis lapisan konten terketik untuk layanan, proyek, proses, dan nilai sebelum membangun halamannya." },
+      { step: "Implementation", detail: "Membangun rute di server dan menambahkan komponen client hanya di tempat filter, formulir, atau motion membutuhkannya." },
+      { step: "Validation", detail: "Menjalankan lint, type check, dan build produksi; mengaudit integritas konten dan aksesibilitas." },
     ],
     gallery: [
-      { index: 1, caption: "Hero composition: oversized display type over a geometric system", src: dignify1 },
-      { index: 2, caption: "Service index: numbered editorial rows instead of generic cards", src: dignify2 },
-      { index: 3, caption: "Case study layout: boxed sections with technical metadata", src: dignify3 },
+      { index: 1, caption: "Komposisi hero: tipografi display besar di atas sistem geometris", src: dignify1 },
+      { index: 2, caption: "Indeks layanan: baris editorial bernomor, bukan kartu generik", src: dignify2 },
+      { index: 3, caption: "Layout studi kasus: bagian berkotak dengan metadata teknis", src: dignify3 },
     ],
     cover: dignify1,
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     reflection:
-      "Building our own site made our process clearer. A small team moves faster when the visual rules and content structure are written down. We also kept the claims close to the work we have actually done.",
+      "Membangun situs sendiri memperjelas proses kami. Tim kecil bergerak lebih cepat saat aturan visual dan struktur kontennya dituliskan. Kami juga menjaga klaimnya tetap dekat dengan pekerjaan yang benar-benar kami lakukan.",
     nextSlug: "arkananta-ai-audit-assistant",
   },
   {
@@ -168,34 +168,47 @@ export const projects: Project[] = [
     status: "Client Project",
     year: 2026,
     summary:
-      "An AI assistant built with n8n for audit work at Arkananta Apta Pratista. It answers audit questions, shows the supporting evidence, and retrieves files from Google Drive with RAG.",
+      "Asisten AI yang dibangun dengan n8n untuk pekerjaan audit di Arkananta Apta Pratista. Menjawab pertanyaan audit, menunjukkan bukti pendukung, dan mengambil file dari Google Drive dengan RAG.",
     overview:
-      "The chatbot answers audit questions and points to the document behind each answer. It can also find and send the file an auditor needs. The knowledge base lives in Google Drive and is searched through a RAG pipeline.",
+      "Chatbot ini menjawab pertanyaan audit dan menunjuk dokumen di balik tiap jawaban. Ia juga bisa menemukan dan mengirim file yang dibutuhkan auditor. Basis pengetahuannya hidup di Google Drive dan dicari lewat pipeline RAG.",
     challenge:
-      "An audit answer is only useful when someone can check its source. The system also needed to accept new files without rebuilding the workflow each time the knowledge base grew.",
+      "Jawaban audit hanya berguna kalau sumbernya bisa dicek. Sistemnya juga harus bisa menerima file baru tanpa membangun ulang workflow setiap kali basis pengetahuan bertambah.",
     approach:
-      "Google Drive is the source of truth. The n8n workflow retrieves relevant documents, gives that context to the model, and returns the source file with the answer. A GPT based model and a fallback model handle the chat, while a file upload path adds new knowledge to the search index.",
+      "Google Drive dijadikan sumber kebenaran. Workflow n8n mengambil dokumen yang relevan, memberikan konteks itu ke model, dan mengembalikan file sumber bersama jawabannya. Model berbasis GPT dan model cadangan menangani chat, sementara jalur unggah file menambah pengetahuan baru ke indeks pencarian.",
     solution:
-      "The finished assistant combines a front end, n8n workflows, and the required integrations. It answers with citations, retrieves supporting files, and accepts uploaded documents. A fallback model keeps the chat available when the primary provider is unavailable.",
+      "Asisten yang selesai menggabungkan front end, workflow n8n, dan integrasi yang dibutuhkan. Ia menjawab dengan kutipan sumber, mengambil file pendukung, dan menerima dokumen yang diunggah. Model cadangan menjaga chat tetap tersedia saat penyedia utama sedang tidak bisa diakses.",
     process: [
-      { step: "Scoping", detail: "Mapped the audit questions, file sources, and evidence requirements." },
-      { step: "Knowledge", detail: "Connected Google Drive as the source and designed the RAG retrieval flow." },
-      { step: "Workflow", detail: "Built the n8n backend for model routing, document retrieval, and fallback handling." },
-      { step: "Front end", detail: "Built the chat interface for answers, evidence, and files." },
-      { step: "Update path", detail: "Added a file upload path so the knowledge base can grow without a rebuild." },
+      { step: "Scoping", detail: "Memetakan pertanyaan audit, sumber file, dan kebutuhan bukti." },
+      { step: "Knowledge", detail: "Menyambungkan Google Drive sebagai sumber dan merancang alur pengambilan RAG." },
+      { step: "Workflow", detail: "Membangun backend n8n untuk perutean model, pengambilan dokumen, dan penanganan cadangan." },
+      { step: "Front end", detail: "Membangun antarmuka chat untuk jawaban, bukti, dan file." },
+      { step: "Update path", detail: "Menambahkan jalur unggah file supaya basis pengetahuan bisa tumbuh tanpa pembangunan ulang." },
     ],
     gallery: [
-      { index: 1, caption: "Chat flow: question, retrieved context, and cited answer", src: arkbot1 },
-      { index: 2, caption: "Evidence: the source file attached to the answer", src: arkbot2 },
-      { index: 3, caption: "Knowledge: Google Drive source and the file upload path", src: arkbot3 },
+      { index: 1, caption: "Alur chat: pertanyaan, konteks yang diambil, dan jawaban bersumber", src: arkbot1 },
+      { index: 2, caption: "Bukti: file sumber yang dilampirkan ke jawaban", src: arkbot2 },
+      { index: 3, caption: "Pengetahuan: sumber Google Drive dan jalur unggah file", src: arkbot3 },
     ],
     cover: arkbot1,
     tech: ["n8n", "GPT", "DeepSeek", "Google Drive", "RAG"],
     reflection:
-      "The most important rule was simple: the assistant must show a source for every answer. That keeps the tool useful for audit work and gives the team something they can verify.",
+      "Aturan yang paling penting sederhana: asistennya harus menunjukkan sumber untuk setiap jawaban. Itu menjaga tools-nya tetap berguna untuk pekerjaan audit dan memberi tim sesuatu yang bisa mereka verifikasi.",
     nextSlug: "tlaga-pratama-persada",
   },
 ];
+
+export const statusLabels = {
+  "Client Project": { en: "Client Project", id: "Proyek Klien" },
+  "Internal Project": { en: "Internal Project", id: "Proyek Internal" },
+  "Concept Project": { en: "Concept Project", id: "Proyek Konsep" },
+} as const;
+
+export type ProjectStatusKey = keyof typeof statusLabels;
+
+export function statusLabel(status: string, locale: "en" | "id"): string {
+  const labels = statusLabels[status as ProjectStatusKey];
+  return labels ? labels[locale] : status;
+}
 
 export const filterOptions = ["All", "Website", "UI/UX", "Automation", "Internal", "Concept"] as const;
 

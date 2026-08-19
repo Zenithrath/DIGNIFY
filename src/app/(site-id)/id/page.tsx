@@ -15,14 +15,13 @@ export const metadata: Metadata = {
   description: seo.homeId.description,
   alternates: {
     canonical: "/id",
-    languages: { en: "/", id: "/id", "x-default": "/" },
+    languages: { id: "/id", "x-default": "/id" },
   },
   openGraph: {
     title: seo.homeId.title,
     description: seo.homeId.description,
     url: "/id",
     locale: "id_ID",
-    alternateLocale: ["en_US"],
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Dignify studio digital" }],
   },
   twitter: {

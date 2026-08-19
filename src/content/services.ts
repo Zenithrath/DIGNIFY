@@ -8,6 +8,8 @@ export const services: Service[] = [
     tagline: "Websites engineered like products.",
     description:
       "We plan the site structure, design the interface, and build the result in clean typed code. The finished site is fast, accessible, and easy to maintain.",
+    descriptionId:
+      "Kami rencanakan struktur situsnya, rancang antarmukanya, dan bangun hasilnya dalam kode yang rapi dan terketik. Hasilnya cepat dibuka, gampang diakses, dan mudah dirawat.",
     deliverables: [
       "The site structure, planned before anything is built",
       "Works well on phones and computers",
@@ -29,6 +31,8 @@ export const services: Service[] = [
     tagline: "Interfaces designed as systems.",
     description:
       "We create clear page structures, useful user flows, and visual systems that stay consistent as the product grows. The goal is a design people can use before it tries to impress them.",
+    descriptionId:
+      "Kami bikin struktur halaman yang jelas, alur yang berguna, dan sistem visual yang tetap konsisten pas produknya makin besar. Tujuannya desain yang enak dipakai, bukan yang cuma niat memukau.",
     deliverables: [
       "A clear map of how people move through your product",
       "A consistent look that stays tidy as the product grows",
@@ -50,6 +54,8 @@ export const services: Service[] = [
     tagline: "Practical AI, scoped to real work.",
     description:
       "We use AI for specific tasks such as document search, chat, content support, and analysis. The workflow stays visible, reviewable, and under your control.",
+    descriptionId:
+      "Kami pakai AI buat tugas yang spesifik seperti pencarian dokumen, chat, bantuan konten, dan analisis. Alurnya tetap kelihatan, bisa dicek, dan tetap di bawah kendalimu.",
     deliverables: [
       "We check first whether AI is actually the right tool for your problem",
       "A simple interface where the AI works for your team",
@@ -71,6 +77,8 @@ export const services: Service[] = [
     tagline: "Workflows that run themselves.",
     description:
       "We connect your tools with n8n so routine work happens without constant copying and checking. Each workflow includes error handling, useful logs, and documentation your team can follow.",
+    descriptionId:
+      "Kami sambungkan tools-mu pakai n8n biar kerjaan rutin jalan tanpa harus terus-terusan copy-paste dan ngecek. Tiap alur punya penanganan error, log yang berguna, dan dokumentasi yang bisa diikuti timmu.",
     deliverables: [
       "The workflow designed on paper before it is built",
       "Your existing tools connected to each other",
@@ -92,6 +100,8 @@ export const services: Service[] = [
     tagline: "Systems that talk to each other.",
     description:
       "We connect your product to REST services, webhooks, external platforms, and internal data. The integration includes clear data mapping, retries where they help, and useful failure messages.",
+    descriptionId:
+      "Kami sambungkan produkmu ke layanan REST, webhook, platform eksternal, dan data internal. Integrasinya termasuk pemetaan data yang jelas, percobaan ulang kalau memang membantu, dan pesan kegagalan yang berguna.",
     deliverables: [
       "A clear plan of how your systems will connect",
       "Your tools connected and kept in sync automatically",

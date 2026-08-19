@@ -10,14 +10,13 @@ export const metadata: Metadata = {
   description: seo.testimonialsId.description,
   alternates: {
     canonical: "/id/testimonials",
-    languages: { en: "/testimonials", id: "/id/testimonials", "x-default": "/testimonials" },
+    languages: { id: "/id/testimonials", "x-default": "/id/testimonials" },
   },
   openGraph: {
     title: seo.testimonialsId.title,
     description: seo.testimonialsId.description,
     url: "/id/testimonials",
     locale: "id_ID",
-    alternateLocale: ["en_US"],
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Testimoni Dignify" }],
   },
 };

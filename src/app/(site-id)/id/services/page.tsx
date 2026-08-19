@@ -15,14 +15,13 @@ export const metadata: Metadata = {
   description: seo.servicesId.description,
   alternates: {
     canonical: "/id/services",
-    languages: { en: "/services", id: "/id/services", "x-default": "/services" },
+    languages: { id: "/id/services", "x-default": "/id/services" },
   },
   openGraph: {
     title: `${seo.servicesId.title} | Dignify`,
     description: seo.servicesId.description,
     url: "/id/services",
     locale: "id_ID",
-    alternateLocale: ["en_US"],
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Layanan Dignify" }],
   },
 };
@@ -81,7 +80,7 @@ export default async function IdServicesPage() {
                       <p className={isDark ? "meta-label mt-5 text-emerald" : "meta-label mt-5 text-emerald-deep"}>{service.tagline}</p>
                     </div>
                     <div className="col-span-12 lg:col-span-5 lg:col-start-8">
-                      <p className={isDark ? "text-base leading-relaxed text-muted-dark" : "text-base leading-relaxed text-muted"}>{service.description}</p>
+                      <p className={isDark ? "text-base leading-relaxed text-muted-dark" : "text-base leading-relaxed text-muted"}>{service.descriptionId ?? service.description}</p>
                     </div>
                     <div className="col-span-12 border-t pt-8 lg:col-span-6 lg:col-start-7" style={{ borderColor: isDark ? "var(--color-line-dark)" : "var(--color-line)" }}>
                       <p className={isDark ? "meta-label text-muted-dark" : "meta-label text-muted"}>YANG DISERAHKAN</p>

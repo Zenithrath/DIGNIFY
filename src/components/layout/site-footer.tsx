@@ -3,7 +3,6 @@ import { BrandLogo } from "./brand";
 import { Container } from "@/components/ui/container";
 import { site, primaryNav } from "@/content/site";
 import { services } from "@/content/services";
-import { LanguageSwitcher } from "./language-switcher";
 import type { Locale } from "@/lib/locale";
 
 const footerServicesId = [
@@ -21,6 +20,11 @@ export function SiteFooter({ locale = "en" }: { locale?: Locale }) {
   const nav = primaryNav(isIndonesian ? "id" : "en");
   const servicesTitle = isIndonesian ? "LAYANAN" : "SERVICES";
   const contactTitle = isIndonesian ? "KONTAK" : "CONTACT";
+  const studioLabel = isIndonesian ? "Studio Digital Kreatif" : "Creative Digital Studio";
+  const menuTitle = isIndonesian ? "DAFTAR" : "MENU";
+  const rights = isIndonesian ? "SEMUA HAK DILINDUNGI." : "ALL RIGHTS RESERVED.";
+  const builtBy = isIndonesian ? "DIRANCANG & DIBANGUN OLEH" : "DESIGNED & BUILT BY";
+  const topLabel = isIndonesian ? "Atas" : "Top";
 
   return (
     <footer className="border-t border-line-dark bg-ink text-paper">
@@ -28,12 +32,12 @@ export function SiteFooter({ locale = "en" }: { locale?: Locale }) {
         <div className="grid grid-cols-12 gap-x-4 gap-y-12">
           <div className="col-span-12 lg:col-span-5">
             <BrandLogo tone="paper" />
-            <p className="meta-label mt-3 text-muted-dark">Creative Digital Studio</p>
+            <p className="meta-label mt-3 text-muted-dark">{studioLabel}</p>
             <p className="mt-8 max-w-sm text-sm leading-relaxed text-muted-dark">{description}</p>
           </div>
 
           <nav aria-label="Footer" className="col-span-6 sm:col-span-4 lg:col-span-2">
-            <p className="meta-label text-muted-dark">MENU</p>
+            <p className="meta-label text-muted-dark">{menuTitle}</p>
             <ul className="mt-4 space-y-1">
               {nav.map((link) => (
                 <li key={link.href}>
@@ -106,16 +110,15 @@ export function SiteFooter({ locale = "en" }: { locale?: Locale }) {
 
         <div className="mt-16 flex flex-col gap-4 border-t border-line-dark pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="meta-label text-muted-dark">
-            © {year} {site.wordmark}. ALL RIGHTS RESERVED.
+            © {year} {site.wordmark}. {rights}
           </p>
           <div className="flex items-center gap-4">
-            <LanguageSwitcher tone="dark" />
-            <p className="meta-label text-muted-dark">DESIGNED & BUILT BY {site.wordmark}</p>
+            <p className="meta-label text-muted-dark">{builtBy} {site.wordmark}</p>
             <a
               href="#top"
               className="inline-flex items-center gap-2 py-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-paper transition-colors hover:text-emerald"
             >
-              Top
+              {topLabel}
               <span aria-hidden className="inline-block text-emerald">↑</span>
             </a>
           </div>

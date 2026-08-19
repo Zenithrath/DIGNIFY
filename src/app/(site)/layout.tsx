@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { site } from "@/content/site";
 import { organizationJsonLd, seo } from "@/content/seo";
 import { JsonLd } from "@/components/seo/json-ld";
-import { baseViewport, localeRedirect, revealNoscript, themeInit } from "@/lib/root-layout";
+import { baseViewport, revealNoscript, themeInit } from "@/lib/root-layout";
 import { SkipLink } from "@/components/layout/skip-link";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -70,7 +70,6 @@ export default function SiteRootLayout({ children }: { children: React.ReactNode
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
-        <script dangerouslySetInnerHTML={{ __html: localeRedirect }} />
       </head>
       <body className="flex min-h-full flex-col bg-paper font-sans text-ink-text">
         <noscript>

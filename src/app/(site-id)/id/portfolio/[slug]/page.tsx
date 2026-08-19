@@ -9,7 +9,7 @@ import { StatusBadge } from "@/components/ui/status-badge";
 import { ProjectPlate } from "@/components/portfolio/project-plate";
 import { JsonLd } from "@/components/seo/json-ld";
 import { site } from "@/content/site";
-import { projects as staticProjects, getProject as getStaticProject } from "@/content/projects";
+import { projects as staticProjects, getProject as getStaticProject, statusLabel } from "@/content/projects";
 import { fetchProjectsFromDb } from "@/lib/cms-store";
 import { formatYearIndex } from "@/lib/utils";
 
@@ -42,9 +42,8 @@ export async function generateMetadata({
     alternates: {
       canonical: `/id/portfolio/${project.slug}`,
       languages: {
-        en: `/portfolio/${project.slug}`,
         id: `/id/portfolio/${project.slug}`,
-        "x-default": `/portfolio/${project.slug}`,
+        "x-default": `/id/portfolio/${project.slug}`,
       },
     },
     openGraph: {
@@ -53,8 +52,7 @@ export async function generateMetadata({
       url: `/id/portfolio/${project.slug}`,
       type: "article",
       locale: "id_ID",
-      alternateLocale: ["en_US"],
-      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: `${project.title} case study` }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: `${project.title} studi kasus` }],
     },
   };
 }
@@ -117,7 +115,7 @@ export default async function IndonesianPortfolioDetailPage({
 
           <div className="mt-12 grid grid-cols-12 gap-x-4 gap-y-10">
             <Reveal className="col-span-12 lg:col-span-9">
-              <p className="meta-label text-muted-dark">/ CASE STUDY / {String(project.year)}</p>
+              <p className="meta-label text-muted-dark">/ STUDI KASUS / {String(project.year)}</p>
               <h1 id="case-heading" className="display mt-6 text-[clamp(2.75rem,7.5vw,7.5rem)]">
                 {project.title}
               </h1>
@@ -125,7 +123,7 @@ export default async function IndonesianPortfolioDetailPage({
             <Reveal delay={0.1} className="col-span-12 lg:col-span-3 lg:pt-14">
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-3">
-                  <StatusBadge status={project.status} tone="dark" />
+                  <StatusBadge status={statusLabel(project.status, "id")} tone="dark" />
                 </div>
                 <dl className="space-y-2 border-t border-line-dark pt-4 text-sm">
                   <div className="flex justify-between">
@@ -275,7 +273,7 @@ export default async function IndonesianPortfolioDetailPage({
             <div className="border-b border-line pb-6">
               <p className="meta-label text-emerald-deep">/ 06 / GALERI</p>
               <h2 id="gallery-heading" className="display mt-6 text-4xl">
-                System plates.
+                Lembaran sistem.
               </h2>
             </div>
           </Reveal>
@@ -342,7 +340,7 @@ export default async function IndonesianPortfolioDetailPage({
               </div>
               <div className="col-span-12 border-t border-line-dark p-8 sm:p-12 lg:col-span-4 lg:border-l lg:border-t-0">
                 <p className="meta-label text-muted-dark">STATUS PROYEK</p>
-                <StatusBadge status={project.status} tone="dark" className="mt-4" />
+                <StatusBadge status={statusLabel(project.status, "id")} tone="dark" className="mt-4" />
                 <p className="mt-8 text-sm leading-relaxed text-muted-dark">
                   {project.status === "Concept Project"
                     ? "Eksplorasi desain yang dibuat studio. Tidak pernah diluncurkan, dan tidak ditampilkan sebagai hasil klien."
@@ -393,7 +391,7 @@ export default async function IndonesianPortfolioDetailPage({
                 </div>
                 <div className="col-span-12 lg:col-span-3">
                   <div className="flex items-center gap-3">
-                    <StatusBadge status={nextProject.status} />
+                    <StatusBadge status={statusLabel(nextProject.status, "id")} />
                     <span className="meta-label text-muted">{nextProject.category}</span>
                   </div>
                   <h3 className="display mt-4 text-3xl sm:text-4xl">{nextProject.title}</h3>

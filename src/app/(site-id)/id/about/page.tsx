@@ -18,14 +18,13 @@ export const metadata: Metadata = {
   description: seo.aboutId.description,
   alternates: {
     canonical: "/id/about",
-    languages: { en: "/about", id: "/id/about", "x-default": "/about" },
+    languages: { id: "/id/about", "x-default": "/id/about" },
   },
   openGraph: {
     title: seo.aboutId.title,
     description: seo.aboutId.description,
     url: "/id/about",
     locale: "id_ID",
-    alternateLocale: ["en_US"],
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Tentang Dignify" }],
   },
 };

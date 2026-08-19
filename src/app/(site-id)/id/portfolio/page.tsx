@@ -13,14 +13,13 @@ export const metadata: Metadata = {
   description: seo.portfolioId.description,
   alternates: {
     canonical: "/id/portfolio",
-    languages: { en: "/portfolio", id: "/id/portfolio", "x-default": "/portfolio" },
+    languages: { id: "/id/portfolio", "x-default": "/id/portfolio" },
   },
   openGraph: {
     title: `${seo.portfolioId.title} | Dignify`,
     description: seo.portfolioId.description,
     url: "/id/portfolio",
     locale: "id_ID",
-    alternateLocale: ["en_US"],
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Portfolio Dignify" }],
   },
   twitter: {

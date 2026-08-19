@@ -7,7 +7,7 @@ import { StatusBadge } from "@/components/ui/status-badge";
 import { JsonLd } from "@/components/seo/json-ld";
 import type { ServiceDetailContent } from "@/content/service-details";
 import { serviceDetailsEn, serviceDetailsId } from "@/content/service-details";
-import { projects as staticProjects } from "@/content/projects";
+import { projects as staticProjects, statusLabel } from "@/content/projects";
 import { fetchProjectsFromDb } from "@/lib/cms-store";
 import { site } from "@/content/site";
 import { cn } from "@/lib/utils";
@@ -38,21 +38,18 @@ export function generateServiceMetadata(
 ): Metadata {
   const meta = serviceDetailMeta[locale][slug] ?? fallbackMeta;
   const path = servicePaths[locale](slug);
-  const enPath = servicePaths.en(slug);
-  const idPath = servicePaths.id(slug);
   return {
     title: meta.title,
     description: meta.description,
     alternates: {
       canonical: path,
-      languages: { en: enPath, id: idPath, "x-default": enPath },
+      languages: { id: servicePaths.id(slug), "x-default": servicePaths.id(slug) },
     },
     openGraph: {
       title: `${meta.title} | Dignify`,
       description: meta.description,
       url: path,
       locale: locale === "id" ? "id_ID" : "en_US",
-      alternateLocale: locale === "id" ? ["en_US"] : ["id_ID"],
       images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: meta.title }],
     },
     twitter: {
@@ -289,7 +286,7 @@ export function ServiceDetailPage({
         </Container>
       </section>
 
-      <RelatedWork category={content.related} copy={copy} />
+      <RelatedWork category={content.related} copy={copy} locale={locale} />
 
       <section aria-labelledby="sd-faq-heading" className="bg-paper py-20 sm:py-28">
         <Container>
@@ -349,9 +346,11 @@ export function ServiceDetailPage({
 async function RelatedWork({
   category,
   copy,
+  locale,
 }: {
   category: string;
   copy: (typeof detailCopy)[Locale];
+  locale: Locale;
 }) {
   const allProjects = await fetchProjectsFromDb().catch(() => staticProjects);
   const related = allProjects.filter((project) => project.category === category).slice(0, 3);
@@ -383,7 +382,7 @@ async function RelatedWork({
                   </span>
                 </span>
                 <span className="col-span-9 col-start-3 flex flex-wrap items-center gap-3 sm:col-span-4 sm:col-start-7">
-                  <StatusBadge status={project.status} tone="dark" />
+                  <StatusBadge status={statusLabel(project.status, locale)} tone="dark" />
                   <span className="meta-label text-muted-dark">
                     {project.category} / {project.year}
                   </span>

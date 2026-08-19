@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { site } from "@/content/site";
 import { organizationJsonLd, seo } from "@/content/seo";
 import { JsonLd } from "@/components/seo/json-ld";
-import { baseViewport, localeRedirect, revealNoscript, themeInit } from "@/lib/root-layout";
+import { baseViewport, revealNoscript, themeInit } from "@/lib/root-layout";
 import { SkipLink } from "@/components/layout/skip-link";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "/id",
-    languages: { en: "/", id: "/id", "x-default": "/" },
+    languages: { id: "/id", "x-default": "/id" },
   },
   openGraph: {
     title: seo.homeId.title,
@@ -35,7 +35,6 @@ export const metadata: Metadata = {
     url: "/id",
     siteName: site.name,
     locale: "id_ID",
-    alternateLocale: ["en_US"],
     type: "website",
     images: [
       {
@@ -70,7 +69,6 @@ export default function IndonesianSiteRootLayout({ children }: { children: React
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
-        <script dangerouslySetInnerHTML={{ __html: localeRedirect }} />
       </head>
       <body className="flex min-h-full flex-col bg-paper font-sans text-ink-text">
         <noscript>
