@@ -94,18 +94,6 @@ body {
   color: #6ee7b7;
 }
 
-.brand-logo {
-  filter: brightness(0);
-}
-
-.brand-logo--paper {
-  filter: brightness(0) invert(1);
-}
-
-[data-theme="dark"] .brand-logo {
-  filter: brightness(0) invert(1);
-}
-
 :focus-visible {
   outline: 2px solid var(--color-emerald);
   outline-offset: 3px;
@@ -114,6 +102,10 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .accordion-body {
+    transition: none;
   }
 }
 
@@ -147,6 +139,24 @@ body {
   .link-underline:hover,
   .link-underline:focus-visible {
     background-size: 100% 1px;
+  }
+
+  .accordion-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s var(--ease-editorial);
+  }
+
+  details[open] > .accordion-body {
+    grid-template-rows: 1fr;
+  }
+
+  .accordion-body-inner {
+    overflow: hidden;
+  }
+
+  .service-card {
+    box-shadow: 0 16px 40px -24px rgb(9 9 11 / 0.4);
   }
 }
 

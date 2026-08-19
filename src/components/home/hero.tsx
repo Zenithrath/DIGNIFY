@@ -7,9 +7,9 @@ export function Hero({ copy = enHomeCopy.hero }: { copy?: HeroCopy }) {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative flex min-h-[calc(100svh-4rem)] flex-col overflow-hidden bg-paper text-ink-text"
+      className="relative flex min-h-0 flex-col overflow-hidden bg-paper text-ink-text sm:min-h-[calc(100svh-4rem)]"
     >
-      <Container className="relative z-10 flex min-w-0 flex-1 flex-col items-center justify-center gap-8 py-16 sm:gap-10 sm:py-24">
+      <Container className="relative z-10 flex min-w-0 flex-1 flex-col items-center justify-center gap-8 pb-16 pt-8 sm:gap-10 sm:pb-24 sm:pt-12">
         <div className="flex w-full max-w-4xl flex-col items-center text-center">
           <p className="hero-item meta-label text-emerald-deep">/ DIGITAL STUDIO</p>
           <h1
